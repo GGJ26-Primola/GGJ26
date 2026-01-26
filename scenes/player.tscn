@@ -512,17 +512,17 @@ animation = &"idle_down_left"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_fjrip"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_dqkch")
-blend_point_0/pos = Vector2(0, -1)
+blend_point_0/pos = Vector2(0, 1)
 blend_point_1/node = SubResource("AnimationNodeAnimation_qlg0r")
-blend_point_1/pos = Vector2(1, -1)
+blend_point_1/pos = Vector2(1, 1)
 blend_point_2/node = SubResource("AnimationNodeAnimation_tuyoq")
-blend_point_2/pos = Vector2(1, 1)
+blend_point_2/pos = Vector2(1, -1)
 blend_point_3/node = SubResource("AnimationNodeAnimation_fjrip")
-blend_point_3/pos = Vector2(0, 1)
+blend_point_3/pos = Vector2(0, -1)
 blend_point_4/node = SubResource("AnimationNodeAnimation_smehm")
-blend_point_4/pos = Vector2(-1, 1)
+blend_point_4/pos = Vector2(-1, -1)
 blend_point_5/node = SubResource("AnimationNodeAnimation_ur7pv")
-blend_point_5/pos = Vector2(-1, -1)
+blend_point_5/pos = Vector2(-1, 1)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_smehm"]
@@ -567,4 +567,4 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_ur7pv")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Idle/blend_position = Vector2(0.048525214, -0.4887892)
+parameters/Idle/blend_position = Vector2(-0.0028544068, 0.44394612)
