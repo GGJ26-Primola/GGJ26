@@ -5,12 +5,13 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 @onready var animated_sprite: AnimatedSprite3D = $AnimatedSprite3D
+@onready var animation_tree: AnimationTree = $AnimationTree
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		animated_sprite.play("jump_front")
@@ -22,7 +23,8 @@ func _physics_process(delta: float) -> void:
 		var input_dir := Input.get_vector("left", "right", "up", "down")
 		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if direction:
-			change_animation(input_dir)
+			#change_animation(input_dir)
+			animation_tree.set("parameters/Idle/blend_position", input_dir)
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
 		else:
