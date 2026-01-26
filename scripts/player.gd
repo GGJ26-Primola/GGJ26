@@ -1,11 +1,14 @@
 extends CharacterBody3D
 
+var idle_png = preload("res://assets/The Female Adventurer - Free/Idle/Idle.png")
+var walk_png = preload("res://assets/The Female Adventurer - Free/Walk/walk.png")
+var jump_png = preload("res://assets/The Female Adventurer - Free/Jump - NEW/Normal/Jump.png")
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
-@onready var animated_sprite: AnimatedSprite3D = $AnimatedSprite3D
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var idle_spreadsheet: Sprite3D = $idle_spreadsheet
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -14,7 +17,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		animated_sprite.play("jump_front")
+		idle_spreadsheet.texture = jump_png
 		velocity.y = JUMP_VELOCITY
 	
 	elif is_on_floor():
@@ -23,25 +26,13 @@ func _physics_process(delta: float) -> void:
 		var input_dir := Input.get_vector("left", "right", "up", "down")
 		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if direction:
-			#change_animation(input_dir)
+			idle_spreadsheet.texture = walk_png
 			animation_tree.set("parameters/Idle/blend_position", input_dir)
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
 		else:
-			animated_sprite.play("idle")
+			idle_spreadsheet.texture = idle_png
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-
-func change_animation(direction: Vector2) -> void:
-	if direction == Vector2.DOWN:
-		animated_sprite.play("walk_down")
-	elif direction == Vector2.UP:
-		animated_sprite.play("walk_up")
-	elif direction == Vector2.LEFT:
-		animated_sprite.flip_h = false
-		animated_sprite.play("walk_left")
-	elif direction == Vector2.RIGHT:
-		animated_sprite.flip_h = true
-		animated_sprite.play("walk_left")
