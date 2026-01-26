@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 		var input_dir := Input.get_vector("left", "right", "up", "down")
 		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if direction:
-			animated_sprite.play("walk_front")
+			change_animation(input_dir)
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
 		else:
@@ -31,3 +31,15 @@ func _physics_process(delta: float) -> void:
 			velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+func change_animation(direction: Vector2) -> void:
+	if direction == Vector2.DOWN:
+		animated_sprite.play("walk_down")
+	elif direction == Vector2.UP:
+		animated_sprite.play("walk_up")
+	elif direction == Vector2.LEFT:
+		animated_sprite.flip_h = false
+		animated_sprite.play("walk_left")
+	elif direction == Vector2.RIGHT:
+		animated_sprite.flip_h = true
+		animated_sprite.play("walk_left")
