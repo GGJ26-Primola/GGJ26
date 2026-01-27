@@ -42,11 +42,16 @@ Global Game Jam 2026 a Primola - Imola
 - [ ] Dialogue system
 - [ ] Melee combat system
 
+## Assets
+- [Dialogic](https://dialogic.pro/)
+- [Phantom Camera](https://phantom-camera.dev/)
+
 ## Team
-- Clausio Zena (3D artist)
+- Core_Diz (audio designer)
 - Federica Viglianisi (2D artist)
+- Klaus (3D artist)
 - Iuri Para (designer)
 - Luca Antonini (designer)
-- Massimo Romagnoli (programmer)
+- [Max Romagnoli (programmer)](https://www.maxromagnoli.com)
 - Vincenzo Grimaudo (programmatore)
-- Vittorio Romagnoli (audio designer)
+- [Zibbo Dry Bone (audio designer)](https://www.linktr.ee/ZIBBO)

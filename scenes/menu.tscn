@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://yhh1kffsdhss" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="Script" uid="uid://btfepk1kdsrwe" path="res://scripts/audio_slider.gd" id="2_vjb58"]
 [ext_resource type="AudioStream" uid="uid://fhsdsr8lkr4g" path="res://assets/Music/safe_zone.mp3" id="3_con2f"]
+[ext_resource type="Script" uid="uid://eurwu1dksdh3" path="res://scenes/fullscreen_button.gd" id="3_mhnvy"]
 
 [node name="Menu" type="Control" unique_id=803179413]
 layout_mode = 3
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.0015773, 1.0030943)
 script = ExtResource("1_yqeox")
 
 [node name="MainPanel" type="Panel" parent="." unique_id=1593277535]
@@ -88,45 +90,65 @@ theme_override_font_sizes/font_size = 70
 text = "Options"
 horizontal_alignment = 1
 
-[node name="MusicContainer" type="HBoxContainer" parent="OptionsPanel/VBoxContainer" unique_id=623231345]
+[node name="OptionsContainer" type="HBoxContainer" parent="OptionsPanel/VBoxContainer" unique_id=640659932]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="TextContainer" type="VBoxContainer" parent="OptionsPanel/VBoxContainer/OptionsContainer" unique_id=1894748331]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="Label" type="Label" parent="OptionsPanel/VBoxContainer/MusicContainer" unique_id=134475892]
+[node name="Label" type="Label" parent="OptionsPanel/VBoxContainer/OptionsContainer/TextContainer" unique_id=134475892]
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 40
 text = "Music"
 horizontal_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="OptionsPanel/VBoxContainer/MusicContainer" unique_id=1034137877]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-max_value = 1.0
-step = 0.05
-script = ExtResource("2_vjb58")
-audio_bus_name = "Music"
-
-[node name="SFXContainer" type="HBoxContainer" parent="OptionsPanel/VBoxContainer" unique_id=290075154]
-layout_mode = 2
-theme_override_constants/separation = 50
-
-[node name="Label" type="Label" parent="OptionsPanel/VBoxContainer/SFXContainer" unique_id=256507806]
+[node name="Label2" type="Label" parent="OptionsPanel/VBoxContainer/OptionsContainer/TextContainer" unique_id=256507806]
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 40
 text = "SFX"
 horizontal_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="OptionsPanel/VBoxContainer/SFXContainer" unique_id=1523040535]
+[node name="Label3" type="Label" parent="OptionsPanel/VBoxContainer/OptionsContainer/TextContainer" unique_id=1413228016]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 40
+text = "Fullscreen"
+horizontal_alignment = 1
+
+[node name="SliderContainer" type="VBoxContainer" parent="OptionsPanel/VBoxContainer/OptionsContainer" unique_id=664868591]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
+size_flags_vertical = 8
+theme_override_constants/separation = 60
+
+[node name="HSlider" type="HSlider" parent="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer" unique_id=1034137877]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+script = ExtResource("2_vjb58")
+audio_bus_name = "Music"
+
+[node name="HSlider2" type="HSlider" parent="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer" unique_id=1523040535]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
 max_value = 1.0
 step = 0.05
 script = ExtResource("2_vjb58")
 audio_bus_name = "SFX"
+
+[node name="FullscreenButton" type="CheckButton" parent="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer" unique_id=572120903]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+button_pressed = true
+script = ExtResource("3_mhnvy")
 
 [node name="BackButton" type="MenuButton" parent="OptionsPanel/VBoxContainer" unique_id=1834750896]
 layout_mode = 2
@@ -143,6 +165,7 @@ parameters/looping = true
 [connection signal="pressed" from="MainPanel/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainPanel/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MainPanel/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="value_changed" from="OptionsPanel/VBoxContainer/MusicContainer/HSlider" to="OptionsPanel/VBoxContainer/MusicContainer/HSlider" method="_on_value_changed"]
-[connection signal="value_changed" from="OptionsPanel/VBoxContainer/SFXContainer/HSlider" to="OptionsPanel/VBoxContainer/SFXContainer/HSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer/HSlider" to="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer/HSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer/HSlider2" to="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer/HSlider2" method="_on_value_changed"]
+[connection signal="toggled" from="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer/FullscreenButton" to="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer/FullscreenButton" method="_on_toggled"]
 [connection signal="pressed" from="OptionsPanel/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

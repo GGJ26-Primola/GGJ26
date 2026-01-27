@@ -21,7 +21,7 @@ config/icon="res://icon.svg"
 
 [audio]
 
-buses/default_bus_layout="uid://ch8r6u24fgg03"
+buses/default_bus_layout="uid://dimskebbxvvdl"
 
 [autoload]
 
@@ -33,6 +33,7 @@ Dialogic="*uid://ds2q0uclmolvu"
 directories/dch_directory={
 "Gatto Mammone": "res://dialogic/Gatto Mammone.dch",
 "Giancarlo": "res://dialogic/Giancarlo.dch",
+"GrimBalduzzi": "res://dialogic/GrimBalduzzi.dch",
 "Maschera 1": "res://dialogic/Maschera 1.dch",
 "Maschera basilisco": "res://dialogic/Maschera basilisco.dch",
 "Maschera gatto": "res://dialogic/Maschera gatto.dch",
@@ -58,11 +59,11 @@ directories/dtl_directory={
 "1[Zona1] V6 Inizio quest gatto 1": "res://1[Zona1] V6 Inizio quest gatto 1.dtl",
 "Dialogo con Villico 1": "res://Dialogo con Villico 1.dtl",
 "Giancarlo": "res://dialogic/Giancarlo.dtl",
+"GrimBalduzzi": "res://dialogic/GrimBalduzzi.dtl",
 "Incontro con Mazanpegul": "res://dialogic/Incontro con Mazanpegul.dtl",
 "timeline": "res://dialogic/timeline.dtl"
 }
 layout/style_directory={}
-variables={}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -81,22 +82,30 @@ choices/reveal_delay=0
 choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
+variables={}
 audio/type_sound_bus="SFX"
 text/autopauses={}
 audio/channel_defaults={
 "": {
-"audio_bus": "",
+"audio_bus": "SFX",
 "fade_length": 0.0,
 "loop": false,
 "volume": 0.0
 },
 "music": {
-"audio_bus": "",
+"audio_bus": "SFX",
 "fade_length": 0.0,
 "loop": true,
 "volume": 0.0
 }
 }
+glossary/default_case_sensitive=true
+glossary/glossary_files=["uid://cfsnry5fpi46i"]
+
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 

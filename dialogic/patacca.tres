@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="DialogicGlossary" format=3 uid="uid://cfsnry5fpi46i"]
+
+[ext_resource type="Script" uid="uid://80elcodyqohb" path="res://addons/dialogic/Modules/Glossary/glossary_resource.gd" id="1_aht5b"]
+
+[resource]
+script = ExtResource("1_aht5b")
+entries = {
+"Mazapégul": {
+"name": "Mazapégul",
+"text": "Mazapégul is a magical fairy with a monkey-cat appearence",
+"title": "Mazapégul"
+},
+"PATACCA": {
+"alternatives": [],
+"case_sensitive": true,
+"extra": "es: you are a PATACCA!",
+"name": "PATACCA",
+"text": "PATACCA is a name for describe a useful person",
+"title": "PATACCA"
+}
+}
