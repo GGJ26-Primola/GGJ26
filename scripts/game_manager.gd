@@ -2,6 +2,8 @@ extends Node
 
 @onready var camera_player: PhantomCamera3D = $CameraPlayer
 
+#var game_status = GameState.State.PLAYING
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#Dialogic.VAR.response = "test"

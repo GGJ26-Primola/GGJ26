@@ -14,12 +14,12 @@ func _process(delta: float) -> void:
 		if main_panel.visible or options_panel.visible:
 			_on_play_button_pressed()
 		else:
-			player.set_active(false)
+			GameState.set_game_status(GameState.State.PAUSE)
 			main_panel.show()
 			options_panel.hide()
 
 func _on_play_button_pressed() -> void:
-	player.set_active(true)
+	GameState.set_game_status(GameState.State.PLAYING)
 	main_panel.hide()
 	options_panel.hide()
 

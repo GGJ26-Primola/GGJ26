@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://yhh1kffsdhss" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="Script" uid="uid://btfepk1kdsrwe" path="res://scripts/audio_slider.gd" id="2_vjb58"]
-[ext_resource type="AudioStream" uid="uid://fhsdsr8lkr4g" path="res://assets/Music/safe_zone.mp3" id="3_con2f"]
-[ext_resource type="Script" uid="uid://eurwu1dksdh3" path="res://scenes/fullscreen_button.gd" id="3_mhnvy"]
+[ext_resource type="Script" uid="uid://eurwu1dksdh3" path="res://scripts/fullscreen_button.gd" id="3_mhnvy"]
+[ext_resource type="AudioStream" uid="uid://b51wiu02jdl1b" path="res://assets/Music/safe_zone.wav" id="4_mhnvy"]
 
 [node name="Menu" type="Control" unique_id=803179413]
 layout_mode = 3
@@ -157,10 +157,9 @@ theme_override_font_sizes/font_size = 60
 text = "Back"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=931347279]
-stream = ExtResource("3_con2f")
+stream = ExtResource("4_mhnvy")
 autoplay = true
 bus = &"Music"
-parameters/looping = true
 
 [connection signal="pressed" from="MainPanel/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainPanel/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

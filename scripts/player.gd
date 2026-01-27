@@ -5,16 +5,26 @@ var idle_png = preload("res://assets/The Female Adventurer - Free/Idle/Idle.png"
 var walk_png = preload("res://assets/The Female Adventurer - Free/Walk/walk.png")
 var jump_png = preload("res://assets/The Female Adventurer - Free/Jump - NEW/Normal/Jump.png")
 
-var player_active: bool = true
+#var player_active: bool = true
 
 const SPEED = 5.0
+const STEP_DURATION = 0.3
 #const JUMP_VELOCITY = 4.5
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var idle_spreadsheet: Sprite3D = $idle_spreadsheet
+@onready var step_player: AudioStreamPlayer = $StepPlayer
 
-func set_active(is_active: bool) -> void:
-	player_active = is_active
+var current_step_duration : float = 0
+
+#func set_active(is_active: bool) -> void:
+#	player_active = is_active
+	
+func set_animation(anim: String) -> void:
+	if anim == "idle":
+		idle_spreadsheet.texture = idle_png
+	elif anim == "walk":
+		idle_spreadsheet.texture = walk_png
 
 func _physics_process(delta: float) -> void:
 	
@@ -27,7 +37,8 @@ func _physics_process(delta: float) -> void:
 		#idle_spreadsheet.texture = jump_png
 		#velocity.y = JUMP_VELOCITY
 	
-	if not player_active:
+	if not GameState.current_game_status == GameState.State.PLAYING:
+		set_animation("idle")
 		return
 	
 	if is_on_floor():
@@ -40,9 +51,16 @@ func _physics_process(delta: float) -> void:
 			animation_tree.set("parameters/Idle/blend_position", input_dir)
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
+			
+			if current_step_duration <= 0:
+				step_player.play()
+				current_step_duration = STEP_DURATION
+			
 		else:
 			idle_spreadsheet.texture = idle_png
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
+	
+	current_step_duration -= delta
 
 	move_and_slide()
