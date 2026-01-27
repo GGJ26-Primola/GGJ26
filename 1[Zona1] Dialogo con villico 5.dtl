@@ -1,0 +1,21 @@
+"Villico 5": Can you keep a secret?
+- Of course!
+	"Villico 5": I think someone is doing something awful, around here...
+	- What do you mean?
+		"Villico 5": Have you noticed how there are not many children around here?
+		- Good, i hate kids!
+			jump Fine
+		- Go on...
+			"Villico 5": There is something sinister going on, but i don't have any proof to present to everybody. If you learn something, let me know, please.
+			- Sure. Count on me.
+				"Villico 5": Please. This means a lot to me.
+			- Nah.
+				jump Fine
+	- Are you gonna talk about chemical trails?
+		jump Fine
+- Nope!
+	label Fine
+	"Villico 5": I'll keep it to myself, then.
+# Nuovo dialogo dopo aver scoperto della strega. 
+"Villico 5": So my daughter has been kidnapped by an evil witch...knowing it doesn't make me feel better as i thougth...
+"Villico 5": Someone should do something about that...
