@@ -1,0 +1,24 @@
+Mazapégul: Hey you, yes you! Yep, i am talking to you, and only you! No, don't turn around!
+Mazapégul: Yes! I am talking to you! When a magic monkey-cat-whatever talks to you, do not pretend to not hear him! Just a friendly advice, you know.
+Player: Wh-who are you? Or better, WHAT are you?
+Mazapégul: Are you dense? Or worse, are you PATACCA? I already told you, i am a magic monkey-cat.
+Player: Honestly that only creates more questions...
+Mazapégul: WHATEVER! I am, oh boy indeed i am, the gRRRRRRRRReat Mazapégul!
+Player: Isn't that just a fairy from legends? My grandma told me the Mazapégul is always up to mischief.
+Mazapégul: Dear boy, i'd tip my hat to you if it wasn't stuck to my head on the PNG. Yes! I am always up to something, but it's all in good fun mind you! This one time, however, i think we share a common goal. Or maybe, a common enemy, right?
+Player: ...What do you mean?
+Mazapégul: Oh don't be alarmed, when you're ancient, wise, beautiful, smart...
+Player: He's been listing adjective for like fifteen minutes...
+Mazapégul: ...and modest like me, you know a thing or two, you go around. SO, entertain me. Did SHE took something from you?
+Player: She?
+Mazapégul: You'll learn soon enough, boy.
+Player: ...Yes.
+Mazapégul: Ha-ha! Just as  i thought! My dear boy, you'll learn soon enought who is this "she" i am rambling about. But there is one itty bitty small problem\: she, in turn, cannot know who you are. Here, take these.
+join "Maschera 1" center
+label Maschera1
+- Take the mask and the weapon
+	leave "Maschera 1"
+	Mazapégul: This mask shall hide your identity, for the time being. I cannot linger here anymore, lest she finds me. We shall see each other again soon! Do not, i repeat DO-NOT! Take off your mask in here, it's not safe. Cia'
+- Refuse equipment from weird magic monkey-cat.
+	Mazapégul: Do not be silly, you NEED this mask, like, really really need it!
+	jump Maschera1
