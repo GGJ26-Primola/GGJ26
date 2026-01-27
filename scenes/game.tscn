@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://h7vt5ykhcvy"]
+[gd_scene format=3 uid="uid://h7vt5ykhcvy"]
 
 [ext_resource type="Script" uid="uid://co08gdsib6vih" path="res://scripts/game_manager.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://d4j24xtuynqto" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -21,24 +21,24 @@ tonemap_mode = 2
 [sub_resource type="Resource" id="Resource_iywne"]
 script = ExtResource("3_lbhrr")
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" unique_id=803510040]
 script = ExtResource("1_iywne")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=789237425]
 environment = SubResource("Environment_yqjtg")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1992286194]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=414300921]
 use_collision = true
 size = Vector3(5.9433594, 0.115478516, 7.022461)
 
-[node name="Player" parent="." instance=ExtResource("1_uwrxv")]
+[node name="Player" parent="." unique_id=1338356758 instance=ExtResource("1_uwrxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 
-[node name="CameraPlayer" type="Node3D" parent="." node_paths=PackedStringArray("follow_target", "look_at_target")]
+[node name="CameraPlayer" type="Node3D" parent="." unique_id=386739997 node_paths=PackedStringArray("follow_target", "look_at_target")]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 6.2, 5)
 top_level = true
 script = ExtResource("2_lnu2h")
@@ -54,12 +54,12 @@ align_position_with_view = Callable()
 align_rotation_with_view = Callable()
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1455375748]
 physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071067, 0, -0.7071067, 0.7071068, 0, 6.2, 5)
 top_level = true
 
-[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1699421758]
 process_priority = 300
 process_physics_priority = 300
 script = ExtResource("4_lbhrr")
