@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://npoikieeri5k"]
 
 [ext_resource type="Script" uid="uid://c5mwekbwnbm26" path="res://scenes/weapon.gd" id="1_xasec"]
+[ext_resource type="AudioStream" uid="uid://dead5w4cg1ro6" path="res://assets/Music/SFX/player_attacking_1.wav" id="2_uxn4k"]
+[ext_resource type="AudioStream" uid="uid://8bragcgdry8r" path="res://assets/Music/SFX/player_attacking_2.wav" id="3_bmw2d"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_6nu22"]
 
@@ -130,3 +132,11 @@ shape = SubResource("CapsuleShape3D_6nu22")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PositionPivot" unique_id=1930070563]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_bmw2d")
+
+[node name="WeaponPlayer1" type="AudioStreamPlayer" parent="PositionPivot" unique_id=879722960]
+stream = ExtResource("2_uxn4k")
+bus = &"SFX"
+
+[node name="WeaponPlayer2" type="AudioStreamPlayer" parent="PositionPivot" unique_id=1583700739]
+stream = ExtResource("3_bmw2d")
+bus = &"SFX"

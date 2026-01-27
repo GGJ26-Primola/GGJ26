@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://chbvpac5f8hxa" path="res://scripts/player.gd" id="1_dqkch"]
 [ext_resource type="Texture2D" uid="uid://bmf1fa4dkp17r" path="res://assets/The Female Adventurer - Free/Idle/Idle.png" id="2_qlg0r"]
 [ext_resource type="PackedScene" uid="uid://npoikieeri5k" path="res://scenes/weapon.tscn" id="3_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://bcg1e8edul77v" path="res://assets/Music/SFX/step.wav" id="4_dqkch"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8cj0n"]
 
@@ -198,3 +199,7 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(-0.78957, 0.8550725)
 
 [node name="Weapon" parent="." unique_id=590353401 instance=ExtResource("3_qhqgy")]
+
+[node name="StepPlayer" type="AudioStreamPlayer" parent="." unique_id=448296281]
+stream = ExtResource("4_dqkch")
+bus = &"SFX"

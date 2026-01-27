@@ -1,6 +1,8 @@
 extends Node3D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var weapon_player_1: AudioStreamPlayer = $"WeaponPlayer1"
+@onready var weapon_player_2: AudioStreamPlayer = $"WeaponPlayer2"
 
 var last_input: Vector2
 #var last_direction: Vector3
@@ -18,6 +20,13 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	if Input.is_action_just_pressed("attack"):
+		
+		# Play sound
+		if randi_range(0, 1) == 0:
+			weapon_player_1.play()
+		else:
+			weapon_player_2.play()
+			
 		animation_player.play("attack")
 	
 	var input_dir := Input.get_vector("up", "down", "left", "right")

@@ -52,9 +52,15 @@ Global Game Jam 2026 a Primola - Imola
 - [x] Woods
 - [x] Boss Fight
 - [ ] Sound effects
-  - [ ] Weapon
-  - [ ] Walking
-  - [ ] Enemies
+  - [x] Player attacking
+  - [x] Player walking
+  - [ ] Player dying
+  - [ ] Ghost attacking
+  - [ ] Ghost  sliding
+  - [ ] Snake attacking
+  - [ ] Snake walking
+  - [ ] Snake dying
+  - [ ] Pick up object 
 
 ## Layer mask
 - 1: Static objects
