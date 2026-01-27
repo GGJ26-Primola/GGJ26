@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqo0cfd63o4nl"]
 
 [ext_resource type="Script" uid="uid://yhh1kffsdhss" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="Script" uid="uid://btfepk1kdsrwe" path="res://scripts/audio_slider.gd" id="2_vjb58"]
 
 [node name="Menu" type="Control" unique_id=803179413]
 layout_mode = 3
@@ -74,6 +75,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 36.77777
+offset_right = -36.77777
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -84,6 +87,46 @@ theme_override_font_sizes/font_size = 70
 text = "Options"
 horizontal_alignment = 1
 
+[node name="MusicContainer" type="HBoxContainer" parent="OptionsPanel/VBoxContainer" unique_id=623231345]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="OptionsPanel/VBoxContainer/MusicContainer" unique_id=134475892]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 40
+text = "Music"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="OptionsPanel/VBoxContainer/MusicContainer" unique_id=1034137877]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.05
+script = ExtResource("2_vjb58")
+audio_bus_name = "Music"
+
+[node name="SFXContainer" type="HBoxContainer" parent="OptionsPanel/VBoxContainer" unique_id=290075154]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="OptionsPanel/VBoxContainer/SFXContainer" unique_id=256507806]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 40
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="OptionsPanel/VBoxContainer/SFXContainer" unique_id=1523040535]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.05
+script = ExtResource("2_vjb58")
+audio_bus_name = "SFX"
+
 [node name="BackButton" type="MenuButton" parent="OptionsPanel/VBoxContainer" unique_id=1834750896]
 layout_mode = 2
 size_flags_vertical = 3
@@ -93,4 +136,6 @@ text = "Back"
 [connection signal="pressed" from="MainPanel/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainPanel/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MainPanel/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="value_changed" from="OptionsPanel/VBoxContainer/MusicContainer/HSlider" to="OptionsPanel/VBoxContainer/MusicContainer/HSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="OptionsPanel/VBoxContainer/SFXContainer/HSlider" to="OptionsPanel/VBoxContainer/SFXContainer/HSlider" method="_on_value_changed"]
 [connection signal="pressed" from="OptionsPanel/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

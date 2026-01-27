@@ -10,5 +10,5 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	if Input.is_action_pressed("lanterna"):
+	if Dialogic.current_state == 0  and Input.is_action_just_pressed("lanterna"):
 		Dialogic.start("timeline")
