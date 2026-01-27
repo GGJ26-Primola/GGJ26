@@ -1,0 +1,16 @@
+# Il gatto è bloccato in un angolo da monello 1 e 2
+"Monello 2": We got him Bro! Time to destroy it
+"Monello 1": Even though is scientifically proven that a cat purring on your lap can improve serotonine level and provide with overall health benefits.
+"Monello 2": ...
+"Monello 1": ...
+"Monello 2": ...
+"Monello 1": IT'S ROCKING TIME!
+Player: Leave that cat alone, or else!
+"Monello 1": Or else what are you gonna do, pipsqueak? You are so short, like a gnome!
+"Monello 2": Yeah what are you gonna do? Hit us in the head with that huge club?
+- "Yes."
+	"Monello 1": Oh damn Bro, he's gonna hit us in the head with that huge club...
+	"Monello 2": H-hey, it was just a prank bro!
+	# Picchiare i due.
+- "No"
+	[end_timeline]

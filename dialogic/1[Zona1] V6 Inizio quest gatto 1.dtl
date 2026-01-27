@@ -1,0 +1,23 @@
+# quest disponibile solo dopo aver preso il randello dall'umarello
+"Villico 6": Oh, finally, someone who's completely selfless and willing to help a poor widow!
+Player: Well, ok i guess...
+"Villico 6": I need someone to bring my husband his lunch! And you came to the right moment!
+- "Weren't you a widow?"
+	"Villico 6": There's no time for pesky details! My hubby is surely starving after a hard day in the fields!
+	jump Continua
+- "It would be a pleasure"
+	Such a good person!
+	jump Continua
+label Continua
+join Salsicce center
+Anyway, bring these sausages to my husband, so he's sure to eat nice and healthy!
+- "I feel like this conversation isn't leaving me much choice..."
+leave Salsicce
+# Il gatto arriva da fuori schermo e passa tra giocatore e png e sparisce dall'altro lato dello schermo
+"Villico 6": That blasted cat stole my sausages! Now my husband will surely starve!
+label torna indietro [gatto]
+- "I'll go get them!"
+	"Villico 6": Oh thank you so much, i am not ready to be a true widow yet!
+- "They are gone for good, probably."
+	"Villico 6": Oh, i know you don't really mean that.
+	jump torna indietro [gatto]

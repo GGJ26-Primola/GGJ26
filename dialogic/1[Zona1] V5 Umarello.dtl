@@ -1,0 +1,30 @@
+# Umarell sta vicino alla fontana, urlando improperi a tutti, il dialogo parte da lontano. 
+Umarell: Pah! I am tired of all this! Things are tumbling down and nobody is doing a damn thing about it!
+[wait time="2.0"]
+Umarell: Pah! Pthooey! If only i were still eighty years old, i'd whip some sense into everyone!
+- Go away.
+	[end_timeline]
+- Get closer.
+	# avvicinati
+Umarell: Aaah, if only i could instruct someone young and strong in the ancient and sacred arts of BASHING SOMEONE IN THE HEAD WITH A STICK, that'd be wonderful.
+Umarell: Wait...
+Umarell: YOU! Come here!
+- Run away.
+	[end_timeline]
+- Get even closer.
+	# arriva a distanza normale di dialogo. 
+Umarell: I knew you were someone smart! I see it in you, you have something in you. Yes, i can see into you the power of COMPLAINING LIKE AN OLD MAN! You crave to learn the ancient arts of Umarello-Jutsu! I shall be your master!
+- "I don't really want to?"
+	[end_timeline]
+- "YES SENSEI!"
+	Umarell: PAIN DOES NOT EXIST IN THIS PLAZA, DOES IT?
+	- "NO SENSEI!"
+	- "A LITTLE BIT, SENSEI!"
+		Umarell: Then you are unworthy!
+		[end_timeline]
+join Mazza center
+# Inserire musica fantasy da arma leggendaria?
+Umarell: GOOD, YOUR TRAINING START NOW! Here is your weapon, brandish it with annoyance and pain in your joints!  Strike me down, and i shall become older than you can ever imagine.
+leave Mazza
+Player: The student is now the master.
+# prompt che spiega come usare la mazza, tirare un colpo

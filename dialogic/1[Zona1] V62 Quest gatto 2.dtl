@@ -1,0 +1,20 @@
+# Il gatto sta buttando giù un vaso dopo l'altro mentre scappa. Un signore lo insegue con la scopa.
+"Monello 3": Damned cat! Get the HELL over here!
+"Gatto normalissimo": Mreow!
+"Monello 3": Why you little...!
+Player: Hey come on now, it's just a cat, there's no need to get violent!
+"Monello 3": Just a cat?? This blasted beast stole my credit car number with a phone scam!
+Player: You gave your credit card infomations over the phone?
+"Monello 3": That's not the point!
+# Il gatto nel frattempo continua a girare.
+Player: Look, i need to get back the sausages the cat stole, can you stop chasing it and let me get them?
+"Monello 3": I'll do it only if you help me get back my OTHER credit card.
+- "How many credit cards do you own??"
+	"Monello 3": Never enough!
+	jump scoiattolo
+- "Where can i find it?"
+	label scoiattolo
+	"Monello 3": A squirrel stole it, when he sold me a water purifier!
+Player: You should really stop giving to animals access to your finances.
+"Monello 3": Whatever, get my card back and you'll get your sausages!
+# Randellare lo scoiattolo da qualche parte vicino agli alberi, droppa la carta di credito.
