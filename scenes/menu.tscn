@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://yhh1kffsdhss" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="Script" uid="uid://btfepk1kdsrwe" path="res://scripts/audio_slider.gd" id="2_vjb58"]
 [ext_resource type="AudioStream" uid="uid://fhsdsr8lkr4g" path="res://assets/Music/safe_zone.mp3" id="3_con2f"]
-[ext_resource type="Script" uid="uid://eurwu1dksdh3" path="res://scripts/fullscreen_button.gd" id="3_mhnvy"]
+[ext_resource type="Script" path="res://scripts/fullscreen_button.gd" id="3_mhnvy"]
 
 [node name="Menu" type="Control" unique_id=803179413]
 layout_mode = 3

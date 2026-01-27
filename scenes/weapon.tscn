@@ -1,18 +1,6 @@
-[gd_scene format=3 uid="uid://b1lakx3v7n5if"]
+[gd_scene format=3 uid="uid://npoikieeri5k"]
 
 [ext_resource type="Script" uid="uid://c5mwekbwnbm26" path="res://scenes/weapon.gd" id="1_xasec"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xasec"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_uxn4k"]
-sky_material = SubResource("ProceduralSkyMaterial_xasec")
-
-[sub_resource type="Environment" id="Environment_bmw2d"]
-background_mode = 2
-sky = SubResource("Sky_uxn4k")
-tonemap_mode = 2
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_6nu22"]
 
@@ -23,7 +11,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Area3D:rotation")
+tracks/0/path = NodePath("PositionPivot/Hitbox:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -35,7 +23,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Node3D:rotation")
+tracks/1/path = NodePath("PositionPivot/GFX:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -47,27 +35,28 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Node3D/Node3D:visible")
+tracks/2/path = NodePath("PositionPivot/GFX:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_uxn4k"]
 resource_name = "attack"
+length = 0.5
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Area3D:rotation")
+tracks/0/path = NodePath("PositionPivot/Hitbox:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.7),
+"times": PackedFloat32Array(0, 0.2, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0.34906584, -0.87266463, 0), Vector3(1.3020157, 0.08028515, 0), Vector3(1.9198622, 0.6981317, 0)]
@@ -75,11 +64,11 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Node3D:rotation")
+tracks/1/path = NodePath("PositionPivot/GFX:rotation")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.7),
+"times": PackedFloat32Array(0, 0.2, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0.34906584, -0.87266463, 0), Vector3(1.3020157, 0.08028515, 0), Vector3(1.9198622, 0.6981317, 0)]
@@ -87,11 +76,11 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Node3D/Node3D:visible")
+tracks/2/path = NodePath("PositionPivot/GFX:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -105,34 +94,25 @@ _data = {
 
 [node name="Weapon" type="Node3D" unique_id=590353401]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2111686662]
-environment = SubResource("Environment_bmw2d")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=542701264]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
-
-[node name="Node3D" type="Node3D" parent="." unique_id=1166082784]
+[node name="PositionPivot" type="Node3D" parent="." unique_id=1166082784]
 script = ExtResource("1_xasec")
 
-[node name="Node3D" type="Node3D" parent="Node3D" unique_id=1747501651]
-transform = Transform3D(0.64278764, -0.26200262, -0.7198463, 0, 0.9396926, -0.34202012, 0.76604444, 0.21984631, 0.6040228, 0, 0, 0)
+[node name="GFX" type="Node3D" parent="PositionPivot" unique_id=1747501651]
+transform = Transform3D(0.64278764, -0.2620026, -0.7198463, 0, 0.93969256, -0.34202012, 0.76604444, 0.2198463, 0.6040228, 0, 0, 0)
+visible = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Node3D" unique_id=733045204]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PositionPivot/GFX" unique_id=733045204]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CylinderMesh_6nu22")
 skeleton = NodePath("../../..")
 
-[node name="Area3D" type="Area3D" parent="Node3D" unique_id=1258223726]
+[node name="Hitbox" type="Area3D" parent="PositionPivot" unique_id=1258223726]
 transform = Transform3D(0.6427876, -0.2620026, -0.71984625, 0, 0.93969256, -0.3420201, 0.7660444, 0.2198463, 0.60402274, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D" unique_id=449062472]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PositionPivot/Hitbox" unique_id=449062472]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_6nu22")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D" unique_id=1930070563]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PositionPivot" unique_id=1930070563]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_bmw2d")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=313549951]
-transform = Transform3D(-3.2093595e-08, -0.6789161, 0.73421586, -2.9676364e-08, 0.73421586, 0.6789161, -1, 0, -4.371139e-08, 2.9895747, 3.2534475, 0)

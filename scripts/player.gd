@@ -15,6 +15,12 @@ const SPEED = 5.0
 
 func set_active(is_active: bool) -> void:
 	player_active = is_active
+	
+func set_animation(anim: String) -> void:
+	if anim == "idle":
+		idle_spreadsheet.texture = idle_png
+	elif anim == "walk":
+		idle_spreadsheet.texture = walk_png
 
 func _physics_process(delta: float) -> void:
 	

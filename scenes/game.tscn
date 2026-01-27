@@ -26,6 +26,7 @@ script = ExtResource("3_lbhrr")
 script = ExtResource("1_iywne")
 
 [node name="Menu" parent="." unique_id=803179413 instance=ExtResource("2_p57ef")]
+scale = Vector2(1, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=789237425]
 environment = SubResource("Environment_yqjtg")
