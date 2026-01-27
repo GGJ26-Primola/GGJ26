@@ -1,26 +1,36 @@
 extends CharacterBody3D
 
+# Images
 var idle_png = preload("res://assets/The Female Adventurer - Free/Idle/Idle.png")
 var walk_png = preload("res://assets/The Female Adventurer - Free/Walk/walk.png")
 var jump_png = preload("res://assets/The Female Adventurer - Free/Jump - NEW/Normal/Jump.png")
 
+var player_active: bool = true
+
 const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+#const JUMP_VELOCITY = 4.5
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var idle_spreadsheet: Sprite3D = $idle_spreadsheet
 
+func set_active(is_active: bool) -> void:
+	player_active = is_active
+
 func _physics_process(delta: float) -> void:
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		idle_spreadsheet.texture = jump_png
-		velocity.y = JUMP_VELOCITY
+	#if Input.is_action_just_pressed("jump") and is_on_floor():
+		#idle_spreadsheet.texture = jump_png
+		#velocity.y = JUMP_VELOCITY
 	
-	elif is_on_floor():
+	if not player_active:
+		return
+	
+	if is_on_floor():
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var input_dir := Input.get_vector("left", "right", "up", "down")
