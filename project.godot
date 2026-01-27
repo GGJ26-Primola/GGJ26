@@ -43,9 +43,20 @@ directories/dch_directory={
 "Monello 2": "res://dialogic/Monello 2.dch",
 "Player": "res://dialogic/Player.dch",
 "Villico 1": "res://dialogic/Villico 1.dch",
-"Villico 2": "res://dialogic/Villico 2.dch"
+"Villico 2": "res://dialogic/Villico 2.dch",
+"Villico 3": "res://Villico 3.dch",
+"Villico 4": "res://Villico 4.dch",
+"Villico 5": "res://Villico 5.dch",
+"Villico 6": "res://Villico 6.dch"
 }
 directories/dtl_directory={
+"1[Zona 1] Dialogo con villico 2": "res://1[Zona 1] Dialogo con villico 2.dtl",
+"1[Zona1] Dialogo con Villico 1": "res://1[Zona1] Dialogo con Villico 1.dtl",
+"1[Zona1] Dialogo con villico 3": "res://1[Zona1] Dialogo con villico 3.dtl",
+"1[Zona1] Dialogo con villico 4": "res://1[Zona1] Dialogo con villico 4.dtl",
+"1[Zona1] Dialogo con villico 5": "res://1[Zona1] Dialogo con villico 5.dtl",
+"1[Zona1] V6 Inizio quest gatto 1": "res://1[Zona1] V6 Inizio quest gatto 1.dtl",
+"Dialogo con Villico 1": "res://Dialogo con Villico 1.dtl",
 "Giancarlo": "res://dialogic/Giancarlo.dtl",
 "Incontro con Mazanpegul": "res://dialogic/Incontro con Mazanpegul.dtl",
 "timeline": "res://dialogic/timeline.dtl"
