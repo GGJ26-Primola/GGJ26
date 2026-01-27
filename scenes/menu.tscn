@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://bqo0cfd63o4nl"]
+
+[ext_resource type="Script" uid="uid://yhh1kffsdhss" path="res://scripts/menu.gd" id="1_yqeox"]
+
+[node name="Menu" type="Control" unique_id=803179413]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqeox")
+
+[node name="MainPanel" type="Panel" parent="." unique_id=1593277535]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 174.22223
+offset_top = 98.0
+offset_right = -174.22223
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel" unique_id=350585992]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MainPanel/VBoxContainer" unique_id=1411358621]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 70
+text = "Pause"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="MenuButton" parent="MainPanel/VBoxContainer" unique_id=1297759899]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 60
+text = "Play"
+
+[node name="OptionsButton" type="MenuButton" parent="MainPanel/VBoxContainer" unique_id=362814617]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 60
+text = "Options"
+
+[node name="ExitButton" type="MenuButton" parent="MainPanel/VBoxContainer" unique_id=25515400]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 60
+text = "Exit"
+
+[node name="OptionsPanel" type="Panel" parent="." unique_id=764678690]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 174.22223
+offset_top = 98.0
+offset_right = -174.22223
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsPanel" unique_id=649414877]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="OptionsPanel/VBoxContainer" unique_id=1241184427]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 70
+text = "Options"
+horizontal_alignment = 1
+
+[node name="BackButton" type="MenuButton" parent="OptionsPanel/VBoxContainer" unique_id=1834750896]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 60
+text = "Back"
+
+[connection signal="pressed" from="MainPanel/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MainPanel/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MainPanel/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="OptionsPanel/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
