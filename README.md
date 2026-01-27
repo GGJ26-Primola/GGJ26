@@ -38,11 +38,32 @@ Global Game Jam 2026 a Primola - Imola
 
 ### Code
 - [ ] System for switch mask
-- [ ] Menu
-- [ ] Dialogue system
+- [x] Menu
+- [x] Dialogue system
 - [ ] Melee combat system
+- [ ] Music change by zone
 
-## Assets
+### UI
+- [ ] ALL
+
+### Audio
+- [x] Safe zone
+- [x] Cemetery
+- [x] Woods
+- [x] Boss Fight
+- [ ] Sound effects
+  - [ ] Weapon
+  - [ ] Walking
+  - [ ] Enemies
+
+## Layer mask
+- 1: Static objects
+- 2: Player
+- 3: Weapon
+- 4: Enemies
+- 5: NPC and items
+
+## Plugins
 - [Dialogic](https://dialogic.pro/)
 - [Phantom Camera](https://phantom-camera.dev/)
 
