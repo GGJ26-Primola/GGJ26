@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cm4noj7flak4p"]
+
+[ext_resource type="Script" uid="uid://b86sfjdni2cnt" path="res://scripts/enemy.gd" id="1_7p1mj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_md0e3"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7p1mj"]
+radius = 0.25
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_md0e3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7p1mj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_md0e3"]
+radius = 0.25
+
+[node name="Enemy" type="CharacterBody3D" unique_id=890366818]
+script = ExtResource("1_7p1mj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=348403177]
+mesh = SubResource("BoxMesh_md0e3")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=52955083]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 1)
+mesh = SubResource("CapsuleMesh_7p1mj")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=366510073]
+shape = SubResource("BoxShape3D_md0e3")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=1397896875]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1051154475]
+shape = SubResource("BoxShape3D_7p1mj")
+
+[node name="Weapon" type="Area3D" parent="." unique_id=1188601852]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Weapon" unique_id=1954222610]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 1)
+shape = SubResource("CapsuleShape3D_md0e3")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
