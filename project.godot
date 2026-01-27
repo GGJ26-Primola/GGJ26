@@ -31,9 +31,23 @@ Dialogic="*uid://ds2q0uclmolvu"
 [dialogic]
 
 directories/dch_directory={
-"Player": "res://dialogic/Player.dch"
+"Gatto Mammone": "res://dialogic/Gatto Mammone.dch",
+"Giancarlo": "res://dialogic/Giancarlo.dch",
+"Maschera 1": "res://dialogic/Maschera 1.dch",
+"Maschera basilisco": "res://dialogic/Maschera basilisco.dch",
+"Maschera gatto": "res://dialogic/Maschera gatto.dch",
+"Maschera peste": "res://dialogic/Maschera peste.dch",
+"Mascherina": "res://dialogic/Mascherina.dch",
+"Mazapégul": "res://dialogic/Mazapégul.dch",
+"Monello 1": "res://dialogic/Monello 1.dch",
+"Monello 2": "res://dialogic/Monello 2.dch",
+"Player": "res://dialogic/Player.dch",
+"Villico 1": "res://dialogic/Villico 1.dch",
+"Villico 2": "res://dialogic/Villico 2.dch"
 }
 directories/dtl_directory={
+"Giancarlo": "res://dialogic/Giancarlo.dtl",
+"Incontro con Mazanpegul": "res://dialogic/Incontro con Mazanpegul.dtl",
 "timeline": "res://dialogic/timeline.dtl"
 }
 layout/style_directory={}
