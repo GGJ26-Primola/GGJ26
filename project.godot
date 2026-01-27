@@ -33,6 +33,7 @@ Dialogic="*uid://ds2q0uclmolvu"
 directories/dch_directory={
 "Gatto Mammone": "res://dialogic/Gatto Mammone.dch",
 "Giancarlo": "res://dialogic/Giancarlo.dch",
+"GrimBalduzzi": "res://dialogic/GrimBalduzzi.dch",
 "Maschera 1": "res://dialogic/Maschera 1.dch",
 "Maschera basilisco": "res://dialogic/Maschera basilisco.dch",
 "Maschera gatto": "res://dialogic/Maschera gatto.dch",
@@ -47,6 +48,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Giancarlo": "res://dialogic/Giancarlo.dtl",
+"GrimBalduzzi": "res://dialogic/GrimBalduzzi.dtl",
 "Incontro con Mazanpegul": "res://dialogic/Incontro con Mazanpegul.dtl",
 "timeline": "res://dialogic/timeline.dtl"
 }
@@ -74,18 +76,20 @@ audio/type_sound_bus="SFX"
 text/autopauses={}
 audio/channel_defaults={
 "": {
-"audio_bus": "",
+"audio_bus": "SFX",
 "fade_length": 0.0,
 "loop": false,
 "volume": 0.0
 },
 "music": {
-"audio_bus": "",
+"audio_bus": "SFX",
 "fade_length": 0.0,
 "loop": true,
 "volume": 0.0
 }
 }
+glossary/default_case_sensitive=true
+glossary/glossary_files=["uid://cfsnry5fpi46i"]
 
 [editor_plugins]
 
