@@ -5,7 +5,7 @@ var idle_png = preload("res://assets/The Female Adventurer - Free/Idle/Idle.png"
 var walk_png = preload("res://assets/The Female Adventurer - Free/Walk/walk.png")
 var jump_png = preload("res://assets/The Female Adventurer - Free/Jump - NEW/Normal/Jump.png")
 
-var player_active: bool = true
+#var player_active: bool = true
 
 const SPEED = 5.0
 #const JUMP_VELOCITY = 4.5
@@ -13,8 +13,8 @@ const SPEED = 5.0
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var idle_spreadsheet: Sprite3D = $idle_spreadsheet
 
-func set_active(is_active: bool) -> void:
-	player_active = is_active
+#func set_active(is_active: bool) -> void:
+#	player_active = is_active
 	
 func set_animation(anim: String) -> void:
 	if anim == "idle":
@@ -33,7 +33,8 @@ func _physics_process(delta: float) -> void:
 		#idle_spreadsheet.texture = jump_png
 		#velocity.y = JUMP_VELOCITY
 	
-	if not player_active:
+	if not GameState.current_game_status == GameState.State.PLAYING:
+		set_animation("idle")
 		return
 	
 	if is_on_floor():
