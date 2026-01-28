@@ -1,4 +1,8 @@
 # Umarell sta vicino alla fontana, urlando improperi a tutti, il dialogo parte da lontano. 
+if {stick} == true:
+	Umarell: I have nothing to teach you anymore.
+	Umarell: You are now the master!
+	[end_timeline]
 Umarell: Pah! I am tired of all this! Things are tumbling down and nobody is doing a damn thing about it!
 [wait time="2.0"]
 Umarell: Pah! Pthooey! If only i were still eighty years old, i'd whip some sense into everyone!
@@ -27,4 +31,5 @@ join Mazza center
 Umarell: GOOD, YOUR TRAINING START NOW! Here is your weapon, brandish it with annoyance and pain in your joints!  Strike me down, and i shall become older than you can ever imagine.
 leave Mazza
 Player: The student is now the master.
+set {stick} = true
 # prompt che spiega come usare la mazza, tirare un colpo

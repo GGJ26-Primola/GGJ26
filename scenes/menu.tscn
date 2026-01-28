@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://btfepk1kdsrwe" path="res://scripts/audio_slider.gd" id="2_vjb58"]
 [ext_resource type="FontFile" uid="uid://7ex4cvf0obq0" path="res://assets/Fonts/Melon Pop.ttf" id="3_g3eks"]
 [ext_resource type="Script" uid="uid://eurwu1dksdh3" path="res://scripts/fullscreen_button.gd" id="3_mhnvy"]
-[ext_resource type="AudioStream" uid="uid://b51wiu02jdl1b" path="res://assets/Music/safe_zone.wav" id="4_mhnvy"]
 
 [node name="Menu" type="Control" unique_id=803179413]
 layout_mode = 3
@@ -220,11 +219,6 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_g3eks")
 theme_override_font_sizes/font_size = 50
 text = "Back"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=931347279]
-stream = ExtResource("4_mhnvy")
-autoplay = true
-bus = &"Music"
 
 [connection signal="pressed" from="MainPanel/VBoxContainer/NinePatchRect/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainPanel/VBoxContainer/NinePatchRect2/OptionsButton" to="." method="_on_options_button_pressed"]

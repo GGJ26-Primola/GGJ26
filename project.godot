@@ -80,7 +80,9 @@ layout/style_directory={
 "bubble": "res://dialogic/styles/bubble.tres",
 "conversation": "res://dialogic/styles/conversation.tres"
 }
-variables={}
+variables={
+"stick": false
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
