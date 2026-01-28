@@ -32,4 +32,5 @@ Umarell: GOOD, YOUR TRAINING START NOW! Here is your weapon, brandish it with an
 leave Mazza
 Player: The student is now the master.
 set {stick} = true
+audio "res://assets/Music/SFX/MASK 1.wav"
 # prompt che spiega come usare la mazza, tirare un colpo

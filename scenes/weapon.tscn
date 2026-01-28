@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://npoikieeri5k"]
 
 [ext_resource type="Script" uid="uid://c5mwekbwnbm26" path="res://scripts/weapon.gd" id="1_xasec"]
+[ext_resource type="PackedScene" uid="uid://cfcllu3k8a7au" path="res://scenes/stick.tscn" id="2_8fp1k"]
 [ext_resource type="AudioStream" uid="uid://dead5w4cg1ro6" path="res://assets/Music/SFX/player_attacking_1.wav" id="2_uxn4k"]
 [ext_resource type="AudioStream" uid="uid://8bragcgdry8r" path="res://assets/Music/SFX/player_attacking_2.wav" id="3_bmw2d"]
 
@@ -61,7 +62,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_uxn4k"]
 resource_name = "attack"
-length = 0.5
+length = 0.3
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -70,7 +71,7 @@ tracks/0/path = NodePath("PositionPivot/GFX:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0.34906584, -0.87266463, 0), Vector3(1.3020157, 0.08028515, 0), Vector3(1.9198622, 0.6981317, 0)]
@@ -82,7 +83,7 @@ tracks/1/path = NodePath("PositionPivot")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.5),
+"times": PackedFloat32Array(0.3),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -96,7 +97,7 @@ tracks/2/path = NodePath("PositionPivot:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -108,7 +109,7 @@ tracks/3/path = NodePath("PositionPivot/GFX/Hitbox:monitorable")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -141,8 +142,12 @@ script = ExtResource("1_xasec")
 [node name="GFX" type="Node3D" parent="PositionPivot" unique_id=1747501651]
 transform = Transform3D(0.64278764, -0.2620026, -0.7198463, 0, 0.93969256, -0.34202012, 0.76604444, 0.2198463, 0.6040228, 0, 0, 0)
 
+[node name="Bastone1" parent="PositionPivot/GFX" unique_id=608548900 instance=ExtResource("2_8fp1k")]
+transform = Transform3D(1.3, 0, 0, 0, 1.2873484, 0.18092503, 0, -0.18092503, 1.2873484, -1.345082e-08, 0.30212066, -0.10996287)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PositionPivot/GFX" unique_id=733045204]
 transform = Transform3D(1, 0, 5.9604645e-08, 0, 1.0000001, 0, 0, 1.4901161e-08, 1, 0, 1.0000001, 1.4901161e-08)
+visible = false
 cast_shadow = 0
 mesh = SubResource("CylinderMesh_6nu22")
 skeleton = NodePath("../../..")

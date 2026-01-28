@@ -1,1 +1,10 @@
+if {meow} == "0":
+	audio "res://assets/Music/SFX/CAT TALK1.wav"
+	set {meow} = "1"
+elif {meow} == "1":
+	audio "res://assets/Music/SFX/CAT TALK2.wav"
+	set {meow} = "2"
+else:
+	audio "res://assets/Music/SFX/CAT TALK3.wav"
+	set {meow} = "0"
 cat: Meow

@@ -5,13 +5,9 @@ enum State { PLAYING, PAUSE, ATTACK, TALKING, GAMEOVER }
 static var dialogic_timeline : DialogicTimeline = null
 static var current_game_status = GameState.State.PLAYING
 static var current_info_mark : Sprite3D = null
-static var has_stick : bool = false
 
 static func set_game_status(status_to_set: GameState.State) -> void:
 	current_game_status = status_to_set
-
-#static func take_stick() -> void:
-	#has_stick = true
 
 static func can_play() -> bool:
 	return Dialogic.current_state == 0 and GameState.current_game_status == GameState.State.PLAYING
@@ -20,7 +16,7 @@ static func can_talk() -> bool:
 	return dialogic_timeline != null and current_info_mark != null
 
 static func can_attack() -> bool:
-	if not Dialogic.VAR.stick: # has_stick == false:
+	if not Dialogic.VAR.stick:
 		return false
 	if can_talk():
 		return false

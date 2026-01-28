@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bveclwsartgkd"
+path="res://.godot/imported/MASK 2.wav-e55143ec1a2de81aa5351fd55f72ea30.sample"
+
+[deps]
+
+source_file="res://assets/Music/SFX/MASK 2.wav"
+dest_files=["res://.godot/imported/MASK 2.wav-e55143ec1a2de81aa5351fd55f72ea30.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
