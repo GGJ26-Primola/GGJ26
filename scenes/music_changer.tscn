@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dw350qjqwdwki"]
+
+[ext_resource type="Script" uid="uid://dwmtsjnge5u0e" path="res://scripts/music_change.gd" id="1_3i2rr"]
+
+[node name="MusicChanger" type="Area3D" unique_id=594796150]
+collision_mask = 2
+script = ExtResource("1_3i2rr")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

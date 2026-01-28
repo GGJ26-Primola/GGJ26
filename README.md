@@ -41,6 +41,8 @@ Global Game Jam 2026 a Primola - Imola
 - [x] Menu
 - [x] Dialogue system
 - [ ] Melee combat system
+  - [x] Hit
+  - [ ] Be hitted
 - [ ] Music change by zone
 
 ### UI
@@ -67,7 +69,8 @@ Global Game Jam 2026 a Primola - Imola
 - 2: Player
 - 3: Weapon
 - 4: Enemies
-- 5: NPC and items
+- 5: NPC
+- 6: Items
 
 ## Plugins
 - [Dialogic](https://dialogic.pro/)

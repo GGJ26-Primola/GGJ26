@@ -3,17 +3,49 @@
 [ext_resource type="Script" uid="uid://co08gdsib6vih" path="res://scripts/game_manager.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://d4j24xtuynqto" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://bu78ssf0f5nim" path="res://scenes/cat.tscn" id="2_0tnpc"]
+[ext_resource type="AudioStream" uid="uid://b51wiu02jdl1b" path="res://assets/Music/safe_zone.wav" id="2_ca42v"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bqo0cfd63o4nl" path="res://scenes/menu.tscn" id="2_p57ef"]
+[ext_resource type="Script" uid="uid://dh0p4hudw1jkb" path="res://scripts/music_manager.gd" id="2_rysoc"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_lbhrr"]
+[ext_resource type="AudioStream" uid="uid://be2mgdfg87nm3" path="res://assets/Music/cemetery.wav" id="3_rysoc"]
 [ext_resource type="PackedScene" uid="uid://c6wi5nthdn08o" path="res://scenes/interactible.tscn" id="3_u5sy4"]
-[ext_resource type="Resource" uid="uid://1g12vq0hg" path="res://dialogic/Cemetery/GrimBalduzzi.dtl" id="4_gee14"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_lbhrr"]
+[ext_resource type="AudioStream" uid="uid://ckssm5iwqrukc" path="res://assets/Music/wood.wav" id="4_ssvqc"]
 [ext_resource type="Resource" uid="uid://ddtd8jcny2dsq" path="res://dialogic/miao.dtl" id="4_vtaks"]
+[ext_resource type="AudioStream" uid="uid://dxhsw30veqa12" path="res://assets/Music/boss.wav" id="5_264po"]
 [ext_resource type="Resource" uid="uid://dkv28mjpp8en4" path="res://dialogic/npc/cat.dch" id="5_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://btg3dwmousmcq" path="res://scenes/destructible.tscn" id="8_dinhu"]
+[ext_resource type="Resource" uid="uid://cgxjwph0mocqs" path="res://dialogic/Safe zone/1[Zona1] V5 Umarello.dtl" id="11_ca42v"]
+[ext_resource type="PackedScene" uid="uid://dw350qjqwdwki" path="res://scenes/music_changer.tscn" id="18_ssvqc"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ssvqc"]
+clip_count = 4
+clip_0/name = &"safe"
+clip_0/stream = ExtResource("2_ca42v")
+clip_0/auto_advance = 0
+clip_1/name = &"cemetery"
+clip_1/stream = ExtResource("3_rysoc")
+clip_1/auto_advance = 0
+clip_2/name = &"woods"
+clip_2/stream = ExtResource("4_ssvqc")
+clip_2/auto_advance = 0
+clip_3/name = &"boss"
+clip_3/stream = ExtResource("5_264po")
+clip_3/auto_advance = 0
+_transitions = {
+Vector2i(-1, -1): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 0,
+"to_time": 0
+}
+}
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gee14"]
 radius = 2.5951588
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kvuet"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8cj0n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -30,11 +62,20 @@ tonemap_mode = 2
 [sub_resource type="Resource" id="Resource_iywne"]
 script = ExtResource("3_lbhrr")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kvpfn"]
-size = Vector3(2.0439148, 1, 11.746826)
+[sub_resource type="BoxShape3D" id="BoxShape3D_264po"]
+size = Vector3(2.778717, 3.199646, 12.869385)
 
 [node name="Game" type="Node" unique_id=803510040]
 script = ExtResource("1_iywne")
+
+[node name="Musics" type="Node" parent="." unique_id=1845575960]
+unique_name_in_owner = true
+script = ExtResource("2_rysoc")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Musics" unique_id=1083764904]
+stream = SubResource("AudioStreamInteractive_ssvqc")
+autoplay = true
+bus = &"Music"
 
 [node name="Cat" parent="." unique_id=1393236629 instance=ExtResource("2_0tnpc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.829, 0.8, -7.116)
@@ -60,14 +101,19 @@ shape = SubResource("SphereShape3D_gee14")
 [node name="Menu" parent="." unique_id=803179413 instance=ExtResource("2_p57ef")]
 scale = Vector2(1, 1)
 
-[node name="NPC" parent="." unique_id=424773282 instance=ExtResource("3_u5sy4")]
+[node name="NPC" type="CSGBox3D" parent="." unique_id=537784218]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7383866, 0.54300904, -5.954705)
-timeline = ExtResource("4_gee14")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="NPC" unique_id=537784218]
+[node name="interactible" parent="NPC" unique_id=424773282 instance=ExtResource("3_u5sy4")]
+timeline = ExtResource("11_ca42v")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC" unique_id=875088808]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/interactible" unique_id=875088808]
 shape = SubResource("SphereShape3D_gee14")
+
+[node name="Destructible" parent="NPC" unique_id=1808292629 instance=ExtResource("8_dinhu")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Destructible" unique_id=1253014746]
+shape = SubResource("BoxShape3D_kvuet")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=789237425]
 environment = SubResource("Environment_yqjtg")
@@ -110,9 +156,23 @@ process_physics_priority = 300
 script = ExtResource("4_lbhrr")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
-[node name="Interactible2" parent="." unique_id=1837154570 instance=ExtResource("3_u5sy4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.403303, 0.057739496, -0.03668952)
+[node name="MusicChanger" parent="." unique_id=594796150 instance=ExtResource("18_ssvqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9138484, 0, 4.059202)
+music_name = "cemetery"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactible2" unique_id=311446724]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85292053, 0, 0.21594238)
-shape = SubResource("BoxShape3D_kvpfn")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicChanger" unique_id=978300869]
+shape = SubResource("BoxShape3D_264po")
+
+[node name="MusicChanger2" parent="." unique_id=975477143 instance=ExtResource("18_ssvqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.982142, 0, 4.059202)
+music_name = "woods"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicChanger2" unique_id=932926409]
+shape = SubResource("BoxShape3D_264po")
+
+[node name="MusicChanger3" parent="." unique_id=599058784 instance=ExtResource("18_ssvqc")]
+transform = Transform3D(-0.033294767, 0, 0.99944556, 0, 1, 0, -0.99944556, 0, -0.033294767, -0.4139743, 0, -3.6449418)
+music_name = "safe"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicChanger3" unique_id=626418203]
+shape = SubResource("BoxShape3D_264po")

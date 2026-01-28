@@ -16,6 +16,8 @@ static func can_talk() -> bool:
 	return dialogic_timeline != null and current_info_mark != null
 
 static func can_attack() -> bool:
+	if not Dialogic.VAR.stick:
+		return false
 	if can_talk():
 		return false
 	return Dialogic.current_state == 0 and GameState.current_game_status == GameState.State.PLAYING

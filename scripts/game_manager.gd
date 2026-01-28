@@ -7,6 +7,11 @@ func _ready() -> void:
 	#Dialogic.VAR.response = "test"
 	GameState.set_game_status(GameState.State.PLAYING)
 	Dialogic.timeline_ended.connect(GameState.end_talk)
+	#Dialogic.signal_event.connect(_on_dialogic_signal)
+
+#func _on_dialogic_signal(argument: String) -> void:
+	#if argument == "stick":
+		#GameState.take_stick()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

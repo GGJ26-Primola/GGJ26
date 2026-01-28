@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://caqhqq1g5e5y4"
+path="res://.godot/imported/CAT TALK3.wav-f8b62bf60f307c3e6031f11f1d123c6b.sample"
+
+[deps]
+
+source_file="res://assets/Music/SFX/CAT TALK3.wav"
+dest_files=["res://.godot/imported/CAT TALK3.wav-f8b62bf60f307c3e6031f11f1d123c6b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

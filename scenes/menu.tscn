@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://bqo0cfd63o4nl"]
 
 [ext_resource type="Script" uid="uid://yhh1kffsdhss" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="PackedScene" uid="uid://olxolwsucs4q" path="res://scenes/rect.tscn" id="2_4ytvr"]
 [ext_resource type="Script" uid="uid://btfepk1kdsrwe" path="res://scripts/audio_slider.gd" id="2_vjb58"]
+[ext_resource type="FontFile" uid="uid://7ex4cvf0obq0" path="res://assets/Fonts/Melon Pop.ttf" id="3_g3eks"]
 [ext_resource type="Script" uid="uid://eurwu1dksdh3" path="res://scripts/fullscreen_button.gd" id="3_mhnvy"]
-[ext_resource type="AudioStream" uid="uid://b51wiu02jdl1b" path="res://assets/Music/safe_zone.wav" id="4_mhnvy"]
 
 [node name="Menu" type="Control" unique_id=803179413]
 layout_mode = 3
@@ -15,77 +16,127 @@ grow_vertical = 2
 scale = Vector2(1.0015773, 1.0030943)
 script = ExtResource("1_yqeox")
 
-[node name="MainPanel" type="Panel" parent="." unique_id=1593277535]
+[node name="MainPanel" parent="." unique_id=229314279 instance=ExtResource("2_4ytvr")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 174.22223
-offset_top = 98.0
-offset_right = -174.22223
-offset_bottom = -98.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 171.91252
+offset_top = 96.700775
+offset_right = -171.91254
+offset_bottom = -96.700806
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainPanel" unique_id=350585992]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 35.204483
+offset_top = 29.907455
+offset_right = -30.585083
+offset_bottom = -27.30899
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="MainPanel/VBoxContainer" unique_id=1411358621]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_g3eks")
 theme_override_font_sizes/font_size = 70
 text = "Pause"
 horizontal_alignment = 1
 
-[node name="PlayButton" type="MenuButton" parent="MainPanel/VBoxContainer" unique_id=1297759899]
+[node name="NinePatchRect" parent="MainPanel/VBoxContainer" unique_id=509942521 instance=ExtResource("2_4ytvr")]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 60
+axis_stretch_horizontal = 0
+axis_stretch_vertical = 0
+
+[node name="PlayButton" type="MenuButton" parent="MainPanel/VBoxContainer/NinePatchRect" unique_id=1297759899]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+focus_neighbor_bottom = NodePath("../../NinePatchRect2/OptionsButton")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0.5058824, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.5058824, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_g3eks")
+theme_override_font_sizes/font_size = 50
 text = "Play"
 
-[node name="OptionsButton" type="MenuButton" parent="MainPanel/VBoxContainer" unique_id=362814617]
+[node name="NinePatchRect2" parent="MainPanel/VBoxContainer" unique_id=1152236961 instance=ExtResource("2_4ytvr")]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 60
+
+[node name="OptionsButton" type="MenuButton" parent="MainPanel/VBoxContainer/NinePatchRect2" unique_id=362814617]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../../NinePatchRect/PlayButton")
+focus_neighbor_bottom = NodePath("../../NinePatchRect3/ExitButton")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0.5058824, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.5058824, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_g3eks")
+theme_override_font_sizes/font_size = 50
 text = "Options"
 
-[node name="ExitButton" type="MenuButton" parent="MainPanel/VBoxContainer" unique_id=25515400]
+[node name="NinePatchRect3" parent="MainPanel/VBoxContainer" unique_id=179014943 instance=ExtResource("2_4ytvr")]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 60
+
+[node name="ExitButton" type="MenuButton" parent="MainPanel/VBoxContainer/NinePatchRect3" unique_id=25515400]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../../NinePatchRect2/OptionsButton")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0.5058824, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.5058824, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_g3eks")
+theme_override_font_sizes/font_size = 50
 text = "Exit"
 
-[node name="OptionsPanel" type="Panel" parent="." unique_id=764678690]
-visible = false
+[node name="OptionsPanel" parent="." unique_id=1926434036 instance=ExtResource("2_4ytvr")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 174.22223
-offset_top = 98.0
-offset_right = -174.22223
-offset_bottom = -98.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 171.9125
+offset_top = 96.700775
+offset_right = -171.9126
+offset_bottom = -96.700806
 
-[node name="VBoxContainer" type="VBoxContainer" parent="OptionsPanel" unique_id=649414877]
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsPanel" unique_id=1453957504]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 36.77777
-offset_right = -36.77777
+offset_left = 36.575623
+offset_top = 29.79921
+offset_right = -36.575623
+offset_bottom = -29.799225
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="OptionsPanel/VBoxContainer" unique_id=1241184427]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_g3eks")
 theme_override_font_sizes/font_size = 70
 text = "Options"
 horizontal_alignment = 1
@@ -97,26 +148,29 @@ theme_override_constants/separation = 30
 
 [node name="TextContainer" type="VBoxContainer" parent="OptionsPanel/VBoxContainer/OptionsContainer" unique_id=1894748331]
 layout_mode = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 15
 
 [node name="Label" type="Label" parent="OptionsPanel/VBoxContainer/OptionsContainer/TextContainer" unique_id=134475892]
 layout_mode = 2
 size_flags_vertical = 6
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("3_g3eks")
+theme_override_font_sizes/font_size = 50
 text = "Music"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="OptionsPanel/VBoxContainer/OptionsContainer/TextContainer" unique_id=256507806]
 layout_mode = 2
 size_flags_vertical = 6
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("3_g3eks")
+theme_override_font_sizes/font_size = 50
 text = "SFX"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="OptionsPanel/VBoxContainer/OptionsContainer/TextContainer" unique_id=1413228016]
 layout_mode = 2
 size_flags_vertical = 6
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("3_g3eks")
+theme_override_font_sizes/font_size = 50
 text = "Fullscreen"
 horizontal_alignment = 1
 
@@ -124,7 +178,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
-theme_override_constants/separation = 60
+theme_override_constants/separation = 15
 
 [node name="HSlider" type="HSlider" parent="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer" unique_id=1034137877]
 custom_minimum_size = Vector2(0, 50)
@@ -150,21 +204,26 @@ theme_override_font_sizes/font_size = 40
 button_pressed = true
 script = ExtResource("3_mhnvy")
 
-[node name="BackButton" type="MenuButton" parent="OptionsPanel/VBoxContainer" unique_id=1834750896]
+[node name="NinePatchRect3" parent="OptionsPanel/VBoxContainer" unique_id=257985056 instance=ExtResource("2_4ytvr")]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 60
+
+[node name="BackButton" type="MenuButton" parent="OptionsPanel/VBoxContainer/NinePatchRect3" unique_id=1834750896]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_g3eks")
+theme_override_font_sizes/font_size = 50
 text = "Back"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=931347279]
-stream = ExtResource("4_mhnvy")
-autoplay = true
-bus = &"Music"
-
-[connection signal="pressed" from="MainPanel/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="MainPanel/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="MainPanel/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MainPanel/VBoxContainer/NinePatchRect/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MainPanel/VBoxContainer/NinePatchRect2/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MainPanel/VBoxContainer/NinePatchRect3/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="value_changed" from="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer/HSlider" to="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer/HSlider" method="_on_value_changed"]
 [connection signal="value_changed" from="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer/HSlider2" to="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer/HSlider2" method="_on_value_changed"]
 [connection signal="toggled" from="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer/FullscreenButton" to="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer/FullscreenButton" method="_on_toggled"]
-[connection signal="pressed" from="OptionsPanel/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="OptionsPanel/VBoxContainer/NinePatchRect3/BackButton" to="." method="_on_back_button_pressed"]

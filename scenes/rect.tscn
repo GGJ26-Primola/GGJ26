@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://olxolwsucs4q"]
+
+[ext_resource type="Texture2D" uid="uid://bxue1yvuq8tky" path="res://assets/UI/conversation_border.png" id="1_aw74g"]
+
+[node name="NinePatchRect" type="NinePatchRect" unique_id=229314279]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_aw74g")
+patch_margin_left = 13
+patch_margin_top = 13
+patch_margin_right = 13
+patch_margin_bottom = 13
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
