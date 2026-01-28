@@ -11,7 +11,7 @@ func end_attack() -> void:
 	
 func _physics_process(delta: float) -> void:
 	
-	if not GameState.can_play():
+	if not GameState.can_attack():
 		return
 	
 	var input_dir := Input.get_vector("up", "down", "left", "right")

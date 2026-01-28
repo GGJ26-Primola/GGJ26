@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c6wi5nthdn08o"]
+
+[ext_resource type="Script" uid="uid://b8hndvokr5mwk" path="res://scripts/interactible.gd" id="1_1vjfl"]
+[ext_resource type="Texture2D" uid="uid://dvrmjniekatns" path="res://assets/info.png" id="2_aqrx6"]
+
+[node name="Interactible" type="Area3D" unique_id=476685811]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_1vjfl")
+
+[node name="InfoMark" type="Sprite3D" parent="." unique_id=694220431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.548575, 0)
+pixel_size = 0.001
+texture = ExtResource("2_aqrx6")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

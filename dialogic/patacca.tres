@@ -6,6 +6,7 @@
 script = ExtResource("1_aht5b")
 entries = {
 "Mazapégul": {
+"case_sensitive": true,
 "name": "Mazapégul",
 "text": "Mazapégul is a magical fairy with a monkey-cat appearence",
 "title": "Mazapégul"

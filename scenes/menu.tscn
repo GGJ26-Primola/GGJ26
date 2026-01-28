@@ -16,7 +16,6 @@ scale = Vector2(1.0015773, 1.0030943)
 script = ExtResource("1_yqeox")
 
 [node name="MainPanel" type="Panel" parent="." unique_id=1593277535]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -62,6 +61,7 @@ theme_override_font_sizes/font_size = 60
 text = "Exit"
 
 [node name="OptionsPanel" type="Panel" parent="." unique_id=764678690]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

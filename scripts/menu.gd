@@ -11,7 +11,12 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
-		if main_panel.visible or options_panel.visible:
+		
+		if GameState.current_game_status == GameState.State.ATTACK:
+			return
+		elif GameState.current_game_status == GameState.State.TALKING:
+			return
+		elif GameState.current_game_status == GameState.State.PAUSE:
 			_on_play_button_pressed()
 		else:
 			GameState.set_game_status(GameState.State.PAUSE)
