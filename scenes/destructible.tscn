@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://btg3dwmousmcq"]
+
+[ext_resource type="Script" uid="uid://cwhxh4qkd6dgg" path="res://scripts/destructible.gd" id="1_vhtfy"]
+
+[node name="Destructible" type="Area3D" unique_id=1808292629]
+collision_layer = 32
+collision_mask = 4
+script = ExtResource("1_vhtfy")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

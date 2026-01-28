@@ -67,7 +67,8 @@ Global Game Jam 2026 a Primola - Imola
 - 2: Player
 - 3: Weapon
 - 4: Enemies
-- 5: NPC and items
+- 5: NPC
+- 6: Items
 
 ## Plugins
 - [Dialogic](https://dialogic.pro/)

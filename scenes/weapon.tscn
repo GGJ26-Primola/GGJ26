@@ -149,7 +149,7 @@ skeleton = NodePath("../../..")
 [node name="Hitbox" type="Area3D" parent="PositionPivot" unique_id=1258223726]
 transform = Transform3D(0.6427876, -0.2620026, -0.71984625, 0, 0.93969256, -0.3420201, 0.7660444, 0.2198463, 0.60402274, 0, 0, 0)
 collision_layer = 4
-collision_mask = 8
+collision_mask = 40
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PositionPivot/Hitbox" unique_id=449062472]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

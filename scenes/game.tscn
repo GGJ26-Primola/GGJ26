@@ -11,9 +11,12 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_lbhrr"]
 [ext_resource type="Resource" uid="uid://ddtd8jcny2dsq" path="res://dialogic/miao.dtl" id="4_vtaks"]
 [ext_resource type="Resource" uid="uid://dkv28mjpp8en4" path="res://dialogic/npc/cat.dch" id="5_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://btg3dwmousmcq" path="res://scenes/destructible.tscn" id="8_dinhu"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gee14"]
 radius = 2.5951588
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kvuet"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8cj0n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -60,14 +63,19 @@ shape = SubResource("SphereShape3D_gee14")
 [node name="Menu" parent="." unique_id=803179413 instance=ExtResource("2_p57ef")]
 scale = Vector2(1, 1)
 
-[node name="NPC" parent="." unique_id=424773282 instance=ExtResource("3_u5sy4")]
+[node name="NPC" type="CSGBox3D" parent="." unique_id=537784218]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7383866, 0.54300904, -5.954705)
+
+[node name="interactible" parent="NPC" unique_id=424773282 instance=ExtResource("3_u5sy4")]
 timeline = ExtResource("4_gee14")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="NPC" unique_id=537784218]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC" unique_id=875088808]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/interactible" unique_id=875088808]
 shape = SubResource("SphereShape3D_gee14")
+
+[node name="Destructible" parent="NPC" unique_id=1808292629 instance=ExtResource("8_dinhu")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Destructible" unique_id=1253014746]
+shape = SubResource("BoxShape3D_kvuet")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=789237425]
 environment = SubResource("Environment_yqjtg")
