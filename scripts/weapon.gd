@@ -3,17 +3,12 @@ extends Node3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var weapon_player_1: AudioStreamPlayer = $"WeaponPlayer1"
 @onready var weapon_player_2: AudioStreamPlayer = $"WeaponPlayer2"
-@onready var collision_shape: CollisionShape3D = $Hitbox/CollisionShape3D
 
 var last_input: Vector2
-#var last_direction: Vector3
 
 func end_attack() -> void:
 	GameState.set_game_status(GameState.State.PLAYING)
 	
-func _ready() -> void:
-	collision_shape.disabled = true
-
 func _physics_process(delta: float) -> void:
 	
 	if not GameState.current_game_status == GameState.State.PLAYING:
