@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bddcy0rvtx2u4"
-path.s3tc="res://.godot/imported/cat.png-74418c656f64bad1813a4e0137c5108d.s3tc.ctex"
+uid="uid://bijja6d7irwmi"
+path.s3tc="res://.godot/imported/JUMP.png-324c1ffe4fd3e815d0021df8fc26fab8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/cat.png"
-dest_files=["res://.godot/imported/cat.png-74418c656f64bad1813a4e0137c5108d.s3tc.ctex"]
+source_file="res://assets/cat/JUMP.png"
+dest_files=["res://.godot/imported/JUMP.png-324c1ffe4fd3e815d0021df8fc26fab8.s3tc.ctex"]
 
 [params]
 

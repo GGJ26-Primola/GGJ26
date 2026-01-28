@@ -53,7 +53,8 @@ directories/dch_directory={
 "Villico 3": "res://dialogic/Villico 3.dch",
 "Villico 4": "res://dialogic/Villico 4.dch",
 "Villico 5": "res://dialogic/Villico 5.dch",
-"Villico 6": "res://dialogic/Villico 6.dch"
+"Villico 6": "res://dialogic/Villico 6.dch",
+"cat": "res://dialogic/cat.dch"
 }
 directories/dtl_directory={
 "1[Zona 1] Dialogo con villico 2": "res://dialogic/1[Zona 1] Dialogo con villico 2.dtl",
@@ -74,9 +75,14 @@ directories/dtl_directory={
 "Giancarlo": "res://dialogic/Giancarlo.dtl",
 "GrimBalduzzi": "res://dialogic/GrimBalduzzi.dtl",
 "Incontro con Mazanpegul": "res://dialogic/Incontro con Mazanpegul.dtl",
+"miao": "res://dialogic/miao.dtl",
 "timeline": "res://dialogic/timeline.dtl"
 }
-layout/style_directory={}
+layout/style_directory={
+"": "res://dialogic/styles/conversation.tres",
+"bubble": "res://dialogic/styles/bubble.tres",
+"conversation": "res://dialogic/styles/conversation.tres"
+}
 variables={}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -114,8 +120,8 @@ audio/channel_defaults={
 }
 glossary/default_case_sensitive=true
 glossary/glossary_files=["uid://cfsnry5fpi46i"]
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://dialogic/styles/conversation.tres", "res://dialogic/styles/bubble.tres"]
+layout/default_style="res://dialogic/styles/conversation.tres"
 
 [display]
 

@@ -2,12 +2,15 @@
 
 [ext_resource type="Script" uid="uid://co08gdsib6vih" path="res://scripts/game_manager.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://d4j24xtuynqto" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://bu78ssf0f5nim" path="res://scenes/cat.tscn" id="2_0tnpc"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bqo0cfd63o4nl" path="res://scenes/menu.tscn" id="2_p57ef"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://c6wi5nthdn08o" path="res://scenes/interactible.tscn" id="3_u5sy4"]
 [ext_resource type="Resource" uid="uid://1g12vq0hg" path="res://dialogic/GrimBalduzzi.dtl" id="4_gee14"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_lbhrr"]
+[ext_resource type="Resource" uid="uid://ddtd8jcny2dsq" path="res://dialogic/miao.dtl" id="4_vtaks"]
+[ext_resource type="Resource" uid="uid://dkv28mjpp8en4" path="res://dialogic/cat.dch" id="5_kvpfn"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gee14"]
 radius = 2.5951588
@@ -30,13 +33,33 @@ script = ExtResource("3_lbhrr")
 [node name="Game" type="Node" unique_id=803510040]
 script = ExtResource("1_iywne")
 
+[node name="Cat" parent="." unique_id=1393236629 instance=ExtResource("2_0tnpc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.829, 0.8, -7.116)
+
+[node name="Interactible" parent="Cat" unique_id=476685811 instance=ExtResource("3_u5sy4")]
+timeline = ExtResource("4_vtaks")
+bubble_pnc = ExtResource("5_kvpfn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cat/Interactible" unique_id=987860928]
+shape = SubResource("SphereShape3D_gee14")
+
+[node name="Cat2" parent="." unique_id=972012601 instance=ExtResource("2_0tnpc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.930778, 0.8, -7.116)
+
+[node name="Interactible" parent="Cat2" unique_id=1542527272 instance=ExtResource("3_u5sy4")]
+timeline = ExtResource("4_vtaks")
+bubble_pnc = ExtResource("5_kvpfn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cat2/Interactible" unique_id=1367323178]
+shape = SubResource("SphereShape3D_gee14")
+
 [node name="Menu" parent="." unique_id=803179413 instance=ExtResource("2_p57ef")]
 scale = Vector2(1, 1)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=537784218]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7383866, 0, -5.954705)
 
-[node name="Interactible" parent="." unique_id=476685811 instance=ExtResource("3_u5sy4")]
+[node name="Interactible" parent="." unique_id=424773282 instance=ExtResource("3_u5sy4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7383866, 0, -5.954705)
 timeline = ExtResource("4_gee14")
 
