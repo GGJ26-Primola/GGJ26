@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dvrmjniekatns" path="res://assets/info.png" id="2_aqrx6"]
 
 [node name="Interactible" type="Area3D" unique_id=476685811]
+disable_mode = 1
 collision_layer = 16
 collision_mask = 2
 script = ExtResource("1_1vjfl")

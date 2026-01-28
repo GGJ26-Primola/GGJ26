@@ -179,9 +179,12 @@ states/Idle/position = Vector2(366, 100)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_smehm")]
 graph_offset = Vector2(-75, -34)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_dqkch"]
+radius = 1.5089272
+
 [node name="Player" type="CharacterBody3D" unique_id=144814704]
 collision_layer = 2
-collision_mask = 25
+collision_mask = 9
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
@@ -211,3 +214,11 @@ parameters/Idle/blend_position = Vector2(-0.78957, 0.8550725)
 [node name="StepPlayer" type="AudioStreamPlayer" parent="." unique_id=448296281]
 stream = ExtResource("4_dqkch")
 bus = &"SFX"
+
+[node name="PlayerInteraction" type="Area3D" parent="." unique_id=376338721]
+collision_layer = 2
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerInteraction" unique_id=277676543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12719727, 0)
+shape = SubResource("SphereShape3D_dqkch")
