@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 		#idle_spreadsheet.texture = jump_png
 		#velocity.y = JUMP_VELOCITY
 	
-	if not GameState.current_game_status == GameState.State.PLAYING:
+	if not GameState.can_play():
 		set_animation("idle")
 		return
 	

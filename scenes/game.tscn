@@ -37,7 +37,7 @@ shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=414300921]
 use_collision = true
-size = Vector3(5.9433594, 0.115478516, 7.022461)
+size = Vector3(24.964844, 0.115478516, 23.318604)
 
 [node name="Player" parent="." unique_id=1338356758 instance=ExtResource("1_uwrxv")]
 unique_name_in_owner = true

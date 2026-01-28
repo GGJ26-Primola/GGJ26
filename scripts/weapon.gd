@@ -11,22 +11,8 @@ func end_attack() -> void:
 	
 func _physics_process(delta: float) -> void:
 	
-	if not GameState.current_game_status == GameState.State.PLAYING:
+	if not GameState.can_play():
 		return
-	
-	if animation_player.is_playing():
-		GameState.set_game_status(GameState.State.ATTACK)
-		return
-	
-	if Input.is_action_just_pressed("attack"):
-		
-		# Play sound
-		if randi_range(0, 1) == 0:
-			weapon_player_1.play()
-		else:
-			weapon_player_2.play()
-			
-		animation_player.play("attack")
 	
 	var input_dir := Input.get_vector("up", "down", "left", "right")
 	if input_dir == Vector2.ZERO:
@@ -34,4 +20,18 @@ func _physics_process(delta: float) -> void:
 	else:
 		last_input = input_dir
 	
-	rotation.y = input_dir.angle()
+	if Input.is_action_just_pressed("attack"):
+		
+		GameState.set_game_status(GameState.State.ATTACK)
+		
+		# Play sound
+		if randi_range(0, 1) == 0:
+			weapon_player_1.play()
+		else:
+			weapon_player_2.play()
+		
+		# Change weapon direction
+		rotation.y = input_dir.angle()
+		
+		# Play animation
+		animation_player.play("attack")
