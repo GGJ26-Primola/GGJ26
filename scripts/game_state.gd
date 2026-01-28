@@ -16,6 +16,8 @@ static func can_talk() -> bool:
 	return dialogic_timeline != null and current_info_mark != null
 
 static func can_attack() -> bool:
+	if can_talk():
+		return false
 	return Dialogic.current_state == 0 and GameState.current_game_status == GameState.State.PLAYING
 
 static func set_dialogic_timeline(timeline_name, info_mark: Sprite3D) -> void:

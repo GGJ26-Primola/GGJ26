@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		last_input = input_dir
 	
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("dialogic_default_action"):
 		
 		GameState.set_game_status(GameState.State.ATTACK)
 		
