@@ -4,3 +4,5 @@
 - "Have you tried, you know, NOT complaining?"
 	[wait time="2.0"]
 	"Villico 1": ...You should respect your elders...
+- "Tell me more"
+	jump

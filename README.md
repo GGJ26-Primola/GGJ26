@@ -41,6 +41,8 @@ Global Game Jam 2026 a Primola - Imola
 - [x] Menu
 - [x] Dialogue system
 - [ ] Melee combat system
+  - [x] Hit
+  - [ ] Be hitted
 - [ ] Music change by zone
 
 ### UI
