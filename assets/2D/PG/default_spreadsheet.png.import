@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnk4w1o5likrw"
-path.s3tc="res://.godot/imported/Grass005_1K-PNG_Displacement.png-57e7577d109a8aee546b78b77e9800ab.s3tc.ctex"
+uid="uid://dje5rr4n03rlf"
+path.s3tc="res://.godot/imported/default_spreadsheet.png-4d0839d8cf8097681f61faa573355f53.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/Grass005_1K-PNG_Displacement.png"
-dest_files=["res://.godot/imported/Grass005_1K-PNG_Displacement.png-57e7577d109a8aee546b78b77e9800ab.s3tc.ctex"]
+source_file="res://assets/2D/PG/default_spreadsheet.png"
+dest_files=["res://.godot/imported/default_spreadsheet.png-4d0839d8cf8097681f61faa573355f53.s3tc.ctex"]
 
 [params]
 
@@ -26,8 +26,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=7
-roughness/src_normal="res://assets/textures/Grass005_1K-PNG_NormalGL.png"
+roughness/mode=0
+roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

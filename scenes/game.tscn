@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cm4noj7flak4p" path="res://scenes/enemy.tscn" id="16_5newe"]
 [ext_resource type="PackedScene" uid="uid://dw350qjqwdwki" path="res://scenes/music_changer.tscn" id="18_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://bpl470i2x3dpm" path="res://scenes/knight.tscn" id="19_264po"]
+[ext_resource type="PackedScene" uid="uid://ijrrf5ej7e13" path="res://scenes/inventory.tscn" id="19_bt5mj"]
 [ext_resource type="Resource" uid="uid://t4q67befekfr" path="res://dialogic/Safe zone/1[Zona1] Dialogo con villico 5.dtl" id="20_1kice"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ssvqc"]
@@ -170,8 +171,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.776409, 1.5390229, 0)
 script = ExtResource("15_37s47")
 
 [node name="Interactible" parent="NPC/Knight" unique_id=1026249889 instance=ExtResource("3_u5sy4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2517471, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7694483, 0)
 timeline = ExtResource("20_1kice")
+reload_now = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Knight/Interactible" unique_id=1839212111]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1594849, 0)
@@ -183,6 +185,8 @@ script = null
 
 [node name="Menu" parent="." unique_id=803179413 instance=ExtResource("2_p57ef")]
 scale = Vector2(1, 1)
+
+[node name="Inventory" parent="." unique_id=874561363 instance=ExtResource("19_bt5mj")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=789237425]
 environment = SubResource("Environment_yqjtg")
@@ -201,12 +205,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 collision_layer = 3
 collision_mask = 3
 
-[node name="CameraPlayer" type="Node3D" parent="." unique_id=386739997 node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 6.2, 5)
+[node name="CameraPlayer" type="Node3D" parent="." unique_id=386739997 node_paths=PackedStringArray("follow_target", "follow_targets")]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 6.9071064, 5.7071066)
 top_level = true
 script = ExtResource("2_lnu2h")
-follow_mode = 2
+follow_mode = 3
 follow_target = NodePath("../Player")
+follow_targets = [NodePath("../Player")]
 tween_resource = SubResource("Resource_iywne")
 follow_offset = Vector3(0, 5, 5)
 follow_damping = true
@@ -217,7 +222,7 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1455375748]
 unique_name_in_owner = true
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 6.2, 5)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 6.9071064, 5.7071066)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1699421758]

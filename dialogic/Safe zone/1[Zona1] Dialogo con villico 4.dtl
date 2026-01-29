@@ -1,6 +1,6 @@
-"Villico 4": Can you wait twenty seconds?
+"Villico 4": Can you wait 2 seconds?
 - "Sure...?"
-	[wait time="20.0"]
+	[wait time="2.0"]
 	"Villico 4": Thanks!
 	# Dare un oggetto curativo come ricompensa
 - "No way!"

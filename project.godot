@@ -54,7 +54,8 @@ directories/dch_directory={
 "Villico 4": "res://dialogic/npc/Villico 4.dch",
 "Villico 5": "res://dialogic/npc/Villico 5.dch",
 "Villico 6": "res://dialogic/npc/Villico 6.dch",
-"cat": "res://dialogic/npc/cat.dch"
+"cat": "res://dialogic/npc/cat.dch",
+"stick": "res://dialogic/npc/stick.dch"
 }
 directories/dtl_directory={
 "1[Zona 1] Dialogo con villico 2": "res://dialogic/Safe zone/1[Zona 1] Dialogo con villico 2.dtl",
@@ -64,7 +65,6 @@ directories/dtl_directory={
 "1[Zona1] Dialogo con villico 5": "res://dialogic/Safe zone/1[Zona1] Dialogo con villico 5.dtl",
 "1[Zona1] Dialogo con villico 51": "res://dialogic/Safe zone/1[Zona1] Dialogo con villico 51.dtl",
 "1[Zona1] V5 Umarello": "res://dialogic/Safe zone/1[Zona1] V5 Umarello.dtl",
-"1[Zona1] V51 Umarello 2": "res://dialogic/Safe zone/1[Zona1] V51 Umarello 2.dtl",
 "1[Zona1] V6 Inizio quest gatto 1": "res://dialogic/Safe zone/1[Zona1] V6 Inizio quest gatto 1.dtl",
 "1[Zona1] V61 Quest gatto 2": "res://dialogic/Safe zone/1[Zona1] V61 Quest gatto 2.dtl",
 "1[Zona1] V62 Quest gatto 2": "res://dialogic/Safe zone/1[Zona1] V62 Quest gatto 2.dtl",
@@ -83,7 +83,7 @@ layout/style_directory={
 variables={
 "current_mask": "default",
 "mask_boss": false,
-"mask_cat": false,
+"mask_cat": true,
 "mask_default": true,
 "mask_ftp1": false,
 "mask_pest": false,
@@ -192,6 +192,13 @@ attack={
 "deadzone": 0.2,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":10,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+inventory={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":73,"key_label":0,"unicode":105,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":1,"pressure":0.0,"pressed":true,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194306,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 

@@ -1,11 +1,11 @@
 # Umarell sta vicino alla fontana, urlando improperi a tutti, il dialogo parte da lontano. 
 if {umarell_hitted} == true:
 	Umarell: ...
-	Umarell: Why?
+	Umarell: <I think i will go lay down a bit, my head hurts./Why?>
 	[end_timeline]
 if {stick} == true:
-	Umarell: I have nothing to teach you anymore.
-	Umarell: You are now the master!
+	Umarell: Such power, such grace, such umarellitude!
+	Umarell: You are indeed a worthy successor.
 	[end_timeline]
 Umarell: Pah! I am tired of all this! Things are tumbling down and nobody is doing a damn thing about it!
 [wait time="0.5"]
@@ -13,28 +13,32 @@ Umarell: Pah! Pthooey! If only i were still eighty years old, i'd whip some sens
 - Go away.
 	[end_timeline]
 - Get closer.
-	# avvicinati
+	[signal arg="fov_1"]
 Umarell: Aaah, if only i could instruct someone young and strong in the ancient and sacred arts of BASHING SOMEONE IN THE HEAD WITH A STICK, that'd be wonderful.
 Umarell: Wait...
 Umarell: YOU! Come here!
 - Run away.
+	[signal arg="fov_0"]
 	[end_timeline]
 - Get even closer.
-	# arriva a distanza normale di dialogo. 
+	[signal arg="fov_2"]
 Umarell: I knew you were someone smart! I see it in you, you have something in you. Yes, i can see into you the power of COMPLAINING LIKE AN OLD MAN! You crave to learn the ancient arts of Umarello-Jutsu! I shall be your master!
 - "I don't really want to?"
+	[signal arg="fov_0"]
 	[end_timeline]
 - "YES SENSEI!"
 	Umarell: PAIN DOES NOT EXIST IN THIS PLAZA, DOES IT?
 	- "NO SENSEI!"
 	- "A LITTLE BIT, SENSEI!"
 		Umarell: Then you are unworthy!
+		[signal arg="fov_0"]
 		[end_timeline]
-join Mazza center
-# Inserire musica fantasy da arma leggendaria?
+join stick center
 Umarell: GOOD, YOUR TRAINING START NOW! Here is your weapon, brandish it with annoyance and pain in your joints!  Strike me down, and i shall become older than you can ever imagine.
-leave Mazza
+[signal arg="fov_0"]
+audio "res://assets/Music/SFX/MASK 1.wav"
+leave stick
 Player: The student is now the master.
 set {stick} = true
-audio "res://assets/Music/SFX/MASK 1.wav"
 # prompt che spiega come usare la mazza, tirare un colpo
+Click the main button to attack

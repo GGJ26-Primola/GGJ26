@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bups6ijwspmnj"
-path.s3tc="res://.godot/imported/walk_front.png-4a1fdbeaf8942761f0382716060c4869.s3tc.ctex"
+uid="uid://jpa66xov2oy2"
+path.s3tc="res://.godot/imported/default_walk_front.png-66babaf6d03b51f37452609993b586e6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/2D/PG/walk_front.png"
-dest_files=["res://.godot/imported/walk_front.png-4a1fdbeaf8942761f0382716060c4869.s3tc.ctex"]
+source_file="res://assets/2D/PG/default_walk_front.png"
+dest_files=["res://.godot/imported/default_walk_front.png-66babaf6d03b51f37452609993b586e6.s3tc.ctex"]
 
 [params]
 
