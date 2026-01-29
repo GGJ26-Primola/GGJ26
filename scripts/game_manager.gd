@@ -1,7 +1,7 @@
 extends Node
 
 #@onready var camera_player: PhantomCamera3D = $"../CameraPlayer"
-@onready var umarell: CSGBox3D = $"../Umarell"
+@onready var umarell: CSGBox3D = $"../NPC/Umarell"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

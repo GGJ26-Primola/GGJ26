@@ -4,16 +4,15 @@
 	- "What do you mean?"
 		"Villico 5": Have you noticed how there are not many children around here?
 		- "Good, i hate kids!"
-			jump Fine
+			"Villico 5": ...
+			[end_timeline]
 		- "Go on..."
 			"Villico 5": There is something sinister going on, but i don't have any proof to present to everybody. If you learn something, let me know, please.
 			- "Sure. Count on me."
 				"Villico 5": Please. This means a lot to me.
 			- "Nah."
-				jump Fine
 	- "Are you gonna talk about chemical trails?"
-		jump Fine
 - "Nope!"
-	label Fine
 	"Villico 5": I'll keep it to myself, then.
+	[end_timeline]
 # Nuovo dialogo dopo aver scoperto della strega.

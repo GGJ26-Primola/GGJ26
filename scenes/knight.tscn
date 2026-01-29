@@ -45,4 +45,4 @@ pixel_size = 0.015
 sprite_frames = SubResource("SpriteFrames_swm0g")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.77649903
+frame_progress = 0.85727817
