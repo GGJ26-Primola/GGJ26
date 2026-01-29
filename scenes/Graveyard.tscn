@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://d0pb4lt4p4116" path="res://assets/Mesh Graveyard/fbx/post_skull.fbx" id="26_4e3pu"]
 [ext_resource type="PackedScene" uid="uid://c0c1gc8v2y6eb" path="res://assets/Mesh Graveyard/fbx/ribcage.fbx" id="27_b6687"]
 [ext_resource type="PackedScene" uid="uid://coctxygy26lp8" path="res://assets/Mesh Graveyard/fbx/skull.fbx" id="28_7dbwh"]
+[ext_resource type="PackedScene" uid="uid://diexnd5rtmssw" path="res://assets/Mesh Graveyard/fbx/coffin_decorated.fbx" id="30_ul1f6"]
 
 [sub_resource type="Resource" id="Resource_cuj8v"]
 script = ExtResource("3_vwnn2")
@@ -214,3 +215,18 @@ transform = Transform3D(0.99009246, -0.14041743, 0, 0.14041743, 0.99009246, 0, 0
 
 [node name="tree_pine_yellow_small2" parent="Node3D/HTerrain/misc" unique_id=535116931 instance=ExtResource("8_3084y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4061884, 1.8860788, 33.770172)
+
+[node name="tree_pine_yellow_large" parent="." unique_id=1128158320 instance=ExtResource("6_dn084")]
+transform = Transform3D(-0.11134749, -0.9937815, 0, 0.9937815, -0.11134749, 0, 0, 0, 1, -13.169261, -1.0352298, -39.892864)
+
+[node name="tree_pine_orange_small" parent="." unique_id=726538785 instance=ExtResource("22_ul1f6")]
+transform = Transform3D(0.08515607, 0.9963676, 0, -0.9963676, 0.08515607, 0, 0, 0, 1, -25.00835, -1.2953358, -35.940327)
+
+[node name="coffin_decorated" parent="." unique_id=954176066 instance=ExtResource("30_ul1f6")]
+transform = Transform3D(0.9440652, 0.32886797, 0.024220388, -0.02916827, 0.15644133, -0.9872566, -0.3284661, 0.93132824, 0.15728348, -25.2969, 0.10806131, -35.837486)
+
+[node name="coffin_decorated2" parent="." unique_id=459946120 instance=ExtResource("30_ul1f6")]
+transform = Transform3D(0.817004, 0.5648625, 0.11590851, 0, 0.20100954, -0.9795894, -0.576632, 0.8003285, 0.16422561, -27.689247, 0.17386973, -34.108112)
+
+[node name="coffin_decorated3" parent="." unique_id=469747714 instance=ExtResource("30_ul1f6")]
+transform = Transform3D(0.47749618, 0.87405336, 0.08960002, 0, 0.101976514, -0.9947868, -0.87863386, 0.4750069, 0.048693396, -29.628252, 0.71484226, -31.961884)
