@@ -37,13 +37,14 @@ Global Game Jam 2026 a Primola - Imola
   - [ ] Misc
 
 ### Code
-- [ ] System for switch mask
+- [x] System for switch mask
 - [x] Menu
 - [x] Dialogue system
 - [ ] Melee combat system
   - [x] Hit
   - [ ] Be hitted
-- [ ] Music change by zone
+- [x] Music change by zone
+- [ ] Boss fight
 
 ### UI
 - [ ] ALL
