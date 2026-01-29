@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://djg7vtuxw4pu6"
+path="res://.godot/imported/MASK CHANGE1.wav-d8f26ac70d40a713ae4b9c4513eb2eb7.sample"
+
+[deps]
+
+source_file="res://assets/Music/SFX/MASK CHANGE1.wav"
+dest_files=["res://.godot/imported/MASK CHANGE1.wav-d8f26ac70d40a713ae4b9c4513eb2eb7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
