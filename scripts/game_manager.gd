@@ -8,6 +8,10 @@ var last_checkpoint := Vector3.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	Global.player = player
+	Global.camera = camera_player
+	
 	GameState.set_game_status(GameState.State.PLAYING)
 	Dialogic.timeline_started.connect(append_target)
 	Dialogic.timeline_ended.connect(remove_target)
@@ -30,8 +34,7 @@ func _on_dialogic_signal(argument: String) -> void:
 		camera_player.follow_offset = Vector3(0, 3, 3)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	
+func _process(_delta: float) -> void:
 	if GameState.can_talk() and Input.is_action_just_pressed("dialogic_default_action"):
 		GameState.start_talk()
 
@@ -43,4 +46,5 @@ func set_last_checkpoint(pos : Vector3) -> void:
 
 func _on_umarell_attacked() -> void:
 	Dialogic.VAR.umarell_hitted = true
-	umarell.rotation_degrees.z = 90.0 # TODO: rotate slowly
+	var tween = create_tween()
+	tween.tween_property(umarell, "rotation_degrees:z", 90.0, 0.2)

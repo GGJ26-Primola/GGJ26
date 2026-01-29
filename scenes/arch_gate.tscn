@@ -1,6 +1,7 @@
-[gd_scene format=4 uid="uid://b6gnfnxf0ghj"]
+[gd_scene format=4 uid="uid://dsf1im1wt7jie"]
 
 [ext_resource type="Texture2D" uid="uid://sak44hvybejj" path="res://assets/Mesh Graveyard/fbx/halloweenbits_texture.png" id="1_h30sx"]
+[ext_resource type="Script" uid="uid://cmwfcg7tpi4kw" path="res://scripts/cemetery_gates.gd" id="1_ydepu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5d0f"]
 resource_name = "HalloweenBits"
@@ -104,7 +105,144 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_c5nvw")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_h30sx"]
+size = Vector3(3.602539, 4.0351563, 1)
+
+[sub_resource type="Animation" id="Animation_ydepu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("arch_gate/arch_gate_left:rotation:z")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("arch_gate/arch_gate_right:rotation:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("arch_gate/arch_gate_left:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("arch_gate/arch_gate_right:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("StaticBody3D/CollisionShape3D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_xaxbw"]
+resource_name = "open"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("arch_gate/arch_gate_left:rotation:z")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 2.0, 2.1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("arch_gate/arch_gate_right:rotation:z")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -2.0, -2.1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("arch_gate/arch_gate_left:position:y")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.003]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("arch_gate/arch_gate_right:position:y")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.003]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("StaticBody3D/CollisionShape3D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.13333334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bhxxm"]
+_data = {
+&"RESET": SubResource("Animation_ydepu"),
+&"open": SubResource("Animation_xaxbw")
+}
+
 [node name="arch_gate" type="Node3D" unique_id=1156300368]
+script = ExtResource("1_ydepu")
 
 [node name="arch_gate" type="MeshInstance3D" parent="." unique_id=143214378]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
@@ -112,7 +250,7 @@ mesh = SubResource("ArrayMesh_7sy1x")
 skeleton = NodePath("")
 
 [node name="arch_gate_left" type="MeshInstance3D" parent="arch_gate" unique_id=1932829082]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015, 0, 0)
+transform = Transform3D(1.0000001, -1.9104376e-29, -6.460949e-15, 0, 1.0000001, -2.9569003e-15, 6.4609484e-15, 2.9569001e-15, 1.0000002, 0.013234926, 0, 0)
 mesh = SubResource("ArrayMesh_di5ys")
 skeleton = NodePath("")
 
@@ -120,3 +258,22 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015, 0, 0)
 mesh = SubResource("ArrayMesh_pvp0a")
 skeleton = NodePath("")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=477308395]
+collision_layer = 33
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=895071367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5175781, 0)
+shape = SubResource("BoxShape3D_h30sx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=404798167]
+libraries/ = SubResource("AnimationLibrary_bhxxm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1563419482]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1202199791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5175781, 0)
+shape = SubResource("BoxShape3D_h30sx")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

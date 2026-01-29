@@ -9,7 +9,7 @@ var last_input: Vector2
 func end_attack() -> void:
 	GameState.set_game_status(GameState.State.PLAYING)
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	
 	if not GameState.can_attack():
 		return

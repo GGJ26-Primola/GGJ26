@@ -52,7 +52,7 @@ func display_mask() -> void:
 	container.get_child(3).get_child(0).visible = Dialogic.VAR.mask_pest
 	container.get_child(4).get_child(0).visible = Dialogic.VAR.mask_boss
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("inventory"):
 		if GameState.can_inventory():

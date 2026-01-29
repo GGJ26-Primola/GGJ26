@@ -13,7 +13,7 @@ var layout
 func _ready() -> void:
 	info_mark.hide()
 
-func _on_area_entered(area: Area3D) -> void:
+func _on_area_entered(_area: Area3D) -> void:
 	
 	if bubble_pnc != null:
 		layout = Dialogic.Styles.load_style("bubble")
@@ -30,7 +30,7 @@ func _on_area_entered(area: Area3D) -> void:
 	if automatic_play and GameState.can_play():
 		GameState.start_talk()
 
-func _on_area_exited(area: Area3D) -> void:
+func _on_area_exited(_area: Area3D) -> void:
 	info_mark.hide()
 	GameState.dialogic_timeline = null
 	GameState.current_info_mark = null

@@ -27,6 +27,7 @@ buses/default_bus_layout="uid://dimskebbxvvdl"
 
 PhantomCameraManager="*uid://duq6jhf6unyis"
 Dialogic="*uid://ds2q0uclmolvu"
+Global="*uid://cl2l666jtqhir"
 
 [dialogic]
 
@@ -88,7 +89,7 @@ variables={
 "mask_ftp1": false,
 "mask_pest": false,
 "meow": 0,
-"stick": false,
+"stick": true,
 "umarell_hitted": false
 }
 extensions_folder="res://addons/dialogic_additions"

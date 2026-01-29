@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d4j24xtuynqto" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://bu78ssf0f5nim" path="res://scenes/cat.tscn" id="2_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://b51wiu02jdl1b" path="res://assets/Music/safe_zone.wav" id="2_ca42v"]
+[ext_resource type="PackedScene" uid="uid://dxmdmtwbtv530" path="res://scenes/safe_zone.tscn" id="2_e1j6l"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bqo0cfd63o4nl" path="res://scenes/menu.tscn" id="2_p57ef"]
 [ext_resource type="Script" uid="uid://dh0p4hudw1jkb" path="res://scripts/music_manager.gd" id="2_rysoc"]
@@ -23,6 +24,14 @@
 [ext_resource type="PackedScene" uid="uid://bpl470i2x3dpm" path="res://scenes/knight.tscn" id="19_264po"]
 [ext_resource type="PackedScene" uid="uid://ijrrf5ej7e13" path="res://scenes/inventory.tscn" id="19_bt5mj"]
 [ext_resource type="Resource" uid="uid://t4q67befekfr" path="res://dialogic/Safe zone/1[Zona1] Dialogo con villico 5.dtl" id="20_1kice"]
+[ext_resource type="Resource" uid="uid://dbmq8cmqa8wls" path="res://dialogic/Safe zone/1[Zona1] Dialogo con Villico 1.dtl" id="25_wljb1"]
+[ext_resource type="Resource" uid="uid://dwpuiw3hquai" path="res://dialogic/Safe zone/1[Zona 1] Dialogo con villico 2.dtl" id="26_v2yb1"]
+[ext_resource type="Texture2D" uid="uid://6ii0307e2il5" path="res://assets/2D/npc1_idle.png" id="27_js0lu"]
+[ext_resource type="Resource" uid="uid://3m3iwwpkrohn" path="res://dialogic/Safe zone/1[Zona1] Dialogo con villico 3.dtl" id="28_gxtfn"]
+[ext_resource type="Resource" uid="uid://byr6jq4fmh4iw" path="res://dialogic/Safe zone/1[Zona1] Dialogo con villico 4.dtl" id="29_twgab"]
+[ext_resource type="Resource" uid="uid://cbk6ksfplw6ox" path="res://dialogic/Safe zone/1[Zona1] V61 Quest gatto 2.dtl" id="30_02fa5"]
+[ext_resource type="Resource" uid="uid://bnmpyrdm1oaoh" path="res://dialogic/Safe zone/1[Zona1] V6 Inizio quest gatto 1.dtl" id="31_nepv3"]
+[ext_resource type="Resource" uid="uid://15s883uo4k61" path="res://dialogic/Safe zone/Incontro con Mazanpegul.dtl" id="32_7025r"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ssvqc"]
 clip_count = 4
@@ -48,7 +57,35 @@ Vector2i(-1, -1): {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_264po"]
-size = Vector3(2.778717, 3.199646, 12.869385)
+size = Vector3(2.778717, 4.818573, 34.19336)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pr1ej"]
+radius = 3.1974819
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jpf8"]
+atlas = ExtResource("27_js0lu")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74b8q"]
+atlas = ExtResource("27_js0lu")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_05nbr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jpf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74b8q")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_m4url"]
+radius = 2.5951588
 
 [sub_resource type="Curve3D" id="Curve3D_ssvqc"]
 bake_interval = 0.01
@@ -88,6 +125,8 @@ script = ExtResource("3_lbhrr")
 unique_name_in_owner = true
 script = ExtResource("1_iywne")
 
+[node name="SafeZone" parent="." unique_id=1897293832 instance=ExtResource("2_e1j6l")]
+
 [node name="Musics" type="Node" parent="." unique_id=1845575960]
 unique_name_in_owner = true
 script = ExtResource("2_rysoc")
@@ -98,10 +137,11 @@ autoplay = true
 bus = &"Music"
 
 [node name="MusicChanger" parent="Musics" unique_id=594796150 instance=ExtResource("18_ssvqc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9138484, 0, 4.059202)
+transform = Transform3D(0.59755516, 0, -0.8018278, 0, 1, 0, 0.8018278, 0, 0.59755516, -14.184232, 13.002569, -45.20195)
 music_name = "cemetery"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Musics/MusicChanger" unique_id=978300869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8146973e-06, 0.8094635, -1.6466045)
 shape = SubResource("BoxShape3D_264po")
 
 [node name="MusicChanger2" parent="Musics" unique_id=975477143 instance=ExtResource("18_ssvqc")]
@@ -119,6 +159,96 @@ music_name = "safe"
 shape = SubResource("BoxShape3D_264po")
 
 [node name="NPC" type="Node" parent="." unique_id=583360651]
+
+[node name="Cat2" parent="NPC" unique_id=503675010 instance=ExtResource("2_0tnpc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5018606, 10.571136, -19.88805)
+script = ExtResource("15_37s47")
+
+[node name="Villico 1" type="CSGBox3D" parent="NPC" unique_id=839157445]
+transform = Transform3D(0.28535387, 0, 0.95842224, 0, 1, 0, -0.95842224, 0, 0.28535387, -15.775247, 9.903278, -8.405848)
+
+[node name="Interactible" parent="NPC/Villico 1" unique_id=279291462 instance=ExtResource("3_u5sy4")]
+timeline = ExtResource("25_wljb1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Villico 1/Interactible" unique_id=1379959268]
+shape = SubResource("SphereShape3D_pr1ej")
+
+[node name="Villico 2" type="CSGBox3D" parent="NPC" unique_id=1868162755]
+transform = Transform3D(0.7170931, 0, -0.6969774, 0, 1, 0, 0.6969774, 0, 0.7170931, 19.628681, 10.369574, -22.001968)
+
+[node name="Interactible" parent="NPC/Villico 2" unique_id=2034438154 instance=ExtResource("3_u5sy4")]
+timeline = ExtResource("26_v2yb1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Villico 2/Interactible" unique_id=1037617535]
+shape = SubResource("SphereShape3D_pr1ej")
+
+[node name="Villico 3" type="Node3D" parent="NPC" unique_id=397024913]
+transform = Transform3D(0.7170931, 0, -0.6969774, 0, 1, 0, 0.6969774, 0, 0.7170931, -6.9409456, 10.589008, -35.30681)
+script = ExtResource("15_37s47")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="NPC/Villico 3" unique_id=334003920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0119781, 0)
+pixel_size = 0.04
+sprite_frames = SubResource("SpriteFrames_05nbr")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Interactible" parent="NPC/Villico 3" unique_id=1589809762 instance=ExtResource("3_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9682198, 0)
+timeline = ExtResource("28_gxtfn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Villico 3/Interactible" unique_id=1727872178]
+shape = SubResource("SphereShape3D_pr1ej")
+
+[node name="Villico 4" type="CSGBox3D" parent="NPC" unique_id=2011642285]
+transform = Transform3D(-0.96831346, 0, -0.24973795, 0, 1, 0, 0.24973795, 0, -0.96831346, 15.1478815, 12.063089, -8.25506)
+
+[node name="Interactible" parent="NPC/Villico 4" unique_id=694160202 instance=ExtResource("3_u5sy4")]
+transform = Transform3D(-0.85218376, 0, -0.52324253, 0, 1, 0, 0.52324253, 0, -0.85218376, 0, 0, 0)
+timeline = ExtResource("29_twgab")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Villico 4/Interactible" unique_id=661503674]
+shape = SubResource("SphereShape3D_pr1ej")
+
+[node name="Villico 5" type="CSGBox3D" parent="NPC" unique_id=1327869115]
+transform = Transform3D(0.7170931, 0, -0.6969774, 0, 1, 0, 0.6969774, 0, 0.7170931, -21.763302, 9.227807, -35.478897)
+
+[node name="Interactible" parent="NPC/Villico 5" unique_id=1908806980 instance=ExtResource("3_u5sy4")]
+timeline = ExtResource("26_v2yb1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Villico 5/Interactible" unique_id=117512039]
+shape = SubResource("SphereShape3D_pr1ej")
+
+[node name="Monello 1" type="CSGBox3D" parent="NPC" unique_id=1634180117]
+transform = Transform3D(0.7170931, 0, -0.6969774, 0, 1, 0, 0.6969774, 0, 0.7170931, 7.930354, 10.241566, -19.934902)
+
+[node name="Interactible" parent="NPC/Monello 1" unique_id=78662612 instance=ExtResource("3_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5402966, 0, 1.4970894)
+timeline = ExtResource("30_02fa5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Monello 1/Interactible" unique_id=79730304]
+shape = SubResource("SphereShape3D_pr1ej")
+
+[node name="Monello 2" type="CSGBox3D" parent="NPC" unique_id=393557570]
+transform = Transform3D(0.7170931, 0, -0.6969774, 0, 1, 0, 0.6969774, 0, 0.7170931, 7.020981, 10.294458, -19.277912)
+
+[node name="Villico 6" type="CSGBox3D" parent="NPC" unique_id=416279659]
+transform = Transform3D(-0.412071, 0, -0.91115177, 0, 1, 0, 0.91115177, 0, -0.412071, 19.227982, 10.596373, -35.64376)
+
+[node name="Interactible" parent="NPC/Villico 6" unique_id=717611685 instance=ExtResource("3_u5sy4")]
+timeline = ExtResource("31_nepv3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Villico 6/Interactible" unique_id=641949308]
+shape = SubResource("SphereShape3D_pr1ej")
+
+[node name="Mazapégul" type="CSGBox3D" parent="NPC" unique_id=1501590508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8080447, 11.317618, -9.558151)
+
+[node name="interactible" parent="NPC/Mazapégul" unique_id=132850483 instance=ExtResource("3_u5sy4")]
+timeline = ExtResource("32_7025r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Mazapégul/interactible" unique_id=585657216]
+shape = SubResource("SphereShape3D_m4url")
 
 [node name="Path3D" type="Path3D" parent="NPC" unique_id=826171985]
 rotation_edit_mode = 2
@@ -152,7 +282,7 @@ automatic_play = true
 shape = SubResource("SphereShape3D_gee14")
 
 [node name="Umarell" type="CSGBox3D" parent="NPC" unique_id=537784218]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7383866, 0.8457434, -5.954705)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5457993, 10.659636, -28.01906)
 size = Vector3(1, 1.6054688, 1)
 
 [node name="interactible" parent="NPC/Umarell" unique_id=424773282 instance=ExtResource("3_u5sy4")]
@@ -201,12 +331,12 @@ size = Vector3(24.964844, 0.115478516, 23.318604)
 
 [node name="Player" parent="." unique_id=1338356758 instance=ExtResource("1_uwrxv")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.916343, -6.015647)
 collision_layer = 3
 collision_mask = 3
 
 [node name="CameraPlayer" type="Node3D" parent="." unique_id=386739997 node_paths=PackedStringArray("follow_targets")]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 6.9071064, 5.7071066)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 16.62345, -0.30854017)
 top_level = true
 script = ExtResource("2_lnu2h")
 follow_mode = 3
@@ -221,7 +351,7 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1455375748]
 unique_name_in_owner = true
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 6.9071064, 5.7071066)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 16.62345, -0.30854017)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1699421758]

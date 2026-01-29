@@ -1,10 +1,22 @@
 extends Node3D
 
-@onready var camera: Camera3D = %Camera3D
-@onready var player: CharacterBody3D = %Player
+var camera
+var player
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+#func _on_enter_tree():
+	#camera = %Camera3D
+	#player = %Player
+
+func _ready() -> void:
+	camera = Global.camera
+	player = Global.player
+
+func _process(_delta: float) -> void:
+	
+	#if camera == null:
+		#camera = get_tree().get("%Camera3D")
+	#if player == null:
+		#player = get_tree().get("%Player")
 	
 	var camera_distance = camera.global_position - global_position if camera != null else Vector3.ZERO
 	var player_distance = player.global_position - global_position if player != null else Vector3.ZERO

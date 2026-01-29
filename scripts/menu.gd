@@ -10,7 +10,7 @@ func _ready() -> void:
 	main_panel.hide()
 	options_panel.hide()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		
 		if GameState.current_game_status == GameState.State.ATTACK:

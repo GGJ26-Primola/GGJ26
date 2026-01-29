@@ -11,9 +11,9 @@ func _ready() -> void:
 		return
 	value = db_to_linear(AudioServer.get_bus_volume_db(audio_bus_id))
 
-func _on_value_changed(value: float) -> void:
+func _on_value_changed(value_to_change: float) -> void:
 	if audio_bus_id < 0:
 		print("Nessun bus trovato col nome " + audio_bus_name)
 		return
-	var db = linear_to_db(value)
+	var db = linear_to_db(value_to_change)
 	AudioServer.set_bus_volume_db(audio_bus_id, db)
