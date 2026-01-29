@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://sqv47xwpwhtk"
+path="res://.godot/imported/WITCH ATTACK2.wav-0f805aac9bdea936de8421f64d650294.sample"
+
+[deps]
+
+source_file="res://assets/Music/SFX/WITCH ATTACK2.wav"
+dest_files=["res://.godot/imported/WITCH ATTACK2.wav-0f805aac9bdea936de8421f64d650294.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
