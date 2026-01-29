@@ -71,6 +71,7 @@ directories/dtl_directory={
 "1[Zona1] V63 Quest gatto 3": "res://dialogic/Safe zone/1[Zona1] V63 Quest gatto 3.dtl",
 "1[Zona1] V64 Quest gatto 4": "res://dialogic/Safe zone/1[Zona1] V64 Quest gatto 4.dtl",
 "1[Zona1] V65 Quest gatto END": "res://dialogic/Safe zone/1[Zona1] V65 Quest gatto END.dtl",
+"2 Secondo incontro Mazapégul": "res://dialogic/Cemetery/2 Secondo incontro Mazapégul.dtl",
 "GrimBalduzzi": "res://dialogic/Cemetery/GrimBalduzzi.dtl",
 "Incontro con Mazanpegul": "res://dialogic/Safe zone/Incontro con Mazanpegul.dtl",
 "miao": "res://dialogic/miao.dtl"
