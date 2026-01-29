@@ -124,8 +124,7 @@ rotation_edit_mode = 2
 curve = SubResource("Curve3D_ssvqc")
 
 [node name="CatPathFollow3D" type="PathFollow3D" parent="NPC/Path3D" unique_id=1932769141]
-transform = Transform3D(0.9999945, 0, 0, 0, 1, 0, 0, 0, 0.9999945, 1.1542286, 0, -8.845772)
-progress = 1.6323297
+transform = Transform3D(0.9999945, 0, 0, 0, 1, 0, 0, 0, 0.9999945, 0, 0, -10)
 rotation_mode = 0
 
 [node name="Cat2" parent="NPC/Path3D/CatPathFollow3D" unique_id=972012601 instance=ExtResource("2_0tnpc")]

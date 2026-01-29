@@ -81,6 +81,12 @@ layout/style_directory={
 "conversation": "res://dialogic/styles/conversation.tres"
 }
 variables={
+"current_mask": "default",
+"mask_boss": false,
+"mask_cat": false,
+"mask_default": true,
+"mask_ftp1": false,
+"mask_pest": false,
 "meow": 0,
 "stick": false,
 "umarell_hitted": false

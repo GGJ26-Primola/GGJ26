@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://ijrrf5ej7e13"]
+
+[ext_resource type="Texture2D" uid="uid://c4csj6jjykbep" path="res://assets/UI/mask.png" id="1_hj2ta"]
+[ext_resource type="Texture2D" uid="uid://bxue1yvuq8tky" path="res://assets/UI/conversation_border.png" id="1_qw0r6"]
+[ext_resource type="Script" uid="uid://djnht1345m1qr" path="res://scripts/inventory.gd" id="1_ty45s"]
+
+[node name="Inventory" type="Control" unique_id=874561363]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ty45s")
+metadata/_edit_vertical_guides_ = [576.0]
+
+[node name="Mask" type="TextureRect" parent="." unique_id=43313674]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -337.5
+offset_top = 100.0
+offset_right = 337.5
+offset_bottom = 195.0
+grow_horizontal = 2
+texture = ExtResource("1_hj2ta")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Mask" unique_id=1172528938]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -1.0530001
+anchor_right = 0.5
+anchor_bottom = -1.0530001
+offset_top = 100.03501
+offset_right = 486.0
+offset_bottom = 195.035
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Mask/HBoxContainer" unique_id=1011986328]
+layout_mode = 2
+texture = ExtResource("1_qw0r6")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Mask/HBoxContainer/TextureRect" unique_id=2024850456]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "1"
+horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Mask/HBoxContainer" unique_id=75200684]
+layout_mode = 2
+texture = ExtResource("1_qw0r6")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Mask/HBoxContainer/TextureRect2" unique_id=236939069]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -34.5
+offset_right = 20.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "2"
+horizontal_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Mask/HBoxContainer" unique_id=688523549]
+layout_mode = 2
+texture = ExtResource("1_qw0r6")
+expand_mode = 2
+
+[node name="Label3" type="Label" parent="Mask/HBoxContainer/TextureRect3" unique_id=1474216509]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -34.5
+offset_right = 20.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "3"
+horizontal_alignment = 1
+
+[node name="TextureRect4" type="TextureRect" parent="Mask/HBoxContainer" unique_id=748877455]
+layout_mode = 2
+texture = ExtResource("1_qw0r6")
+expand_mode = 2
+
+[node name="Label4" type="Label" parent="Mask/HBoxContainer/TextureRect4" unique_id=1495423411]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -34.5
+offset_right = 20.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "4"
+horizontal_alignment = 1
+
+[node name="TextureRect5" type="TextureRect" parent="Mask/HBoxContainer" unique_id=811582266]
+layout_mode = 2
+texture = ExtResource("1_qw0r6")
+expand_mode = 2
+
+[node name="Label5" type="Label" parent="Mask/HBoxContainer/TextureRect5" unique_id=1480761006]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -34.5
+offset_right = 20.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "5"
+horizontal_alignment = 1
