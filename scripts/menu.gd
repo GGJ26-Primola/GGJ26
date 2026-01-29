@@ -17,6 +17,8 @@ func _process(delta: float) -> void:
 			return
 		elif GameState.current_game_status == GameState.State.TALKING:
 			return
+		elif GameState.current_game_status == GameState.State.INVENTORY:
+			return
 		elif GameState.current_game_status == GameState.State.PAUSE:
 			_on_play_button_pressed()
 		else:

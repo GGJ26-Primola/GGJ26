@@ -33,7 +33,6 @@ func set_animation(direction: Vector2) -> void:
 	
 	var animState = $AnimationTree.get("parameters/playback")
 	animState.travel(type_of_walking)
-	
 
 func hitted() -> void:
 	print("Game Over")
