@@ -81,8 +81,8 @@ layout/style_directory={
 "conversation": "res://dialogic/styles/conversation.tres"
 }
 variables={
-"meow": "",
-"stick": true,
+"meow": 0,
+"stick": false,
 "umarell_hitted": false
 }
 extensions_folder="res://addons/dialogic_additions"
