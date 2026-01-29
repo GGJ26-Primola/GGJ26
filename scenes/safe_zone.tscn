@@ -5,21 +5,47 @@
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_tq04a"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_u50r8"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_v8mog"]
+[ext_resource type="Script" uid="uid://vojqxe207xwt" path="res://addons/zylann.hterrain/hterrain.gd" id="6_al4nf"]
+[ext_resource type="Resource" uid="uid://dkym263iq42h1" path="res://data_terrain/data.hterrain" id="7_v8mog"]
+[ext_resource type="Script" uid="uid://bt278ef3qrx7h" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="8_8s1qs"]
+[ext_resource type="Texture2D" uid="uid://doftwvjcf25uv" path="res://assets/textures/Grass_01.png" id="9_qfqvm"]
+[ext_resource type="Texture2D" uid="uid://67r1njq1jq0c" path="res://assets/textures/360_F_603980502_qIAJ5hytZnM0U4JMmwiY1C71Qj3BEHVV.jpg" id="10_8s1qs"]
+[ext_resource type="PackedScene" uid="uid://b6gnfnxf0ghj" path="res://scenes/arch_gate.tscn" id="11_5qfcg"]
+[ext_resource type="PackedScene" uid="uid://7iq3jpnw00w7" path="res://assets/Mesh Village/Casa1.glb" id="12_8s1qs"]
+[ext_resource type="PackedScene" uid="uid://cajdblliud01w" path="res://assets/Mesh Village/Barile1.glb" id="13_b3c7i"]
+[ext_resource type="PackedScene" uid="uid://c6wi5nthdn08o" path="res://scenes/interactible.tscn" id="14_v6h63"]
+[ext_resource type="Resource" uid="uid://cgxjwph0mocqs" path="res://dialogic/Safe zone/1[Zona1] V5 Umarello.dtl" id="15_vhcfq"]
+[ext_resource type="PackedScene" uid="uid://btg3dwmousmcq" path="res://scenes/destructible.tscn" id="16_v6h63"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_al4nf"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="Sky" id="Sky_uwrxv"]
+[sub_resource type="Sky" id="Sky_5qfcg"]
 sky_material = SubResource("ProceduralSkyMaterial_al4nf")
 
 [sub_resource type="Environment" id="Environment_5qfcg"]
 background_mode = 2
-sky = SubResource("Sky_uwrxv")
+sky = SubResource("Sky_5qfcg")
 tonemap_mode = 2
 
 [sub_resource type="Resource" id="Resource_8s1qs"]
 script = ExtResource("4_u50r8")
+
+[sub_resource type="Resource" id="Resource_v8mog"]
+script = ExtResource("8_8s1qs")
+mode = 0
+textures = [[ExtResource("9_qfqvm"), ExtResource("10_8s1qs"), null], [null, null, null]]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ocx5q"]
+top_radius = 2.0
+bottom_radius = 2.0
+height = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vhcfq"]
+radius = 2.5951588
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ocx5q"]
 
 [node name="SafeZone" type="Node" unique_id=1897293832]
 
@@ -30,17 +56,18 @@ scale = Vector2(1, 1)
 environment = SubResource("Environment_5qfcg")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1122504620]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 2.884983, -156.19872)
+light_energy = 0.5
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=144814704 instance=ExtResource("2_4ijr1")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7045717, 4.51527, 0.6878681)
 collision_layer = 3
 collision_mask = 3
 
 [node name="CameraPlayer" type="Node3D" parent="." unique_id=2105263332 node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 6.2, 5)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, -0.7045717, 9.51527, 5.687868)
 top_level = true
 script = ExtResource("3_tq04a")
 follow_mode = 2
@@ -54,7 +81,7 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1424948690]
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 6.2, 5)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, -0.7045717, 9.51527, 5.687868)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1426049265]
@@ -63,6 +90,71 @@ process_physics_priority = 300
 script = ExtResource("5_v8mog")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1259922609]
-use_collision = true
-size = Vector3(24.964844, 0.115478516, 23.318604)
+[node name="Lev" type="Node3D" parent="." unique_id=254732565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.77166, 0, 28.508984)
+
+[node name="Terrain" type="Node3D" parent="Lev" unique_id=979507050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.35095, 1.9947815, -57.60821)
+
+[node name="HTerrain" type="Node3D" parent="Lev/Terrain" unique_id=1378301239]
+script = ExtResource("6_al4nf")
+centered = true
+_terrain_data = ExtResource("7_v8mog")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_v8mog")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+metadata/_custom_type_script = "uid://vojqxe207xwt"
+
+[node name="Misc" type="Node3D" parent="Lev/Terrain/HTerrain" unique_id=1373467095]
+
+[node name="arch_gate" parent="Lev/Terrain/HTerrain/Misc" unique_id=1156300368 instance=ExtResource("11_5qfcg")]
+transform = Transform3D(0.60287386, 0, 0.7978365, 0, 1, 0, -0.7978365, 0, 0.60287386, -61.077744, 2.1361766, 22.55244)
+
+[node name="Casa1" parent="Lev/Terrain/HTerrain/Misc" unique_id=1452605416 instance=ExtResource("12_8s1qs")]
+transform = Transform3D(0.29620218, 0, 0.6890315, 0, 0.7500001, 0, -0.6890315, 0, 0.29620218, -21.778158, 0.45522785, 14.58372)
+
+[node name="Casa2" parent="Lev/Terrain/HTerrain/Misc" unique_id=2097704796 instance=ExtResource("12_8s1qs")]
+transform = Transform3D(0.2695701, 0, -0.69988006, 0, 0.7500001, 0, 0.69988006, 0, 0.2695701, 21.593784, 3.191762, 4.5367413)
+
+[node name="Casa3" parent="Lev/Terrain/HTerrain/Misc" unique_id=97455346 instance=ExtResource("12_8s1qs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.62449, 3.4914842, -24.789894)
+
+[node name="Barile1" parent="Lev/Terrain/HTerrain/Misc" unique_id=525089347 instance=ExtResource("13_b3c7i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.587555, 0.49981117, 23.167355)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lev/Terrain/HTerrain/Misc" unique_id=201389623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2133656, 0)
+mesh = SubResource("CylinderMesh_ocx5q")
+
+[node name="Casa4" parent="Lev/Terrain/HTerrain/Misc" unique_id=1235373896 instance=ExtResource("12_8s1qs")]
+transform = Transform3D(-0.74962425, 0, 0.023741215, 0, 0.7500001, 0, -0.023741215, 0, -0.74962425, 16.926981, 2.9540253, 26.254099)
+
+[node name="Casa5" parent="Lev/Terrain/HTerrain/Misc" unique_id=1768628348 instance=ExtResource("12_8s1qs")]
+transform = Transform3D(0.29620218, 0, 0.6890315, 0, 0.7500001, 0, -0.6890315, 0, 0.29620218, -21.778158, 0.45522785, 14.58372)
+
+[node name="NPCs" type="Node3D" parent="Lev/Terrain/HTerrain" unique_id=900616454]
+
+[node name="NPC" type="CSGBox3D" parent="Lev/Terrain/HTerrain/NPCs" unique_id=1262632974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5905528, 2.3079138, 4.013735)
+
+[node name="interactible" parent="Lev/Terrain/HTerrain/NPCs/NPC" unique_id=476685811 instance=ExtResource("14_v6h63")]
+timeline = ExtResource("15_vhcfq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lev/Terrain/HTerrain/NPCs/NPC/interactible" unique_id=931815508]
+shape = SubResource("SphereShape3D_vhcfq")
+
+[node name="Destructible" parent="Lev/Terrain/HTerrain/NPCs/NPC" unique_id=1808292629 instance=ExtResource("16_v6h63")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lev/Terrain/HTerrain/NPCs/NPC/Destructible" unique_id=167708291]
+shape = SubResource("BoxShape3D_ocx5q")

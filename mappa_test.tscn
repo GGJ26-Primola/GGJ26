@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://buxqotxp6eqsg"]
+
+[ext_resource type="Script" uid="uid://vojqxe207xwt" path="res://addons/zylann.hterrain/hterrain.gd" id="1_u561m"]
+[ext_resource type="Resource" uid="uid://dkym263iq42h1" path="res://data_terrain/data.hterrain" id="2_7c4fx"]
+[ext_resource type="Script" uid="uid://bt278ef3qrx7h" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_6ud6o"]
+[ext_resource type="Texture2D" uid="uid://doftwvjcf25uv" path="res://assets/textures/Grass_01.png" id="4_plbj2"]
+[ext_resource type="Texture2D" uid="uid://dnk4w1o5likrw" path="res://assets/textures/Grass005_1K-PNG_Displacement.png" id="5_80q85"]
+[ext_resource type="PackedScene" uid="uid://d4j24xtuynqto" path="res://scenes/player.tscn" id="6_va85g"]
+[ext_resource type="PackedScene" uid="uid://bqo0cfd63o4nl" path="res://scenes/menu.tscn" id="7_v0aua"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="8_gu5j8"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="9_3sd6i"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="10_kd0i0"]
+
+[sub_resource type="Resource" id="Resource_4v3fe"]
+script = ExtResource("3_6ud6o")
+mode = 0
+textures = [[ExtResource("4_plbj2"), ExtResource("5_80q85"), null, null], [null, null, null, null]]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p5ged"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_b3c7i"]
+sky_material = SubResource("ProceduralSkyMaterial_p5ged")
+
+[sub_resource type="Environment" id="Environment_do1dg"]
+background_mode = 2
+sky = SubResource("Sky_b3c7i")
+tonemap_mode = 2
+
+[sub_resource type="Resource" id="Resource_fnobq"]
+script = ExtResource("9_3sd6i")
+
+[node name="Mappa" type="Node3D" unique_id=2075202572]
+
+[node name="HTerrain" type="Node3D" parent="." unique_id=790597949]
+script = ExtResource("1_u561m")
+centered = true
+_terrain_data = ExtResource("2_7c4fx")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_4v3fe")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+metadata/_custom_type_script = "uid://vojqxe207xwt"
+
+[node name="Menu" parent="." unique_id=803179413 instance=ExtResource("7_v0aua")]
+scale = Vector2(1, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1139172467]
+environment = SubResource("Environment_do1dg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=436432671]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 49.863113, -156.19872)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="Player2" parent="." unique_id=1990275929 instance=ExtResource("6_va85g")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.83556, 60.750156, 15.743759)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CameraPlayer" type="Node3D" parent="." unique_id=1382291535 node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 5, 5)
+top_level = true
+script = ExtResource("8_gu5j8")
+follow_mode = 2
+follow_target = NodePath("")
+tween_resource = SubResource("Resource_fnobq")
+follow_offset = Vector3(0, 5, 5)
+follow_damping = true
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1741911732]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 5, 5)
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=762720764]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("10_kd0i0")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=381820518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 58.947475, 13.13324)
+use_collision = true
+size = Vector3(24.964844, 0.115478516, 23.318604)
