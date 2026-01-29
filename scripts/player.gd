@@ -42,6 +42,9 @@ func set_animation(directon: Vector2) -> void:
 			y_direction = "back"
 	animated_sprite.play(type_of_walking + "_" + y_direction)
 
+func hitted() -> void:
+	print("Game Over")
+
 func _physics_process(delta: float) -> void:
 	
 	# Add the gravity.

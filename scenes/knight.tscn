@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bpl470i2x3dpm"]
+
+[ext_resource type="Texture2D" uid="uid://btah2ao4a4sns" path="res://assets/2D/knight_idle.png" id="1_dp28g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i0j8"]
+atlas = ExtResource("1_dp28g")
+region = Rect2(0, 0, 158, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxgmm"]
+atlas = ExtResource("1_dp28g")
+region = Rect2(158, 0, 158, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dyjn"]
+atlas = ExtResource("1_dp28g")
+region = Rect2(316, 0, 158, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fsgc"]
+atlas = ExtResource("1_dp28g")
+region = Rect2(474, 0, 158, 225)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_swm0g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3i0j8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxgmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dyjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fsgc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Knight" type="Node3D" unique_id=156773684]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1386599287]
+pixel_size = 0.015
+sprite_frames = SubResource("SpriteFrames_swm0g")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.85727817

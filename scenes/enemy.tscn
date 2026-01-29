@@ -4,9 +4,6 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_md0e3"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_7p1mj"]
-radius = 0.25
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_md0e3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7p1mj"]
@@ -14,16 +11,14 @@ radius = 0.25
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_md0e3"]
 radius = 0.25
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7p1mj"]
+radius = 0.25
+
 [node name="Enemy" type="CharacterBody3D" unique_id=890366818]
 script = ExtResource("1_7p1mj")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=348403177]
+[node name="GFX" type="MeshInstance3D" parent="." unique_id=348403177]
 mesh = SubResource("BoxMesh_md0e3")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=52955083]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 1)
-mesh = SubResource("CapsuleMesh_7p1mj")
-skeleton = NodePath("../CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=366510073]
 shape = SubResource("BoxShape3D_md0e3")
@@ -43,4 +38,10 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 1)
 shape = SubResource("CapsuleShape3D_md0e3")
 
+[node name="GFX" type="MeshInstance3D" parent="Weapon" unique_id=52955083]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 1)
+mesh = SubResource("CapsuleMesh_7p1mj")
+skeleton = NodePath("../../CollisionShape3D")
+
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="Weapon" to="." method="_on_weapon_area_entered"]

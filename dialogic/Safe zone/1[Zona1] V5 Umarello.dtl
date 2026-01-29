@@ -1,10 +1,14 @@
 # Umarell sta vicino alla fontana, urlando improperi a tutti, il dialogo parte da lontano. 
+if {umarell_hitted} == true:
+	Umarell: ...
+	Umarell: Why?
+	[end_timeline]
 if {stick} == true:
 	Umarell: I have nothing to teach you anymore.
 	Umarell: You are now the master!
 	[end_timeline]
 Umarell: Pah! I am tired of all this! Things are tumbling down and nobody is doing a damn thing about it!
-[wait time="2.0"]
+[wait time="0.5"]
 Umarell: Pah! Pthooey! If only i were still eighty years old, i'd whip some sense into everyone!
 - Go away.
 	[end_timeline]
