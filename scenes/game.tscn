@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://btg3dwmousmcq" path="res://scenes/destructible.tscn" id="8_dinhu"]
 [ext_resource type="Resource" uid="uid://cgxjwph0mocqs" path="res://dialogic/Safe zone/1[Zona1] V5 Umarello.dtl" id="11_ca42v"]
 [ext_resource type="PackedScene" uid="uid://dw350qjqwdwki" path="res://scenes/music_changer.tscn" id="18_ssvqc"]
+[ext_resource type="PackedScene" uid="uid://bpl470i2x3dpm" path="res://scenes/knight.tscn" id="19_264po"]
+[ext_resource type="Resource" uid="uid://t4q67befekfr" path="res://dialogic/Safe zone/1[Zona1] Dialogo con villico 5.dtl" id="20_1kice"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ssvqc"]
 clip_count = 4
@@ -72,6 +74,10 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_264po"]
+radius = 1.8525391
+height = 4.337036
 
 [node name="Game" type="Node" unique_id=803510040]
 
@@ -194,5 +200,16 @@ curve = SubResource("Curve3D_ssvqc")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1932769141]
 transform = Transform3D(-4.3711296e-08, 0, -0.99999785, 0, 1, 0, 0.99999785, 0, -4.3711296e-08, 0, 0, 0)
+
+[node name="Knight" parent="." unique_id=156773684 instance=ExtResource("19_264po")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.776409, 1.5390229, 0)
+
+[node name="Interactible" parent="Knight" unique_id=1026249889 instance=ExtResource("3_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2517471, 0)
+timeline = ExtResource("20_1kice")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Knight/Interactible" unique_id=1839212111]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1594849, 0)
+shape = SubResource("CapsuleShape3D_264po")
 
 [connection signal="attacked" from="Umarell/Destructible" to="GameManager" method="_on_umarell_attacked"]
