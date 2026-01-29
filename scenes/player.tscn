@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://chbvpac5f8hxa" path="res://scripts/player.gd" id="1_dqkch"]
 [ext_resource type="PackedScene" uid="uid://npoikieeri5k" path="res://scenes/weapon.tscn" id="3_qhqgy"]
 [ext_resource type="AudioStream" uid="uid://bcg1e8edul77v" path="res://assets/Music/SFX/step.wav" id="4_dqkch"]
-[ext_resource type="Texture2D" uid="uid://cfcb7dbde2v7b" path="res://assets/2D/PG/idle_back.png" id="5_smehm"]
-[ext_resource type="Texture2D" uid="uid://dc7m5a20pqv7o" path="res://assets/2D/PG/idle_front.png" id="6_ur7pv"]
-[ext_resource type="Texture2D" uid="uid://3d84t5o0ti2w" path="res://assets/2D/PG/walk_back.png" id="7_y4r1p"]
-[ext_resource type="Texture2D" uid="uid://bups6ijwspmnj" path="res://assets/2D/PG/walk_front.png" id="8_d2wvv"]
+[ext_resource type="Texture2D" uid="uid://d31vpgir843jg" path="res://assets/2D/PG/default_idle_back.png" id="5_smehm"]
+[ext_resource type="Texture2D" uid="uid://biursjthe8mo4" path="res://assets/2D/PG/default_idle_front.png" id="6_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://c8xawa5tkbrjh" path="res://assets/2D/PG/default_walk_back.png" id="7_y4r1p"]
+[ext_resource type="Texture2D" uid="uid://jpa66xov2oy2" path="res://assets/2D/PG/default_walk_front.png" id="8_d2wvv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
 atlas = ExtResource("5_smehm")

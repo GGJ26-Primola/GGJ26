@@ -5,6 +5,7 @@ var current_item : float
 const initial_position = 384.5
 
 func _ready() -> void:
+	hide()
 	inventory_size = container.get_child_count()
 	set_current_item()
 	container.position.x = initial_position - current_item * 98
@@ -22,6 +23,23 @@ func set_current_item() -> void:
 	elif Dialogic.VAR.current_mask == "boss":
 		current_item = 5.0
 
+func equip_mask() -> void:
+	if current_item == 1 and Dialogic.VAR.mask_default:
+		Dialogic.VAR.current_mask = "default"
+	elif current_item == 2 and Dialogic.VAR.mask_cat:
+		Dialogic.VAR.current_mask = "cat"
+	elif current_item == 3 and Dialogic.VAR.mask_ftp1:
+		Dialogic.VAR.current_mask = "ftp1"
+	elif current_item == 4 and Dialogic.VAR.mask_pest:
+		Dialogic.VAR.current_mask = "pest"
+	elif current_item == 5 and Dialogic.VAR.mask_boss:
+		Dialogic.VAR.current_mask = "boss"
+	else:
+		return
+	
+	GameState.current_game_status = GameState.State.PLAYING
+	hide()
+
 func move_container() -> void:
 	var tween = create_tween()
 	tween.tween_property(container, "position:x",
@@ -34,7 +52,12 @@ func display_mask() -> void:
 	container.get_child(3).get_child(0).visible = Dialogic.VAR.mask_pest
 	container.get_child(4).get_child(0).visible = Dialogic.VAR.mask_boss
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
+	
+	if Input.is_action_just_pressed("inventory") and GameState.can_inventory():
+		show()
+		GameState.current_game_status = GameState.State.INVENTORY
+	
 	if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
 		var direction = Input.get_axis("left","right")
 		direction = sign(direction)
@@ -43,10 +66,5 @@ func _physics_process(delta: float) -> void:
 			return
 		current_item += direction
 		move_container()
-
-func select_item() -> void:
-	if current_item == 1 and Dialogic.VAR.mask_default:
-		#TODO: seleziona mascherina
-		pass
-	elif current_item == 2 and Dialogic.VAR.mask_cat:
-		pass
+	elif Input.is_action_just_pressed("dialogic_default_action"):
+		equip_mask()

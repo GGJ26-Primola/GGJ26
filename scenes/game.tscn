@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cm4noj7flak4p" path="res://scenes/enemy.tscn" id="16_5newe"]
 [ext_resource type="PackedScene" uid="uid://dw350qjqwdwki" path="res://scenes/music_changer.tscn" id="18_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://bpl470i2x3dpm" path="res://scenes/knight.tscn" id="19_264po"]
+[ext_resource type="PackedScene" uid="uid://ijrrf5ej7e13" path="res://scenes/inventory.tscn" id="19_bt5mj"]
 [ext_resource type="Resource" uid="uid://t4q67befekfr" path="res://dialogic/Safe zone/1[Zona1] Dialogo con villico 5.dtl" id="20_1kice"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ssvqc"]
@@ -183,6 +184,8 @@ script = null
 
 [node name="Menu" parent="." unique_id=803179413 instance=ExtResource("2_p57ef")]
 scale = Vector2(1, 1)
+
+[node name="Inventory" parent="." unique_id=874561363 instance=ExtResource("19_bt5mj")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=789237425]
 environment = SubResource("Environment_yqjtg")

@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfcb7dbde2v7b"
-path.s3tc="res://.godot/imported/idle_back.png-c931a4659d6fbe29d84fdcf17e8a0574.s3tc.ctex"
+uid="uid://biursjthe8mo4"
+path="res://.godot/imported/default_idle_front.png-15c506fd9e45018bc2b2d964180e327c.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2D/PG/idle_back.png"
-dest_files=["res://.godot/imported/idle_back.png-c931a4659d6fbe29d84fdcf17e8a0574.s3tc.ctex"]
+source_file="res://assets/2D/PG/default_idle_front.png"
+dest_files=["res://.godot/imported/default_idle_front.png-15c506fd9e45018bc2b2d964180e327c.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
