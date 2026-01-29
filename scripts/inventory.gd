@@ -58,6 +58,9 @@ func _process(delta: float) -> void:
 		show()
 		GameState.current_game_status = GameState.State.INVENTORY
 	
+	if GameState.current_game_status != GameState.State.INVENTORY:
+		return
+	
 	if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
 		var direction = Input.get_axis("left","right")
 		direction = sign(direction)

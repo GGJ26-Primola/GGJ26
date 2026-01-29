@@ -28,7 +28,8 @@ func set_animation(directon: Vector2) -> void:
 		else:
 			last_y_direction = false
 			y_direction = "back"
-	animated_sprite.play(Dialogic.VAR.current_mask + "_" + type_of_walking + "_" + y_direction)
+	#Dialogic.VAR.current_mask + "_" + 
+	animated_sprite.play(type_of_walking + "_" + y_direction)
 
 func hitted() -> void:
 	print("Game Over")
