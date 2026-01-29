@@ -40,6 +40,7 @@ func display_mask() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
 		var direction = Input.get_axis("left","right")
+		direction = sign(direction)
 		var temp_item = current_item + direction
 		if temp_item < 1 or temp_item > inventory_size:
 			return
