@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://clbgrsnndj50o"]
+
+[ext_resource type="PackedScene" uid="uid://d4j24xtuynqto" path="res://scenes/player.tscn" id="1_xmt2e"]
+[ext_resource type="PackedScene" uid="uid://ctio65mmg2fab" path="res://scenes/boss.tscn" id="2_jiv1s"]
+[ext_resource type="Script" uid="uid://dh0p4hudw1jkb" path="res://scripts/music_manager.gd" id="2_lymcn"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_byl7a"]
+[ext_resource type="AudioStream" uid="uid://b51wiu02jdl1b" path="res://assets/Music/safe_zone.wav" id="3_uluxr"]
+[ext_resource type="AudioStream" uid="uid://be2mgdfg87nm3" path="res://assets/Music/cemetery.wav" id="4_1286f"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_s17tx"]
+[ext_resource type="AudioStream" uid="uid://ckssm5iwqrukc" path="res://assets/Music/wood.wav" id="5_0mx00"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_3o5e3"]
+[ext_resource type="AudioStream" uid="uid://dxhsw30veqa12" path="res://assets/Music/boss.wav" id="6_e317x"]
+[ext_resource type="Script" uid="uid://co08gdsib6vih" path="res://scripts/game_manager.gd" id="6_s17tx"]
+[ext_resource type="PackedScene" uid="uid://bqo0cfd63o4nl" path="res://scenes/menu.tscn" id="18_h771b"]
+[ext_resource type="PackedScene" uid="uid://ijrrf5ej7e13" path="res://scenes/inventory.tscn" id="19_bc2po"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ssvqc"]
+clip_count = 4
+clip_0/name = &"safe"
+clip_0/stream = ExtResource("3_uluxr")
+clip_0/auto_advance = 0
+clip_1/name = &"cemetery"
+clip_1/stream = ExtResource("4_1286f")
+clip_1/auto_advance = 0
+clip_2/name = &"woods"
+clip_2/stream = ExtResource("5_0mx00")
+clip_2/auto_advance = 0
+clip_3/name = &"boss"
+clip_3/stream = ExtResource("6_e317x")
+clip_3/auto_advance = 0
+_transitions = {
+Vector2i(-1, -1): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 0,
+"to_time": 0
+}
+}
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8cj0n"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_kvpfn"]
+sky_material = SubResource("ProceduralSkyMaterial_8cj0n")
+
+[sub_resource type="Environment" id="Environment_yqjtg"]
+background_mode = 2
+sky = SubResource("Sky_kvpfn")
+tonemap_mode = 2
+
+[sub_resource type="Resource" id="Resource_iywne"]
+script = ExtResource("4_s17tx")
+
+[node name="Game" type="Node" unique_id=803510040]
+
+[node name="GameManager" type="Node" parent="." unique_id=1908884894]
+unique_name_in_owner = true
+script = ExtResource("6_s17tx")
+
+[node name="Musics" type="Node" parent="." unique_id=1845575960]
+unique_name_in_owner = true
+script = ExtResource("2_lymcn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Musics" unique_id=1083764904]
+stream = SubResource("AudioStreamInteractive_ssvqc")
+autoplay = true
+bus = &"Music"
+
+[node name="Menu" parent="." unique_id=803179413 instance=ExtResource("18_h771b")]
+scale = Vector2(1, 1)
+
+[node name="Inventory" parent="." unique_id=874561363 instance=ExtResource("19_bc2po")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=789237425]
+environment = SubResource("Environment_yqjtg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1992286194]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=414300921]
+use_collision = true
+size = Vector3(24.964844, 0.115478516, 12)
+
+[node name="Player" parent="." unique_id=1338356758 instance=ExtResource("1_xmt2e")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CameraPlayer" type="Node3D" parent="." unique_id=386739997 node_paths=PackedStringArray("follow_targets")]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 6.9071064, 5.7071066)
+top_level = true
+script = ExtResource("3_byl7a")
+follow_mode = 3
+follow_targets = [NodePath("../Player")]
+tween_resource = SubResource("Resource_iywne")
+follow_offset = Vector3(0, 5, 5)
+follow_damping = true
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1455375748]
+unique_name_in_owner = true
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 6.9071064, 5.7071066)
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1699421758]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("5_3o5e3")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="Boss" parent="." unique_id=1656814271 instance=ExtResource("2_jiv1s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11)
