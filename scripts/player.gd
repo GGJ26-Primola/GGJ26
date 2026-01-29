@@ -7,7 +7,12 @@ extends CharacterBody3D
 
 @onready var game_manager: Node = %GameManager
 @onready var step_player: AudioStreamPlayer = $StepPlayer
-@onready var animated_sprite: AnimatedSprite3D = $AnimatedSprite3D
+#@onready var animated_sprite: AnimatedSprite3D = $AnimatedSprite3D
+@onready var animation_tree: AnimationTree = $AnimationTree
+@onready var spreadsheet: Sprite3D = $spreadsheet
+
+
+var sprite_folder = "res://assets/2D/PG/"
 
 const SPEED = 5.0
 const STEP_DURATION = 0.3
@@ -16,19 +21,19 @@ const STEP_DURATION = 0.3
 var current_step_duration : float = 0
 var last_y_direction : bool = false
 
-func set_animation(directon: Vector2) -> void:
-	var type_of_walking = "idle"
-	var y_direction = "front" if last_y_direction == true else "back"
-	if directon != Vector2.ZERO and is_on_floor():
-		animated_sprite.flip_h = directon.x < 0
-		type_of_walking = "walk"
-		if directon.y >= 0:
-			last_y_direction = true
-			y_direction = "front"
-		else:
-			last_y_direction = false
-			y_direction = "back"
-	animated_sprite.play(Dialogic.VAR.current_mask + "_" + type_of_walking + "_" + y_direction)
+func set_animation(direction: Vector2) -> void:
+	var type_of_walking = "Idle"
+	#var y_direction = "front" if last_y_direction == true else "back"
+	if direction != Vector2.ZERO and is_on_floor():
+		animation_tree.set("parameters/Idle/blend_position", direction)
+		animation_tree.set("parameters/Walk/blend_position", direction)
+		type_of_walking = "Walk"
+		
+	spreadsheet.texture = load(sprite_folder + Dialogic.VAR.current_mask + "_spreadsheet.png")
+	
+	var animState = $AnimationTree.get("parameters/playback")
+	animState.travel(type_of_walking)
+	
 
 func hitted() -> void:
 	print("Game Over")
