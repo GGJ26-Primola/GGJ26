@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnk4w1o5likrw"
-path.s3tc="res://.godot/imported/Grass005_1K-PNG_Displacement.png-57e7577d109a8aee546b78b77e9800ab.s3tc.ctex"
+uid="uid://cgvhomv6ladst"
+path.s3tc="res://.godot/imported/StoneWall1_512.png-e22b21e40305bf2c94ceb98911f68927.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/Grass005_1K-PNG_Displacement.png"
-dest_files=["res://.godot/imported/Grass005_1K-PNG_Displacement.png-57e7577d109a8aee546b78b77e9800ab.s3tc.ctex"]
+source_file="res://assets/textures/StoneWall1_512.png"
+dest_files=["res://.godot/imported/StoneWall1_512.png-e22b21e40305bf2c94ceb98911f68927.s3tc.ctex"]
 
 [params]
 

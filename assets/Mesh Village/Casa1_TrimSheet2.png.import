@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnk4w1o5likrw"
-path.s3tc="res://.godot/imported/Grass005_1K-PNG_Displacement.png-57e7577d109a8aee546b78b77e9800ab.s3tc.ctex"
+uid="uid://b7xgrotlxab2b"
+path.s3tc="res://.godot/imported/Casa1_TrimSheet2.png-e8f4876424ffee9eb6b74a436f070a8d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "017bb6f569f80f15c86981ae927d4598"
+}
 
 [deps]
 
-source_file="res://assets/textures/Grass005_1K-PNG_Displacement.png"
-dest_files=["res://.godot/imported/Grass005_1K-PNG_Displacement.png-57e7577d109a8aee546b78b77e9800ab.s3tc.ctex"]
+source_file="res://assets/Mesh Village/Casa1_TrimSheet2.png"
+dest_files=["res://.godot/imported/Casa1_TrimSheet2.png-e8f4876424ffee9eb6b74a436f070a8d.s3tc.ctex"]
 
 [params]
 
