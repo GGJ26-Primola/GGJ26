@@ -11,7 +11,6 @@ extends CharacterBody3D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var spreadsheet: Sprite3D = $spreadsheet
 
-
 var sprite_folder = "res://assets/2D/PG/"
 
 const SPEED = 5.0
@@ -35,7 +34,7 @@ func set_animation(direction: Vector2) -> void:
 	animState.travel(type_of_walking)
 
 func hitted() -> void:
-	print("Game Over")
+	print("Game Over") #TODO
 
 func _physics_process(delta: float) -> void:
 	

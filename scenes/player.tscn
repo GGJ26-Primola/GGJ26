@@ -4,10 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dje5rr4n03rlf" path="res://assets/2D/PG/default_spreadsheet.png" id="2_smehm"]
 [ext_resource type="PackedScene" uid="uid://npoikieeri5k" path="res://scenes/weapon.tscn" id="3_qhqgy"]
 [ext_resource type="AudioStream" uid="uid://bcg1e8edul77v" path="res://assets/Music/SFX/step.wav" id="4_dqkch"]
-[ext_resource type="Texture2D" uid="uid://d31vpgir843jg" path="res://assets/2D/PG/default_idle_back.png" id="5_smehm"]
-[ext_resource type="Texture2D" uid="uid://biursjthe8mo4" path="res://assets/2D/PG/default_idle_front.png" id="6_ur7pv"]
-[ext_resource type="Texture2D" uid="uid://c8xawa5tkbrjh" path="res://assets/2D/PG/default_walk_back.png" id="7_y4r1p"]
-[ext_resource type="Texture2D" uid="uid://jpa66xov2oy2" path="res://assets/2D/PG/default_walk_front.png" id="8_d2wvv"]
 
 [sub_resource type="Animation" id="Animation_fjrip"]
 length = 0.001
@@ -233,85 +229,6 @@ states/Walk/node = SubResource("AnimationNodeBlendSpace2D_smehm")
 states/Walk/position = Vector2(530.80005, 98.464005)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ur7pv")]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
-atlas = ExtResource("5_smehm")
-region = Rect2(0, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
-atlas = ExtResource("5_smehm")
-region = Rect2(100, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
-atlas = ExtResource("6_ur7pv")
-region = Rect2(0, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oprun"]
-atlas = ExtResource("6_ur7pv")
-region = Rect2(100, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a8ls1"]
-atlas = ExtResource("7_y4r1p")
-region = Rect2(0, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qfm1y"]
-atlas = ExtResource("7_y4r1p")
-region = Rect2(100, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
-atlas = ExtResource("8_d2wvv")
-region = Rect2(0, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
-atlas = ExtResource("8_d2wvv")
-region = Rect2(100, 0, 100, 100)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_60mlk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3v2ag")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jej6c")
-}],
-"loop": true,
-"name": &"idle_back",
-"speed": 2.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f1ej7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oprun")
-}],
-"loop": true,
-"name": &"idle_front",
-"speed": 2.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a8ls1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qfm1y")
-}],
-"loop": true,
-"name": &"walk_back",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fulsm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4r5pv")
-}],
-"loop": true,
-"name": &"walk_front",
-"speed": 5.0
-}]
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fjrip"]
 radius = 0.79248047
 height = 2.1748047
@@ -342,15 +259,6 @@ tree_root = SubResource("AnimationNodeStateMachine_fulsm")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0.11937559, 0.58153844)
 parameters/Walk/blend_position = Vector2(-0.09182739, -0.50769234)
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1129168953]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76950634, 0)
-visible = false
-pixel_size = 0.03
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_60mlk")
-animation = &"idle_front"
-autoplay = "idle_front"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=383512871]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3461914, 0)

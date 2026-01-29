@@ -205,12 +205,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 collision_layer = 3
 collision_mask = 3
 
-[node name="CameraPlayer" type="Node3D" parent="." unique_id=386739997 node_paths=PackedStringArray("follow_target", "follow_targets")]
+[node name="CameraPlayer" type="Node3D" parent="." unique_id=386739997 node_paths=PackedStringArray("follow_targets")]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 6.9071064, 5.7071066)
 top_level = true
 script = ExtResource("2_lnu2h")
 follow_mode = 3
-follow_target = NodePath("../Player")
 follow_targets = [NodePath("../Player")]
 tween_resource = SubResource("Resource_iywne")
 follow_offset = Vector3(0, 5, 5)

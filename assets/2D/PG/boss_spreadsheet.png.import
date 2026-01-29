@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5508w632j8rc"
-path="res://.godot/imported/cat_walk_back.png-358e3be0768c93af52dfbbffc2f8d644.ctex"
+uid="uid://bmyg5ct623fym"
+path="res://.godot/imported/boss_spreadsheet.png-5180aff68af05e45d2ef023848c517ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2D/PG/cat_walk_back.png"
-dest_files=["res://.godot/imported/cat_walk_back.png-358e3be0768c93af52dfbbffc2f8d644.ctex"]
+source_file="res://assets/2D/PG/boss_spreadsheet.png"
+dest_files=["res://.godot/imported/boss_spreadsheet.png-5180aff68af05e45d2ef023848c517ea.ctex"]
 
 [params]
 
