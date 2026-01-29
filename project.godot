@@ -82,7 +82,8 @@ layout/style_directory={
 }
 variables={
 "meow": "",
-"stick": false
+"stick": true,
+"umarell_hitted": false
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01

@@ -101,18 +101,19 @@ shape = SubResource("SphereShape3D_gee14")
 [node name="Menu" parent="." unique_id=803179413 instance=ExtResource("2_p57ef")]
 scale = Vector2(1, 1)
 
-[node name="NPC" type="CSGBox3D" parent="." unique_id=537784218]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7383866, 0.54300904, -5.954705)
+[node name="Umarell" type="CSGBox3D" parent="." unique_id=537784218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7383866, 0.8457434, -5.954705)
+size = Vector3(1, 1.6054688, 1)
 
-[node name="interactible" parent="NPC" unique_id=424773282 instance=ExtResource("3_u5sy4")]
+[node name="interactible" parent="Umarell" unique_id=424773282 instance=ExtResource("3_u5sy4")]
 timeline = ExtResource("11_ca42v")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/interactible" unique_id=875088808]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Umarell/interactible" unique_id=875088808]
 shape = SubResource("SphereShape3D_gee14")
 
-[node name="Destructible" parent="NPC" unique_id=1808292629 instance=ExtResource("8_dinhu")]
+[node name="Destructible" parent="Umarell" unique_id=1808292629 instance=ExtResource("8_dinhu")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Destructible" unique_id=1253014746]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Umarell/Destructible" unique_id=1253014746]
 shape = SubResource("BoxShape3D_kvuet")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=789237425]
@@ -176,3 +177,5 @@ music_name = "safe"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MusicChanger3" unique_id=626418203]
 shape = SubResource("BoxShape3D_264po")
+
+[connection signal="attacked" from="Umarell/Destructible" to="." method="_on_umarell_attacked"]
