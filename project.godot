@@ -54,7 +54,8 @@ directories/dch_directory={
 "Villico 4": "res://dialogic/npc/Villico 4.dch",
 "Villico 5": "res://dialogic/npc/Villico 5.dch",
 "Villico 6": "res://dialogic/npc/Villico 6.dch",
-"cat": "res://dialogic/npc/cat.dch"
+"cat": "res://dialogic/npc/cat.dch",
+"stick": "res://dialogic/npc/stick.dch"
 }
 directories/dtl_directory={
 "1[Zona 1] Dialogo con villico 2": "res://dialogic/Safe zone/1[Zona 1] Dialogo con villico 2.dtl",
@@ -64,7 +65,6 @@ directories/dtl_directory={
 "1[Zona1] Dialogo con villico 5": "res://dialogic/Safe zone/1[Zona1] Dialogo con villico 5.dtl",
 "1[Zona1] Dialogo con villico 51": "res://dialogic/Safe zone/1[Zona1] Dialogo con villico 51.dtl",
 "1[Zona1] V5 Umarello": "res://dialogic/Safe zone/1[Zona1] V5 Umarello.dtl",
-"1[Zona1] V51 Umarello 2": "res://dialogic/Safe zone/1[Zona1] V51 Umarello 2.dtl",
 "1[Zona1] V6 Inizio quest gatto 1": "res://dialogic/Safe zone/1[Zona1] V6 Inizio quest gatto 1.dtl",
 "1[Zona1] V61 Quest gatto 2": "res://dialogic/Safe zone/1[Zona1] V61 Quest gatto 2.dtl",
 "1[Zona1] V62 Quest gatto 2": "res://dialogic/Safe zone/1[Zona1] V62 Quest gatto 2.dtl",

@@ -10,7 +10,6 @@ func _ready() -> void:
 	container.position.x = initial_position - current_item * 98
 	display_mask()
 
-
 func set_current_item() -> void:
 	if Dialogic.VAR.current_mask == "default":
 		current_item = 1.0
@@ -23,14 +22,12 @@ func set_current_item() -> void:
 	elif Dialogic.VAR.current_mask == "boss":
 		current_item = 5.0
 
-
 func move_container() -> void:
 	var tween = create_tween()
 	tween.tween_property(container, "position:x",
 	 initial_position - current_item * 98, 0.2)
 
 func display_mask() -> void:
-	#TODO: seleziona mascherina (se disponibile) -> Dialogic
 	container.get_child(0).get_child(0).visible = Dialogic.VAR.mask_default
 	container.get_child(1).get_child(0).visible = Dialogic.VAR.mask_cat
 	container.get_child(2).get_child(0).visible = Dialogic.VAR.mask_ftp1
@@ -48,7 +45,7 @@ func _physics_process(delta: float) -> void:
 
 func select_item() -> void:
 	if current_item == 1 and Dialogic.VAR.mask_default:
-		#TODO: seleziona mascherina (se disponibile) -> Dialogic
+		#TODO: seleziona mascherina
 		pass
 	elif current_item == 2 and Dialogic.VAR.mask_cat:
 		pass

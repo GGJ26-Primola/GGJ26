@@ -10,16 +10,16 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "idle",
-&"description": "accenna la strega",
-&"display_name": "Knight",
+&"default_portrait": "stick",
+&"description": "",
+&"display_name": "Walking stick",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
-"idle": {
+"stick": {
 "export_overrides": {
-"image": "\"res://assets/UI/knight.png\""
+"image": "\"res://assets/UI/stick.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -27,5 +27,5 @@
 "scene": ""
 }
 },
-&"scale": 0.7
+&"scale": 0.5
 }

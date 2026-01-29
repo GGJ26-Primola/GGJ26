@@ -1,3 +1,4 @@
+join "Villico 5" left
 "Villico 5": Can you keep a secret?
 - "Of course!"
 	"Villico 5": I think someone is doing something awful, around here...
@@ -11,7 +12,13 @@
 			- "Sure. Count on me."
 				"Villico 5": Please. This means a lot to me.
 			- "Nah."
+				[wait time="0.5"]
+				"Villico 5": Why?
+				"Villico 5": You villagers are all the same.
+				[end_timeline]
 	- "Are you gonna talk about chemical trails?"
+		"Villico 5": ... what?
+		[end_timeline]
 - "Nope!"
 	"Villico 5": I'll keep it to myself, then.
 	[end_timeline]

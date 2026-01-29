@@ -2,6 +2,8 @@ extends Node
 
 #@onready var camera_player: PhantomCamera3D = $"../CameraPlayer"
 @onready var umarell: CSGBox3D = $"../NPC/Umarell"
+@onready var player: CharacterBody3D = %Player
+var last_checkpoint := Vector3.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,6 +21,12 @@ func _process(delta: float) -> void:
 	
 	if GameState.can_play() and Input.is_action_just_pressed("dialogic_default_action"):
 		GameState.start_talk()
+
+func respawn() -> void:
+	player.position = last_checkpoint
+
+func set_last_checkpoint(pos : Vector3) -> void:
+	last_checkpoint = pos
 
 func _on_umarell_attacked() -> void:
 	Dialogic.VAR.umarell_hitted = true
