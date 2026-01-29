@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://btg3dwmousmcq" path="res://scenes/destructible.tscn" id="8_dinhu"]
 [ext_resource type="Resource" uid="uid://cgxjwph0mocqs" path="res://dialogic/Safe zone/1[Zona1] V5 Umarello.dtl" id="11_ca42v"]
 [ext_resource type="PackedScene" uid="uid://dw350qjqwdwki" path="res://scenes/music_changer.tscn" id="18_ssvqc"]
+[ext_resource type="PackedScene" uid="uid://bpl470i2x3dpm" path="res://scenes/knight.tscn" id="19_264po"]
+[ext_resource type="Resource" uid="uid://t4q67befekfr" path="res://dialogic/Safe zone/1[Zona1] Dialogo con villico 5.dtl" id="20_1kice"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ssvqc"]
 clip_count = 4
@@ -42,6 +44,9 @@ Vector2i(-1, -1): {
 }
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_264po"]
+size = Vector3(2.778717, 3.199646, 12.869385)
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_gee14"]
 radius = 2.5951588
 
@@ -62,10 +67,22 @@ tonemap_mode = 2
 [sub_resource type="Resource" id="Resource_iywne"]
 script = ExtResource("3_lbhrr")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_264po"]
-size = Vector3(2.778717, 3.199646, 12.869385)
+[sub_resource type="Curve3D" id="Curve3D_ssvqc"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 10, 0, 0, 0, 0, 0, 10, 10, 0, 20, 0, 0, 0, 0, 0, 0, 20, 0, 20),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_264po"]
+radius = 1.8525391
+height = 4.337036
 
 [node name="Game" type="Node" unique_id=803510040]
+
+[node name="GameManager" type="Node" parent="." unique_id=1908884894]
+unique_name_in_owner = true
 script = ExtResource("1_iywne")
 
 [node name="Musics" type="Node" parent="." unique_id=1845575960]
@@ -76,6 +93,27 @@ script = ExtResource("2_rysoc")
 stream = SubResource("AudioStreamInteractive_ssvqc")
 autoplay = true
 bus = &"Music"
+
+[node name="MusicChanger" parent="Musics" unique_id=594796150 instance=ExtResource("18_ssvqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9138484, 0, 4.059202)
+music_name = "cemetery"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Musics/MusicChanger" unique_id=978300869]
+shape = SubResource("BoxShape3D_264po")
+
+[node name="MusicChanger2" parent="Musics" unique_id=975477143 instance=ExtResource("18_ssvqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.982142, 0, 4.059202)
+music_name = "woods"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Musics/MusicChanger2" unique_id=932926409]
+shape = SubResource("BoxShape3D_264po")
+
+[node name="MusicChanger3" parent="Musics" unique_id=599058784 instance=ExtResource("18_ssvqc")]
+transform = Transform3D(-0.033294767, 0, 0.99944556, 0, 1, 0, -0.99944556, 0, -0.033294767, -0.4139743, 0, -3.6449418)
+music_name = "safe"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Musics/MusicChanger3" unique_id=626418203]
+shape = SubResource("BoxShape3D_264po")
 
 [node name="Cat" parent="." unique_id=1393236629 instance=ExtResource("2_0tnpc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.829, 0.8, -7.116)
@@ -157,25 +195,21 @@ process_physics_priority = 300
 script = ExtResource("4_lbhrr")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
-[node name="MusicChanger" parent="." unique_id=594796150 instance=ExtResource("18_ssvqc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9138484, 0, 4.059202)
-music_name = "cemetery"
+[node name="Path3D" type="Path3D" parent="." unique_id=826171985]
+curve = SubResource("Curve3D_ssvqc")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicChanger" unique_id=978300869]
-shape = SubResource("BoxShape3D_264po")
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1932769141]
+transform = Transform3D(-4.3711296e-08, 0, -0.99999785, 0, 1, 0, 0.99999785, 0, -4.3711296e-08, 0, 0, 0)
 
-[node name="MusicChanger2" parent="." unique_id=975477143 instance=ExtResource("18_ssvqc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.982142, 0, 4.059202)
-music_name = "woods"
+[node name="Knight" parent="." unique_id=156773684 instance=ExtResource("19_264po")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.776409, 1.5390229, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicChanger2" unique_id=932926409]
-shape = SubResource("BoxShape3D_264po")
+[node name="Interactible" parent="Knight" unique_id=1026249889 instance=ExtResource("3_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2517471, 0)
+timeline = ExtResource("20_1kice")
 
-[node name="MusicChanger3" parent="." unique_id=599058784 instance=ExtResource("18_ssvqc")]
-transform = Transform3D(-0.033294767, 0, 0.99944556, 0, 1, 0, -0.99944556, 0, -0.033294767, -0.4139743, 0, -3.6449418)
-music_name = "safe"
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Knight/Interactible" unique_id=1839212111]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1594849, 0)
+shape = SubResource("CapsuleShape3D_264po")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicChanger3" unique_id=626418203]
-shape = SubResource("BoxShape3D_264po")
-
-[connection signal="attacked" from="Umarell/Destructible" to="." method="_on_umarell_attacked"]
+[connection signal="attacked" from="Umarell/Destructible" to="GameManager" method="_on_umarell_attacked"]
