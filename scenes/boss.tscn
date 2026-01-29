@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ctio65mmg2fab"]
+
+[ext_resource type="Texture2D" uid="uid://dmn7pm0c1vs2o" path="res://assets/2D/boss.png" id="1_dlmty"]
+
+[node name="Boss" type="Node3D" unique_id=1656814271]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=80689855]
+pixel_size = 0.03
+texture = ExtResource("1_dlmty")
