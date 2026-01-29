@@ -54,9 +54,13 @@ func display_mask() -> void:
 
 func _process(delta: float) -> void:
 	
-	if Input.is_action_just_pressed("inventory") and GameState.can_inventory():
-		show()
-		GameState.current_game_status = GameState.State.INVENTORY
+	if Input.is_action_just_pressed("inventory"):
+		if GameState.can_inventory():
+			show()
+			GameState.current_game_status = GameState.State.INVENTORY
+		elif GameState.current_game_status == GameState.State.INVENTORY:
+			hide()
+			GameState.current_game_status = GameState.State.PLAYING
 	
 	if GameState.current_game_status != GameState.State.INVENTORY:
 		return
