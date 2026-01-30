@@ -2,7 +2,7 @@ extends Node
 
 #@onready var camera: Camera3D = %Camera3D
 @onready var camera_player: PhantomCamera3D = $"../CameraPlayer"
-@onready var umarell: CSGBox3D = $"../NPC/Umarell"
+@onready var umarell: Node3D = $"../NPC/Umarell"
 @onready var player: CharacterBody3D = %Player
 var last_checkpoint := Vector3.ZERO
 
@@ -24,7 +24,6 @@ func append_target() -> void:
 		camera_player.set_follow_targets([player, new_target])
 	else:
 		camera_player.set_follow_targets([player])
-
 
 func remove_target() -> void:
 	GameState.end_talk()
@@ -54,6 +53,10 @@ func _on_umarell_attacked() -> void:
 	Dialogic.VAR.umarell_hitted = true
 	var tween = create_tween()
 	tween.tween_property(umarell, "rotation_degrees:z", 90.0, 0.2)
+
+func start_cat_quest() -> void:
+	print("start cat")
+
 
 func _on_item_attacked() -> void:
 	print("HIT!")

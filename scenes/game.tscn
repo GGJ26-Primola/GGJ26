@@ -13,9 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c6wi5nthdn08o" path="res://scenes/interactible.tscn" id="3_u5sy4"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://ckssm5iwqrukc" path="res://assets/Music/wood.wav" id="4_ssvqc"]
-[ext_resource type="Resource" uid="uid://ddtd8jcny2dsq" path="res://dialogic/miao.dtl" id="4_vtaks"]
 [ext_resource type="AudioStream" uid="uid://dxhsw30veqa12" path="res://assets/Music/boss.wav" id="5_264po"]
-[ext_resource type="Resource" uid="uid://dkv28mjpp8en4" path="res://dialogic/npc/cat.dch" id="5_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://btg3dwmousmcq" path="res://scenes/destructible.tscn" id="8_dinhu"]
 [ext_resource type="Resource" uid="uid://cgxjwph0mocqs" path="res://dialogic/Safe zone/1[Zona1] V5 Umarello.dtl" id="11_ca42v"]
 [ext_resource type="Script" uid="uid://tq8hh5r2ii45" path="res://scripts/look_at_2d.gd" id="15_37s47"]
@@ -24,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bpl470i2x3dpm" path="res://scenes/knight.tscn" id="19_264po"]
 [ext_resource type="PackedScene" uid="uid://ijrrf5ej7e13" path="res://scenes/inventory.tscn" id="19_bt5mj"]
 [ext_resource type="Resource" uid="uid://t4q67befekfr" path="res://dialogic/Safe zone/1[Zona1] Dialogo con villico 5.dtl" id="20_1kice"]
+[ext_resource type="PackedScene" uid="uid://bnulwgy8p3fxt" path="res://scenes/umarell.tscn" id="22_v2yb1"]
 [ext_resource type="Resource" uid="uid://dbmq8cmqa8wls" path="res://dialogic/Safe zone/1[Zona1] Dialogo con Villico 1.dtl" id="25_wljb1"]
 [ext_resource type="Resource" uid="uid://dwpuiw3hquai" path="res://dialogic/Safe zone/1[Zona 1] Dialogo con villico 2.dtl" id="26_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://6ii0307e2il5" path="res://assets/2D/npc1_idle.png" id="27_js0lu"]
@@ -68,6 +67,14 @@ size = Vector3(11.573242, 4.576172, 2.1826172)
 [sub_resource type="BoxShape3D" id="BoxShape3D_gxtfn"]
 size = Vector3(3.1818848, 7.4123535, 35.796875)
 
+[sub_resource type="Curve3D" id="Curve3D_ssvqc"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 10, 0, 0, 0, 0, 0, 10, 10, 0, 20, 0, 0, 0, 0, 0, 0, 20, 0, 20),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_pr1ej"]
 radius = 3.1974819
 
@@ -96,18 +103,11 @@ animations = [{
 [sub_resource type="SphereShape3D" id="SphereShape3D_m4url"]
 radius = 2.5951588
 
-[sub_resource type="Curve3D" id="Curve3D_ssvqc"]
-bake_interval = 0.01
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 10, 0, 0, 0, 0, 0, 10, 10, 0, 20, 0, 0, 0, 0, 0, 0, 20, 0, 20),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
-}
-point_count = 5
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_gee14"]
 radius = 2.5951588
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kvuet"]
+size = Vector3(1.1894531, 2.4003906, 1.1669922)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_264po"]
 radius = 1.8525391
@@ -177,6 +177,18 @@ music_name = "safe"
 shape = SubResource("BoxShape3D_gxtfn")
 
 [node name="NPC" type="Node" parent="." unique_id=583360651]
+
+[node name="CatPath3D" type="Path3D" parent="NPC" unique_id=826171985]
+rotation_edit_mode = 2
+curve = SubResource("Curve3D_ssvqc")
+
+[node name="CatPathFollow3D" type="PathFollow3D" parent="NPC/CatPath3D" unique_id=1932769141]
+transform = Transform3D(0.9999945, 0, 0, 0, 1, 0, 0, 0, 0.9999945, 0, 0, -10)
+rotation_mode = 0
+
+[node name="Cat" parent="NPC/CatPath3D/CatPathFollow3D" unique_id=972012601 instance=ExtResource("2_0tnpc")]
+transform = Transform3D(1.0000021, 0, 0, 0, 1, 0, 0, 0, 1.0000021, 0, 0.8, 0)
+script = ExtResource("15_37s47")
 
 [node name="Cat2" parent="NPC" unique_id=503675010 instance=ExtResource("2_0tnpc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5018606, 10.571136, -19.88805)
@@ -259,42 +271,11 @@ timeline = ExtResource("32_7025r")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Mazapégul/interactible" unique_id=585657216]
 shape = SubResource("SphereShape3D_m4url")
 
-[node name="Path3D" type="Path3D" parent="NPC" unique_id=826171985]
-rotation_edit_mode = 2
-curve = SubResource("Curve3D_ssvqc")
-
-[node name="CatPathFollow3D" type="PathFollow3D" parent="NPC/Path3D" unique_id=1932769141]
-transform = Transform3D(0.9999945, 0, 0, 0, 1, 0, 0, 0, 0.9999945, 0, 0, -10)
-rotation_mode = 0
-
-[node name="Cat2" parent="NPC/Path3D/CatPathFollow3D" unique_id=972012601 instance=ExtResource("2_0tnpc")]
-transform = Transform3D(1.0000021, 0, 0, 0, 1, 0, 0, 0, 1.0000021, 0, 0.8, 0)
-script = ExtResource("15_37s47")
-
-[node name="Interactible" parent="NPC/Path3D/CatPathFollow3D/Cat2" unique_id=1542527272 instance=ExtResource("3_u5sy4")]
-timeline = ExtResource("4_vtaks")
-bubble_pnc = ExtResource("5_kvpfn")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Path3D/CatPathFollow3D/Cat2/Interactible" unique_id=1367323178]
-shape = SubResource("SphereShape3D_gee14")
-
-[node name="Cat" parent="NPC" unique_id=1393236629 instance=ExtResource("2_0tnpc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.829, 0.8, -7.116)
-script = ExtResource("15_37s47")
-
-[node name="Interactible" parent="NPC/Cat" unique_id=476685811 instance=ExtResource("3_u5sy4")]
-timeline = ExtResource("4_vtaks")
-bubble_pnc = ExtResource("5_kvpfn")
-automatic_play = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Cat/Interactible" unique_id=987860928]
-shape = SubResource("SphereShape3D_gee14")
-
-[node name="Umarell" type="CSGBox3D" parent="NPC" unique_id=537784218]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5457993, 10.659636, -28.01906)
-size = Vector3(1, 1.6054688, 1)
+[node name="Umarell" type="Node3D" parent="NPC" unique_id=1288093849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5457993, 11.231781, -28.01906)
 
 [node name="interactible" parent="NPC/Umarell" unique_id=424773282 instance=ExtResource("3_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2969675, 0)
 timeline = ExtResource("11_ca42v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Umarell/interactible" unique_id=875088808]
@@ -304,6 +285,8 @@ shape = SubResource("SphereShape3D_gee14")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Umarell/Destructible" unique_id=1253014746]
 shape = SubResource("BoxShape3D_kvuet")
+
+[node name="Umarell" parent="NPC/Umarell" unique_id=1830822283 instance=ExtResource("22_v2yb1")]
 
 [node name="Knight" parent="NPC" unique_id=156773684 instance=ExtResource("19_264po")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.724173, 12.231031, -27.749834)
