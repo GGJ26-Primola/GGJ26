@@ -10,12 +10,22 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "",
+&"default_portrait": "idle",
 &"description": "",
-&"display_name": "Mascherina",
+&"display_name": "FTP1 Mask",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
-&"portraits": {},
-&"scale": 1.0
+&"portraits": {
+"idle": {
+"export_overrides": {
+"image": "\"res://assets/UI/mask_ftp1.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 0.7
 }

@@ -26,7 +26,7 @@ static func can_inventory() -> bool:
 static func can_talk() -> bool:
 	if GameState.current_game_status != GameState.State.PLAYING:
 		return false
-	return dialogic_timeline != null and current_info_mark != null
+	return dialogic_timeline != null # and current_info_mark != null
 
 static func can_attack() -> bool:
 	if not Dialogic.VAR.stick:
@@ -43,17 +43,20 @@ static func can_attack() -> bool:
 
 static func start_talk():
 	if can_talk():
-		current_game_status = GameState.State.TALKING
+		
+		set_game_status(GameState.State.TALKING)
 		Dialogic.start(dialogic_timeline)
-		current_info_mark.hide()
+		if current_info_mark != null:
+			current_info_mark.hide()
 
 static func end_talk():
-	current_game_status = GameState.State.PLAYING
+	set_game_status(GameState.State.PLAYING)
 	if dialogic_reload_now:
-		current_info_mark.show()
+		if current_info_mark != null:
+			current_info_mark.show()
 		return
 	
-	if dialogic_destroy_after_read:
+	if dialogic_destroy_after_read and current_info_mark:
 		current_info_mark.get_parent().get_parent().queue_free()
 	
 	dialogic_timeline = null
