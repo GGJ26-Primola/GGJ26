@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bpl470i2x3dpm" path="res://scenes/knight.tscn" id="19_264po"]
 [ext_resource type="PackedScene" uid="uid://ijrrf5ej7e13" path="res://scenes/inventory.tscn" id="19_bt5mj"]
 [ext_resource type="Resource" uid="uid://t4q67befekfr" path="res://dialogic/Safe zone/1[Zona1] Dialogo con villico 5.dtl" id="20_1kice"]
-[ext_resource type="PackedScene" uid="uid://bnulwgy8p3fxt" path="res://scenes/umarell.tscn" id="22_v2yb1"]
+[ext_resource type="PackedScene" path="res://scenes/umarell.tscn" id="22_v2yb1"]
 [ext_resource type="Resource" uid="uid://dbmq8cmqa8wls" path="res://dialogic/Safe zone/1[Zona1] Dialogo con Villico 1.dtl" id="25_wljb1"]
 [ext_resource type="Resource" uid="uid://dwpuiw3hquai" path="res://dialogic/Safe zone/1[Zona 1] Dialogo con villico 2.dtl" id="26_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://6ii0307e2il5" path="res://assets/2D/npc1_idle.png" id="27_js0lu"]
@@ -31,6 +31,7 @@
 [ext_resource type="Resource" uid="uid://cbk6ksfplw6ox" path="res://dialogic/Safe zone/1[Zona1] V61 Quest gatto 2.dtl" id="30_02fa5"]
 [ext_resource type="Resource" uid="uid://bnmpyrdm1oaoh" path="res://dialogic/Safe zone/1[Zona1] V6 Inizio quest gatto 1.dtl" id="31_nepv3"]
 [ext_resource type="Resource" uid="uid://15s883uo4k61" path="res://dialogic/Safe zone/Incontro con Mazanpegul.dtl" id="32_7025r"]
+[ext_resource type="PackedScene" uid="uid://wwx5yv6ev5yr" path="res://scenes/woods.tscn" id="33_v2yb1"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ssvqc"]
 clip_count = 4
@@ -359,6 +360,9 @@ shape = SubResource("BoxShape3D_wljb1")
 scale = Vector2(1, 1)
 
 [node name="Inventory" parent="." unique_id=874561363 instance=ExtResource("19_bt5mj")]
+
+[node name="Woods" parent="." unique_id=180963676 instance=ExtResource("33_v2yb1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.142365, 21.69962, -14.668915)
 
 [connection signal="attacked" from="NPC/Umarell/Destructible" to="GameManager" method="_on_umarell_attacked"]
 [connection signal="attacked" from="CSGBox3D2/Destructible" to="GameManager" method="_on_item_attacked"]

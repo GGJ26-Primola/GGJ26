@@ -1,29 +1,29 @@
 [gd_scene format=3 uid="uid://dvtfflyj2wnh7"]
 
 [ext_resource type="Script" uid="uid://vojqxe207xwt" path="res://addons/zylann.hterrain/hterrain.gd" id="1_6uo2k"]
-[ext_resource type="Resource" path="res://data_terrain/graveyard terrain/data.hterrain" id="2_whxyv"]
+[ext_resource type="Resource" uid="uid://cokl4qvnper31" path="res://data_terrain/graveyard terrain/data.hterrain" id="2_whxyv"]
 [ext_resource type="Script" uid="uid://bt278ef3qrx7h" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_vwnn2"]
 [ext_resource type="Texture2D" uid="uid://dnk4w1o5likrw" path="res://assets/textures/Grass005_1K-PNG_Displacement.png" id="4_7x5b5"]
-[ext_resource type="PackedScene" path="res://scenes/arch_gate.tscn" id="5_2dajg"]
+[ext_resource type="PackedScene" uid="uid://b6gnfnxf0ghj" path="res://scenes/arch_gate.tscn" id="5_2dajg"]
 [ext_resource type="Texture2D" uid="uid://67r1njq1jq0c" path="res://assets/textures/360_F_603980502_qIAJ5hytZnM0U4JMmwiY1C71Qj3BEHVV.jpg" id="5_i863g"]
-[ext_resource type="PackedScene" uid="uid://cdo86jexfsk6q" path="res://assets/Mesh Graveyard/fbx/tree_pine_yellow_large.fbx" id="6_dn084"]
+[ext_resource type="PackedScene" uid="uid://cdo86jexfsk6q" path="res://assets/Mesh Woods/tree_pine_yellow_large.fbx" id="6_dn084"]
 [ext_resource type="Texture2D" uid="uid://nra28017mqyk" path="res://assets/textures/R.jpg" id="6_psvny"]
-[ext_resource type="PackedScene" uid="uid://b7xlkcf006u1g" path="res://assets/Mesh Graveyard/fbx/tree_pine_orange_medium.fbx" id="7_jwwb4"]
-[ext_resource type="PackedScene" uid="uid://biodym60jxpwh" path="res://assets/Mesh Graveyard/fbx/tree_pine_yellow_small.fbx" id="8_3084y"]
-[ext_resource type="PackedScene" uid="uid://lbnw7nxspft8" path="res://assets/Mesh Graveyard/fbx/tree_pine_yellow_medium.fbx" id="9_i47lc"]
+[ext_resource type="PackedScene" uid="uid://b7xlkcf006u1g" path="res://assets/Mesh Woods/tree_pine_orange_medium.fbx" id="7_jwwb4"]
+[ext_resource type="PackedScene" uid="uid://biodym60jxpwh" path="res://assets/Mesh Woods/tree_pine_yellow_small.fbx" id="8_3084y"]
+[ext_resource type="PackedScene" uid="uid://lbnw7nxspft8" path="res://assets/Mesh Woods/tree_pine_yellow_medium.fbx" id="9_i47lc"]
 [ext_resource type="PackedScene" uid="uid://co7m328assp1u" path="res://assets/Mesh Graveyard/fbx/fence.fbx" id="10_wx0pr"]
 [ext_resource type="PackedScene" uid="uid://8j8104eiqp4l" path="res://assets/Mesh Graveyard/fbx/fence_broken.fbx" id="11_54a33"]
 [ext_resource type="PackedScene" uid="uid://ctj1r7wy4yuvj" path="res://assets/Mesh Graveyard/fbx/fence_pillar.fbx" id="12_dnuul"]
 [ext_resource type="PackedScene" uid="uid://7i6j35sj5r80" path="res://assets/Mesh Graveyard/fbx/fence_seperate_broken.fbx" id="13_so36i"]
-[ext_resource type="PackedScene" uid="uid://bb2b4bacfh66b" path="res://assets/Mesh Graveyard/fbx/tree_pine_orange_large.fbx" id="14_dn084"]
+[ext_resource type="PackedScene" uid="uid://bb2b4bacfh66b" path="res://assets/Mesh Woods/tree_pine_orange_large.fbx" id="14_dn084"]
 [ext_resource type="PackedScene" uid="uid://b535v4obf7exm" path="res://assets/Mesh Graveyard/fbx/bench_decorated.fbx" id="15_jwwb4"]
 [ext_resource type="PackedScene" uid="uid://bhbshk8lw1yj2" path="res://assets/Mesh Graveyard/fbx/shrine.fbx" id="16_3084y"]
 [ext_resource type="PackedScene" uid="uid://bv7ktt3tps38o" path="res://assets/Mesh Graveyard/fbx/crypt.fbx" id="17_i47lc"]
 [ext_resource type="PackedScene" uid="uid://j5tvvkj7dxwi" path="res://assets/Mesh Graveyard/fbx/shrine_candles.fbx" id="18_wx0pr"]
 [ext_resource type="PackedScene" uid="uid://wy0r5mnva52i" path="res://assets/Mesh Graveyard/fbx/skull_candle.fbx" id="19_jwwb4"]
-[ext_resource type="PackedScene" uid="uid://dt6k7hbregl8t" path="res://assets/Mesh Graveyard/fbx/tree_dead_large.fbx" id="20_uqnd1"]
-[ext_resource type="PackedScene" uid="uid://cpo7hpc1jkyh1" path="res://assets/Mesh Graveyard/fbx/tree_dead_large_decorated.fbx" id="21_i863g"]
-[ext_resource type="PackedScene" uid="uid://hsv2s78komcg" path="res://assets/Mesh Graveyard/fbx/tree_pine_orange_small.fbx" id="22_ul1f6"]
+[ext_resource type="PackedScene" uid="uid://dt6k7hbregl8t" path="res://assets/Mesh Woods/tree_dead_large.fbx" id="20_uqnd1"]
+[ext_resource type="PackedScene" uid="uid://cpo7hpc1jkyh1" path="res://assets/Mesh Woods/tree_dead_large_decorated.fbx" id="21_i863g"]
+[ext_resource type="PackedScene" uid="uid://hsv2s78komcg" path="res://assets/Mesh Woods/tree_pine_orange_small.fbx" id="22_ul1f6"]
 [ext_resource type="PackedScene" uid="uid://byy8otmxn3pkt" path="res://assets/Mesh Graveyard/fbx/grave_A.fbx" id="23_wmh2o"]
 [ext_resource type="PackedScene" uid="uid://o8drd2dls7pa" path="res://assets/Mesh Graveyard/fbx/grave_A_destroyed.fbx" id="24_d7tg2"]
 [ext_resource type="PackedScene" uid="uid://dki7g1fmr53rk" path="res://assets/Mesh Graveyard/fbx/plaque.fbx" id="25_xu5yr"]
@@ -39,8 +39,8 @@
 [ext_resource type="PackedScene" uid="uid://ddmaqvjyjl07m" path="res://assets/Mesh Graveyard/fbx/floor_dirt_grave.fbx" id="36_8d2an"]
 [ext_resource type="PackedScene" uid="uid://b5osoe7kw6r30" path="res://assets/Mesh Graveyard/fbx/gravemarker_B.fbx" id="37_3f8l7"]
 [ext_resource type="PackedScene" uid="uid://dadgtupcfjk0x" path="res://assets/Mesh Graveyard/fbx/gravemarker_A.fbx" id="38_05v6j"]
-[ext_resource type="PackedScene" uid="uid://baic7s2s8gk5l" path="res://assets/Mesh Graveyard/fbx/tree_dead_medium.fbx" id="39_3xyas"]
-[ext_resource type="PackedScene" uid="uid://pg5srqam86l1" path="res://assets/Mesh Graveyard/fbx/tree_dead_small.fbx" id="40_02nll"]
+[ext_resource type="PackedScene" uid="uid://baic7s2s8gk5l" path="res://assets/Mesh Woods/tree_dead_medium.fbx" id="39_3xyas"]
+[ext_resource type="PackedScene" uid="uid://pg5srqam86l1" path="res://assets/Mesh Woods/tree_dead_small.fbx" id="40_02nll"]
 [ext_resource type="PackedScene" uid="uid://c41yj3ho0nbyx" path="res://assets/Mesh Graveyard/fbx/gravestone.fbx" id="42_6ejqv"]
 [ext_resource type="PackedScene" uid="uid://s8e0kiq7njfp" path="res://assets/Mesh Graveyard/fbx/grave_B.fbx" id="43_8d2an"]
 [ext_resource type="PackedScene" uid="uid://drqci832dkfxi" path="res://assets/Mesh Graveyard/fbx/post.fbx" id="44_3f8l7"]
@@ -61,7 +61,7 @@ textures = [[ExtResource("4_7x5b5"), ExtResource("5_i863g"), ExtResource("6_psvn
 [node name="Graveyard" type="Node" unique_id=1810824615]
 
 [node name="Terrain" type="Node3D" parent="." unique_id=369932315]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5721283, -26.566683)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.197346, -2.0598412, -45.64779)
 
 [node name="HTerrain" type="Node3D" parent="Terrain" unique_id=1235703823]
 script = ExtResource("1_6uo2k")
@@ -1501,7 +1501,46 @@ transform = Transform3D(0.7807174, -0.2538813, -0.5709859, 0.30924937, 0.950981,
 [node name="crypt9" parent="Terrain/HTerrain/misc" unique_id=1671820805 instance=ExtResource("17_i47lc")]
 transform = Transform3D(-0.061048593, 0, -0.9981348, 0, 1, 0, 0.9981348, 0, -0.061048593, 56.927555, -2.159162, -17.41152)
 
-[node name="pillar2" parent="Terrain" unique_id=1872469703 instance=ExtResource("51_vpao2")]
+[node name="fence39" parent="Terrain/HTerrain/misc" unique_id=1217653172 instance=ExtResource("10_wx0pr")]
+transform = Transform3D(0.7015563, 0, -0.71261406, 0, 1, 0, 0.71261406, 0, 0.7015563, -6.6512856, 4.81684, 17.36462)
+
+[node name="fence67" parent="Terrain/HTerrain/misc" unique_id=593061016 instance=ExtResource("10_wx0pr")]
+transform = Transform3D(0.5704986, 0, -0.82129866, 0, 1, 0, 0.82129866, 0, 0.5704986, -10.048519, 4.81684, 14.5788355)
+
+[node name="fence68" parent="Terrain/HTerrain/misc" unique_id=1082236161 instance=ExtResource("10_wx0pr")]
+transform = Transform3D(0.5704986, 0, -0.82129866, 0, 1, 0, 0.82129866, 0, 0.5704986, -13.231973, 4.81684, 9.457388)
+
+[node name="fence69" parent="Terrain/HTerrain/misc" unique_id=102006745 instance=ExtResource("10_wx0pr")]
+transform = Transform3D(0.5501945, 0.26441172, -0.79206854, -0.15084651, 0.9644099, 0.21716098, 0.82129866, 0, 0.5704986, -15.822331, 4.212778, 5.5170956)
+
+[node name="fence_broken10" parent="Terrain/HTerrain/misc" unique_id=125002875 instance=ExtResource("11_54a33")]
+transform = Transform3D(0.95628434, 0, -0.29243848, -0.07229136, 0.968964, -0.23639536, 0.28336236, 0.24720195, 0.9266051, -0.14487118, 2.8126433, 22.588518)
+
+[node name="fence_gate2" parent="Terrain/HTerrain/misc" unique_id=2102677164 instance=ExtResource("49_jvslo")]
+transform = Transform3D(0.99548775, 0.029966142, -0.09003432, 0, 0.94882643, 0.3157981, 0.09489019, -0.31437314, 0.9445451, 21.311007, 0.9177942, 30.467548)
+
+[node name="coffin_decorated6" parent="Terrain/HTerrain/misc" unique_id=915598295 instance=ExtResource("30_ul1f6")]
+transform = Transform3D(1, 0, 0, 0, 0.966394, -0.25706533, 0, 0.25706533, 0.966394, 21.54979, 0.7908864, 31.684757)
+
+[node name="tree_dead_large10" parent="Terrain/HTerrain/misc" unique_id=1231251271 instance=ExtResource("20_uqnd1")]
+transform = Transform3D(0.10739214, 1.9912043, 0.15353583, -0.7329538, -0.10373125, 1.8579608, 1.8577527, -0.15603249, 0.72416025, -18.020031, 6.6966705, 19.179335)
+
+[node name="tree_dead_large11" parent="Terrain/HTerrain/misc" unique_id=257585741 instance=ExtResource("20_uqnd1")]
+transform = Transform3D(0.643913, -1.4298398, 1.2413435, -0.7667761, 1.0019405, 1.5518277, -1.7313087, -0.975538, -0.22560239, -9.891207, 5.5239344, 21.118618)
+
+[node name="pumpkin_yellow_jackolantern" parent="Terrain/HTerrain/misc" unique_id=1169864433 instance=ExtResource("52_oqdcf")]
+transform = Transform3D(0.88511765, 0, 0.46536738, 0, 1, 0, -0.46536738, 0, 0.88511765, -9.204229, 4.516194, 21.515625)
+
+[node name="tree_pine_orange_large43" parent="Terrain/HTerrain/misc" unique_id=1200611745 instance=ExtResource("14_dn084")]
+transform = Transform3D(0.6489037, 0.62745166, -0.43038157, 0.029048912, 0.5448012, 0.83806175, 0.7603157, -0.55632347, 0.33529672, -17.41486, 5.9296474, 24.338121)
+
+[node name="tree_dead_large_decorated9" parent="Terrain/HTerrain/misc" unique_id=34276647 instance=ExtResource("21_i863g")]
+transform = Transform3D(0.79659325, 0, -0.6045157, 0, 1, 0, 0.6045157, 0, 0.79659325, -20.13593, 6.400344, 18.286068)
+
+[node name="tree_dead_large_decorated10" parent="Terrain/HTerrain/misc" unique_id=1639251476 instance=ExtResource("21_i863g")]
+transform = Transform3D(0.9671658, 0, -0.2541462, 0.08010735, 0.9490247, 0.3048525, 0.241191, -0.31520188, 0.91786426, -20.632835, 5.9144807, 14.529592)
+
+[node name="pillar2" parent="Terrain/HTerrain/misc" unique_id=1872469703 instance=ExtResource("51_vpao2")]
 transform = Transform3D(0.9842172, -0.1769645, 0, 0.1769645, 0.9842172, 0, 0, 0, 1, 36.011745, -0.56436396, -9.046232)
 
 [node name="NPC" type="Node" parent="." unique_id=1347129066]
@@ -1511,42 +1550,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5721283, -26.566683)
 
 [node name="Mazapégul" type="Node3D" parent="NPC" unique_id=1326737898]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5721283, -26.566683)
-
-[node name="fence" parent="." unique_id=1217653172 instance=ExtResource("10_wx0pr")]
-transform = Transform3D(0.7015563, 0, -0.71261406, 0, 1, 0, 0.71261406, 0, 0.7015563, -6.6512856, -0.7552881, -9.202062)
-
-[node name="fence2" parent="." unique_id=593061016 instance=ExtResource("10_wx0pr")]
-transform = Transform3D(0.5704986, 0, -0.82129866, 0, 1, 0, 0.82129866, 0, 0.5704986, -10.048519, -0.7552881, -11.987847)
-
-[node name="fence3" parent="." unique_id=1082236161 instance=ExtResource("10_wx0pr")]
-transform = Transform3D(0.5704986, 0, -0.82129866, 0, 1, 0, 0.82129866, 0, 0.5704986, -13.231973, -0.7552881, -17.109295)
-
-[node name="fence4" parent="." unique_id=102006745 instance=ExtResource("10_wx0pr")]
-transform = Transform3D(0.5501945, 0.26441172, -0.79206854, -0.15084651, 0.9644099, 0.21716098, 0.82129866, 0, 0.5704986, -15.822331, -1.3593502, -21.049587)
-
-[node name="fence_broken" parent="." unique_id=125002875 instance=ExtResource("11_54a33")]
-transform = Transform3D(0.95628434, 0, -0.29243848, -0.07229136, 0.968964, -0.23639536, 0.28336236, 0.24720195, 0.9266051, -0.14487118, -2.759485, -3.9781647)
-
-[node name="fence_gate" parent="." unique_id=2102677164 instance=ExtResource("49_jvslo")]
-transform = Transform3D(0.99548775, 0.029966142, -0.09003432, 0, 0.94882643, 0.3157981, 0.09489019, -0.31437314, 0.9445451, 21.311007, -4.654334, 3.9008665)
-
-[node name="coffin_decorated" parent="." unique_id=915598295 instance=ExtResource("30_ul1f6")]
-transform = Transform3D(1, 0, 0, 0, 0.966394, -0.25706533, 0, 0.25706533, 0.966394, 21.54979, -4.781242, 5.1180744)
-
-[node name="tree_dead_large" parent="." unique_id=1231251271 instance=ExtResource("20_uqnd1")]
-transform = Transform3D(0.10739214, 1.9912043, 0.15353583, -0.7329538, -0.10373125, 1.8579608, 1.8577527, -0.15603249, 0.72416025, -18.020031, 1.124542, -7.387348)
-
-[node name="tree_dead_large2" parent="." unique_id=257585741 instance=ExtResource("20_uqnd1")]
-transform = Transform3D(0.643913, -1.4298398, 1.2413435, -0.7667761, 1.0019405, 1.5518277, -1.7313087, -0.975538, -0.22560239, -9.891207, -0.04819417, -5.448065)
-
-[node name="pumpkin_yellow_jackolantern" parent="." unique_id=1169864433 instance=ExtResource("52_oqdcf")]
-transform = Transform3D(0.88511765, 0, 0.46536738, 0, 1, 0, -0.46536738, 0, 0.88511765, -9.204229, -1.0559343, -5.0510573)
-
-[node name="tree_pine_orange_large" parent="." unique_id=1200611745 instance=ExtResource("14_dn084")]
-transform = Transform3D(0.6489037, 0.62745166, -0.43038157, 0.029048912, 0.5448012, 0.83806175, 0.7603157, -0.55632347, 0.33529672, -17.41486, 0.3575189, -2.2285619)
-
-[node name="tree_dead_large_decorated" parent="." unique_id=34276647 instance=ExtResource("21_i863g")]
-transform = Transform3D(0.79659325, 0, -0.6045157, 0, 1, 0, 0.6045157, 0, 0.79659325, -20.13593, 0.8282155, -8.280616)
-
-[node name="tree_dead_large_decorated2" parent="." unique_id=1639251476 instance=ExtResource("21_i863g")]
-transform = Transform3D(0.9671658, 0, -0.2541462, 0.08010735, 0.9490247, 0.3048525, 0.241191, -0.31520188, 0.91786426, -20.632835, 0.34235227, -12.037091)

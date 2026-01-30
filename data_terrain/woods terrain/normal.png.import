@@ -2,37 +2,36 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7ekson7d3tn"
-path.s3tc="res://.godot/imported/halloweenbits_texture.png-49480939279a1fc734019fdcf491abbf.s3tc.ctex"
+uid="uid://c5ayef7vpuxx3"
+path="res://.godot/imported/normal.png-0ca700ea1020ec251634ba10d58d5cc9.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Mesh Graveyard/fbx/halloweenbits_texture.png"
-dest_files=["res://.godot/imported/halloweenbits_texture.png-49480939279a1fc734019fdcf491abbf.s3tc.ctex"]
+source_file="res://data_terrain/woods terrain/normal.png"
+dest_files=["res://.godot/imported/normal.png-0ca700ea1020ec251634ba10d58d5cc9.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
-compress/hdr_compression=1
+compress/hdr_compression=0
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
-mipmaps/limit=-1
+mipmaps/generate=false
+mipmaps/limit=0
 roughness/mode=0
 roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
 process/channel_remap/alpha=3
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
