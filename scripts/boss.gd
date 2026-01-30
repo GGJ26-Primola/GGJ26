@@ -128,3 +128,7 @@ func state_machine(delta: float) -> void:
 			pass
 		WEAK:
 			pass
+
+
+func _on_timer_timeout() -> void:
+	Global.game_over = true

@@ -201,7 +201,6 @@ transitions = ["bullets_in", "bullets_out", SubResource("AnimationNodeStateMachi
 
 [node name="Boss" type="Node3D" unique_id=1656814271]
 script = ExtResource("1_neq0i")
-can_mist = true
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=80689855]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
@@ -226,3 +225,9 @@ anim_player = NodePath("../AnimationPlayer")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2.187)
 visible = false
 size = Vector3(5.540039, 2, 2.9188843)
+
+[node name="Timer" type="Timer" parent="." unique_id=1031802002]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
