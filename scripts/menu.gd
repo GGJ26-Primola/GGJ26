@@ -24,8 +24,11 @@ func _process(_delta: float) -> void:
 		else:
 			GameState.set_game_status(GameState.State.PAUSE)
 			main_panel.show()
-			play_button.focus_mode = Control.FOCUS_ALL
 			options_panel.hide()
+			
+			# TODO: WORK, but the menu is not working in the scene right now
+			#play_button.focus_mode = Control.FOCUS_ALL
+			#play_button.grab_focus()
 
 func _on_play_button_pressed() -> void:
 	GameState.set_game_status(GameState.State.PLAYING)
