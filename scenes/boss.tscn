@@ -1,19 +1,228 @@
 [gd_scene format=3 uid="uid://ctio65mmg2fab"]
 
-[ext_resource type="Texture2D" uid="uid://dmn7pm0c1vs2o" path="res://assets/2D/boss.png" id="1_dlmty"]
 [ext_resource type="Script" uid="uid://d0c0tclcwrgkl" path="res://scripts/boss.gd" id="1_neq0i"]
+[ext_resource type="Texture2D" uid="uid://xp817dx81uy0" path="res://assets/2D/boss_spreadsheet.png" id="2_jncid"]
 [ext_resource type="PackedScene" uid="uid://c4pfeujhlittk" path="res://scenes/mist.tscn" id="3_jncid"]
+
+[sub_resource type="Animation" id="Animation_jncid"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_qnbj4"]
+resource_name = "bullets_in"
+length = 1.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:can_shoot")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_r3bxh"]
+resource_name = "bullets_out"
+length = 1.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [6, 5, 4]
+}
+
+[sub_resource type="Animation" id="Animation_wqpjq"]
+resource_name = "charging"
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:can_mist")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_2cdgk"]
+resource_name = "idle"
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_qsl3t"]
+resource_name = "mist"
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [7, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:can_mist")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qsl3t"]
+_data = {
+&"RESET": SubResource("Animation_jncid"),
+&"bullets_in": SubResource("Animation_qnbj4"),
+&"bullets_out": SubResource("Animation_r3bxh"),
+&"charging": SubResource("Animation_wqpjq"),
+&"idle": SubResource("Animation_2cdgk"),
+&"mist": SubResource("Animation_qsl3t")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jncid"]
+animation = &"bullets_in"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qnbj4"]
+animation = &"bullets_out"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r3bxh"]
+animation = &"charging"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wqpjq"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2cdgk"]
+animation = &"mist"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qnbj4"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2cdgk"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wqpjq"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jncid"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5f346"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qsl3t"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r3bxh"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2avx2"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jncid"]
+states/bullets_in/node = SubResource("AnimationNodeAnimation_jncid")
+states/bullets_in/position = Vector2(588.36804, 48.799995)
+states/bullets_out/node = SubResource("AnimationNodeAnimation_qnbj4")
+states/bullets_out/position = Vector2(588.4, 163.2)
+states/charging/node = SubResource("AnimationNodeAnimation_r3bxh")
+states/charging/position = Vector2(455.6, 100.8)
+states/idle/node = SubResource("AnimationNodeAnimation_wqpjq")
+states/idle/position = Vector2(350.00003, 163.3472)
+states/mist/node = SubResource("AnimationNodeAnimation_2cdgk")
+states/mist/position = Vector2(455.44, 13.599998)
+transitions = ["bullets_in", "bullets_out", SubResource("AnimationNodeStateMachineTransition_qnbj4"), "idle", "charging", SubResource("AnimationNodeStateMachineTransition_2cdgk"), "bullets_out", "idle", SubResource("AnimationNodeStateMachineTransition_wqpjq"), "charging", "bullets_in", SubResource("AnimationNodeStateMachineTransition_jncid"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_5f346"), "charging", "mist", SubResource("AnimationNodeStateMachineTransition_qsl3t"), "mist", "charging", SubResource("AnimationNodeStateMachineTransition_r3bxh"), "charging", "idle", SubResource("AnimationNodeStateMachineTransition_2avx2")]
 
 [node name="Boss" type="Node3D" unique_id=1656814271]
 script = ExtResource("1_neq0i")
+can_mist = true
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=80689855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+pixel_size = 0.03
 texture_filter = 0
-texture = ExtResource("1_dlmty")
+texture = ExtResource("2_jncid")
+hframes = 4
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1667033057]
+root_node = NodePath("../Sprite3D")
+libraries/ = SubResource("AnimationLibrary_qsl3t")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1711742388]
+root_node = NodePath("../Sprite3D")
+tree_root = SubResource("AnimationNodeStateMachine_jncid")
+anim_player = NodePath("../AnimationPlayer")
 
 [node name="bullets" type="Node3D" parent="." unique_id=1585150938]
 
 [node name="mist" parent="." unique_id=1045705961 instance=ExtResource("3_jncid")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.1869202)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2.187)
 visible = false
 size = Vector3(5.540039, 2, 2.9188843)
