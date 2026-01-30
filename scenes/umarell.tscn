@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bnulwgy8p3fxt"]
+
+[ext_resource type="Texture2D" uid="uid://dyvirfmsvfix" path="res://assets/2D/umarell_idle.png" id="1_jcaxm"]
+[ext_resource type="Script" uid="uid://bfryxfm24q1t8" path="res://scripts/umarell.gd" id="1_wms45"]
+[ext_resource type="Texture2D" uid="uid://d36jxgjl8roc8" path="res://assets/2D/umarell_idle_stick.png" id="2_e0qfy"]
+[ext_resource type="Texture2D" uid="uid://c3bdnqvvrdjc8" path="res://assets/2D/umarell_hitted.png" id="2_soi4u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxvgb"]
+atlas = ExtResource("2_soi4u")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmfnb"]
+atlas = ExtResource("2_soi4u")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0qfy"]
+atlas = ExtResource("1_jcaxm")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wms45"]
+atlas = ExtResource("1_jcaxm")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_soi4u"]
+atlas = ExtResource("2_e0qfy")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew2kg"]
+atlas = ExtResource("2_e0qfy")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_soi4u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxvgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmfnb")
+}],
+"loop": true,
+"name": &"hitted",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0qfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wms45")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soi4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ew2kg")
+}],
+"loop": true,
+"name": &"idle_bastone",
+"speed": 2.0
+}]
+
+[node name="Umarell" type="Node3D" unique_id=1830822283]
+script = ExtResource("1_wms45")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=266252278]
+pixel_size = 0.025
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_soi4u")
+animation = &"idle_bastone"
+autoplay = "idle_bastone"
+frame_progress = 0.74106926
