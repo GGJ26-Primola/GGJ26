@@ -39,3 +39,7 @@ func _physics_process(_delta: float) -> void:
 		
 		# Play animation
 		animation_player.play("attack")
+
+
+func _on_hitbox_area_entered(area: Area3D) -> void:
+	print(area)
