@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7ekson7d3tn"
-path.s3tc="res://.godot/imported/halloweenbits_texture.png-49480939279a1fc734019fdcf491abbf.s3tc.ctex"
+uid="uid://cq8vfowoo0b4v"
+path.s3tc="res://.godot/imported/halloweenbits_texture.png-db68a813a6b5ce8d3f53867c46be1072.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Mesh Graveyard/fbx/halloweenbits_texture.png"
-dest_files=["res://.godot/imported/halloweenbits_texture.png-49480939279a1fc734019fdcf491abbf.s3tc.ctex"]
+source_file="res://assets/Mesh Woods/halloweenbits_texture.png"
+dest_files=["res://.godot/imported/halloweenbits_texture.png-db68a813a6b5ce8d3f53867c46be1072.s3tc.ctex"]
 
 [params]
 
