@@ -18,7 +18,13 @@ func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 
 func append_target() -> void:
-	camera_player.append_follow_targets(GameState.current_info_mark.get_parent().get_parent())
+	var new_target = GameState.current_info_mark.get_parent().get_parent()
+	#camera_player.append_follow_targets(GameState.current_info_mark.get_parent().get_parent())
+	if new_target != null:
+		camera_player.set_follow_targets([player, new_target])
+	else:
+		camera_player.set_follow_targets([player])
+
 
 func remove_target() -> void:
 	GameState.end_talk()
