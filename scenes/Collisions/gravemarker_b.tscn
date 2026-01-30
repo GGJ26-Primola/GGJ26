@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cexb1px1iq0ng"]
+
+[ext_resource type="PackedScene" uid="uid://b5osoe7kw6r30" path="res://assets/Mesh Graveyard/fbx/gravemarker_B.fbx" id="1_rijuu"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_scvem"]
+height = 3.4060059
+radius = 0.4399414
+
+[node name="gravemarker_B" unique_id=772543980 instance=ExtResource("1_rijuu")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1744489199]
+transform = Transform3D(0.9999769, 0.00578554, -0.0035888986, -0.00577419, 0.9999783, 0.0031679424, 0.0036071306, -0.003147167, 0.99998856, 0, 0.7813941, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1465065905]
+transform = Transform3D(-0.99999464, -0.0028273507, -1.8626451e-09, 0.0028273503, -0.99999464, 4.4237822e-09, 5.820766e-09, -6.9849193e-10, 0.99999726, -9.313226e-10, 0.27210528, -2.3283064e-10)
+shape = SubResource("CylinderShape3D_scvem")

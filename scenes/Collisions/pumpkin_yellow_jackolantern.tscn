@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://crxsf4xrh232p"]
+
+[ext_resource type="PackedScene" uid="uid://c4i5x1v3oyn1u" path="res://assets/Mesh Graveyard/fbx/pumpkin_yellow_jackolantern.fbx" id="1_ls3ro"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nd3t3"]
+height = 0.81884766
+radius = 0.8120117
+
+[node name="pumpkin_yellow_jackolantern" unique_id=1169864433 instance=ExtResource("1_ls3ro")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1739671916]
+transform = Transform3D(0.9999769, 0.00578554, -0.0035888986, -0.00577419, 0.9999783, 0.0031679424, 0.0036071306, -0.003147167, 0.99998856, 0, 0.7813941, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1033188856]
+transform = Transform3D(-0.99998826, -0.0028272544, 4.656613e-10, 0.0028272762, -0.99998826, 3.0035153e-08, 2.7706847e-08, -5.5879354e-09, 0.9999845, -0.001720489, -0.33641106, -2.7939677e-09)
+shape = SubResource("CylinderShape3D_nd3t3")

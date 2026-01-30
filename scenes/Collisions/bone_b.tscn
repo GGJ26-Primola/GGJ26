@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dld8esuaiu6u8"]
+
+[ext_resource type="PackedScene" uid="uid://dxvfjf3631ec8" path="res://assets/Mesh Graveyard/fbx/bone_B.fbx" id="1_kfw4d"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3brj7"]
+radius = 0.2023573
+
+[node name="bone_B" unique_id=772325730 instance=ExtResource("1_kfw4d")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1795279489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7813941, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=338446792]
+transform = Transform3D(-0.999996, -0.00282737, 0, 0.00282737, -0.999996, 0, 0, 0, 1, -0.0029563652, -0.7735144, 0)
+shape = SubResource("SphereShape3D_3brj7")

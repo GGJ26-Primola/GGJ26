@@ -10,7 +10,6 @@
 [ext_resource type="AudioStream" uid="uid://ckssm5iwqrukc" path="res://assets/Music/wood.wav" id="5_0mx00"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_3o5e3"]
 [ext_resource type="AudioStream" uid="uid://dxhsw30veqa12" path="res://assets/Music/boss.wav" id="6_e317x"]
-[ext_resource type="Script" uid="uid://co08gdsib6vih" path="res://scripts/game_manager.gd" id="6_s17tx"]
 [ext_resource type="PackedScene" path="res://scenes/game_over_menu.tscn" id="9_c4qu0"]
 [ext_resource type="PackedScene" uid="uid://bqo0cfd63o4nl" path="res://scenes/menu.tscn" id="18_h771b"]
 [ext_resource type="PackedScene" uid="uid://ijrrf5ej7e13" path="res://scenes/inventory.tscn" id="19_bc2po"]
@@ -55,11 +54,7 @@ volumetric_fog_density = 0.0
 [sub_resource type="Resource" id="Resource_iywne"]
 script = ExtResource("4_s17tx")
 
-[node name="Game" type="Node" unique_id=803510040]
-
-[node name="GameManager" type="Node" parent="." unique_id=1908884894]
-unique_name_in_owner = true
-script = ExtResource("6_s17tx")
+[node name="Bossfight" type="Node3D" unique_id=453515205]
 
 [node name="Musics" type="Node" parent="." unique_id=1845575960]
 unique_name_in_owner = true
@@ -112,6 +107,7 @@ unique_name_in_owner = true
 physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 6.9071064, 5.7071066)
 top_level = true
+current = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1699421758]
 process_priority = 300
@@ -121,4 +117,3 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="Boss" parent="." unique_id=1656814271 instance=ExtResource("2_jiv1s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
-can_mist = false

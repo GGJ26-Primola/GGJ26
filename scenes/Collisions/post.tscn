@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://4nji5g6rscex"]
+
+[ext_resource type="PackedScene" uid="uid://drqci832dkfxi" path="res://assets/Mesh Graveyard/fbx/post.fbx" id="1_14cbc"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xbhbe"]
+height = 5.248474
+radius = 0.5449219
+
+[node name="post" unique_id=871882191 instance=ExtResource("1_14cbc")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1303779528]
+transform = Transform3D(0.9999915, 0.0035103564, -0.0021805633, -0.0035061724, 0.999992, 0.0019204029, 0.0021872846, -0.0019127441, 0.99999577, 0, 0.7813941, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1184287283]
+transform = Transform3D(-0.9999966, -0.0029510953, 0.00018758886, 0.002936524, -0.9985162, -0.05435723, 0.00034774828, -0.054356363, 0.9985205, 0.002924618, 1.306495, 4.4237822e-09)
+shape = SubResource("CylinderShape3D_xbhbe")
