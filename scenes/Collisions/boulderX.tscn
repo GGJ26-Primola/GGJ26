@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cnmluv43bqtv6"]
+
+[ext_resource type="PackedScene" uid="uid://unm54xv5ofb2" path="res://assets/Mesh Woods/Rocks/Flat_Boulder_02.glb" id="1_qpnde"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rkbi2"]
+height = 13.09082
+radius = 6.605957
+
+[node name="Flat_Boulder_02" unique_id=1830268054 instance=ExtResource("1_qpnde")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1356604495]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1776218208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2023926, 0)
+shape = SubResource("CylinderShape3D_rkbi2")

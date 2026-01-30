@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://5uaw20pscdik"]
+
+[ext_resource type="PackedScene" uid="uid://biodym60jxpwh" path="res://assets/Mesh Woods/tree_pine_yellow_small.fbx" id="1_6mik7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xiddv"]
+height = 3.3139648
+
+[node name="tree_pine_yellow_small" unique_id=1611583559 instance=ExtResource("1_6mik7")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1088335619]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1046969641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6569824, 0)
+shape = SubResource("CapsuleShape3D_xiddv")

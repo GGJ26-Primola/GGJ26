@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bjcmrso3picf2"]
+
+[ext_resource type="PackedScene" uid="uid://htnsokkcnvo" path="res://assets/Mesh Woods/Extras/Flat_Tree_Stump.glb" id="1_t78jn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t2apt"]
+radius = 2.1347656
+height = 4.2695313
+
+[node name="Flat_Tree_Stump" unique_id=1770649150 instance=ExtResource("1_t78jn")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=474579185]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1118640339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24804688, 0)
+shape = SubResource("CapsuleShape3D_t2apt")

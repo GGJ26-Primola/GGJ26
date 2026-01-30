@@ -22,3 +22,8 @@ func shoot() -> void:
 func _on_hitbox_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		Global.game_over = true
+
+
+func _on_hitbox_body_exited(body: Node3D) -> void:
+	if body.name == "Player":
+		Global.game_over = false
