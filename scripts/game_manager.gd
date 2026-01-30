@@ -7,7 +7,7 @@ extends Node
 var last_checkpoint := Vector3.ZERO
 
 var cat_running = false
-const RUN_SPEED = 0.5
+const RUN_SPEED = 5
 
 @onready var cat_path: PathFollow3D = $"../NPC/CatPath3D/CatPathFollow3D"
 @onready var child_1_path: PathFollow3D = $"../NPC/CatPath3D/PathFollow3D"
@@ -82,7 +82,7 @@ func _process(delta: float) -> void:
 		if Global.current_level == Global.Level.CEMETERY and not Dialogic.VAR.mask_cat:
 			cemetery_death_audio.play()
 			cemetery_death_timer.start()
-	elif Dialogic.VAR.mask_cat:
+	elif Dialogic.VAR.mask_cat or Global.current_level != Global.Level.CEMETERY:
 		cemetery_death_audio.stop()
 		cemetery_death_timer.stop()
 

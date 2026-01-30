@@ -49,6 +49,7 @@ func _process(_delta: float) -> void:
 				focused = active.get_child(0).get_child(2).get_child(0)
 			else:
 				focused = active.get_child(0).get_child(1).get_child(1).get_child(current_item)
+
 		if focused != null:
 			focused.focus_mode = Control.FOCUS_ALL
 			focused.grab_focus()
