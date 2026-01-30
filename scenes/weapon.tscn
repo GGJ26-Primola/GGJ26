@@ -167,3 +167,5 @@ bus = &"SFX"
 [node name="WeaponPlayer2" type="AudioStreamPlayer" parent="PositionPivot" unique_id=1583700739]
 stream = ExtResource("3_bmw2d")
 bus = &"SFX"
+
+[connection signal="area_entered" from="PositionPivot/GFX/Hitbox" to="PositionPivot" method="_on_hitbox_area_entered"]

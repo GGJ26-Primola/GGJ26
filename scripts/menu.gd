@@ -34,7 +34,7 @@ func _process(_delta: float) -> void:
 			play_button.grab_focus()
 			current_item = 0
 			
-	if Input.is_action_just_pressed("up") or Input.is_action_just_pressed("down"):
+	elif Input.is_action_just_pressed("up") or Input.is_action_just_pressed("down"):
 		var focused 
 		var active = options_panel if options_panel.visible else main_panel
 		var direction = Input.get_axis("up","down")
@@ -49,7 +49,7 @@ func _process(_delta: float) -> void:
 				focused = active.get_child(0).get_child(2).get_child(0)
 			else:
 				focused = active.get_child(0).get_child(1).get_child(1).get_child(current_item)
-				
+
 		if focused != null:
 			focused.focus_mode = Control.FOCUS_ALL
 			focused.grab_focus()

@@ -35,9 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://csmobhdu4w4fp" path="res://scenes/Collisions/grave_a.tscn" id="40_pgi4y"]
 [ext_resource type="PackedScene" uid="uid://cdh07f0ahctua" path="res://scenes/Collisions/grave_a_destroyed.tscn" id="41_17ynj"]
 [ext_resource type="PackedScene" uid="uid://b01wwa82fddnm" path="res://scenes/Collisions/fence_seperate_broken.tscn" id="41_a7vut"]
-[ext_resource type="PackedScene" uid="uid://sixelajdjoew" path="res://assets/3D/Tomba2.glb" id="41_l6fg0"]
 [ext_resource type="PackedScene" uid="uid://cvlefwuw2uljc" path="res://scenes/Collisions/tree_pine_orange_small.tscn" id="42_lgker"]
-[ext_resource type="PackedScene" uid="uid://b6wxe8qhetltb" path="res://assets/3D/Tomba3.glb" id="42_pgi4y"]
 [ext_resource type="PackedScene" uid="uid://c3715oyku61f8" path="res://scenes/Collisions/tree_pine_yellow_medium.tscn" id="43_5uk6q"]
 [ext_resource type="PackedScene" uid="uid://5uaw20pscdik" path="res://scenes/Collisions/tree_pine_yellow_small.tscn" id="44_l6fg0"]
 [ext_resource type="PackedScene" uid="uid://ccfb6gib7387b" path="res://scenes/Collisions/bench_decorated.tscn" id="45_dxgjj"]
@@ -55,7 +53,10 @@
 [ext_resource type="PackedScene" uid="uid://bknlrxujrca65" path="res://scenes/Collisions/tree_dead_large_decorated.tscn" id="52_3gxe6"]
 [ext_resource type="PackedScene" uid="uid://c1qihdenasb7v" path="res://scenes/Collisions/pillar.tscn" id="52_lgker"]
 [ext_resource type="PackedScene" uid="uid://kskbp6x8ypvw" path="res://scenes/Collisions/coffin_decorated.tscn" id="53_dw5wf"]
-[ext_resource type="PackedScene" uid="uid://brvu5hhvr7oku" path="res://assets/3D/Tomba4.glb" id="55_17ynj"]
+[ext_resource type="PackedScene" uid="uid://dhn0ni2okeplp" path="res://scenes/Collisions/tomba_1.tscn" id="53_l6fg0"]
+[ext_resource type="PackedScene" uid="uid://8d8768euabnx" path="res://scenes/Collisions/tomba_2.tscn" id="54_pgi4y"]
+[ext_resource type="PackedScene" uid="uid://ckhtkmwebm8h4" path="res://scenes/Collisions/tomba_3.tscn" id="55_17ynj"]
+[ext_resource type="PackedScene" uid="uid://dvhiiowi6tim4" path="res://scenes/Collisions/tomba_4.tscn" id="56_dxgjj"]
 
 [sub_resource type="Resource" id="Resource_cuj8v"]
 script = ExtResource("3_vwnn2")
@@ -775,15 +776,6 @@ transform = Transform3D(0.85205173, 0.34726304, 0.39168385, -0.31552172, 0.93776
 
 [node name="fence4" parent="Terrain/HTerrain/misc" unique_id=1035671424 instance=ExtResource("49_dxgjj")]
 transform = Transform3D(0.2389582, 0.9392622, -0.24634473, -0.16146293, 0.28859654, 0.9437381, 0.95751166, -0.18573838, 0.22061855, -19.79773, 7.273902, 18.070543)
-
-[node name="Tomba1" parent="Terrain/HTerrain/misc" unique_id=940432853 instance=ExtResource("40_5uk6q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.60935, 40.09064, 46.19382)
-
-[node name="Tomba2" parent="Terrain/HTerrain/misc" unique_id=728585705 instance=ExtResource("41_l6fg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.71354, 59.771484, 53.596302)
-
-[node name="Tomba3" parent="Terrain/HTerrain/misc" unique_id=1847038830 instance=ExtResource("42_pgi4y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.899303, 59.024, 53.965363)
 
 [node name="tree_pine_yellow_medium46" parent="Terrain/HTerrain/misc" unique_id=2096631978 instance=ExtResource("43_5uk6q")]
 transform = Transform3D(-0.7697005, 0, 0.6384051, 0, 1, 0, -0.6384051, 0, -0.7697005, 51.54454, -3.080471, -33.469864)
@@ -1571,9 +1563,6 @@ transform = Transform3D(0.9671658, 0, -0.2541462, 0.08010735, 0.9490247, 0.30485
 [node name="fence_gate4" parent="Terrain/HTerrain/misc" unique_id=452652093 instance=ExtResource("51_nfs6y")]
 transform = Transform3D(0.99548775, 0.029966142, -0.09003432, 0, 0.94882643, 0.3157981, 0.09489019, -0.31437314, 0.9445451, 21.311007, 0.9177942, 30.467548)
 
-[node name="Tomba4" parent="Terrain/HTerrain/misc" unique_id=2114324941 instance=ExtResource("55_17ynj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.901527, 59.7212, 53.8125)
-
 [node name="pillar3" parent="Terrain/HTerrain/misc" unique_id=1602841066 instance=ExtResource("52_lgker")]
 transform = Transform3D(1, -2.2351742e-08, 0, 0, 0.98719764, -0.15950216, 0, 0.15950212, 0.9871975, 39.532413, -0.019554138, -20.205635)
 
@@ -1587,3 +1576,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5721283, -26.566683)
 
 [node name="Mazapégul" type="Node3D" parent="NPC" unique_id=1326737898]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5721283, -26.566683)
+
+[node name="Tomba1" parent="." unique_id=940432853 instance=ExtResource("53_l6fg0")]
+transform = Transform3D(1, 0, 0, 0, 0.99982035, -0.01895314, 0, 0.01895314, 0.99982035, -31.833174, 3.8894987, -20.957268)
+
+[node name="Tomba2" parent="." unique_id=728585705 instance=ExtResource("54_pgi4y")]
+transform = Transform3D(0.9783431, 0, 0.20698972, 0, 1, 0, -0.20698972, 0, 0.9783431, -35.777637, 3.275981, -4.645851)
+
+[node name="Tomba3" parent="." unique_id=1847038830 instance=ExtResource("55_17ynj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.74603, 1.9805351, -25.225689)
+
+[node name="Tomba4" parent="." unique_id=2114324941 instance=ExtResource("56_dxgjj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.020872, -1.7759933, -4.558563)
+
+[node name="Tomba5" parent="." unique_id=372847001 instance=ExtResource("53_l6fg0")]
+transform = Transform3D(0.9999426, 0.002123803, 0.010503553, -0.010716117, 0.19817635, 0.98010784, 0, -0.9801641, 0.19818772, 7.604413, -6.324424, -35.191154)
+
+[node name="Tomba6" parent="." unique_id=142037133 instance=ExtResource("54_pgi4y")]
+transform = Transform3D(0.99999994, 0, 0.00040142573, 0, 1, 0, -0.00040142573, 0, 0.99999994, -7.5161753, 1.3390876, -39.583664)
+
+[node name="Tomba7" parent="." unique_id=1081142333 instance=ExtResource("40_5uk6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.474834, -3.1320891, -41.016407)
