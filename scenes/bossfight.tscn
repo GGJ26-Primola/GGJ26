@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_3o5e3"]
 [ext_resource type="AudioStream" uid="uid://dxhsw30veqa12" path="res://assets/Music/boss.wav" id="6_e317x"]
 [ext_resource type="Script" uid="uid://co08gdsib6vih" path="res://scripts/game_manager.gd" id="6_s17tx"]
+[ext_resource type="PackedScene" path="res://scenes/game_over_menu.tscn" id="9_c4qu0"]
 [ext_resource type="PackedScene" uid="uid://bqo0cfd63o4nl" path="res://scenes/menu.tscn" id="18_h771b"]
 [ext_resource type="PackedScene" uid="uid://ijrrf5ej7e13" path="res://scenes/inventory.tscn" id="19_bc2po"]
 
@@ -73,6 +74,8 @@ bus = &"Music"
 scale = Vector2(1, 1)
 
 [node name="Inventory" parent="." unique_id=874561363 instance=ExtResource("19_bc2po")]
+
+[node name="GameOverMenu" parent="." unique_id=251255802 instance=ExtResource("9_c4qu0")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=789237425]
 environment = SubResource("Environment_yqjtg")
