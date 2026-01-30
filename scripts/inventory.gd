@@ -1,5 +1,8 @@
 extends Control
+
 @onready var container: HBoxContainer = $Mask/HBoxContainer
+@onready var change_mask_audio: AudioStreamPlayer = $ChangeMaskAudio
+
 var inventory_size : int
 var current_item : float
 const initial_position = 384.5
@@ -37,6 +40,7 @@ func equip_mask() -> void:
 	else:
 		return
 	
+	change_mask_audio.play()
 	GameState.current_game_status = GameState.State.PLAYING
 	hide()
 

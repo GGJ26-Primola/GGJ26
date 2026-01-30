@@ -8,6 +8,15 @@
 [ext_resource type="Texture2D" uid="uid://xmy5gco18upw" path="res://assets/UI/mask_ftp1.png" id="6_p7iul"]
 [ext_resource type="Texture2D" uid="uid://ce6hrb7ricy0e" path="res://assets/UI/mask_pest.png" id="7_td2ew"]
 [ext_resource type="Texture2D" uid="uid://dx652blsfomrk" path="res://assets/UI/mask_boss.png" id="8_ylenm"]
+[ext_resource type="AudioStream" uid="uid://djg7vtuxw4pu6" path="res://assets/Music/SFX/MASK CHANGE1.wav" id="9_td2ew"]
+[ext_resource type="AudioStream" uid="uid://bmd7k8b8nlus7" path="res://assets/Music/SFX/MASK CHANGE2.wav" id="10_ylenm"]
+[ext_resource type="AudioStream" uid="uid://bax4ddgpqknrv" path="res://assets/Music/SFX/MASK CHANGE3.wav" id="11_0df5h"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_td2ew"]
+streams_count = 3
+stream_0/stream = ExtResource("9_td2ew")
+stream_1/stream = ExtResource("10_ylenm")
+stream_2/stream = ExtResource("11_0df5h")
 
 [node name="Inventory" type="Control" unique_id=874561363]
 layout_mode = 3
@@ -119,3 +128,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_ylenm")
 metadata/_edit_use_anchors_ = true
+
+[node name="ChangeMaskAudio" type="AudioStreamPlayer" parent="." unique_id=1312114583]
+stream = SubResource("AudioStreamRandomizer_td2ew")
+bus = &"SFX"

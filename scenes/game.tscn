@@ -315,11 +315,6 @@ shape = SubResource("CapsuleShape3D_264po")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3007967, 0.5577383, 4.980488)
 script = null
 
-[node name="Menu" parent="." unique_id=803179413 instance=ExtResource("2_p57ef")]
-scale = Vector2(1, 1)
-
-[node name="Inventory" parent="." unique_id=874561363 instance=ExtResource("19_bt5mj")]
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=789237425]
 environment = SubResource("Environment_yqjtg")
 
@@ -369,6 +364,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.686136, 10.597036, -7.6934
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D2/Destructible" unique_id=447905751]
 shape = SubResource("BoxShape3D_wljb1")
+
+[node name="Menu" parent="." unique_id=803179413 instance=ExtResource("2_p57ef")]
+scale = Vector2(1, 1)
+
+[node name="Inventory" parent="." unique_id=874561363 instance=ExtResource("19_bt5mj")]
 
 [connection signal="attacked" from="NPC/Umarell/Destructible" to="GameManager" method="_on_umarell_attacked"]
 [connection signal="attacked" from="CSGBox3D2/Destructible" to="GameManager" method="_on_item_attacked"]
