@@ -106,7 +106,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_c5nvw")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h30sx"]
-size = Vector3(3.602539, 4.0351563, 1)
+size = Vector3(3.602539, 4.0351563, 0.71276855)
 
 [sub_resource type="Animation" id="Animation_ydepu"]
 length = 0.001
@@ -273,7 +273,7 @@ libraries/ = SubResource("AnimationLibrary_bhxxm")
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1563419482]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1202199791]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5175781, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5175781, -0.14361572)
 shape = SubResource("BoxShape3D_h30sx")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

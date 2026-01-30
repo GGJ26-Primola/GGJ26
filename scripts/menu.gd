@@ -1,8 +1,8 @@
 extends Control
 
-@onready var player: CharacterBody3D = %Player
 @onready var main_panel: NinePatchRect = $MainPanel
 @onready var options_panel: NinePatchRect = $OptionsPanel
+
 @onready var play_button: MenuButton = $MainPanel/VBoxContainer/NinePatchRect/PlayButton
 
 # Called when the node enters the scene tree for the first time.
@@ -24,7 +24,7 @@ func _process(_delta: float) -> void:
 		else:
 			GameState.set_game_status(GameState.State.PAUSE)
 			main_panel.show()
-			#play_button.f
+			play_button.focus_mode = Control.FOCUS_ALL
 			options_panel.hide()
 
 func _on_play_button_pressed() -> void:

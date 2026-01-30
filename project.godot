@@ -84,11 +84,11 @@ layout/style_directory={
 }
 variables={
 "current_mask": "default",
-"mask_boss": false,
+"mask_boss": true,
 "mask_cat": true,
 "mask_default": true,
-"mask_ftp1": false,
-"mask_pest": false,
+"mask_ftp1": true,
+"mask_pest": true,
 "meow": 0,
 "stick": true,
 "umarell_hitted": false
