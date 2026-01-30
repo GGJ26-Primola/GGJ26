@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://dxhsw30veqa12" path="res://assets/Music/boss.wav" id="5_264po"]
 [ext_resource type="PackedScene" uid="uid://btg3dwmousmcq" path="res://scenes/destructible.tscn" id="8_dinhu"]
 [ext_resource type="Resource" uid="uid://cgxjwph0mocqs" path="res://dialogic/Safe zone/1[Zona1] V5 Umarello.dtl" id="11_ca42v"]
+[ext_resource type="AudioStream" uid="uid://cj87igh3bjjco" path="res://assets/Music/SFX/GHOST WALKING.wav" id="11_twgab"]
 [ext_resource type="Resource" uid="uid://dfih0wiq8j04t" path="res://dialogic/Safe zone/1[Zona1] V65 Quest gatto END.dtl" id="14_gxtfn"]
 [ext_resource type="Script" uid="uid://tq8hh5r2ii45" path="res://scripts/look_at_2d.gd" id="15_37s47"]
 [ext_resource type="PackedScene" uid="uid://cm4noj7flak4p" path="res://scenes/enemy.tscn" id="16_5newe"]
@@ -152,6 +153,10 @@ script = ExtResource("1_iywne")
 child_1_hitted_dialogue = ExtResource("2_js0lu")
 child_2_hitted_dialogue = ExtResource("3_gxtfn")
 
+[node name="CemeteryDeathTimer" type="Timer" parent="GameManager" unique_id=859603541]
+wait_time = 10.0
+one_shot = true
+
 [node name="SafeZone" parent="." unique_id=1897293832 instance=ExtResource("2_e1j6l")]
 
 [node name="Musics" type="Node" parent="." unique_id=1845575960]
@@ -191,6 +196,10 @@ music_name = "safe"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Musics/MusicChanger4" unique_id=938094998]
 shape = SubResource("BoxShape3D_gxtfn")
+
+[node name="CemeteryDeathAudio" type="AudioStreamPlayer" parent="Musics" unique_id=1017522231]
+stream = ExtResource("11_twgab")
+bus = &"SFX"
 
 [node name="NPC" type="Node" parent="." unique_id=583360651]
 
@@ -405,6 +414,7 @@ scale = Vector2(1, 1)
 [node name="Woods" parent="." unique_id=474693119 instance=ExtResource("33_v2yb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.142365, 21.69962, -14.668915)
 
+[connection signal="timeout" from="GameManager/CemeteryDeathTimer" to="GameManager" method="cemetery_game_over"]
 [connection signal="attacked" from="NPC/CatPath3D/PathFollow3D/Destructible" to="GameManager" method="_on_child_1_attacked"]
 [connection signal="attacked" from="NPC/CatPath3D/PathFollow3D2/Destructible" to="GameManager" method="_on_child_2_attacked"]
 [connection signal="attacked" from="NPC/Umarell/Destructible" to="GameManager" method="_on_umarell_attacked"]

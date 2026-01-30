@@ -2,14 +2,4 @@
 
 [ext_resource type="PackedScene" uid="uid://1gtbarf0bsw1" path="res://assets/Mesh Woods/Rocks/Flat_Boulder_03.glb" id="1_0bqw3"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_58tcj"]
-radius = 7.8706055
-height = 24.076782
-
 [node name="Flat_Boulder_03" unique_id=535769743 instance=ExtResource("1_0bqw3")]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1152891341]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=2024206178]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0327487, 8.271912, 0)
-shape = SubResource("CapsuleShape3D_58tcj")

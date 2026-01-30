@@ -2,7 +2,7 @@ class_name GameState
 
 enum State { PLAYING, PAUSE, INVENTORY, ATTACK, TALKING, GAMEOVER }
 
-static var current_game_status = GameState.State.PLAYING
+static var current_game_status := GameState.State.PLAYING
 
 # Dialogic stuff
 static var dialogic_timeline : DialogicTimeline = null
