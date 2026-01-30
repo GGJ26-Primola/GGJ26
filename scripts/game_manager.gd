@@ -7,7 +7,7 @@ extends Node
 var last_checkpoint := Vector3.ZERO
 
 var cat_running = false
-const RUN_SPEED = 0.5
+const RUN_SPEED = 5
 
 @onready var cat_path: PathFollow3D = $"../NPC/CatPath3D/CatPathFollow3D"
 @onready var child_1_path: PathFollow3D = $"../NPC/CatPath3D/PathFollow3D"

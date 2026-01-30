@@ -50,9 +50,9 @@ func _process(_delta: float) -> void:
 			else:
 				focused = active.get_child(0).get_child(1).get_child(1).get_child(current_item)
 				
-			
-		focused.focus_mode = Control.FOCUS_ALL
-		focused.grab_focus()
+		if focused != null:
+			focused.focus_mode = Control.FOCUS_ALL
+			focused.grab_focus()
 
 func _on_play_button_pressed() -> void:
 	GameState.set_game_status(GameState.State.PLAYING)
