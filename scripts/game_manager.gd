@@ -82,7 +82,7 @@ func _process(delta: float) -> void:
 		if Global.current_level == Global.Level.CEMETERY and not Dialogic.VAR.mask_cat:
 			cemetery_death_audio.play()
 			cemetery_death_timer.start()
-	elif Dialogic.VAR.mask_cat:
+	elif Dialogic.VAR.mask_cat or Global.current_level != Global.Level.CEMETERY:
 		cemetery_death_audio.stop()
 		cemetery_death_timer.stop()
 
