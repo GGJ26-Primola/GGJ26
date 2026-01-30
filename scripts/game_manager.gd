@@ -79,10 +79,10 @@ func _process(delta: float) -> void:
 	
 	# If you are in the cemetery without mask, you can live for few seconds
 	if cemetery_death_timer.is_stopped():
-		if Global.current_level == Global.Level.CEMETERY and not Dialogic.VAR.mask_cat:
+		if Global.current_level == Global.Level.CEMETERY and not Dialogic.VAR.current_mask == "cat":
 			cemetery_death_audio.play()
 			cemetery_death_timer.start()
-	elif Dialogic.VAR.mask_cat or Global.current_level != Global.Level.CEMETERY:
+	elif Dialogic.VAR.current_mask == "cat" or Global.current_level != Global.Level.CEMETERY:
 		cemetery_death_audio.stop()
 		cemetery_death_timer.stop()
 

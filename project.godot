@@ -87,9 +87,9 @@ layout/style_directory={
 variables={
 "current_mask": "default",
 "mask_boss": false,
-"mask_cat": false,
+"mask_cat": true,
 "mask_default": true,
-"mask_ftp1": false,
+"mask_ftp1": true,
 "mask_pest": false,
 "meow": 0,
 "stick": false,
