@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b77kssq5whayj"]
+
+[ext_resource type="PackedScene" uid="uid://bywp0kn41cm0j" path="res://assets/Mesh Woods/Trees/Spruce/Flat_Tree_Spruce_large.glb" id="1_w0on8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vdtlo"]
+radius = 0.97021484
+height = 4.6169434
+
+[node name="Flat_Tree_Spruce_large" unique_id=991850535 instance=ExtResource("1_w0on8")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=590157840]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=184337277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3084717, 0)
+shape = SubResource("CapsuleShape3D_vdtlo")

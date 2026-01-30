@@ -1,0 +1,4 @@
+[signal arg="cat_stop"]
+"Monello 1": Ouch... why?
+[signal arg="cat_start"]
+"Monello 1": I wan only running to kill a cat...

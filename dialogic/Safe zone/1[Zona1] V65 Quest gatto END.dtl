@@ -1,4 +1,6 @@
 # Il gatto cambia forma e diventa più grande, rivelando la sua forma gatto mammone
+if {mask_cat} == true:
+	"Gatto Mammone": Miao
 "Gatto Mammone": FOR THOUSANDS OF YEARS I SLUMBERED, and the one time i try to grab a snack, kids throw rocks at me, old men follow me with a broom and other nasty stuff. The nerve!
 Player: Wh-who are you?
 "Gatto Mammone": Mreow! I am the great, the magnificent Gatto Mammone!
@@ -13,7 +15,10 @@ Player: Isn't that dangerous?
 "Gatto Mammone": Mrreow. Very much so. You will need help. Take this.
 join "Maschera gatto" center
 Player: Another mask?
+audio "res://assets/Music/SFX/MASK 2.wav"
 leave "Maschera gatto"
+set {mask_cat} = true
+[signal arg="inventory"]
 "Maschera gatto": Masks have meaning. Masks have power. When you wear a mask, you are not what's under it, but what is on it.
 "Gatto Mammone": If you wear the mask of the great Gatto Mammone, you become like the great Gatto mammone. A cat's eye can peer into the world of night and spirits.
 "Gatto Mammone": I cannot protect you from teeth and nail, for that you will have to rely on your wits. The risk is great, but i sense in you the need to go forward.

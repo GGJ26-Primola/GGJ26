@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bhfoudrsi3gsq"]
+
+[ext_resource type="PackedScene" uid="uid://c41yj3ho0nbyx" path="res://assets/Mesh Graveyard/fbx/gravestone.fbx" id="1_pucf0"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_uutl5"]
+height = 3.2928467
+radius = 0.8413086
+
+[node name="gravestone" unique_id=173594523 instance=ExtResource("1_pucf0")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=305825598]
+transform = Transform3D(0.9999915, 0.0035103564, -0.0021805633, -0.0035061724, 0.999992, 0.0019204029, 0.0021872846, -0.0019127441, 0.99999577, 0, 0.7813941, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1468489730]
+transform = Transform3D(-0.999996, -0.00282737, 0, 0.0028273698, -0.999996, 5.005859e-09, 1.0011718e-08, -5.005859e-09, 1, 0.00015997165, 0.32868475, -1.1641532e-10)
+shape = SubResource("CylinderShape3D_uutl5")

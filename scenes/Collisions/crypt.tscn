@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bxbwd5c1ee00c"]
+
+[ext_resource type="PackedScene" uid="uid://bv7ktt3tps38o" path="res://assets/Mesh Graveyard/fbx/crypt.fbx" id="1_5ertr"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_828pm"]
+height = 3.7752686
+radius = 4.3413086
+
+[node name="crypt" unique_id=463524438 instance=ExtResource("1_5ertr")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=483080581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7813941, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=2134392907]
+transform = Transform3D(-0.999996, -0.00282737, 0, 0.00282737, -0.999996, 0, 0, 0, 1, -0.00052202115, 1.2321795, 0)
+shape = SubResource("CylinderShape3D_828pm")

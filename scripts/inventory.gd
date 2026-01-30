@@ -13,6 +13,11 @@ func _ready() -> void:
 	set_current_item()
 	container.position.x = initial_position - current_item * 98
 	display_mask()
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+
+func _on_dialogic_signal(argument: String) -> void:
+	if argument == "inventory":
+		display_mask()
 
 func set_current_item() -> void:
 	if Dialogic.VAR.current_mask == "default":
