@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ckhtkmwebm8h4"]
+
+[ext_resource type="PackedScene" uid="uid://b6wxe8qhetltb" path="res://assets/3D/Tomba3.glb" id="1_m2kv1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2nbly"]
+radius = 1.2861328
+height = 4.8278503
+
+[node name="Tomba3" unique_id=1847038830 instance=ExtResource("1_m2kv1")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=467822653]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=751882011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.692392, 1.1971421, 6.4303465)
+shape = SubResource("CapsuleShape3D_2nbly")
