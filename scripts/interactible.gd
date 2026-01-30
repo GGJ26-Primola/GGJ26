@@ -4,7 +4,7 @@ extends Area3D
 @export var bubble_pnc : DialogicCharacter
 @export var automatic_play : bool = false
 @export var reload_now : bool = false
-#@export var destroy_after_read : bool = false
+@export var destroy_after_read : bool = false
 
 @onready var info_mark: Sprite3D = $InfoMark
 
@@ -26,6 +26,7 @@ func _on_area_entered(_area: Area3D) -> void:
 	GameState.dialogic_timeline = timeline
 	GameState.current_info_mark = info_mark
 	GameState.dialogic_reload_now = reload_now
+	GameState.dialogic_destroy_after_read = destroy_after_read
 	
 	if automatic_play and GameState.can_play():
 		GameState.start_talk()

@@ -75,6 +75,8 @@ directories/dtl_directory={
 "2 Secondo incontro Mazapégul": "res://dialogic/Cemetery/2 Secondo incontro Mazapégul.dtl",
 "GrimBalduzzi": "res://dialogic/Cemetery/GrimBalduzzi.dtl",
 "Incontro con Mazanpegul": "res://dialogic/Safe zone/Incontro con Mazanpegul.dtl",
+"hitted_child_1": "res://dialogic/Safe zone/hitted_child_1.dtl",
+"hitted_child_2": "res://dialogic/Safe zone/hitted_child_2.dtl",
 "miao": "res://dialogic/miao.dtl"
 }
 layout/style_directory={
@@ -84,13 +86,13 @@ layout/style_directory={
 }
 variables={
 "current_mask": "default",
-"mask_boss": true,
-"mask_cat": true,
+"mask_boss": false,
+"mask_cat": false,
 "mask_default": true,
 "mask_ftp1": true,
-"mask_pest": true,
+"mask_pest": false,
 "meow": 0,
-"stick": false,
+"stick": true,
 "umarell_hitted": false
 }
 extensions_folder="res://addons/dialogic_additions"
@@ -134,7 +136,6 @@ layout/default_style="res://dialogic/styles/conversation.tres"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor_plugins]

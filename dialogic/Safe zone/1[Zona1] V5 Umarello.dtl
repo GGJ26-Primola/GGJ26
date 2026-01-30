@@ -1,4 +1,4 @@
-# Umarell sta vicino alla fontana, urlando improperi a tutti, il dialogo parte da lontano. 
+join Umarell right
 if {umarell_hitted} == true:
 	Umarell: ...
 	Umarell: <I think i will go lay down a bit, my head hurts./Why?>

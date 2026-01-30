@@ -8,7 +8,8 @@ var input_dir : Vector2
 var last_input : Vector2
 
 func end_attack() -> void:
-	GameState.set_game_status(GameState.State.PLAYING)
+	if GameState.current_game_status == GameState.State.ATTACK:
+		GameState.set_game_status(GameState.State.PLAYING)
 	
 func _physics_process(_delta: float) -> void:
 	
