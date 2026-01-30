@@ -4,13 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://bxue1yvuq8tky" path="res://assets/UI/conversation_border.png" id="1_qw0r6"]
 [ext_resource type="Script" uid="uid://djnht1345m1qr" path="res://scripts/inventory.gd" id="1_ty45s"]
 [ext_resource type="Texture2D" uid="uid://wxv88jlrwibk" path="res://assets/UI/mask_default.png" id="4_g71ie"]
+[ext_resource type="Texture2D" uid="uid://c5tqgxuninqs3" path="res://assets/UI/no_mask_default.png" id="5_nq6oc"]
 [ext_resource type="Texture2D" uid="uid://clj5jpgwu64mu" path="res://assets/UI/mask_cat.png" id="5_sr8g6"]
 [ext_resource type="Texture2D" uid="uid://xmy5gco18upw" path="res://assets/UI/mask_ftp1.png" id="6_p7iul"]
+[ext_resource type="Texture2D" uid="uid://csem8tuee7to7" path="res://assets/UI/no_mask_cat.png" id="7_k86sa"]
 [ext_resource type="Texture2D" uid="uid://ce6hrb7ricy0e" path="res://assets/UI/mask_pest.png" id="7_td2ew"]
 [ext_resource type="Texture2D" uid="uid://dx652blsfomrk" path="res://assets/UI/mask_boss.png" id="8_ylenm"]
+[ext_resource type="Texture2D" uid="uid://04crocvx8kkh" path="res://assets/UI/no_mask_ftp1.png" id="9_40feg"]
 [ext_resource type="AudioStream" uid="uid://djg7vtuxw4pu6" path="res://assets/Music/SFX/MASK CHANGE1.wav" id="9_td2ew"]
 [ext_resource type="AudioStream" uid="uid://bmd7k8b8nlus7" path="res://assets/Music/SFX/MASK CHANGE2.wav" id="10_ylenm"]
 [ext_resource type="AudioStream" uid="uid://bax4ddgpqknrv" path="res://assets/Music/SFX/MASK CHANGE3.wav" id="11_0df5h"]
+[ext_resource type="Texture2D" uid="uid://c77n3guyxwvu3" path="res://assets/UI/no_mask_pest.png" id="11_tla8l"]
+[ext_resource type="Texture2D" uid="uid://gvqqpwqgffoj" path="res://assets/UI/no_mask_boss.png" id="13_w24ly"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_td2ew"]
 streams_count = 3
@@ -64,9 +69,27 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_g71ie")
+metadata/_edit_use_anchors_ = true
+
+[node name="MaskTexture2" type="TextureRect" parent="Mask/HBoxContainer/TextureRect" unique_id=340325115]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_nq6oc")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="Mask/HBoxContainer" unique_id=75200684]
@@ -84,6 +107,16 @@ grow_vertical = 2
 texture = ExtResource("5_sr8g6")
 metadata/_edit_use_anchors_ = true
 
+[node name="MaskTexture2" type="TextureRect" parent="Mask/HBoxContainer/TextureRect2" unique_id=716395208]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_k86sa")
+metadata/_edit_use_anchors_ = true
+
 [node name="TextureRect3" type="TextureRect" parent="Mask/HBoxContainer" unique_id=688523549]
 layout_mode = 2
 texture = ExtResource("1_qw0r6")
@@ -97,6 +130,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_p7iul")
+metadata/_edit_use_anchors_ = true
+
+[node name="MaskTexture2" type="TextureRect" parent="Mask/HBoxContainer/TextureRect3" unique_id=716860832]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_40feg")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect4" type="TextureRect" parent="Mask/HBoxContainer" unique_id=748877455]
@@ -114,6 +157,16 @@ grow_vertical = 2
 texture = ExtResource("7_td2ew")
 metadata/_edit_use_anchors_ = true
 
+[node name="MaskTexture2" type="TextureRect" parent="Mask/HBoxContainer/TextureRect4" unique_id=108762676]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_tla8l")
+metadata/_edit_use_anchors_ = true
+
 [node name="TextureRect5" type="TextureRect" parent="Mask/HBoxContainer" unique_id=811582266]
 layout_mode = 2
 texture = ExtResource("1_qw0r6")
@@ -127,6 +180,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_ylenm")
+metadata/_edit_use_anchors_ = true
+
+[node name="MaskTexture2" type="TextureRect" parent="Mask/HBoxContainer/TextureRect5" unique_id=1974004490]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_w24ly")
 metadata/_edit_use_anchors_ = true
 
 [node name="ChangeMaskAudio" type="AudioStreamPlayer" parent="." unique_id=1312114583]
