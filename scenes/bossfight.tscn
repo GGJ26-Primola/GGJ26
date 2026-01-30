@@ -48,6 +48,8 @@ sky_material = SubResource("ProceduralSkyMaterial_8cj0n")
 background_mode = 2
 sky = SubResource("Sky_kvpfn")
 tonemap_mode = 2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
 
 [sub_resource type="Resource" id="Resource_iywne"]
 script = ExtResource("4_s17tx")
