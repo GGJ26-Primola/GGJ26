@@ -1,9 +1,19 @@
 [gd_scene format=3 uid="uid://ctio65mmg2fab"]
 
 [ext_resource type="Texture2D" uid="uid://dmn7pm0c1vs2o" path="res://assets/2D/boss.png" id="1_dlmty"]
+[ext_resource type="Script" uid="uid://d0c0tclcwrgkl" path="res://scripts/boss.gd" id="1_neq0i"]
+[ext_resource type="PackedScene" uid="uid://c4pfeujhlittk" path="res://scenes/mist.tscn" id="3_jncid"]
 
 [node name="Boss" type="Node3D" unique_id=1656814271]
+script = ExtResource("1_neq0i")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=80689855]
-pixel_size = 0.03
+texture_filter = 0
 texture = ExtResource("1_dlmty")
+
+[node name="bullets" type="Node3D" parent="." unique_id=1585150938]
+
+[node name="mist" parent="." unique_id=1045705961 instance=ExtResource("3_jncid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.1869202)
+visible = false
+size = Vector3(5.540039, 2, 2.9188843)

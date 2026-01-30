@@ -48,6 +48,8 @@ sky_material = SubResource("ProceduralSkyMaterial_8cj0n")
 background_mode = 2
 sky = SubResource("Sky_kvpfn")
 tonemap_mode = 2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
 
 [sub_resource type="Resource" id="Resource_iywne"]
 script = ExtResource("4_s17tx")
@@ -115,4 +117,4 @@ script = ExtResource("5_3o5e3")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="Boss" parent="." unique_id=1656814271 instance=ExtResource("2_jiv1s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -7)

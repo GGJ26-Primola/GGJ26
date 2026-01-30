@@ -1,5 +1,8 @@
 extends Control
+
 @onready var container: HBoxContainer = $Mask/HBoxContainer
+@onready var change_mask_audio: AudioStreamPlayer = $ChangeMaskAudio
+
 var inventory_size : int
 var current_item : float
 const initial_position = 384.5
@@ -37,6 +40,7 @@ func equip_mask() -> void:
 	else:
 		return
 	
+	change_mask_audio.play()
 	GameState.current_game_status = GameState.State.PLAYING
 	hide()
 
@@ -52,7 +56,7 @@ func display_mask() -> void:
 	container.get_child(3).get_child(0).visible = Dialogic.VAR.mask_pest
 	container.get_child(4).get_child(0).visible = Dialogic.VAR.mask_boss
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("inventory"):
 		if GameState.can_inventory():

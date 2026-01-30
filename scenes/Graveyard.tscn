@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dvtfflyj2wnh7"]
 
 [ext_resource type="Script" uid="uid://vojqxe207xwt" path="res://addons/zylann.hterrain/hterrain.gd" id="1_6uo2k"]
-[ext_resource type="Resource" uid="uid://cokl4qvnper31" path="res://data_terrain/graveyard terrain/data.hterrain" id="2_whxyv"]
+[ext_resource type="Resource" path="res://data_terrain/graveyard terrain/data.hterrain" id="2_whxyv"]
 [ext_resource type="Script" uid="uid://bt278ef3qrx7h" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_vwnn2"]
 [ext_resource type="Texture2D" uid="uid://dnk4w1o5likrw" path="res://assets/textures/Grass005_1K-PNG_Displacement.png" id="4_7x5b5"]
-[ext_resource type="PackedScene" uid="uid://b6gnfnxf0ghj" path="res://scenes/arch_gate.tscn" id="5_2dajg"]
+[ext_resource type="PackedScene" path="res://scenes/arch_gate.tscn" id="5_2dajg"]
 [ext_resource type="Texture2D" uid="uid://67r1njq1jq0c" path="res://assets/textures/360_F_603980502_qIAJ5hytZnM0U4JMmwiY1C71Qj3BEHVV.jpg" id="5_i863g"]
 [ext_resource type="PackedScene" uid="uid://cdo86jexfsk6q" path="res://assets/Mesh Graveyard/fbx/tree_pine_yellow_large.fbx" id="6_dn084"]
 [ext_resource type="Texture2D" uid="uid://nra28017mqyk" path="res://assets/textures/R.jpg" id="6_psvny"]

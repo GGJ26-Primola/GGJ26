@@ -6,8 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://8bragcgdry8r" path="res://assets/Music/SFX/player_attacking_2.wav" id="3_bmw2d"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6nu22"]
-radius = 0.5908203
-height = 2.135254
+radius = 0.7182617
+height = 2.5270996
 
 [sub_resource type="Animation" id="Animation_xasec"]
 length = 0.001
@@ -153,7 +153,7 @@ monitoring = false
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PositionPivot/GFX/Hitbox" unique_id=449062472]
-transform = Transform3D(1.000001, 0, -2.9802322e-07, -2.9802322e-08, 1, -2.2351742e-07, 1.7881393e-07, -1.4901161e-08, 1.0000019, 0, 1.067627, -1.4901161e-08)
+transform = Transform3D(1.0000007, -5.9604645e-08, -3.2782555e-07, 1.4901161e-08, 0.9999999, -2.5331974e-07, 2.9802322e-07, 1.4901161e-08, 1.0000019, 1.4901161e-08, 1.2635498, 1.4901161e-08)
 shape = SubResource("CapsuleShape3D_6nu22")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PositionPivot" unique_id=1930070563]

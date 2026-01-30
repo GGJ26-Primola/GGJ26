@@ -1,8 +1,8 @@
 extends Control
 
-@onready var player: CharacterBody3D = %Player
 @onready var main_panel: NinePatchRect = $MainPanel
 @onready var options_panel: NinePatchRect = $OptionsPanel
+
 @onready var play_button: MenuButton = $MainPanel/VBoxContainer/NinePatchRect/PlayButton
 
 # Called when the node enters the scene tree for the first time.
@@ -10,7 +10,7 @@ func _ready() -> void:
 	main_panel.hide()
 	options_panel.hide()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		
 		if GameState.current_game_status == GameState.State.ATTACK:
@@ -24,8 +24,11 @@ func _process(delta: float) -> void:
 		else:
 			GameState.set_game_status(GameState.State.PAUSE)
 			main_panel.show()
-			#play_button.f
 			options_panel.hide()
+			
+			# TODO: WORK, but the menu is not working in the scene right now
+			#play_button.focus_mode = Control.FOCUS_ALL
+			#play_button.grab_focus()
 
 func _on_play_button_pressed() -> void:
 	GameState.set_game_status(GameState.State.PLAYING)
