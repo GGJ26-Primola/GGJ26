@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cuxpl5ngt2o80"]
+
+[ext_resource type="PackedScene" uid="uid://s8e0kiq7njfp" path="res://assets/Mesh Graveyard/fbx/grave_B.fbx" id="1_tia50"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_juqek"]
+height = 3.4060059
+radius = 0.76416016
+
+[node name="grave_B" unique_id=353827317 instance=ExtResource("1_tia50")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=424058961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7813941, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1244095464]
+transform = Transform3D(-0.999996, -0.00282737, 0, 0.00282737, -0.999996, 0, 0, 0, 1, 0, 0.27210522, 0)
+shape = SubResource("CylinderShape3D_juqek")

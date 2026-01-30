@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cc5kaqcimh0k"]
+
+[ext_resource type="PackedScene" uid="uid://c0c1gc8v2y6eb" path="res://assets/Mesh Graveyard/fbx/ribcage.fbx" id="1_4f2ch"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sfp81"]
+height = 1.0378113
+radius = 0.5449219
+
+[node name="ribcage" unique_id=845625228 instance=ExtResource("1_4f2ch")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=421964296]
+transform = Transform3D(0.9999915, 0.0035103564, -0.0021805633, -0.0035061724, 0.999992, 0.0019204029, 0.0021872846, -0.0019127441, 0.99999577, 0, 0.7813941, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=315388309]
+transform = Transform3D(-1, -0.0029511182, 0.000187587, 0.0029365083, -0.99851227, -0.054357417, 0.00034774735, -0.054356117, 0.99851656, -0.0032884146, -0.79571265, -0.114438154)
+shape = SubResource("CylinderShape3D_sfp81")
