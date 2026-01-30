@@ -2,7 +2,7 @@ extends Node
 
 #@onready var camera: Camera3D = %Camera3D
 @onready var camera_player: PhantomCamera3D = $"../CameraPlayer"
-@onready var umarell: CSGBox3D = $"../NPC/Umarell"
+@onready var umarell: Node3D = $"../NPC/Umarell"
 @onready var player: CharacterBody3D = %Player
 var last_checkpoint := Vector3.ZERO
 
@@ -20,6 +20,10 @@ const RUN_SPEED = 0.5
 @export var child_1_hitted_dialogue : DialogicTimeline
 @export var child_2_hitted_dialogue : DialogicTimeline
 @export var cat_end_dialogue : DialogicTimeline
+
+# Cemetery
+@onready var cemetery_death_audio : AudioStreamPlayer = $"../Musics/CemeteryDeathAudio"
+@onready var cemetery_death_timer : Timer = $CemeteryDeathTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -46,7 +50,6 @@ func append_target() -> void:
 	else:
 		camera_player.set_follow_targets([player])
 
-
 func remove_target() -> void:
 	GameState.end_talk()
 	camera_player.set_follow_targets([player])
@@ -66,14 +69,28 @@ func _on_dialogic_signal(argument: String) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	if GameState.current_game_status == GameState.State.GAMEOVER:
+		return
+	
 	if GameState.can_talk() and Input.is_action_just_pressed("dialogic_default_action"):
 		GameState.start_talk()
 	run_paths(delta)
+	
+	# If you are in the cemetery without mask, you can live for few seconds
+	if cemetery_death_timer.is_stopped():
+		if Global.current_level == Global.Level.CEMETERY and not Dialogic.VAR.mask_cat:
+			cemetery_death_audio.play()
+			cemetery_death_timer.start()
+	elif Dialogic.VAR.mask_cat:
+		cemetery_death_audio.stop()
+		cemetery_death_timer.stop()
 
 func run_paths(delta) -> void:
 	if not cat_running:
 		return
-		
+	
+	# If both child are defeated, set the final dialog available
 	if child_1_path == null and child_2_path == null:
 		cat_end_collision.disabled = false
 		cat_running = false
@@ -95,8 +112,8 @@ func set_last_checkpoint(pos : Vector3) -> void:
 func _on_umarell_attacked() -> void:
 	Dialogic.VAR.umarell_hitted = true
 	Dialogic.emit_signal("signal_event", "umarell")
-	var tween = create_tween()
-	tween.tween_property(umarell, "rotation_degrees:z", 90.0, 0.2)
+	#var tween = create_tween()
+	#tween.tween_property(umarell, "rotation_degrees:z", 90.0, 0.2)
 
 func start_cat(start : bool = true) -> void:
 	if child_1_collision != null:
@@ -126,4 +143,8 @@ func start_timeline(timeline : DialogicTimeline) -> void:
 	GameState.dialogic_reload_now = false
 	GameState.dialogic_destroy_after_read = false
 	Dialogic.start(timeline)
-	
+
+# TODO : CEMETERY
+func cemetery_game_over() -> void:
+	print("Cemetery game over")
+	GameState.current_game_status = GameState.State.GAMEOVER
