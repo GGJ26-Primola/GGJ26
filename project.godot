@@ -90,7 +90,7 @@ variables={
 "mask_ftp1": true,
 "mask_pest": true,
 "meow": 0,
-"stick": false,
+"stick": true,
 "umarell_hitted": false
 }
 extensions_folder="res://addons/dialogic_additions"
@@ -134,7 +134,6 @@ layout/default_style="res://dialogic/styles/conversation.tres"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
