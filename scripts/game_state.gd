@@ -8,7 +8,7 @@ static var current_game_status = GameState.State.PLAYING
 static var dialogic_timeline : DialogicTimeline = null
 static var current_info_mark : Sprite3D = null
 static var dialogic_reload_now : bool = false
-#static var dialogic_destroy_after_read : bool = false
+static var dialogic_destroy_after_read : bool = false
 
 static func set_game_status(status_to_set: GameState.State) -> void:
 	current_game_status = status_to_set
@@ -51,6 +51,10 @@ static func end_talk():
 	current_game_status = GameState.State.PLAYING
 	if dialogic_reload_now:
 		current_info_mark.show()
-	else:
-		dialogic_timeline = null
-		current_info_mark = null
+		return
+	
+	if dialogic_destroy_after_read:
+		current_info_mark.get_parent().get_parent().queue_free()
+	
+	dialogic_timeline = null
+	current_info_mark = null

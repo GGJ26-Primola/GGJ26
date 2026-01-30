@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bpl470i2x3dpm" path="res://scenes/knight.tscn" id="19_264po"]
 [ext_resource type="PackedScene" uid="uid://ijrrf5ej7e13" path="res://scenes/inventory.tscn" id="19_bt5mj"]
 [ext_resource type="Resource" uid="uid://t4q67befekfr" path="res://dialogic/Safe zone/1[Zona1] Dialogo con villico 5.dtl" id="20_1kice"]
-[ext_resource type="PackedScene" path="res://scenes/umarell.tscn" id="22_v2yb1"]
+[ext_resource type="PackedScene" uid="uid://bnulwgy8p3fxt" path="res://scenes/umarell.tscn" id="22_v2yb1"]
 [ext_resource type="Resource" uid="uid://dbmq8cmqa8wls" path="res://dialogic/Safe zone/1[Zona1] Dialogo con Villico 1.dtl" id="25_wljb1"]
 [ext_resource type="Resource" uid="uid://dwpuiw3hquai" path="res://dialogic/Safe zone/1[Zona 1] Dialogo con villico 2.dtl" id="26_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://6ii0307e2il5" path="res://assets/2D/npc1_idle.png" id="27_js0lu"]
@@ -69,12 +69,13 @@ size = Vector3(11.573242, 4.576172, 2.1826172)
 size = Vector3(3.1818848, 7.4123535, 35.796875)
 
 [sub_resource type="Curve3D" id="Curve3D_ssvqc"]
+closed = true
 bake_interval = 0.01
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 10, 0, 0, 0, 0, 0, 10, 10, 0, 20, 0, 0, 0, 0, 0, 0, 20, 0, 20),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+"points": PackedVector3Array(2.66, 0, 0, -1.52, 0.5, 0.475, 4.502, 9.911, -19.888, 0, 0, 0, -1.99, 0.74, -0.25, -4.7933307, 9.996371, -26.022768, -2.04, 0.79, 0, -2.245, -0.655, 0, -13.17012, 11.599634, -41.540997, -4.56, -0.595, -0.195, 0, 0, 0, 0, 13.3208275, -51.613373, 1.845, 0.52, -0.31, 0, 0, 0, 11.896488, 14.962042, -52.538567, 11.41, 0.175, -7.2, -5.865, 0, 0, 10.461414, 8.515165, -29.20387),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
-point_count = 5
+point_count = 6
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pr1ej"]
 radius = 3.1974819
@@ -184,16 +185,28 @@ rotation_edit_mode = 2
 curve = SubResource("Curve3D_ssvqc")
 
 [node name="CatPathFollow3D" type="PathFollow3D" parent="NPC/CatPath3D" unique_id=1932769141]
-transform = Transform3D(0.9999945, 0, 0, 0, 1, 0, 0, 0, 0.9999945, 0, 0, -10)
+transform = Transform3D(0.9999945, 0, 0, 0, 1, 0, 0, 0, 0.9999945, 4.502, 9.911, -19.888)
 rotation_mode = 0
 
 [node name="Cat" parent="NPC/CatPath3D/CatPathFollow3D" unique_id=972012601 instance=ExtResource("2_0tnpc")]
 transform = Transform3D(1.0000021, 0, 0, 0, 1, 0, 0, 0, 1.0000021, 0, 0.8, 0)
 script = ExtResource("15_37s47")
 
-[node name="Cat2" parent="NPC" unique_id=503675010 instance=ExtResource("2_0tnpc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5018606, 10.571136, -19.88805)
-script = ExtResource("15_37s47")
+[node name="PathFollow3D" type="PathFollow3D" parent="NPC/CatPath3D" unique_id=1729732772]
+transform = Transform3D(0.99999875, 0, 0, 0, 0.99999887, 0, 0, 0, 0.9999992, 2.65451, 10.126058, -20.504871)
+progress = 2.0
+rotation_mode = 0
+
+[node name="Monello 1" type="CSGBox3D" parent="NPC/CatPath3D/PathFollow3D" unique_id=1634180117]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="PathFollow3D2" type="PathFollow3D" parent="NPC/CatPath3D" unique_id=1156250254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 1.7979691, 10.150391, -21.020096)
+progress = 3.0
+rotation_mode = 0
+
+[node name="Monello 2" type="CSGBox3D" parent="NPC/CatPath3D/PathFollow3D2" unique_id=393557570]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Villico 1" type="CSGBox3D" parent="NPC" unique_id=839157445]
 transform = Transform3D(0.28535387, 0, 0.95842224, 0, 1, 0, -0.95842224, 0, 0.28535387, -15.775247, 9.903278, -8.405848)
@@ -241,18 +254,15 @@ timeline = ExtResource("29_twgab")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Villico 4/Interactible" unique_id=661503674]
 shape = SubResource("SphereShape3D_pr1ej")
 
-[node name="Monello 1" type="CSGBox3D" parent="NPC" unique_id=1634180117]
-transform = Transform3D(0.7170931, 0, -0.6969774, 0, 1, 0, 0.6969774, 0, 0.7170931, 7.930354, 10.241566, -19.934902)
+[node name="CatInteraction" type="Node3D" parent="NPC" unique_id=1200902109]
+transform = Transform3D(0.7170931, 0, -0.6969774, 0, 1, 0, 0.6969774, 0, 0.7170931, 3.4240766, 10.920674, -19.934902)
 
-[node name="Interactible" parent="NPC/Monello 1" unique_id=78662612 instance=ExtResource("3_u5sy4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5402966, 0, 1.4970894)
+[node name="Interactible" parent="NPC/CatInteraction" unique_id=78662612 instance=ExtResource("3_u5sy4")]
 timeline = ExtResource("30_02fa5")
+destroy_after_read = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Monello 1/Interactible" unique_id=79730304]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/CatInteraction/Interactible" unique_id=79730304]
 shape = SubResource("SphereShape3D_pr1ej")
-
-[node name="Monello 2" type="CSGBox3D" parent="NPC" unique_id=393557570]
-transform = Transform3D(0.7170931, 0, -0.6969774, 0, 1, 0, 0.6969774, 0, 0.7170931, 7.020981, 10.294458, -19.277912)
 
 [node name="Villico 6" type="CSGBox3D" parent="NPC" unique_id=416279659]
 transform = Transform3D(-0.412071, 0, -0.91115177, 0, 1, 0, 0.91115177, 0, -0.412071, 19.227982, 10.596373, -35.64376)
