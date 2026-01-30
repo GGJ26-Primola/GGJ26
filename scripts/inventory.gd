@@ -50,6 +50,12 @@ func move_container() -> void:
 	 initial_position - current_item * 98, 0.2)
 
 func display_mask() -> void:
+	container.get_child(0).get_child(1).visible = not Dialogic.VAR.mask_default
+	container.get_child(1).get_child(1).visible = not Dialogic.VAR.mask_cat
+	container.get_child(2).get_child(1).visible = not Dialogic.VAR.mask_ftp1
+	container.get_child(3).get_child(1).visible = not Dialogic.VAR.mask_pest
+	container.get_child(4).get_child(1).visible = not Dialogic.VAR.mask_boss
+	
 	container.get_child(0).get_child(0).visible = Dialogic.VAR.mask_default
 	container.get_child(1).get_child(0).visible = Dialogic.VAR.mask_cat
 	container.get_child(2).get_child(0).visible = Dialogic.VAR.mask_ftp1
@@ -73,9 +79,11 @@ func _process(_delta: float) -> void:
 		var direction = Input.get_axis("left","right")
 		direction = sign(direction)
 		var temp_item = current_item + direction
-		if temp_item < 1 or temp_item > inventory_size:
-			return
-		current_item += direction
+		temp_item = wrapi(temp_item, 1, inventory_size+1)
+		current_item = temp_item
+		#if temp_item < 1 or temp_item > inventory_size:
+			#return
+		#current_item += direction
 		move_container()
 	elif Input.is_action_just_pressed("dialogic_default_action"):
 		equip_mask()
