@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://0rnjgk85woi0"]
+
+[ext_resource type="PackedScene" uid="uid://bhbshk8lw1yj2" path="res://assets/Mesh Graveyard/fbx/shrine.fbx" id="1_5hlgg"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_i0my1"]
+height = 1.1152344
+radius = 0.90478516
+
+[node name="shrine" unique_id=1279285287 instance=ExtResource("1_5hlgg")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=61416481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7813941, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1981363766]
+transform = Transform3D(-0.9999219, -0.012496233, 0, 0.012496233, -0.9999219, 0, 0, 0, 1, -0.008615566, 0.38923943, 0)
+shape = SubResource("CylinderShape3D_i0my1")

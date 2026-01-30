@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bjr4jehmwtb6s"]
+
+[ext_resource type="PackedScene" uid="uid://3x7scg1nupk8" path="res://assets/Mesh Woods/Extras/Flat_Fallen_Log.glb" id="1_u0evj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ndll2"]
+radius = 0.8955078
+height = 8.229858
+
+[node name="Flat_Fallen_Log" unique_id=598745923 instance=ExtResource("1_u0evj")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1097292636]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1161071652]
+transform = Transform3D(-0.007676854, 0.91443384, -0.40466285, -0.99996483, -0.008394901, -2.6757804e-10, -0.0033971055, 0.40464872, 0.9144661, -0.4045667, 0.8034971, 0.6034591)
+shape = SubResource("CapsuleShape3D_ndll2")

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bmfnd6airen4x"]
+
+[ext_resource type="PackedScene" uid="uid://biyrpy40bpnnf" path="res://assets/Mesh Woods/Rocks/Flat_Rock_02.glb" id="1_arfmn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dyrkc"]
+radius = 0.5913086
+height = 3.3139648
+
+[node name="Flat_Rock_02" unique_id=977992342 instance=ExtResource("1_arfmn")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=736380353]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=607381835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6569824, 0)
+shape = SubResource("CapsuleShape3D_dyrkc")
