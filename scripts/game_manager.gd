@@ -48,3 +48,6 @@ func _on_umarell_attacked() -> void:
 	Dialogic.VAR.umarell_hitted = true
 	var tween = create_tween()
 	tween.tween_property(umarell, "rotation_degrees:z", 90.0, 0.2)
+
+func _on_item_attacked() -> void:
+	print("HIT!")

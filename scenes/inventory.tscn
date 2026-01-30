@@ -3,6 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://c4csj6jjykbep" path="res://assets/UI/mask.png" id="1_hj2ta"]
 [ext_resource type="Texture2D" uid="uid://bxue1yvuq8tky" path="res://assets/UI/conversation_border.png" id="1_qw0r6"]
 [ext_resource type="Script" uid="uid://djnht1345m1qr" path="res://scripts/inventory.gd" id="1_ty45s"]
+[ext_resource type="Texture2D" uid="uid://wxv88jlrwibk" path="res://assets/UI/mask_default.png" id="4_g71ie"]
+[ext_resource type="Texture2D" uid="uid://clj5jpgwu64mu" path="res://assets/UI/mask_cat.png" id="5_sr8g6"]
+[ext_resource type="Texture2D" uid="uid://xmy5gco18upw" path="res://assets/UI/mask_ftp1.png" id="6_p7iul"]
+[ext_resource type="Texture2D" uid="uid://ce6hrb7ricy0e" path="res://assets/UI/mask_pest.png" id="7_td2ew"]
+[ext_resource type="Texture2D" uid="uid://dx652blsfomrk" path="res://assets/UI/mask_boss.png" id="8_ylenm"]
 
 [node name="Inventory" type="Control" unique_id=874561363]
 layout_mode = 3
@@ -45,107 +50,72 @@ layout_mode = 2
 texture = ExtResource("1_qw0r6")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="Mask/HBoxContainer/TextureRect" unique_id=2024850456]
+[node name="MaskTexture" type="TextureRect" parent="Mask/HBoxContainer/TextureRect" unique_id=1841706718]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "1"
-horizontal_alignment = 1
+texture = ExtResource("4_g71ie")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="Mask/HBoxContainer" unique_id=75200684]
 layout_mode = 2
 texture = ExtResource("1_qw0r6")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="Mask/HBoxContainer/TextureRect2" unique_id=236939069]
+[node name="MaskTexture" type="TextureRect" parent="Mask/HBoxContainer/TextureRect2" unique_id=752878176]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -34.5
-offset_right = 20.0
-offset_bottom = 34.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "2"
-horizontal_alignment = 1
+texture = ExtResource("5_sr8g6")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect3" type="TextureRect" parent="Mask/HBoxContainer" unique_id=688523549]
 layout_mode = 2
 texture = ExtResource("1_qw0r6")
 expand_mode = 2
 
-[node name="Label3" type="Label" parent="Mask/HBoxContainer/TextureRect3" unique_id=1474216509]
+[node name="MaskTexture" type="TextureRect" parent="Mask/HBoxContainer/TextureRect3" unique_id=516290418]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -34.5
-offset_right = 20.0
-offset_bottom = 34.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "3"
-horizontal_alignment = 1
+texture = ExtResource("6_p7iul")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect4" type="TextureRect" parent="Mask/HBoxContainer" unique_id=748877455]
 layout_mode = 2
 texture = ExtResource("1_qw0r6")
 expand_mode = 2
 
-[node name="Label4" type="Label" parent="Mask/HBoxContainer/TextureRect4" unique_id=1495423411]
+[node name="MaskTexture" type="TextureRect" parent="Mask/HBoxContainer/TextureRect4" unique_id=618491490]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -34.5
-offset_right = 20.0
-offset_bottom = 34.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "4"
-horizontal_alignment = 1
+texture = ExtResource("7_td2ew")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect5" type="TextureRect" parent="Mask/HBoxContainer" unique_id=811582266]
 layout_mode = 2
 texture = ExtResource("1_qw0r6")
 expand_mode = 2
 
-[node name="Label5" type="Label" parent="Mask/HBoxContainer/TextureRect5" unique_id=1480761006]
+[node name="MaskTexture" type="TextureRect" parent="Mask/HBoxContainer/TextureRect5" unique_id=792372379]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -34.5
-offset_right = 20.0
-offset_bottom = 34.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "5"
-horizontal_alignment = 1
+texture = ExtResource("8_ylenm")
+metadata/_edit_use_anchors_ = true

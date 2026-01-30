@@ -1,6 +1,5 @@
 extends Control
 
-@onready var player: CharacterBody3D = %Player
 @onready var main_panel: NinePatchRect = $MainPanel
 @onready var options_panel: NinePatchRect = $OptionsPanel
 @onready var play_button: MenuButton = $MainPanel/VBoxContainer/NinePatchRect/PlayButton

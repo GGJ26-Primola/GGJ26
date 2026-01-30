@@ -231,7 +231,7 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fjrip"]
 radius = 0.79248047
-height = 2.1748047
+height = 2.0610352
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_dqkch"]
 radius = 1.5089272
@@ -262,7 +262,7 @@ parameters/Idle/blend_position = Vector2(0.11937559, 0.58153844)
 parameters/Walk/blend_position = Vector2(-0.09182739, -0.50769234)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=383512871]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3461914, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40307617, 0)
 shape = SubResource("CapsuleShape3D_fjrip")
 
 [node name="Weapon" parent="." unique_id=590353401 instance=ExtResource("3_qhqgy")]
