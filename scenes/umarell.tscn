@@ -13,6 +13,10 @@ region = Rect2(0, 0, 100, 100)
 atlas = ExtResource("2_soi4u")
 region = Rect2(100, 0, 100, 100)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5fsp"]
+atlas = ExtResource("2_soi4u")
+region = Rect2(200, 0, 100, 100)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_e0qfy"]
 atlas = ExtResource("1_jcaxm")
 region = Rect2(0, 0, 100, 100)
@@ -37,10 +41,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hmfnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5fsp")
 }],
-"loop": true,
+"loop": false,
 "name": &"hitted",
-"speed": 2.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -74,4 +81,5 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_soi4u")
 animation = &"hitted"
 autoplay = "idle_bastone"
-frame_progress = 0.24451819
+frame = 2
+frame_progress = 1.0

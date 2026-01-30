@@ -17,6 +17,7 @@ scale = Vector2(1.0015773, 1.0030943)
 script = ExtResource("1_yqeox")
 
 [node name="MainPanel" parent="." unique_id=229314279 instance=ExtResource("2_4ytvr")]
+visible = false
 layout_mode = 1
 offset_left = 171.91252
 offset_top = 96.700775
@@ -122,7 +123,6 @@ theme_override_font_sizes/font_size = 50
 text = "Exit"
 
 [node name="OptionsPanel" parent="." unique_id=1926434036 instance=ExtResource("2_4ytvr")]
-visible = false
 layout_mode = 1
 offset_left = 171.9125
 offset_top = 96.700775
@@ -192,6 +192,10 @@ theme_override_constants/separation = 15
 [node name="HSlider" type="HSlider" parent="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer" unique_id=1034137877]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+focus_neighbor_top = NodePath("../../../NinePatchRect3/BackButton")
+focus_neighbor_bottom = NodePath("../HSlider2")
+focus_next = NodePath("../HSlider2")
+focus_previous = NodePath("../../../NinePatchRect3/BackButton")
 max_value = 1.0
 step = 0.05
 script = ExtResource("2_vjb58")
@@ -200,6 +204,10 @@ audio_bus_name = "Music"
 [node name="HSlider2" type="HSlider" parent="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer" unique_id=1523040535]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+focus_neighbor_top = NodePath("../HSlider")
+focus_neighbor_bottom = NodePath("../FullscreenButton")
+focus_next = NodePath("../FullscreenButton")
+focus_previous = NodePath("../HSlider")
 max_value = 1.0
 step = 0.05
 script = ExtResource("2_vjb58")
@@ -209,6 +217,10 @@ audio_bus_name = "SFX"
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 0
+focus_neighbor_top = NodePath("../HSlider2")
+focus_neighbor_bottom = NodePath("../../../NinePatchRect3/BackButton")
+focus_next = NodePath("../../../NinePatchRect3/BackButton")
+focus_previous = NodePath("../HSlider2")
 theme_override_font_sizes/font_size = 40
 button_pressed = true
 script = ExtResource("3_mhnvy")
