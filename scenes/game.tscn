@@ -57,7 +57,16 @@ Vector2i(-1, -1): {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_264po"]
-size = Vector3(2.778717, 4.818573, 34.19336)
+size = Vector3(5.328125, 4.818573, 18.332031)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v2yb1"]
+size = Vector3(2.3261719, 6.8847656, 13.261719)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_js0lu"]
+size = Vector3(11.573242, 4.576172, 2.1826172)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gxtfn"]
+size = Vector3(3.1818848, 7.4123535, 35.796875)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pr1ej"]
 radius = 3.1974819
@@ -139,26 +148,33 @@ autoplay = true
 bus = &"Music"
 
 [node name="MusicChanger" parent="Musics" unique_id=594796150 instance=ExtResource("18_ssvqc")]
-transform = Transform3D(0.59755516, 0, -0.8018278, 0, 1, 0, 0.8018278, 0, 0.59755516, -14.184232, 13.002569, -45.20195)
+transform = Transform3D(0.59755516, 0, -0.8018278, 0, 1, 0, 0.8018278, 0, 0.59755516, -21.09858, 14.743387, -54.40932)
 music_name = "cemetery"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Musics/MusicChanger" unique_id=978300869]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2417297, 0.8094635, -0.72121143)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8360138, 0, 2.2814732)
 shape = SubResource("BoxShape3D_264po")
 
 [node name="MusicChanger2" parent="Musics" unique_id=975477143 instance=ExtResource("18_ssvqc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.982142, 0, 4.059202)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.321154, 12.206872, -14.739716)
 music_name = "woods"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Musics/MusicChanger2" unique_id=932926409]
-shape = SubResource("BoxShape3D_264po")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Musics/MusicChanger2" unique_id=922534152]
+shape = SubResource("BoxShape3D_v2yb1")
 
 [node name="MusicChanger3" parent="Musics" unique_id=599058784 instance=ExtResource("18_ssvqc")]
-transform = Transform3D(-0.033294767, 0, 0.99944556, 0, 1, 0, -0.99944556, 0, -0.033294767, -0.4139743, 0, -3.6449418)
+transform = Transform3D(-0.033294767, 0, 0.99944556, 0, 1, 0, -0.99944556, 0, -0.033294767, 25.114351, 12.544534, -13.09822)
 music_name = "safe"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Musics/MusicChanger3" unique_id=626418203]
-shape = SubResource("BoxShape3D_264po")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Musics/MusicChanger3" unique_id=1054535474]
+shape = SubResource("BoxShape3D_js0lu")
+
+[node name="MusicChanger4" parent="Musics" unique_id=1887628211 instance=ExtResource("18_ssvqc")]
+transform = Transform3D(0.66220164, 0, -0.7493257, 0, 1, 0, 0.7493257, 0, 0.66220164, -12.937877, 12.071232, -44.60178)
+music_name = "safe"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Musics/MusicChanger4" unique_id=938094998]
+shape = SubResource("BoxShape3D_gxtfn")
 
 [node name="NPC" type="Node" parent="." unique_id=583360651]
 
@@ -210,15 +226,6 @@ transform = Transform3D(-0.85218376, 0, -0.52324253, 0, 1, 0, 0.52324253, 0, -0.
 timeline = ExtResource("29_twgab")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Villico 4/Interactible" unique_id=661503674]
-shape = SubResource("SphereShape3D_pr1ej")
-
-[node name="Villico 5" type="CSGBox3D" parent="NPC" unique_id=1327869115]
-transform = Transform3D(0.7170931, 0, -0.6969774, 0, 1, 0, 0.6969774, 0, 0.7170931, -21.763302, 9.227807, -35.478897)
-
-[node name="Interactible" parent="NPC/Villico 5" unique_id=1908806980 instance=ExtResource("3_u5sy4")]
-timeline = ExtResource("26_v2yb1")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Villico 5/Interactible" unique_id=117512039]
 shape = SubResource("SphereShape3D_pr1ej")
 
 [node name="Monello 1" type="CSGBox3D" parent="NPC" unique_id=1634180117]
@@ -299,7 +306,7 @@ shape = SubResource("SphereShape3D_gee14")
 shape = SubResource("BoxShape3D_kvuet")
 
 [node name="Knight" parent="NPC" unique_id=156773684 instance=ExtResource("19_264po")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.776409, 1.5390229, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.724173, 12.231031, -27.749834)
 script = ExtResource("15_37s47")
 
 [node name="Interactible" parent="NPC/Knight" unique_id=1026249889 instance=ExtResource("3_u5sy4")]
