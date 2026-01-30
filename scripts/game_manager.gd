@@ -2,7 +2,7 @@ extends Node
 
 #@onready var camera: Camera3D = %Camera3D
 @onready var camera_player: PhantomCamera3D = $"../CameraPlayer"
-@onready var umarell: CSGBox3D = $"../NPC/Umarell"
+@onready var umarell: Node3D = $"../NPC/Umarell"
 @onready var player: CharacterBody3D = %Player
 var last_checkpoint := Vector3.ZERO
 

@@ -1,6 +1,7 @@
 # Il gatto cambia forma e diventa più grande, rivelando la sua forma gatto mammone
 if {mask_cat} == true:
 	"Gatto Mammone": Miao
+	[end_timeline]
 "Gatto Mammone": FOR THOUSANDS OF YEARS I SLUMBERED, and the one time i try to grab a snack, kids throw rocks at me, old men follow me with a broom and other nasty stuff. The nerve!
 Player: Wh-who are you?
 "Gatto Mammone": Mreow! I am the great, the magnificent Gatto Mammone!
