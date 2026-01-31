@@ -133,6 +133,11 @@ _data = {
 &"attack": SubResource("Animation_uxn4k")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8fp1k"]
+streams_count = 2
+stream_0/stream = ExtResource("2_uxn4k")
+stream_1/stream = ExtResource("3_bmw2d")
+
 [node name="Weapon" type="Node3D" unique_id=590353401]
 
 [node name="PositionPivot" type="Node3D" parent="." unique_id=1166082784]
@@ -160,10 +165,6 @@ shape = SubResource("CapsuleShape3D_6nu22")
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_bmw2d")
 
-[node name="WeaponPlayer1" type="AudioStreamPlayer" parent="PositionPivot" unique_id=879722960]
-stream = ExtResource("2_uxn4k")
-bus = &"SFX"
-
-[node name="WeaponPlayer2" type="AudioStreamPlayer" parent="PositionPivot" unique_id=1583700739]
-stream = ExtResource("3_bmw2d")
+[node name="WeaponAudio" type="AudioStreamPlayer" parent="PositionPivot" unique_id=879722960]
+stream = SubResource("AudioStreamRandomizer_8fp1k")
 bus = &"SFX"

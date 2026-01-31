@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://bu78ssf0f5nim" path="res://scenes/cat.tscn" id="2_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://b51wiu02jdl1b" path="res://assets/Music/safe_zone.wav" id="2_ca42v"]
 [ext_resource type="PackedScene" uid="uid://dxmdmtwbtv530" path="res://scenes/safe_zone.tscn" id="2_e1j6l"]
-[ext_resource type="Resource" uid="uid://dshht4ncgt01m" path="res://dialogic/Safe zone/hitted_child_1.dtl" id="2_js0lu"]
+[ext_resource type="Resource" path="res://dialogic/Safe zone/hitted_child_1.dtl" id="2_js0lu"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bqo0cfd63o4nl" path="res://scenes/menu.tscn" id="2_p57ef"]
 [ext_resource type="Script" uid="uid://dh0p4hudw1jkb" path="res://scripts/music_manager.gd" id="2_rysoc"]
-[ext_resource type="Resource" uid="uid://g8tjnldk20po" path="res://dialogic/Safe zone/hitted_child_2.dtl" id="3_gxtfn"]
+[ext_resource type="Resource" path="res://dialogic/Safe zone/hitted_child_2.dtl" id="3_gxtfn"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://be2mgdfg87nm3" path="res://assets/Music/cemetery.wav" id="3_rysoc"]
 [ext_resource type="PackedScene" uid="uid://c6wi5nthdn08o" path="res://scenes/interactible.tscn" id="3_u5sy4"]
@@ -26,8 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://bpl470i2x3dpm" path="res://scenes/knight.tscn" id="19_264po"]
 [ext_resource type="PackedScene" uid="uid://ijrrf5ej7e13" path="res://scenes/inventory.tscn" id="19_bt5mj"]
 [ext_resource type="Resource" uid="uid://t4q67befekfr" path="res://dialogic/Safe zone/1[Zona1] Dialogo con villico 5.dtl" id="20_1kice"]
-[ext_resource type="PackedScene" uid="uid://bnulwgy8p3fxt" path="res://scenes/umarell.tscn" id="22_v2yb1"]
-[ext_resource type="Script" uid="uid://drh820sgimx7h" path="res://scripts/mazapegul.gd" id="24_7025r"]
+[ext_resource type="PackedScene" path="res://scenes/umarell.tscn" id="22_v2yb1"]
+[ext_resource type="Script" path="res://scripts/mazapegul.gd" id="24_7025r"]
 [ext_resource type="Texture2D" uid="uid://d1m6gsuv8l63j" path="res://assets/2D/mazapegul_idle.png" id="25_m4url"]
 [ext_resource type="Resource" uid="uid://dbmq8cmqa8wls" path="res://dialogic/Safe zone/1[Zona1] Dialogo con Villico 1.dtl" id="25_wljb1"]
 [ext_resource type="Texture2D" uid="uid://cdogkwrkjp13t" path="res://assets/2D/mazapegul_idle_with_hat.png" id="26_8ool0"]
@@ -43,6 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://c0uv0iitg3qpb" path="res://scenes/graveyard_game_over.tscn" id="40_05nbr"]
 [ext_resource type="PackedScene" uid="uid://dvtfflyj2wnh7" path="res://scenes/Graveyard.tscn" id="40_m4url"]
 [ext_resource type="PackedScene" uid="uid://dsf1im1wt7jie" path="res://scenes/Collisions/arch_gate.tscn" id="41_8ool0"]
+[ext_resource type="PackedScene" uid="uid://0eameechcba5" path="res://scenes/snake.tscn" id="44_0sl42"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ssvqc"]
 clip_count = 4
@@ -497,6 +498,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.316717, 17.005215, -79.08
 
 [node name="arch_gate" parent="." unique_id=1156300368 instance=ExtResource("41_8ool0")]
 transform = Transform3D(-0.9986626, -0.04212606, 0.029975494, -0.043559503, 0.9978539, -0.048894368, -0.02785127, -0.050134677, -0.9983543, -16.31212, 15.002968, -73.02219)
+
+[node name="Snakes" type="Node3D" parent="." unique_id=1247978364]
+
+[node name="Snake" parent="Snakes" unique_id=1789395511 instance=ExtResource("44_0sl42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.910667, 13.248374, -16.058613)
+can_exit_agro = false
 
 [connection signal="timeout" from="GameManager/CemeteryDeathTimer" to="GameManager" method="cemetery_game_over"]
 [connection signal="timeout" from="GameManager/CemeteryRespawnTimer" to="GameManager" method="cemetery_respawn"]

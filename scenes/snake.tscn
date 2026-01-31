@@ -3,6 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://bmx140lehrsx4" path="res://assets/2D/snake_attack.png" id="1_a5f6l"]
 [ext_resource type="Script" uid="uid://e6o3aopyhevo" path="res://scripts/snake.gd" id="1_yc36x"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4b1q"]
+atlas = ExtResource("1_a5f6l")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4j5f3"]
+atlas = ExtResource("1_a5f6l")
+region = Rect2(100, 0, 100, 100)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_a5f6l"]
 atlas = ExtResource("1_a5f6l")
 region = Rect2(200, 0, 100, 100)
@@ -19,9 +27,15 @@ region = Rect2(100, 0, 100, 100)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_l4b1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4j5f3")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_a5f6l")
 }],
-"loop": false,
+"loop": true,
 "name": &"attack",
 "speed": 5.0
 }, {
@@ -37,13 +51,26 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Snake" type="Node3D" unique_id=483913166]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yc36x"]
+radius = 0.31201172
+height = 2.1308594
+
+[node name="Snake" type="CharacterBody3D" unique_id=1789395511]
 script = ExtResource("1_yc36x")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=917195355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5101238, 0)
 pixel_size = 0.03
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_l4b1q")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.94723976
+frame_progress = 0.50146204
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2108725072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06542969, 0)
+shape = SubResource("CapsuleShape3D_yc36x")
+
+[node name="RespawnTimer" type="Timer" parent="." unique_id=887659088]
+
+[connection signal="timeout" from="RespawnTimer" to="." method="respawn"]

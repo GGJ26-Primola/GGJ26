@@ -1,8 +1,7 @@
 extends Node3D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var weapon_player_1: AudioStreamPlayer = $"WeaponPlayer1"
-@onready var weapon_player_2: AudioStreamPlayer = $"WeaponPlayer2"
+@onready var weapon_audio: AudioStreamPlayer = $"WeaponAudio"
 
 var input_dir : Vector2
 var last_input : Vector2
@@ -28,10 +27,7 @@ func _physics_process(_delta: float) -> void:
 		GameState.set_game_status(GameState.State.ATTACK)
 		
 		# Play sound
-		if randi_range(0, 1) == 0:
-			weapon_player_1.play()
-		else:
-			weapon_player_2.play()
+		weapon_audio.play()
 		
 		# Change weapon direction
 		rotation.y = input_dir.angle()

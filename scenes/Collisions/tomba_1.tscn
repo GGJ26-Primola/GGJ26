@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://d2eder4aolp38" path="res://assets/3D/Tomba1.glb" id="1_p05h6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oyb7y"]
-radius = 1.2861328
-height = 3.6053467
+radius = 0.9604492
+height = 3.2313843
 
 [node name="Tomba1" unique_id=940432853 instance=ExtResource("1_p05h6")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=613097103]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=866519951]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.225609, 0.80267334, 6.57606)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.225609, 0.61569214, 6.57606)
 shape = SubResource("CapsuleShape3D_oyb7y")

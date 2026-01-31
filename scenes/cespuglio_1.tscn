@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c3uo7fp6x1jxv"]
+
+[ext_resource type="PackedScene" uid="uid://da1u5gvjiadge" path="res://assets/3D/Cespuglio1.glb" id="1_e1em3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_r26pt"]
+radius = 0.681229
+
+[node name="Cespuglio1" unique_id=324863276 instance=ExtResource("1_e1em3")]
+
+[node name="Cespuglio_01" parent="." index="0" unique_id=323162715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=937461373]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1321191835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5413289, 0)
+shape = SubResource("SphereShape3D_r26pt")
