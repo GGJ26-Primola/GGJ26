@@ -28,11 +28,11 @@ Umarell: I knew you were someone smart! I see it in you, you have something in y
 	[end_timeline]
 - "YES SENSEI!"
 	Umarell: PAIN DOES NOT EXIST IN THIS PLAZA, DOES IT?
-	- "NO SENSEI!"
 	- "A LITTLE BIT, SENSEI!"
 		Umarell: Then you are unworthy!
 		[signal arg="fov_0"]
 		[end_timeline]
+	- "NO SENSEI!"
 set {stick} = true
 [signal arg="umarell"]
 join stick center

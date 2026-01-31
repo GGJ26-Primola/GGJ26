@@ -6,5 +6,6 @@
 "Monello 2": ...
 "Monello 1": LET'S THROW ROCKS AT IT!
 "Monello 2": YEAAAH!!
+audio "res://assets/Music/SFX/CAT HIT 1.wav"
 [signal arg="cat_start"]
 Player: I should do smoething about that.
