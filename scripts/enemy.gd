@@ -1,15 +1,15 @@
 extends CharacterBody3D
 
 @export var agro_range : float = 100.0
-@export var respawn_time : float = 10.0
 @export var speed : float = 350.0
 @export var can_exit_agro := true
 @export var can_die := true
 
 @onready var animated_sprite: AnimatedSprite3D = $AnimatedSprite3D
 @onready var respawn_timer: Timer = $RespawnTimer
+@onready var collision_shape: CollisionShape3D = $Area3D/CollisionShape3D
 
-enum STATUS { IDLE, FOLLOW, RETURNING }
+enum STATUS { IDLE, FOLLOW, RETURNING, HITTED }
 var current_status := STATUS.IDLE
 
 var starting_point : Vector3
@@ -18,12 +18,17 @@ var min_distance_starting_point : float = 1.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	starting_point = global_position
-	respawn_timer.wait_time = respawn_time
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	
 	if Global.player == null:
+		return
+	
+	if current_status == STATUS.HITTED:
+		return
+	
+	if GameState.current_game_status != GameState.State.PLAYING:
 		return
 	
 	# If player enter agro, start follow
@@ -45,6 +50,10 @@ func _physics_process(delta: float) -> void:
 		
 		# Move in the direction of player
 		var distance : Vector3 = Global.player.global_position - global_position
+		if distance.length_squared() < 2:
+			hitted(null)
+			Global.game_manager.game_over()
+			return
 		move_to_target(distance, delta)
 	
 	# if is returning
@@ -61,10 +70,18 @@ func move_to_target(distance : Vector3, delta : float) -> void:
 	distance = distance.normalized()
 	velocity.x = distance.x * speed * delta
 	velocity.z = distance.z * speed * delta
+	velocity.y = distance.y * speed * delta
 	move_and_slide()
 
-func hitted() -> void:
+func hitted(_area : Area3D) -> void:
+	current_status = STATUS.HITTED
+	animated_sprite.visible = false
+	collision_shape.disabled = true
 	respawn_timer.start()
 	
 func respawn() -> void:
-	print("Enemy respwned")
+	# TODO: Respawn only if is outside agro. Add new status
+	global_position = starting_point
+	current_status = STATUS.IDLE
+	animated_sprite.visible = true
+	collision_shape.disabled = false

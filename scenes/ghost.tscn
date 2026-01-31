@@ -53,7 +53,7 @@ pixel_size = 0.03
 sprite_frames = SubResource("SpriteFrames_sv5gc")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.275564
+frame_progress = 0.99239624
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy" unique_id=1991669721]
 shape = SubResource("SphereShape3D_wj1r3")

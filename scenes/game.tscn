@@ -505,6 +505,27 @@ transform = Transform3D(-0.9986626, -0.04212606, 0.029975494, -0.043559503, 0.99
 [node name="Snake" parent="Snakes" unique_id=1789395511 instance=ExtResource("44_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.910667, 13.248374, -16.058613)
 
+[node name="Snake2" parent="Snakes" unique_id=599877792 instance=ExtResource("44_0sl42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.415813, 13.248374, -20.285894)
+
+[node name="Snake3" parent="Snakes" unique_id=1834964929 instance=ExtResource("44_0sl42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.841206, 13.543286, -19.275051)
+
+[node name="Snake4" parent="Snakes" unique_id=851296796 instance=ExtResource("44_0sl42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.873524, 14.098, -9.874639)
+
+[node name="Snake5" parent="Snakes" unique_id=1766115343 instance=ExtResource("44_0sl42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.56111, 13.557306, -15.636919)
+
+[node name="Snake6" parent="Snakes" unique_id=1541137866 instance=ExtResource("44_0sl42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.80115, 13.999988, -19.09919)
+
+[node name="Snake7" parent="Snakes" unique_id=1457252853 instance=ExtResource("44_0sl42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.864952, 13.607558, -24.334179)
+
+[node name="Snake8" parent="Snakes" unique_id=1933366449 instance=ExtResource("44_0sl42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.795444, 13.65453, -12.187587)
+
 [node name="Ghosts" type="Node3D" parent="." unique_id=2030157221]
 
 [node name="Ghost" parent="Ghosts" unique_id=766622181 instance=ExtResource("45_oaba0")]
