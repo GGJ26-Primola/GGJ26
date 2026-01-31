@@ -1,0 +1,48 @@
+if {mask_boss} == true:
+	Fantasma1: Look at this beautiful bush!
+	Fantasma1: YES! It's amazing!
+	[end_timeline]
+if {cemetery_bush} == true:
+	Fantasma1: You’re back. Did you find what I asked for?
+	- Hand over the flower bed.
+		join bush center
+		Fantasma1: Perfect, I can finally start building my little garden.
+		leave bush
+		Fantasma1: Here, take this herring...
+		Fantasma1: ...
+		join "Maschera basilisco" center
+		Fantasma1: And this basilisk mask!
+		audio "res://assets/Music/SFX/MASK 2.wav"
+		leave "Maschera basilisco"
+		Fantasma1: I hope you will find it useful.
+		[end_timeline]
+Fantasma1: Now that you have destroyed the artifact that kept us imprisoned, we are free to torture you properly.
+Fantasma1: After all, the artifact kept us subjugated to its power, but we are no less.
+- Remain silent
+- Prepare to fight
+Fantasma1: <Empty Text Event>
+[wait time="1.0" hide_text="false"]
+Fantasma1: I was joking.
+Fantasma1: However, if you wish to continue your noble quest, you must satisfy our desires.
+Player: ...
+- Leave
+	[end_timeline]
+- “What are your desires?”
+Fantasma1: First of all, you must bring us a flower bed with a small bush.
+Player: “A flower bed with a small bush”?
+Fantasma1: Exactly. Be careful\: not too big… but not too small either.
+Fantasma1: With a nice little path in the middle. And maybe… a second flower bed, placed a bit farther over, to create some variety.
+Player: You must be joking.
+Fantasma2: Oh no. We are terribly serious.
+Fantasma1: Without flower beds, there is no passage.
+Fantasma1: Without passage, there is no quest.
+Fantasma1: Without a quest… you stay here with us.
+Player: What if I refuse?
+Fantasma1: Then we would have to…
+Fantasma1: (dramatic pause)
+Fantasma1: …look at you with disappointment. For eternity.
+Fantasma2: And trust me\: it’s much worse than a curse.
+Player: …Fine. Where do I find a flower bed?
+Fantasma1: Ah! At last, someone who understands the value of ritual gardening.
+Fantasma1: However, that is precisely the trial we set before you! You must be able to find a flower bed and bring it to us!
+Fantasma1: Now go, and prove yourself worthy of this world.

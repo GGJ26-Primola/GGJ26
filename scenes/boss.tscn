@@ -156,6 +156,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 1]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:can_die")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_qsl3t"]
 resource_name = "mist"
@@ -184,6 +196,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_8eiau"]
+resource_name = "no_damage"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:can_die")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_2avx2"]
@@ -241,6 +281,7 @@ _data = {
 &"damage": SubResource("Animation_0onds"),
 &"idle": SubResource("Animation_2cdgk"),
 &"mist": SubResource("Animation_qsl3t"),
+&"no_damage": SubResource("Animation_8eiau"),
 &"scream": SubResource("Animation_2avx2"),
 &"weak": SubResource("Animation_lfs1x")
 }
@@ -265,6 +306,9 @@ animation = &"idle"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2cdgk"]
 animation = &"mist"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lfs1x"]
+animation = &"no_damage"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0onds"]
 animation = &"scream"
@@ -315,6 +359,11 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7apjh"]
 switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qh5fr"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4dlq0"]
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jncid"]
 states/bullets_in/node = SubResource("AnimationNodeAnimation_jncid")
@@ -331,12 +380,14 @@ states/idle/node = SubResource("AnimationNodeAnimation_wqpjq")
 states/idle/position = Vector2(350.00003, 163.3472)
 states/mist/node = SubResource("AnimationNodeAnimation_2cdgk")
 states/mist/position = Vector2(455.44, 13.599998)
+states/no_damage/node = SubResource("AnimationNodeAnimation_lfs1x")
+states/no_damage/position = Vector2(11.000002, 334.0707)
 states/scream/node = SubResource("AnimationNodeAnimation_0onds")
 states/scream/position = Vector2(614, 267.03998)
 states/weak/node = SubResource("AnimationNodeAnimation_5f346")
 states/weak/position = Vector2(349.71906, 349.75998)
-transitions = ["bullets_in", "bullets_out", SubResource("AnimationNodeStateMachineTransition_qnbj4"), "idle", "charging", SubResource("AnimationNodeStateMachineTransition_2cdgk"), "bullets_out", "idle", SubResource("AnimationNodeStateMachineTransition_wqpjq"), "charging", "bullets_in", SubResource("AnimationNodeStateMachineTransition_jncid"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_5f346"), "charging", "mist", SubResource("AnimationNodeStateMachineTransition_qsl3t"), "mist", "charging", SubResource("AnimationNodeStateMachineTransition_r3bxh"), "charging", "idle", SubResource("AnimationNodeStateMachineTransition_2avx2"), "idle", "charging_scream", SubResource("AnimationNodeStateMachineTransition_0onds"), "charging_scream", "scream", SubResource("AnimationNodeStateMachineTransition_lfs1x"), "scream", "weak", SubResource("AnimationNodeStateMachineTransition_8eiau"), "weak", "damage", SubResource("AnimationNodeStateMachineTransition_vn2fc"), "scream", "charging_scream", SubResource("AnimationNodeStateMachineTransition_gqd3i"), "charging_scream", "idle", SubResource("AnimationNodeStateMachineTransition_mautr"), "damage", "idle", SubResource("AnimationNodeStateMachineTransition_ho3mf"), "weak", "idle", SubResource("AnimationNodeStateMachineTransition_7apjh")]
-graph_offset = Vector2(41, 84)
+transitions = ["bullets_in", "bullets_out", SubResource("AnimationNodeStateMachineTransition_qnbj4"), "idle", "charging", SubResource("AnimationNodeStateMachineTransition_2cdgk"), "bullets_out", "idle", SubResource("AnimationNodeStateMachineTransition_wqpjq"), "charging", "bullets_in", SubResource("AnimationNodeStateMachineTransition_jncid"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_5f346"), "charging", "mist", SubResource("AnimationNodeStateMachineTransition_qsl3t"), "mist", "charging", SubResource("AnimationNodeStateMachineTransition_r3bxh"), "charging", "idle", SubResource("AnimationNodeStateMachineTransition_2avx2"), "idle", "charging_scream", SubResource("AnimationNodeStateMachineTransition_0onds"), "charging_scream", "scream", SubResource("AnimationNodeStateMachineTransition_lfs1x"), "scream", "weak", SubResource("AnimationNodeStateMachineTransition_8eiau"), "weak", "damage", SubResource("AnimationNodeStateMachineTransition_vn2fc"), "scream", "charging_scream", SubResource("AnimationNodeStateMachineTransition_gqd3i"), "charging_scream", "idle", SubResource("AnimationNodeStateMachineTransition_mautr"), "damage", "idle", SubResource("AnimationNodeStateMachineTransition_ho3mf"), "damage", "no_damage", SubResource("AnimationNodeStateMachineTransition_7apjh"), "no_damage", "damage", SubResource("AnimationNodeStateMachineTransition_qh5fr"), "idle", "no_damage", SubResource("AnimationNodeStateMachineTransition_4dlq0")]
+graph_offset = Vector2(-230, 52)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jncid"]
 transparency = 1

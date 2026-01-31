@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://clbgrsnndj50o"]
 
+[ext_resource type="Script" uid="uid://bys4fs465botc" path="res://scripts/bossfight_game_manager.gd" id="1_fhro2"]
 [ext_resource type="PackedScene" uid="uid://d4j24xtuynqto" path="res://scenes/player.tscn" id="1_xmt2e"]
 [ext_resource type="PackedScene" uid="uid://ctio65mmg2fab" path="res://scenes/boss.tscn" id="2_jiv1s"]
 [ext_resource type="Script" uid="uid://dh0p4hudw1jkb" path="res://scripts/music_manager.gd" id="2_lymcn"]
@@ -11,6 +12,7 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_3o5e3"]
 [ext_resource type="AudioStream" uid="uid://dxhsw30veqa12" path="res://assets/Music/boss.wav" id="6_e317x"]
 [ext_resource type="PackedScene" path="res://scenes/game_over_menu.tscn" id="9_c4qu0"]
+[ext_resource type="PackedScene" uid="uid://c0uv0iitg3qpb" path="res://scenes/graveyard_game_over.tscn" id="9_fhro2"]
 [ext_resource type="PackedScene" uid="uid://bqo0cfd63o4nl" path="res://scenes/menu.tscn" id="18_h771b"]
 [ext_resource type="PackedScene" uid="uid://ijrrf5ej7e13" path="res://scenes/inventory.tscn" id="19_bc2po"]
 
@@ -56,6 +58,9 @@ script = ExtResource("4_s17tx")
 
 [node name="Bossfight" type="Node3D" unique_id=453515205]
 
+[node name="BossfightGameManager" type="Node" parent="." unique_id=2077988314]
+script = ExtResource("1_fhro2")
+
 [node name="Musics" type="Node" parent="." unique_id=1845575960]
 unique_name_in_owner = true
 script = ExtResource("2_lymcn")
@@ -71,6 +76,9 @@ scale = Vector2(1, 1)
 [node name="Inventory" parent="." unique_id=874561363 instance=ExtResource("19_bc2po")]
 
 [node name="GameOverMenu" parent="." unique_id=251255802 instance=ExtResource("9_c4qu0")]
+visible = false
+
+[node name="GraveyardGameOver" parent="." unique_id=456347588 instance=ExtResource("9_fhro2")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=789237425]
 environment = SubResource("Environment_yqjtg")
@@ -117,3 +125,8 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="Boss" parent="." unique_id=1656814271 instance=ExtResource("2_jiv1s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="RespawnTimer" type="Timer" parent="." unique_id=1388105050]
+one_shot = true
+
+[connection signal="timeout" from="RespawnTimer" to="BossfightGameManager" method="cemetery_respawn"]

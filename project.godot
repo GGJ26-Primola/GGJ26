@@ -32,6 +32,11 @@ Global="*uid://cl2l666jtqhir"
 [dialogic]
 
 directories/dch_directory={
+"Fantasma1": "res://dialogic/npc/cemetery/Fantasma1.dch",
+"Fantasma2": "res://dialogic/npc/cemetery/Fantasma2.dch",
+"Fantasma3": "res://dialogic/npc/cemetery/Fantasma3.dch",
+"Fantasma4": "res://dialogic/npc/cemetery/Fantasma4.dch",
+"Fantasma5": "res://dialogic/npc/cemetery/Fantasma5.dch",
 "Gatto Mammone": "res://dialogic/npc/Gatto Mammone.dch",
 "Gatto normalissimo": "res://dialogic/npc/Gatto normalissimo.dch",
 "Giancarlo": "res://dialogic/npc/Giancarlo.dch",
@@ -47,6 +52,7 @@ directories/dch_directory={
 "Monello 2": "res://dialogic/npc/Monello 2.dch",
 "Monello 3": "res://dialogic/npc/Monello 3.dch",
 "Player": "res://dialogic/npc/Player.dch",
+"Protagonista": "res://dialogic/npc/cemetery/Protagonista.dch",
 "Salsicce": "res://dialogic/npc/Salsicce.dch",
 "Umarell": "res://dialogic/npc/Umarell.dch",
 "Villico 1": "res://dialogic/npc/Villico 1.dch",
@@ -55,7 +61,11 @@ directories/dch_directory={
 "Villico 4": "res://dialogic/npc/Villico 4.dch",
 "Villico 5": "res://dialogic/npc/Villico 5.dch",
 "Villico 6": "res://dialogic/npc/Villico 6.dch",
+"bush": "res://dialogic/npc/bush.dch",
 "cat": "res://dialogic/npc/cat.dch",
+"potion": "res://dialogic/npc/potion.dch",
+"scheletro_mercante": "res://dialogic/npc/cemetery/scheletro_mercante.dch",
+"scroll": "res://dialogic/npc/scroll.dch",
 "stick": "res://dialogic/npc/stick.dch"
 }
 directories/dtl_directory={
@@ -75,9 +85,15 @@ directories/dtl_directory={
 "2 Secondo incontro Mazapégul": "res://dialogic/Cemetery/2 Secondo incontro Mazapégul.dtl",
 "GrimBalduzzi": "res://dialogic/Cemetery/GrimBalduzzi.dtl",
 "Incontro con Mazanpegul": "res://dialogic/Safe zone/Incontro con Mazanpegul.dtl",
+"fantasmi": "res://dialogic/Cemetery/fantasmi.dtl",
+"fantasmi_lindas": "res://dialogic/Cemetery/fantasmi_lindas.dtl",
+"fantasmi_smith": "res://dialogic/Cemetery/fantasmi_smith.dtl",
+"fantasmi_termsandconditions": "res://dialogic/Cemetery/fantasmi_termsandconditions.dtl",
+"fantasmi_vial": "res://dialogic/Cemetery/fantasmi_vial.dtl",
 "hitted_child_1": "res://dialogic/Safe zone/hitted_child_1.dtl",
 "hitted_child_2": "res://dialogic/Safe zone/hitted_child_2.dtl",
-"miao": "res://dialogic/miao.dtl"
+"miao": "res://dialogic/miao.dtl",
+"scheletro_mercante": "res://dialogic/Cemetery/scheletro_mercante.dtl"
 }
 layout/style_directory={
 "": "res://dialogic/styles/conversation.tres",
@@ -85,6 +101,9 @@ layout/style_directory={
 "conversation": "res://dialogic/styles/conversation.tres"
 }
 variables={
+"cemetery_bush": false,
+"cemetery_scroll": false,
+"cemetery_vial": false,
 "current_mask": "default",
 "dead_from_ghost": false,
 "mask_boss": false,

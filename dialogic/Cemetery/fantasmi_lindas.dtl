@@ -1,0 +1,7 @@
+if {cemetery_scroll} == false:
+	Fantasma3: Hello!
+	Fantasma3: Why are you looking through me?
+	Player: *blush*
+	[end_timeline]
+Fantasma3: Linda’s Inn, on Fiascaie Street 453. Come and enjoy our wine and our traditional dishes.
+Player: ...

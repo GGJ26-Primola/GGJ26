@@ -1,0 +1,9 @@
+if {cemetery_scroll} == false:
+	Fantasma4: Hi!
+	[end_timeline]
+Fantasma4: Need to sharpen your sword?
+Fantasma4: Come to Smith’s. A 10% discount for new warriors.
+Fantasma4: Here’s your coupon.
+Player: ...
+- Take the coupon parchment.
+- Go away

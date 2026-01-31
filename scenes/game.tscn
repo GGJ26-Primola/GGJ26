@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://bu78ssf0f5nim" path="res://scenes/cat.tscn" id="2_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://b51wiu02jdl1b" path="res://assets/Music/safe_zone.wav" id="2_ca42v"]
 [ext_resource type="PackedScene" uid="uid://dxmdmtwbtv530" path="res://scenes/safe_zone.tscn" id="2_e1j6l"]
-[ext_resource type="Resource" path="res://dialogic/Safe zone/hitted_child_1.dtl" id="2_js0lu"]
+[ext_resource type="Resource" uid="uid://dshht4ncgt01m" path="res://dialogic/Safe zone/hitted_child_1.dtl" id="2_js0lu"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bqo0cfd63o4nl" path="res://scenes/menu.tscn" id="2_p57ef"]
 [ext_resource type="Script" uid="uid://dh0p4hudw1jkb" path="res://scripts/music_manager.gd" id="2_rysoc"]
-[ext_resource type="Resource" path="res://dialogic/Safe zone/hitted_child_2.dtl" id="3_gxtfn"]
+[ext_resource type="Resource" uid="uid://g8tjnldk20po" path="res://dialogic/Safe zone/hitted_child_2.dtl" id="3_gxtfn"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://be2mgdfg87nm3" path="res://assets/Music/cemetery.wav" id="3_rysoc"]
 [ext_resource type="PackedScene" uid="uid://c6wi5nthdn08o" path="res://scenes/interactible.tscn" id="3_u5sy4"]
@@ -26,12 +26,12 @@
 [ext_resource type="PackedScene" uid="uid://bpl470i2x3dpm" path="res://scenes/knight.tscn" id="19_264po"]
 [ext_resource type="PackedScene" uid="uid://ijrrf5ej7e13" path="res://scenes/inventory.tscn" id="19_bt5mj"]
 [ext_resource type="Resource" uid="uid://t4q67befekfr" path="res://dialogic/Safe zone/1[Zona1] Dialogo con villico 5.dtl" id="20_1kice"]
-[ext_resource type="PackedScene" path="res://scenes/umarell.tscn" id="22_v2yb1"]
-[ext_resource type="Script" path="res://scripts/mazapegul.gd" id="24_7025r"]
+[ext_resource type="PackedScene" uid="uid://bnulwgy8p3fxt" path="res://scenes/umarell.tscn" id="22_v2yb1"]
+[ext_resource type="Script" uid="uid://drh820sgimx7h" path="res://scripts/mazapegul.gd" id="24_7025r"]
 [ext_resource type="Texture2D" uid="uid://d1m6gsuv8l63j" path="res://assets/2D/mazapegul_idle.png" id="25_m4url"]
 [ext_resource type="Resource" uid="uid://dbmq8cmqa8wls" path="res://dialogic/Safe zone/1[Zona1] Dialogo con Villico 1.dtl" id="25_wljb1"]
 [ext_resource type="Texture2D" uid="uid://cdogkwrkjp13t" path="res://assets/2D/mazapegul_idle_with_hat.png" id="26_8ool0"]
-[ext_resource type="Resource" uid="uid://cqxbtqudrldrs" path="res://dialogic/Cemetery/2 Secondo incontro Mazapégul.dtl" id="26_pr1ej"]
+[ext_resource type="Resource" path="res://dialogic/Cemetery/2 Secondo incontro Mazapégul.dtl" id="26_pr1ej"]
 [ext_resource type="Resource" uid="uid://dwpuiw3hquai" path="res://dialogic/Safe zone/1[Zona 1] Dialogo con villico 2.dtl" id="26_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://6ii0307e2il5" path="res://assets/2D/npc1_idle.png" id="27_js0lu"]
 [ext_resource type="Resource" uid="uid://3m3iwwpkrohn" path="res://dialogic/Safe zone/1[Zona1] Dialogo con villico 3.dtl" id="28_gxtfn"]
@@ -52,6 +52,7 @@
 [ext_resource type="PackedScene" uid="uid://c3715oyku61f8" path="res://scenes/Collisions/tree_pine_yellow_medium.tscn" id="50_7ixpq"]
 [ext_resource type="PackedScene" uid="uid://ckcwxssmjgdri" path="res://scenes/Collisions/tree_pine_orange_medium.tscn" id="51_bk1p3"]
 [ext_resource type="PackedScene" uid="uid://67ph82uhj4oh" path="res://scenes/Collisions/tree_pine_orange_large.tscn" id="52_n8ral"]
+[ext_resource type="PackedScene" uid="uid://lkcb5qva01jm" path="res://scenes/ghost.tscn" id="45_oaba0"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ssvqc"]
 clip_count = 4
@@ -535,6 +536,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.436905, 22.81261, -61.972
 
 [node name="tree_pine_orange_large2" parent="." unique_id=495724873 instance=ExtResource("52_n8ral")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.764145, 21.108316, -62.264267)
+[node name="Ghosts" type="Node3D" parent="." unique_id=2030157221]
+
+[node name="Ghost" parent="Ghosts" unique_id=766622181 instance=ExtResource("45_oaba0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1009274, 11.403783, -14.541943)
 
 [connection signal="timeout" from="GameManager/CemeteryDeathTimer" to="GameManager" method="cemetery_game_over"]
 [connection signal="timeout" from="GameManager/CemeteryRespawnTimer" to="GameManager" method="cemetery_respawn"]

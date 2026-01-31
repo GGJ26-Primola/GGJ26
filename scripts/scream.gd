@@ -17,7 +17,10 @@ func _process(delta: float) -> void:
 func _on_hitbox_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		if Dialogic.VAR.current_mask != "boss":
-			Global.game_over = true
+			Dialogic.VAR.boss_last_death = "scream"
+			#Global.game_over = true
+			Global.game_manager.game_over()
+
 		else:
 			boss.can_parry = true
 			boss.kill_tween = true
