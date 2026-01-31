@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdogkwrkjp13t"
-path.s3tc="res://.godot/imported/mazapegul_idle_with_hat.png-180cdeb64a603174e171a1d3b9a34785.s3tc.ctex"
+uid="uid://slnjes3fi2cq"
+path.s3tc="res://.godot/imported/idle_intro.png-6850c2b7cf327f0093d406236e5d6092.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/2D/mazapegul_idle_with_hat.png"
-dest_files=["res://.godot/imported/mazapegul_idle_with_hat.png-180cdeb64a603174e171a1d3b9a34785.s3tc.ctex"]
+source_file="res://assets/2D/PG/idle_intro.png"
+dest_files=["res://.godot/imported/idle_intro.png-6850c2b7cf327f0093d406236e5d6092.s3tc.ctex"]
 
 [params]
 

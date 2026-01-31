@@ -27,7 +27,10 @@
 [ext_resource type="PackedScene" uid="uid://ijrrf5ej7e13" path="res://scenes/inventory.tscn" id="19_bt5mj"]
 [ext_resource type="Resource" uid="uid://t4q67befekfr" path="res://dialogic/Safe zone/1[Zona1] Dialogo con villico 5.dtl" id="20_1kice"]
 [ext_resource type="PackedScene" uid="uid://bnulwgy8p3fxt" path="res://scenes/umarell.tscn" id="22_v2yb1"]
+[ext_resource type="Script" uid="uid://drh820sgimx7h" path="res://scripts/mazapegul.gd" id="24_7025r"]
+[ext_resource type="Texture2D" uid="uid://d1m6gsuv8l63j" path="res://assets/2D/mazapegul_idle.png" id="25_m4url"]
 [ext_resource type="Resource" uid="uid://dbmq8cmqa8wls" path="res://dialogic/Safe zone/1[Zona1] Dialogo con Villico 1.dtl" id="25_wljb1"]
+[ext_resource type="Texture2D" uid="uid://cdogkwrkjp13t" path="res://assets/2D/mazapegul_idle_with_hat.png" id="26_8ool0"]
 [ext_resource type="Resource" uid="uid://dwpuiw3hquai" path="res://dialogic/Safe zone/1[Zona 1] Dialogo con villico 2.dtl" id="26_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://6ii0307e2il5" path="res://assets/2D/npc1_idle.png" id="27_js0lu"]
 [ext_resource type="Resource" uid="uid://3m3iwwpkrohn" path="res://dialogic/Safe zone/1[Zona1] Dialogo con villico 3.dtl" id="28_gxtfn"]
@@ -41,16 +44,16 @@
 clip_count = 4
 clip_0/name = &"safe"
 clip_0/stream = ExtResource("2_ca42v")
-clip_0/auto_advance = 0
+clip_0/auto_advance = 2
 clip_1/name = &"cemetery"
 clip_1/stream = ExtResource("3_rysoc")
-clip_1/auto_advance = 0
+clip_1/auto_advance = 2
 clip_2/name = &"woods"
 clip_2/stream = ExtResource("4_ssvqc")
 clip_2/auto_advance = 0
 clip_3/name = &"boss"
 clip_3/stream = ExtResource("5_264po")
-clip_3/auto_advance = 0
+clip_3/auto_advance = 2
 _transitions = {
 Vector2i(-1, -1): {
 "fade_beats": 1.0,
@@ -112,6 +115,47 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr1ej"]
+atlas = ExtResource("25_m4url")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05nbr"]
+atlas = ExtResource("25_m4url")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sl42"]
+atlas = ExtResource("26_8ool0")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oaba0"]
+atlas = ExtResource("26_8ool0")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_458eo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pr1ej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05nbr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sl42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oaba0")
+}],
+"loop": true,
+"name": &"idle_hat",
 "speed": 5.0
 }]
 
@@ -313,11 +357,21 @@ timeline = ExtResource("31_nepv3")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Villico 6/Interactible" unique_id=641949308]
 shape = SubResource("SphereShape3D_pr1ej")
 
-[node name="Mazapégul" type="CSGBox3D" parent="NPC" unique_id=1501590508]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8080447, 11.317618, -9.558151)
+[node name="Mazapégul" type="Node3D" parent="NPC" unique_id=1634428036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8080447, 12.606836, -8.691912)
+script = ExtResource("24_7025r")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="NPC/Mazapégul" unique_id=604520178]
+pixel_size = 0.03
+sprite_frames = SubResource("SpriteFrames_458eo")
+animation = &"idle"
+autoplay = "idle_hat"
+frame_progress = 0.14907537
 
 [node name="interactible" parent="NPC/Mazapégul" unique_id=132850483 instance=ExtResource("3_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.36278248, 0)
 timeline = ExtResource("32_7025r")
+automatic_play = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Mazapégul/interactible" unique_id=585657216]
 shape = SubResource("SphereShape3D_m4url")
@@ -362,10 +416,6 @@ environment = SubResource("Environment_yqjtg")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1992286194]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=414300921]
-use_collision = true
-size = Vector3(24.964844, 0.115478516, 23.318604)
 
 [node name="Player" parent="." unique_id=1338356758 instance=ExtResource("1_uwrxv")]
 unique_name_in_owner = true

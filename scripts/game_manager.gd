@@ -55,7 +55,6 @@ func remove_target() -> void:
 	camera_player.set_follow_targets([player])
 
 func _on_dialogic_signal(argument: String) -> void:
-	print("_on_dialogic_signal")
 	if argument == "fov_0":
 		camera_player.follow_offset = Vector3(0, 5, 5)
 	elif argument == "fov_1":
