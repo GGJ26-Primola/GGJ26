@@ -378,4 +378,4 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_cdiht")
 animation = &"run"
 autoplay = "idle"
-frame_progress = 0.28307799
+frame_progress = 0.31084168

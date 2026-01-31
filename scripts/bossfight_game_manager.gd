@@ -3,6 +3,7 @@ extends Node
 @onready var graveyard_game_over: Control = $"../GraveyardGameOver"
 @onready var camera_player: PhantomCamera3D = $"../CameraPlayer"
 @onready var respawn_timer: Timer = $"../RespawnTimer"
+@onready var boss: Node3D = $"../Boss"
 
 var last_checkpoint: Vector3
 
@@ -13,6 +14,10 @@ func _ready() -> void:
 	
 	last_checkpoint = player.global_position
 	graveyard_game_over.hide()
+	set_camera()
+
+func set_camera() -> void:
+	camera_player.set_follow_targets([player, boss])
 
 func respawn() -> void:
 	player.global_position = last_checkpoint
