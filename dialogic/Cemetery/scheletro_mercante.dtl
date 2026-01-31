@@ -1,0 +1,41 @@
+if {current_mask} != "ftp1":
+	scheletro_mercante: EHY!
+	scheletro_mercante: You don't have a mask !!
+	Player: I have a mask!
+	scheletro_mercante: It's not a FTP1 certified mask!
+	scheletro_mercante: I only trade with well mannered people.
+	scheletro_mercante: With people who cares of their own health.
+	[end_timeline]
+scheletro_mercante: Hello!
+label main
+scheletro_mercante: How can I help you?
+- Buy
+	scheletro_mercante: I have this beautiful forks with bone handlers
+	Player: Where did you find the bones?
+	scheletro_mercante: We are in a graveyard ...
+	jump main
+- Sell
+	scheletro_mercante: Do you have something for me?
+	Player: Are you interested in a rubber chicken with a pulley in the middle?
+	scheletro_mercante: No
+	jump main
+- Just talk
+	scheletro_mercante: Lately I have been feeling a bit washed out.
+	scheletro_mercante: I could really use a revitalizing cream.
+	if {cemetery_vial} == false:
+		scheletro_mercante: Do you have one?
+		Player: No.
+		[end_timeline]
+	Player: Why not an anti-aging vial?
+	scheletro_mercante: Do you have one?
+	Player: Of course!
+	join potion center
+	Player: How do you swallow it?
+	scheletro_mercante: Ask your mother.
+	leave potion
+	[wait time="1.0" hide_text="false"]
+	scheletro_mercante: Ahhhh, I'm already feeling better!
+	join bush center
+	scheletro_mercante: Take this flower bad with a small bush!
+	leave bush
+	Player: Just the thing I was looking for.

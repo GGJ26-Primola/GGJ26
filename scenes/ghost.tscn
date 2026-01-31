@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://lkcb5qva01jm"]
+
+[ext_resource type="PackedScene" uid="uid://cm4noj7flak4p" path="res://scenes/enemy.tscn" id="1_l5lq6"]
+[ext_resource type="Texture2D" uid="uid://bmpgcjolxjolr" path="res://assets/2D/green_ghost.png" id="2_l5lq6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbnym"]
+atlas = ExtResource("2_l5lq6")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_veat2"]
+atlas = ExtResource("2_l5lq6")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mfnq"]
+atlas = ExtResource("2_l5lq6")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lv6vd"]
+atlas = ExtResource("2_l5lq6")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sv5gc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbnym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_veat2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mfnq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lv6vd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wj1r3"]
+radius = 0.7729261
+
+[node name="Ghost" type="Node3D" unique_id=766622181]
+
+[node name="Enemy" parent="." unique_id=1759208191 instance=ExtResource("1_l5lq6")]
+speed = 200.0
+can_die = false
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Enemy" unique_id=1665357714]
+pixel_size = 0.03
+sprite_frames = SubResource("SpriteFrames_sv5gc")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.275564
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy" unique_id=1991669721]
+shape = SubResource("SphereShape3D_wj1r3")
+
+[node name="RespawnTimer" type="Timer" parent="Enemy" unique_id=1278661948]
