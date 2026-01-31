@@ -23,8 +23,12 @@ var last_y_direction : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	sprite_intro.show()
-	spreadsheet.hide()
+	if Dialogic.VAR.mask_default:
+		spreadsheet.show()
+		sprite_intro.hide()
+	else:
+		spreadsheet.hide()
+		sprite_intro.show()
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 
 func _on_dialogic_signal(argument: String) -> void:
