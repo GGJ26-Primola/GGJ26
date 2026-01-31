@@ -137,7 +137,6 @@ layout/default_style="res://dialogic/styles/conversation.tres"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor_plugins]

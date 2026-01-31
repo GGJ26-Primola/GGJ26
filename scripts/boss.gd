@@ -5,6 +5,9 @@ extends Node3D
 
 @onready var bullets: Node3D = $bullets
 @onready var mist: FogVolume = $mist
+@onready var scream: Node3D = $scream
+@onready var scream_mesh: MeshInstance3D = $scream/MeshInstance3D
+
 @onready var player: CharacterBody3D = %Player
 #@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
@@ -24,20 +27,32 @@ var bullet
 var bullet_number = 0
 
 ## MIST STATE ##
-var initial_mist_scale
-var initial_mist_position
+var initial_mist_scale : Vector3
+var initial_mist_position : Vector3
 @export var can_mist := false
-var expanding := true
+var mist_expanding := false
+
+## SCREAM STATE ##
+var initial_scream_scale
+var initial_scream_position
+var initial_scream_height
+@export var can_scream := false
+var scream_expanding := false
 
 func _ready() -> void:
 	State = IDLE
 	
 	bullet = load("res://scenes/bullet.tscn")
-	
 	bullet_number = randi_range(1,5)
+	
 	initial_mist_scale = mist.scale
 	initial_mist_position = mist.position
 	mist.disabled = true
+	
+	initial_scream_scale = scream.scale
+	initial_scream_position = scream.position
+	initial_scream_height = scream_mesh.mesh.height
+	scream.hide()
 	
 	animState = animation_tree.get("parameters/playback")
 	
@@ -64,9 +79,10 @@ func state_machine(delta: float) -> void:
 					animState.travel("charging")
 					can_idle = false
 					can_mist = true
+					can_scream = true
 					var next_state = randf_range(0, 1)
 					if next_state <= 0.8:
-						State = BULLETS
+						State = MIST
 					else:
 						State = MIST
 
@@ -96,28 +112,24 @@ func state_machine(delta: float) -> void:
 				var tween = create_tween()
 				tween.tween_property(mist, "visible", true, 1)
 				await tween.finished
-				expanding= true
+				mist_expanding= true
 				
-			elif expanding:
-				expanding = false
+			elif mist_expanding:
+				mist_expanding = false
 				var expand_mist = create_tween().set_parallel(true)
-				expand_mist.tween_property(mist, "disabled", false, 0.1)
+				expand_mist.tween_property(mist, "disabled", false, 3)
 				expand_mist.tween_property(mist, "scale", Vector3(5,1,8), 7)
 				expand_mist.tween_property(mist, "position:z", 8, 7)
 				await expand_mist.finished
 				
 				var remove_mist = create_tween().set_parallel(true)
-				#remove_mist.tween_property(mist, "scale", Vector3(0.1, 1, 0.1), 3)
 				remove_mist.tween_property(mist, "global_position:z", mist.global_position.z + 15, 5)
 				remove_mist.tween_property(mist, "visible", false, 5)
 				
 				await remove_mist.finished
 				
-				#var tween = create_tween()
-				#tween.tween_property(mist, "visible", false, 0.1)
-				#await tween.finished
-				mist.position = initial_mist_position
 				mist.scale = initial_mist_scale
+				mist.position = initial_mist_position
 				mist.disabled = true
 				
 				idle_wait = randi_range(100,200)
@@ -125,7 +137,45 @@ func state_machine(delta: float) -> void:
 				animState.travel("idle")
 				State = IDLE
 		SCREAM:
-			pass
+			animState.travel("scream")
+			if can_scream:
+				scream_expanding= true
+				#can_scream = false
+				
+				var tween = create_tween()
+				tween.tween_property(scream, "visible", true, 1)
+				await tween.finished
+				#scream.show()
+				
+				
+			elif scream_expanding:
+				scream_expanding = false
+				scream_mesh.mesh.material.uv1_offset = Vector3.ZERO
+				
+				var expand_scream = create_tween().set_parallel(true)
+				expand_scream.tween_property(scream, "disabled", false, 1)
+				expand_scream.tween_property(scream, "scale", Vector3(20,1,20), 7)
+				expand_scream.tween_property(scream_mesh, "mesh:height", 20, 7)
+				expand_scream.tween_property(scream_mesh, "mesh:material:uv1_offset", Vector3(10,10,0), 7)
+				await expand_scream.finished
+				
+				var remove_scream = create_tween().set_parallel(true)
+				#remove_scream.tween_property(scream, "scale", Vector3(0.1, 1, 0.1), 3)
+				#remove_scream.tween_property(scream, "global_position:z", scream.global_position.z + 15, 5)
+				remove_scream.tween_property(scream, "visible", false, 5)
+				remove_scream.tween_property(scream_mesh, "mesh:material:uv1_offset", Vector3(10,10,0), 5)
+				
+				await remove_scream.finished
+				
+				scream.scale = initial_scream_scale
+				scream.position = initial_scream_position
+				scream_mesh.mesh.height = initial_scream_height
+				
+				idle_wait = randi_range(100,200)
+				can_idle = true
+				#animState.travel("idle")
+				State = IDLE
+			
 		WEAK:
 			pass
 
