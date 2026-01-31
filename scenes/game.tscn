@@ -44,6 +44,14 @@
 [ext_resource type="PackedScene" uid="uid://dvtfflyj2wnh7" path="res://scenes/Graveyard.tscn" id="40_m4url"]
 [ext_resource type="PackedScene" uid="uid://dsf1im1wt7jie" path="res://scenes/Collisions/arch_gate.tscn" id="41_8ool0"]
 [ext_resource type="PackedScene" uid="uid://0eameechcba5" path="res://scenes/snake.tscn" id="44_0sl42"]
+[ext_resource type="PackedScene" uid="uid://1gtbarf0bsw1" path="res://assets/Mesh Woods/Rocks/Flat_Boulder_03.glb" id="45_pf7vy"]
+[ext_resource type="PackedScene" uid="uid://bb2b4bacfh66b" path="res://assets/Mesh Graveyard/fbx/tree_pine_orange_large.fbx" id="46_o8ni1"]
+[ext_resource type="PackedScene" uid="uid://b7xlkcf006u1g" path="res://assets/Mesh Graveyard/fbx/tree_pine_orange_medium.fbx" id="47_3hbvx"]
+[ext_resource type="PackedScene" uid="uid://lbnw7nxspft8" path="res://assets/Mesh Graveyard/fbx/tree_pine_yellow_medium.fbx" id="48_q8j3a"]
+[ext_resource type="PackedScene" path="res://scenes/Collisions/tree_pine_yellow_large.tscn" id="49_ms3bu"]
+[ext_resource type="PackedScene" uid="uid://c3715oyku61f8" path="res://scenes/Collisions/tree_pine_yellow_medium.tscn" id="50_7ixpq"]
+[ext_resource type="PackedScene" uid="uid://ckcwxssmjgdri" path="res://scenes/Collisions/tree_pine_orange_medium.tscn" id="51_bk1p3"]
+[ext_resource type="PackedScene" uid="uid://67ph82uhj4oh" path="res://scenes/Collisions/tree_pine_orange_large.tscn" id="52_n8ral"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ssvqc"]
 clip_count = 4
@@ -503,6 +511,30 @@ transform = Transform3D(-0.9986626, -0.04212606, 0.029975494, -0.043559503, 0.99
 
 [node name="Snake" parent="Snakes" unique_id=1789395511 instance=ExtResource("44_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.910667, 13.248374, -16.058613)
+
+[node name="Flat_Boulder_03" parent="." unique_id=535769743 instance=ExtResource("45_pf7vy")]
+transform = Transform3D(-0.111496374, -0.96605635, -0.09495434, -0.038667787, 0.1978023, -0.57779586, 0.3821863, -0.2618178, -0.08615994, -38.98559, 16.63804, -58.38967)
+
+[node name="tree_pine_orange_large" parent="." unique_id=1535710466 instance=ExtResource("46_o8ni1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.708145, 22.753239, -61.562485)
+
+[node name="tree_pine_orange_medium" parent="." unique_id=1715483347 instance=ExtResource("47_3hbvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.0521, 22.626396, -61.839577)
+
+[node name="tree_pine_yellow_medium" parent="." unique_id=587314601 instance=ExtResource("48_q8j3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.90744, 22.074022, -61.408676)
+
+[node name="tree_pine_yellow_large" parent="." unique_id=1161222749 instance=ExtResource("49_ms3bu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.3363, 21.799623, -63.100727)
+
+[node name="tree_pine_yellow_medium2" parent="." unique_id=812486897 instance=ExtResource("50_7ixpq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.721596, 22.057657, -60.902603)
+
+[node name="tree_pine_orange_medium2" parent="." unique_id=848010131 instance=ExtResource("51_bk1p3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.436905, 22.81261, -61.972363)
+
+[node name="tree_pine_orange_large2" parent="." unique_id=495724873 instance=ExtResource("52_n8ral")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.764145, 21.108316, -62.264267)
 
 [connection signal="timeout" from="GameManager/CemeteryDeathTimer" to="GameManager" method="cemetery_game_over"]
 [connection signal="timeout" from="GameManager/CemeteryRespawnTimer" to="GameManager" method="cemetery_respawn"]
