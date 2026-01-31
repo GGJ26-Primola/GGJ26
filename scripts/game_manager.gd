@@ -24,6 +24,7 @@ const RUN_SPEED = 5
 # Cemetery
 @onready var cemetery_death_audio : AudioStreamPlayer = $"../Musics/CemeteryDeathAudio"
 @onready var cemetery_death_timer : Timer = $CemeteryDeathTimer
+@onready var cemetery_respawn_timer: Timer = $CemeteryRespawnTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -143,7 +144,14 @@ func start_timeline(timeline : DialogicTimeline) -> void:
 	GameState.dialogic_destroy_after_read = false
 	Dialogic.start(timeline)
 
-# TODO : CEMETERY
+# CEMETERY
 func cemetery_game_over() -> void:
 	print("Cemetery game over")
+	Dialogic.VAR.dead_from_ghost = true
 	GameState.current_game_status = GameState.State.GAMEOVER
+	cemetery_respawn_timer.start()
+	respawn()
+	
+func cemetery_respawn() -> void:
+	GameState.current_game_status = GameState.State.PLAYING
+	respawn()

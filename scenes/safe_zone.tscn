@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://doftwvjcf25uv" path="res://assets/textures/Grass_01.png" id="9_qfqvm"]
 [ext_resource type="Texture2D" uid="uid://67r1njq1jq0c" path="res://assets/textures/360_F_603980502_qIAJ5hytZnM0U4JMmwiY1C71Qj3BEHVV.jpg" id="10_8s1qs"]
 [ext_resource type="Texture2D" uid="uid://dyxlrpi7d10g" path="res://assets/textures/Grass005_1K-PNG_AmbientOcclusion.png" id="10_11gxj"]
-[ext_resource type="PackedScene" uid="uid://dsf1im1wt7jie" path="res://scenes/Collisions/arch_gate.tscn" id="11_5qfcg"]
 [ext_resource type="PackedScene" uid="uid://7iq3jpnw00w7" path="res://assets/Mesh Village/Casa1.glb" id="12_8s1qs"]
 [ext_resource type="PackedScene" uid="uid://cajdblliud01w" path="res://assets/Mesh Village/Barile1.glb" id="13_b3c7i"]
 [ext_resource type="PackedScene" uid="uid://bb2b4bacfh66b" path="res://assets/Mesh Woods/tree_pine_orange_large.fbx" id="25_mg75l"]
@@ -17,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://pg5srqam86l1" path="res://assets/Mesh Woods/tree_dead_small.fbx" id="34_3rgd6"]
 [ext_resource type="PackedScene" uid="uid://cpo7hpc1jkyh1" path="res://assets/Mesh Woods/tree_dead_large_decorated.fbx" id="35_2nqb3"]
 [ext_resource type="PackedScene" uid="uid://biodym60jxpwh" path="res://assets/Mesh Woods/tree_pine_yellow_small.fbx" id="36_2jpf8"]
-
 
 [sub_resource type="Resource" id="Resource_v8mog"]
 script = ExtResource("8_8s1qs")
@@ -59,9 +57,6 @@ metadata/_custom_type_script = "uid://vojqxe207xwt"
 
 [node name="Misc" type="Node3D" parent="Lev/Terrain/HTerrain" unique_id=1373467095]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.964693, 0)
-
-[node name="arch_gate" parent="Lev/Terrain/HTerrain/Misc" unique_id=1156300368 instance=ExtResource("11_5qfcg")]
-transform = Transform3D(-0.8030293, -0.10349322, -0.5868844, -0.09357739, 0.99448663, -0.047329906, 0.5885468, 0.01691182, -0.8082866, -18.26205, 2.5413485, -18.720642)
 
 [node name="Casa1" parent="Lev/Terrain/HTerrain/Misc" unique_id=1452605416 instance=ExtResource("12_8s1qs")]
 transform = Transform3D(-0.3612924, 0, 0.6572427, 0, 0.7500001, 0, -0.6572427, 0, -0.3612924, -23.730978, -0.2789526, 25.575405)

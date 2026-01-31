@@ -274,7 +274,7 @@ pixel_size = 0.03
 sprite_frames = SubResource("SpriteFrames_smehm")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.0130565325
+frame_progress = 0.2306765
 
 [node name="spreadsheet" type="Sprite3D" parent="." unique_id=1703754418]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

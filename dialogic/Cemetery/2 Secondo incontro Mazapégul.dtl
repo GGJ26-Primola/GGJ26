@@ -1,6 +1,22 @@
-Mazapégul: You! Hey You! You made it this far, you're not the average guy, that's for sure!
+join Mazapégul right
+if {stick} == false:
+	Mazapégul (idle): You can not enter the graveyard.
+	Mazapégul (idle): The lock is a little rusty.
+	Mazapégul (idle): You need to find something to unlock the gate!
+	[end_timeline]
+elif {mask_cat} == false:
+	Mazapégul (idle): You have found something to unlock the gate!
+	Mazapégul (idle): BUT BEWARE!
+	Mazapégul (idle): Inside the graveyard the are thing that you cannot hit with a stick!
+	Mazapégul (idle): Find something that protects you from evil spirits!
+	[end_timeline]
+elif {dead_from_ghost} == true:
+	Mazapégul (idle): I told you that you are a PATACCA!
+	Mazapégul (idle): Use the mask that the Gatto Mammone gave you!
+	[end_timeline]
+Mazapégul (idle): You! Hey You! You made it this far, you're not the average guy, that's for sure!
 Player: It's you again! You have to tell me who you were referring to!
-Mazapégul: Oh yeah, "her". She's evil incarnate, a force of destruction indeed. Look around you, cant you feel it?
+Mazapégul (idle): Oh yeah, "her". She's evil incarnate, a force of destruction indeed. Look around you, cant you feel it?
 Mazapégul: The ugly tingle of dark magic in the air? This place is permeated with the power of an evil witch!
 Mazapégul: The dead rise from the ground and roam the earth. You are very lucky - or very special - to have befriended the Gatto Mammone.
 Mazapégul: The power of his mask will allow you to see the twisted spirits that will hunt you, but i don't think your umarellitude can help you here.
