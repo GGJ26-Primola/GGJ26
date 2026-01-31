@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dwapv8iv1pid6"]
+
+[ext_resource type="PackedScene" uid="uid://cnu5glq6icb16" path="res://assets/3D/Albero1.glb" id="1_6nsxp"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1ucbf"]
+height = 3.9707031
+radius = 1.2182617
+
+[node name="Albero1" unique_id=158863957 instance=ExtResource("1_6nsxp")]
+
+[node name="Albero_01" parent="." index="0" unique_id=545991908]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=653317876]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1096054523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.642334, 0)
+shape = SubResource("CylinderShape3D_1ucbf")
