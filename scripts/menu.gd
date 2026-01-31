@@ -59,6 +59,11 @@ func _on_play_button_pressed() -> void:
 	main_panel.hide()
 	options_panel.hide()
 
+func _on_reload_button_pressed() -> void:
+	if Global.game_manager != null:
+		_on_play_button_pressed()
+		Global.game_manager.respawn()
+
 func _on_options_button_pressed() -> void:
 	main_panel.hide()
 	options_panel.show()

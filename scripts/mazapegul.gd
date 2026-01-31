@@ -13,3 +13,5 @@ func _on_dialogic_signal(argument: String) -> void:
 func play_animation() -> void:
 	if Dialogic.VAR.mask_default:
 		animated_sprite.play("idle")
+	else:
+		animated_sprite.play("idle_mask")

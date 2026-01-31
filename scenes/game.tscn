@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://bu78ssf0f5nim" path="res://scenes/cat.tscn" id="2_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://b51wiu02jdl1b" path="res://assets/Music/safe_zone.wav" id="2_ca42v"]
 [ext_resource type="PackedScene" uid="uid://dxmdmtwbtv530" path="res://scenes/safe_zone.tscn" id="2_e1j6l"]
-[ext_resource type="Resource" path="res://dialogic/Safe zone/hitted_child_1.dtl" id="2_js0lu"]
+[ext_resource type="Resource" uid="uid://dshht4ncgt01m" path="res://dialogic/Safe zone/hitted_child_1.dtl" id="2_js0lu"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bqo0cfd63o4nl" path="res://scenes/menu.tscn" id="2_p57ef"]
 [ext_resource type="Script" uid="uid://dh0p4hudw1jkb" path="res://scripts/music_manager.gd" id="2_rysoc"]
-[ext_resource type="Resource" path="res://dialogic/Safe zone/hitted_child_2.dtl" id="3_gxtfn"]
+[ext_resource type="Resource" uid="uid://g8tjnldk20po" path="res://dialogic/Safe zone/hitted_child_2.dtl" id="3_gxtfn"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://be2mgdfg87nm3" path="res://assets/Music/cemetery.wav" id="3_rysoc"]
 [ext_resource type="PackedScene" uid="uid://c6wi5nthdn08o" path="res://scenes/interactible.tscn" id="3_u5sy4"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://d1m6gsuv8l63j" path="res://assets/2D/mazapegul_idle.png" id="25_m4url"]
 [ext_resource type="Resource" uid="uid://dbmq8cmqa8wls" path="res://dialogic/Safe zone/1[Zona1] Dialogo con Villico 1.dtl" id="25_wljb1"]
 [ext_resource type="Texture2D" uid="uid://cdogkwrkjp13t" path="res://assets/2D/mazapegul_idle_with_hat.png" id="26_8ool0"]
+[ext_resource type="Resource" uid="uid://cqxbtqudrldrs" path="res://dialogic/Cemetery/2 Secondo incontro Mazapégul.dtl" id="26_pr1ej"]
 [ext_resource type="Resource" uid="uid://dwpuiw3hquai" path="res://dialogic/Safe zone/1[Zona 1] Dialogo con villico 2.dtl" id="26_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://6ii0307e2il5" path="res://assets/2D/npc1_idle.png" id="27_js0lu"]
 [ext_resource type="Resource" uid="uid://3m3iwwpkrohn" path="res://dialogic/Safe zone/1[Zona1] Dialogo con villico 3.dtl" id="28_gxtfn"]
@@ -39,6 +40,9 @@
 [ext_resource type="Resource" uid="uid://bnmpyrdm1oaoh" path="res://dialogic/Safe zone/1[Zona1] V6 Inizio quest gatto 1.dtl" id="31_nepv3"]
 [ext_resource type="Resource" uid="uid://15s883uo4k61" path="res://dialogic/Safe zone/Incontro con Mazanpegul.dtl" id="32_7025r"]
 [ext_resource type="PackedScene" uid="uid://wwx5yv6ev5yr" path="res://scenes/woods.tscn" id="33_v2yb1"]
+[ext_resource type="PackedScene" uid="uid://c0uv0iitg3qpb" path="res://scenes/graveyard_game_over.tscn" id="40_05nbr"]
+[ext_resource type="PackedScene" uid="uid://dvtfflyj2wnh7" path="res://scenes/Graveyard.tscn" id="40_m4url"]
+[ext_resource type="PackedScene" uid="uid://dsf1im1wt7jie" path="res://scenes/Collisions/arch_gate.tscn" id="41_8ool0"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ssvqc"]
 clip_count = 4
@@ -64,7 +68,7 @@ Vector2i(-1, -1): {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_264po"]
-size = Vector3(5.328125, 4.818573, 18.332031)
+size = Vector3(5.328125, 4.818573, 12.674805)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v2yb1"]
 size = Vector3(2.3261719, 6.8847656, 13.261719)
@@ -73,7 +77,7 @@ size = Vector3(2.3261719, 6.8847656, 13.261719)
 size = Vector3(11.573242, 4.576172, 2.1826172)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gxtfn"]
-size = Vector3(3.1818848, 7.4123535, 35.796875)
+size = Vector3(3.1818848, 6.4179688, 30.320313)
 
 [sub_resource type="Curve3D" id="Curve3D_ssvqc"]
 closed = true
@@ -201,6 +205,10 @@ child_2_hitted_dialogue = ExtResource("3_gxtfn")
 wait_time = 10.0
 one_shot = true
 
+[node name="CemeteryRespawnTimer" type="Timer" parent="GameManager" unique_id=2109619764]
+wait_time = 3.0
+one_shot = true
+
 [node name="SafeZone" parent="." unique_id=1897293832 instance=ExtResource("2_e1j6l")]
 
 [node name="Musics" type="Node" parent="." unique_id=1845575960]
@@ -213,11 +221,11 @@ autoplay = true
 bus = &"Music"
 
 [node name="MusicChanger" parent="Musics" unique_id=594796150 instance=ExtResource("18_ssvqc")]
-transform = Transform3D(0.59755516, 0, -0.8018278, 0, 1, 0, 0.8018278, 0, 0.59755516, -21.09858, 14.743387, -54.40932)
+transform = Transform3D(0.0031067133, 0, -0.9999951, 0, 1, 0, 0.9999951, 0, 0.0031067133, -16.211838, 16.006071, -78.95611)
 music_name = "cemetery"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Musics/MusicChanger" unique_id=978300869]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8360138, 0, 2.2814732)
+transform = Transform3D(1, 0, -1.0477379e-08, 0, 1, 0, 1.0477379e-08, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_264po")
 
 [node name="MusicChanger2" parent="Musics" unique_id=975477143 instance=ExtResource("18_ssvqc")]
@@ -235,7 +243,7 @@ music_name = "safe"
 shape = SubResource("BoxShape3D_js0lu")
 
 [node name="MusicChanger4" parent="Musics" unique_id=1887628211 instance=ExtResource("18_ssvqc")]
-transform = Transform3D(0.66220164, 0, -0.7493257, 0, 1, 0, 0.7493257, 0, 0.66220164, -12.937877, 12.071232, -44.60178)
+transform = Transform3D(0.20893589, 0, -0.97792935, 0, 1, 0, 0.97792935, 0, 0.20893589, -12.937877, 16.324903, -68.49562)
 music_name = "safe"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Musics/MusicChanger4" unique_id=938094998]
@@ -357,6 +365,23 @@ timeline = ExtResource("31_nepv3")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Villico 6/Interactible" unique_id=641949308]
 shape = SubResource("SphereShape3D_pr1ej")
 
+[node name="Mazapégul2" type="Node3D" parent="NPC" unique_id=940331418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.067849, 16.470304, -67.55223)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="NPC/Mazapégul2" unique_id=87102487]
+pixel_size = 0.03
+sprite_frames = SubResource("SpriteFrames_458eo")
+animation = &"idle"
+autoplay = "idle_hat"
+frame_progress = 0.14907537
+
+[node name="interactible" parent="NPC/Mazapégul2" unique_id=1468380590 instance=ExtResource("3_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.36278248, 0)
+timeline = ExtResource("26_pr1ej")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Mazapégul2/interactible" unique_id=848257564]
+shape = SubResource("SphereShape3D_m4url")
+
 [node name="Mazapégul" type="Node3D" parent="NPC" unique_id=1634428036]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8080447, 12.606836, -8.691912)
 script = ExtResource("24_7025r")
@@ -461,10 +486,19 @@ scale = Vector2(1, 1)
 
 [node name="Inventory" parent="." unique_id=874561363 instance=ExtResource("19_bt5mj")]
 
+[node name="GraveyardGameOver" parent="." unique_id=456347588 instance=ExtResource("40_05nbr")]
+
 [node name="Woods" parent="." unique_id=474693119 instance=ExtResource("33_v2yb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.142365, 21.69962, -14.668915)
 
+[node name="Graveyard" parent="." unique_id=1810824615 instance=ExtResource("40_m4url")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.316717, 17.005215, -79.08286)
+
+[node name="arch_gate" parent="." unique_id=1156300368 instance=ExtResource("41_8ool0")]
+transform = Transform3D(-0.9986626, -0.04212606, 0.029975494, -0.043559503, 0.9978539, -0.048894368, -0.02785127, -0.050134677, -0.9983543, -16.31212, 15.002968, -73.02219)
+
 [connection signal="timeout" from="GameManager/CemeteryDeathTimer" to="GameManager" method="cemetery_game_over"]
+[connection signal="timeout" from="GameManager/CemeteryRespawnTimer" to="GameManager" method="cemetery_respawn"]
 [connection signal="attacked" from="NPC/CatPath3D/PathFollow3D/Destructible" to="GameManager" method="_on_child_1_attacked"]
 [connection signal="attacked" from="NPC/CatPath3D/PathFollow3D2/Destructible" to="GameManager" method="_on_child_2_attacked"]
 [connection signal="attacked" from="NPC/Umarell/Destructible" to="GameManager" method="_on_umarell_attacked"]

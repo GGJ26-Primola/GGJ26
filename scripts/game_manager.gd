@@ -4,7 +4,7 @@ extends Node
 @onready var camera_player: PhantomCamera3D = $"../CameraPlayer"
 @onready var umarell: Node3D = $"../NPC/Umarell"
 @onready var player: CharacterBody3D = %Player
-var last_checkpoint := Vector3.ZERO
+var last_checkpoint : Vector3
 
 var cat_running = false
 const RUN_SPEED = 5
@@ -24,12 +24,17 @@ const RUN_SPEED = 5
 # Cemetery
 @onready var cemetery_death_audio : AudioStreamPlayer = $"../Musics/CemeteryDeathAudio"
 @onready var cemetery_death_timer : Timer = $CemeteryDeathTimer
+@onready var cemetery_respawn_timer: Timer = $CemeteryRespawnTimer
+@onready var graveyard_game_over: Control = $"../GraveyardGameOver"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
+	Global.game_manager = self
 	Global.player = player
 	Global.camera = camera_player
+	
+	last_checkpoint = player.global_position
 	
 	cat_end_collision.disabled = true
 	child_1_collision.disabled = true
@@ -39,6 +44,8 @@ func _ready() -> void:
 	Dialogic.timeline_started.connect(append_target)
 	Dialogic.timeline_ended.connect(remove_target)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	
+	graveyard_game_over.hide()
 
 func append_target() -> void:
 	if GameState.current_info_mark == null:
@@ -103,7 +110,7 @@ func run_paths(delta) -> void:
 		child_2_path.progress -= delta * RUN_SPEED
 
 func respawn() -> void:
-	player.position = last_checkpoint
+	player.global_position = last_checkpoint
 
 func set_last_checkpoint(pos : Vector3) -> void:
 	last_checkpoint = pos
@@ -143,7 +150,14 @@ func start_timeline(timeline : DialogicTimeline) -> void:
 	GameState.dialogic_destroy_after_read = false
 	Dialogic.start(timeline)
 
-# TODO : CEMETERY
+# CEMETERY
 func cemetery_game_over() -> void:
-	print("Cemetery game over")
-	GameState.current_game_status = GameState.State.GAMEOVER
+	Dialogic.VAR.dead_from_ghost = true
+	GameState.set_game_status(GameState.State.GAMEOVER)
+	graveyard_game_over.show()
+	cemetery_respawn_timer.start()
+	
+func cemetery_respawn() -> void:
+	graveyard_game_over.hide()
+	respawn()
+	GameState.set_game_status(GameState.State.PLAYING)
