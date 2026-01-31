@@ -7,13 +7,15 @@ extends Node3D
 @onready var mist: FogVolume = $mist
 @onready var scream: Node3D = $scream
 @onready var scream_mesh: MeshInstance3D = $scream/MeshInstance3D
+@onready var timer: Timer = $Timer
 
 @onready var player: CharacterBody3D = %Player
 #@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var boss_hitbox: Area3D = $BossHitbox
 var animState
 
-enum {IDLE, BULLETS, MIST, SCREAM, WEAK}
+enum {IDLE, BULLETS, MIST, SCREAM, PARRY, WEAK}
 
 var State
 
@@ -38,6 +40,12 @@ var initial_scream_position
 var initial_scream_height
 @export var can_scream := false
 var scream_expanding := false
+var boss_scream
+var player_scream
+
+## PARRY STATE ##
+var can_parry := true
+var kill_tween := false
 
 func _ready() -> void:
 	State = IDLE
@@ -52,6 +60,8 @@ func _ready() -> void:
 	initial_scream_scale = scream.scale
 	initial_scream_position = scream.position
 	initial_scream_height = scream_mesh.mesh.height
+	boss_scream = load("res://assets/2D/boss_scream.png")
+	player_scream = load("res://assets/2D/player_scream.png")
 	scream.hide()
 	
 	animState = animation_tree.get("parameters/playback")
@@ -60,7 +70,10 @@ func _ready() -> void:
 	#await get_tree().create_timer(3).timeout
 
 func _process(delta: float) -> void:
+	#print("can_scream: ", can_scream, "\nscream_expanding: ", scream_expanding)
 	state_machine(delta)
+	if Dialogic.VAR.current_mask == "pest":
+		timer.stop()
 
 func fire () -> void:
 	var bullet_instance = bullet.instantiate()
@@ -73,6 +86,8 @@ func fire () -> void:
 func state_machine(delta: float) -> void:
 	match State:
 		IDLE:
+			boss_hitbox.monitorable = false
+			boss_hitbox.monitoring = false
 			if can_idle:
 				idle_wait -= delta
 				if idle_wait <= 0:
@@ -82,9 +97,9 @@ func state_machine(delta: float) -> void:
 					can_scream = true
 					var next_state = randf_range(0, 1)
 					if next_state <= 0.8:
-						State = MIST
+						State = SCREAM
 					else:
-						State = MIST
+						State = SCREAM
 
 		BULLETS:
 			animState.travel("bullets_in")
@@ -139,46 +154,79 @@ func state_machine(delta: float) -> void:
 		SCREAM:
 			animState.travel("scream")
 			if can_scream:
-				scream_expanding= true
 				#can_scream = false
+				scream_expanding= true
 				
-				var tween = create_tween()
-				tween.tween_property(scream, "visible", true, 1)
-				await tween.finished
-				#scream.show()
-				
-				
+				#var tween = create_tween()
+				#tween.tween_property(scream, "visible", true, 1)
+				#await tween.finished
+				scream.show()
+			
 			elif scream_expanding:
 				scream_expanding = false
 				scream_mesh.mesh.material.uv1_offset = Vector3.ZERO
-				
+				scream_mesh.mesh.material.albedo_texture = boss_scream
 				var expand_scream = create_tween().set_parallel(true)
 				expand_scream.tween_property(scream, "disabled", false, 1)
-				expand_scream.tween_property(scream, "scale", Vector3(20,1,20), 7)
-				expand_scream.tween_property(scream_mesh, "mesh:height", 20, 7)
-				expand_scream.tween_property(scream_mesh, "mesh:material:uv1_offset", Vector3(10,10,0), 7)
+				expand_scream.tween_property(scream, "scale", Vector3(20,1,20), 5)
+				expand_scream.tween_property(scream_mesh, "mesh:height", 20, 5)
+				expand_scream.tween_property(scream_mesh, "mesh:material:uv1_offset", Vector3(10,10,0), 5)
 				await expand_scream.finished
 				
-				var remove_scream = create_tween().set_parallel(true)
-				#remove_scream.tween_property(scream, "scale", Vector3(0.1, 1, 0.1), 3)
-				#remove_scream.tween_property(scream, "global_position:z", scream.global_position.z + 15, 5)
-				remove_scream.tween_property(scream, "visible", false, 5)
-				remove_scream.tween_property(scream_mesh, "mesh:material:uv1_offset", Vector3(10,10,0), 5)
+				#var remove_scream = create_tween().set_parallel(true)
+				##remove_scream.tween_property(scream, "scale", Vector3(0.1, 1, 0.1), 3)
+				##remove_scream.tween_property(scream, "global_position:z", scream.global_position.z + 15, 5)
+				#remove_scream.tween_property(scream, "disabled", true, 1)
+				#remove_scream.tween_property(scream_mesh, "mesh:material:uv1_offset", Vector3(10,10,0), 1)
+				#
+				#await remove_scream.finished
 				
-				await remove_scream.finished
-				
+				scream.hide()
+				scream.disabled = true
 				scream.scale = initial_scream_scale
 				scream.position = initial_scream_position
 				scream_mesh.mesh.height = initial_scream_height
 				
 				idle_wait = randi_range(100,200)
 				can_idle = true
-				#animState.travel("idle")
+				animState.travel("idle")
 				State = IDLE
-			
+		PARRY:
+			if can_parry:
+				can_parry = false
+				animState.travel("weak")
+				
+				scream_mesh.mesh.material.uv1_offset = Vector3.ZERO
+				scream_mesh.mesh.material.albedo_texture = player_scream
+				
+				var contract_scream = create_tween().set_parallel(true)
+				contract_scream.tween_property(scream, "scale", Vector3(1,1,1), 1)
+				contract_scream.tween_property(scream_mesh, "mesh:height", 1, 1)
+				contract_scream.tween_property(scream_mesh, "mesh:material:uv1_offset", Vector3(-10,-10,0), 1)
+				await contract_scream.finished
+				
+				scream.hide()
+				scream.disabled = true
+				scream.scale = initial_scream_scale
+				scream.position = initial_scream_position
+				scream_mesh.mesh.height = initial_scream_height
+				State = WEAK
 		WEAK:
-			pass
+			boss_hitbox.monitorable = true
+			boss_hitbox.monitoring = true
+			#can_idle = true
+			
 
 
 func _on_timer_timeout() -> void:
 	Global.game_over = true
+
+
+func _on_boss_hitbox_area_entered(area: Area3D) -> void:
+	print("BOSS HIT")
+	#boss_hitbox.monitorable = false
+	#boss_hitbox.monitoring = false
+	animState.travel("damage")
+	animState.travel("idle")
+	State = IDLE
+	
