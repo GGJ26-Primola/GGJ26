@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dsf1im1wt7jie"]
 
-[ext_resource type="Texture2D" uid="uid://sak44hvybejj" path="res://assets/Mesh Graveyard/fbx/halloweenbits_texture.png" id="1_h30sx"]
+[ext_resource type="Texture2D" uid="uid://b7ekson7d3tn" path="res://assets/Mesh Graveyard/fbx/halloweenbits_texture.png" id="1_h30sx"]
 [ext_resource type="Script" uid="uid://cmwfcg7tpi4kw" path="res://scripts/cemetery_gates.gd" id="1_ydepu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5d0f"]
@@ -170,6 +170,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Area3D/CollisionShape3D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_xaxbw"]
 resource_name = "open"
@@ -230,6 +242,18 @@ tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0.13333334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Area3D/CollisionShape3D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]

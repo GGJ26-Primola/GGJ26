@@ -40,8 +40,10 @@
 [ext_resource type="Resource" uid="uid://bnmpyrdm1oaoh" path="res://dialogic/Safe zone/1[Zona1] V6 Inizio quest gatto 1.dtl" id="31_nepv3"]
 [ext_resource type="Resource" uid="uid://15s883uo4k61" path="res://dialogic/Safe zone/Incontro con Mazanpegul.dtl" id="32_7025r"]
 [ext_resource type="PackedScene" uid="uid://wwx5yv6ev5yr" path="res://scenes/woods.tscn" id="33_v2yb1"]
+[ext_resource type="PackedScene" uid="uid://c0uv0iitg3qpb" path="res://scenes/graveyard_game_over.tscn" id="40_05nbr"]
 [ext_resource type="PackedScene" uid="uid://dvtfflyj2wnh7" path="res://scenes/Graveyard.tscn" id="40_m4url"]
 [ext_resource type="PackedScene" uid="uid://dsf1im1wt7jie" path="res://scenes/Collisions/arch_gate.tscn" id="41_8ool0"]
+[ext_resource type="PackedScene" uid="uid://0eameechcba5" path="res://scenes/snake.tscn" id="44_0sl42"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ssvqc"]
 clip_count = 4
@@ -205,6 +207,7 @@ wait_time = 10.0
 one_shot = true
 
 [node name="CemeteryRespawnTimer" type="Timer" parent="GameManager" unique_id=2109619764]
+wait_time = 3.0
 one_shot = true
 
 [node name="SafeZone" parent="." unique_id=1897293832 instance=ExtResource("2_e1j6l")]
@@ -475,6 +478,7 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.686136, 10.597036, -7.6934795)
 
 [node name="Destructible" parent="CSGBox3D2" unique_id=314538345 instance=ExtResource("8_dinhu")]
+destroy_parent = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D2/Destructible" unique_id=447905751]
 shape = SubResource("BoxShape3D_wljb1")
@@ -484,6 +488,8 @@ scale = Vector2(1, 1)
 
 [node name="Inventory" parent="." unique_id=874561363 instance=ExtResource("19_bt5mj")]
 
+[node name="GraveyardGameOver" parent="." unique_id=456347588 instance=ExtResource("40_05nbr")]
+
 [node name="Woods" parent="." unique_id=474693119 instance=ExtResource("33_v2yb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.142365, 21.69962, -14.668915)
 
@@ -492,6 +498,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.316717, 17.005215, -79.08
 
 [node name="arch_gate" parent="." unique_id=1156300368 instance=ExtResource("41_8ool0")]
 transform = Transform3D(-0.9986626, -0.04212606, 0.029975494, -0.043559503, 0.9978539, -0.048894368, -0.02785127, -0.050134677, -0.9983543, -16.31212, 15.002968, -73.02219)
+
+[node name="Snakes" type="Node3D" parent="." unique_id=1247978364]
+
+[node name="Snake" parent="Snakes" unique_id=1789395511 instance=ExtResource("44_0sl42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.910667, 13.248374, -16.058613)
 
 [connection signal="timeout" from="GameManager/CemeteryDeathTimer" to="GameManager" method="cemetery_game_over"]
 [connection signal="timeout" from="GameManager/CemeteryRespawnTimer" to="GameManager" method="cemetery_respawn"]

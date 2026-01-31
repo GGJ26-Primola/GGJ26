@@ -88,10 +88,10 @@ variables={
 "current_mask": "default",
 "dead_from_ghost": false,
 "mask_boss": false,
-"mask_cat": true,
+"mask_cat": false,
 "mask_default": true,
 "mask_ftp1": false,
-"mask_pest": false,
+"mask_pest": true,
 "meow": 0,
 "stick": true,
 "umarell_hitted": false

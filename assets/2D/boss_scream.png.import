@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmx140lehrsx4"
-path.s3tc="res://.godot/imported/snake_attack.png-3db6de7784cff5b808bf40a903ff9b5f.s3tc.ctex"
+uid="uid://b25uubmxhjsvw"
+path.s3tc="res://.godot/imported/boss_scream.png-9c04e0788d58ea7bdbf150f050e7edaa.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/2D/snake_attack.png"
-dest_files=["res://.godot/imported/snake_attack.png-3db6de7784cff5b808bf40a903ff9b5f.s3tc.ctex"]
+source_file="res://assets/2D/boss_scream.png"
+dest_files=["res://.godot/imported/boss_scream.png-9c04e0788d58ea7bdbf150f050e7edaa.s3tc.ctex"]
 
 [params]
 

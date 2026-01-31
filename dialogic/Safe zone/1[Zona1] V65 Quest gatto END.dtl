@@ -1,18 +1,36 @@
 # Il gatto cambia forma e diventa più grande, rivelando la sua forma gatto mammone
+if {meow} == 0:
+	audio "res://assets/Music/SFX/CAT TALK1.wav"
+	set {meow} = 1
+elif {meow} == 1:
+	audio "res://assets/Music/SFX/CAT TALK2.wav"
+	set {meow} = 2
+else:
+	audio "res://assets/Music/SFX/CAT TALK3.wav"
+	set {meow} = 0
 if {mask_cat} == true:
-	"Gatto Mammone": Miao
+	"Gatto Mammone": Meow
 	[end_timeline]
 "Gatto Mammone": FOR THOUSANDS OF YEARS I SLUMBERED, and the one time i try to grab a snack, kids throw rocks at me, old men follow me with a broom and other nasty stuff. The nerve!
 Player: Wh-who are you?
+audio "res://assets/Music/SFX/CAT TALK2.wav"
 "Gatto Mammone": Mreow! I am the great, the magnificent Gatto Mammone!
-"Gatto Mammone": And you...meow.
+audio "res://assets/Music/SFX/CAT TALK1.wav"
+"Gatto Mammone": And you... meow.
 Player: And i?
-"Gatto Mammone": And you have a a very good reason to be around here, i can feel it. And you felt it too. This place is weird, twisted in some sense. The people are sad. Or angry. Or whatever those two teenagers were.
-Player: Yeah...and seems that some children have gone missing.
-"Gatto Mammone": Meow, indeed.............. Indeed.
-[wait time="1.7" hide_text="false"]
-"Gatto Mammone": Go to the graveyard. There you will find answers. It's a dark place,  full of dangers and darkness. Spirit roam the land and the dead can't find peace.
+"Gatto Mammone": And you have a very good reason to be around here, i can feel it.
+"Gatto Mammone": And you felt it too.
+audio "res://assets/Music/SFX/CAT TALK2.wav"
+"Gatto Mammone": This place is weird, twisted in some sense. The people are sad. Or angry.
+"Gatto Mammone": Or whatever those two teenagers were.
+Player: Yeah... and seems that some children have gone missing.
+audio "res://assets/Music/SFX/CAT TALK3.wav"
+"Gatto Mammone": Meow, indeed... Indeed.
+[wait time="1.5" hide_text="false"]
+"Gatto Mammone": Go to the graveyard. There you will find answers. It's a dark place, full of dangers and darkness.
+"Gatto Mammone": Spirit roam the land and the dead can't find peace.
 Player: Isn't that dangerous?
+audio "res://assets/Music/SFX/CAT TALK1.wav"
 "Gatto Mammone": Mrreow. Very much so. You will need help. Take this.
 join "Maschera gatto" center
 Player: Another mask?
@@ -20,11 +38,16 @@ audio "res://assets/Music/SFX/MASK 2.wav"
 leave "Maschera gatto"
 set {mask_cat} = true
 [signal arg="inventory"]
-"Maschera gatto": Masks have meaning. Masks have power. When you wear a mask, you are not what's under it, but what is on it.
-"Gatto Mammone": If you wear the mask of the great Gatto Mammone, you become like the great Gatto mammone. A cat's eye can peer into the world of night and spirits.
+"Gatto Mammone": Masks have meaning. Masks have power.
+"Gatto Mammone": When you wear a mask, you are not what's under it, but what is on it.
+"Gatto Mammone": If you wear the mask of the great Gatto Mammone, you become like the great Gatto mammone.
+"Gatto Mammone": A cat's eye can peer into the world of night and spirits.
+audio "res://assets/Music/SFX/CAT TALK3.wav"
 "Gatto Mammone": I cannot protect you from teeth and nail, for that you will have to rely on your wits. The risk is great, but i sense in you the need to go forward.
 - "I can't stop now!"
 	"Gatto Mammone": Purr, such courage!
 - "I know, but i am very scared"
 	"Gatto Mammone": Fear is good, it will keep your feet quick!
-"Gatto Mammone": Now go to the graveyard, and do not get eaten, meow!
+"Gatto Mammone": Now go to the graveyard, and do not get eaten!
+audio "res://assets/Music/SFX/CAT TALK1.wav"
+"Gatto Mammone": Meow
