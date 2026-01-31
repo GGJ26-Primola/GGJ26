@@ -10,6 +10,7 @@ extends CharacterBody3D
 #@onready var animated_sprite: AnimatedSprite3D = $AnimatedSprite3D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var spreadsheet: Sprite3D = $spreadsheet
+@onready var sprite_intro: AnimatedSprite3D = $SpriteIntro
 
 var sprite_folder = "res://assets/2D/PG/"
 
@@ -19,6 +20,21 @@ const STEP_DURATION = 0.3
 
 var current_step_duration : float = 0
 var last_y_direction : bool = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	if Dialogic.VAR.mask_default:
+		spreadsheet.show()
+		sprite_intro.hide()
+	else:
+		spreadsheet.hide()
+		sprite_intro.show()
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+
+func _on_dialogic_signal(argument: String) -> void:
+	if argument == "intro_end":
+		spreadsheet.show()
+		sprite_intro.hide()
 
 func set_animation(direction: Vector2) -> void:
 	var type_of_walking = "Idle"

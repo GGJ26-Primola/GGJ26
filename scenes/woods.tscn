@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dyxlrpi7d10g" path="res://assets/textures/Grass005_1K-PNG_AmbientOcclusion.png" id="5_gk5tg"]
 [ext_resource type="Texture2D" uid="uid://nra28017mqyk" path="res://assets/textures/R.jpg" id="6_y6g3r"]
 [ext_resource type="PackedScene" uid="uid://67ph82uhj4oh" path="res://scenes/Collisions/tree_pine_orange_large.tscn" id="7_6ovqo"]
-[ext_resource type="PackedScene" path="res://scenes/Collisions/tree_pine_yellow_large.tscn" id="8_sacjn"]
+[ext_resource type="PackedScene" uid="uid://btsroxy2eeykp" path="res://scenes/Collisions/tree_pine_yellow_large.tscn" id="8_sacjn"]
 [ext_resource type="PackedScene" uid="uid://ckcwxssmjgdri" path="res://scenes/Collisions/tree_pine_orange_medium.tscn" id="10_jvtka"]
 [ext_resource type="PackedScene" uid="uid://cnmluv43bqtv6" path="res://scenes/Collisions/boulderX.tscn" id="11_gk5tg"]
 [ext_resource type="PackedScene" uid="uid://dnw3xyfeekf8g" path="res://scenes/Collisions/boulderZ.tscn" id="12_y6g3r"]
@@ -46,7 +46,7 @@ size = Vector3(6.5759277, 8.453125, 76.07422)
 
 [node name="Woods" type="Node3D" unique_id=474693119]
 
-[node name="Trees" type="Node" parent="." unique_id=795559660]
+[node name="Trees" type="Node3D" parent="." unique_id=100381990]
 
 [node name="tree_pine_orange_large2" parent="Trees" unique_id=200796427 instance=ExtResource("7_6ovqo")]
 transform = Transform3D(-0.23354934, 0.0006334856, -0.97234493, 0.070761286, 0.99735934, -0.016346497, 0.9697669, -0.07262208, -0.23297745, -7.038954, -10.948149, 9.997815)
@@ -633,7 +633,7 @@ transform = Transform3D(1, 0, 0, 0, 0.99738055, 0.07233303, 0, -0.07233303, 0.99
 [node name="tree_dead_large_decorated2" parent="Trees" unique_id=21604289 instance=ExtResource("31_jvtka")]
 transform = Transform3D(0.9730195, 0.06863887, 0.22027722, -0.08640809, 0.99365026, 0.0720625, -0.2139322, -0.089151934, 0.97277194, 58.319332, -5.1137834, -90.13561)
 
-[node name="Rocks" type="Node" parent="." unique_id=606677826]
+[node name="Rocks" type="Node3D" parent="." unique_id=2058346402]
 
 [node name="Flat_Boulder_11" parent="Rocks" unique_id=1830268054 instance=ExtResource("11_gk5tg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.403875, -10.559607, 12.469486)
@@ -680,7 +680,7 @@ transform = Transform3D(0.99159425, 0.08594355, -0.09671877, -0.085594, 0.996299
 [node name="Flat_Rock_10" parent="Rocks" unique_id=855260005 instance=ExtResource("15_wp64s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.71468, -7.046382, -3.6021118)
 
-[node name="Misc" type="Node" parent="." unique_id=273582298]
+[node name="Misc" type="Node3D" parent="." unique_id=10333393]
 
 [node name="Node3D" type="Node3D" parent="Misc" unique_id=405474798]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.098392, -12.667622, -46.335297)
@@ -888,7 +888,7 @@ transform = Transform3D(0.9880138, 0.15436551, 0, -0.15436551, 0.9880138, 0, 0, 
 [node name="Flat_Fallen_Log2" parent="Misc" unique_id=513698106 instance=ExtResource("30_cqfx6")]
 transform = Transform3D(0.18836962, 0.029430533, -0.98165727, -0.034295492, 0.99913853, 0.02337369, 0.9814994, 0.029263511, 0.18921664, 41.656105, -2.394774, -71.868195)
 
-[node name="Boundaries" type="Node" parent="." unique_id=1706968638]
+[node name="Boundaries" type="Node3D" parent="." unique_id=1662531786]
 
 [node name="Node3D" type="Node3D" parent="Boundaries" unique_id=1167538909]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.633629, -5.423582, -39.990868)

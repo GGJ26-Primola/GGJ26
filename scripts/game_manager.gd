@@ -7,7 +7,7 @@ extends Node
 var last_checkpoint := Vector3.ZERO
 
 var cat_running = false
-const RUN_SPEED = 0.5
+const RUN_SPEED = 5
 
 @onready var cat_path: PathFollow3D = $"../NPC/CatPath3D/CatPathFollow3D"
 @onready var child_1_path: PathFollow3D = $"../NPC/CatPath3D/PathFollow3D"
@@ -24,6 +24,7 @@ const RUN_SPEED = 0.5
 # Cemetery
 @onready var cemetery_death_audio : AudioStreamPlayer = $"../Musics/CemeteryDeathAudio"
 @onready var cemetery_death_timer : Timer = $CemeteryDeathTimer
+@onready var cemetery_respawn_timer: Timer = $CemeteryRespawnTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -55,7 +56,6 @@ func remove_target() -> void:
 	camera_player.set_follow_targets([player])
 
 func _on_dialogic_signal(argument: String) -> void:
-	print("_on_dialogic_signal")
 	if argument == "fov_0":
 		camera_player.follow_offset = Vector3(0, 5, 5)
 	elif argument == "fov_1":
@@ -79,10 +79,10 @@ func _process(delta: float) -> void:
 	
 	# If you are in the cemetery without mask, you can live for few seconds
 	if cemetery_death_timer.is_stopped():
-		if Global.current_level == Global.Level.CEMETERY and not Dialogic.VAR.mask_cat:
+		if Global.current_level == Global.Level.CEMETERY and not Dialogic.VAR.current_mask == "cat":
 			cemetery_death_audio.play()
 			cemetery_death_timer.start()
-	elif Dialogic.VAR.mask_cat:
+	elif Dialogic.VAR.current_mask == "cat" or Global.current_level != Global.Level.CEMETERY:
 		cemetery_death_audio.stop()
 		cemetery_death_timer.stop()
 
@@ -144,7 +144,14 @@ func start_timeline(timeline : DialogicTimeline) -> void:
 	GameState.dialogic_destroy_after_read = false
 	Dialogic.start(timeline)
 
-# TODO : CEMETERY
+# CEMETERY
 func cemetery_game_over() -> void:
 	print("Cemetery game over")
+	Dialogic.VAR.dead_from_ghost = true
 	GameState.current_game_status = GameState.State.GAMEOVER
+	cemetery_respawn_timer.start()
+	respawn()
+	
+func cemetery_respawn() -> void:
+	GameState.current_game_status = GameState.State.PLAYING
+	respawn()

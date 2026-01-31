@@ -12,7 +12,6 @@ func end_attack() -> void:
 		GameState.set_game_status(GameState.State.PLAYING)
 	
 func _physics_process(_delta: float) -> void:
-	
 	if not GameState.can_attack():
 		return
 	
