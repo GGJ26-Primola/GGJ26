@@ -278,8 +278,8 @@ func state_machine(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	Dialogic.VAR.boss_last_death = "mist"
-	Global.game_over = true
-	#Global.game_manager.game_over()
+	#Global.game_over = true
+	Global.game_manager.game_over()
 
 func _on_boss_hitbox_area_entered(area: Area3D) -> void:
 	print("BOSS HIT")
