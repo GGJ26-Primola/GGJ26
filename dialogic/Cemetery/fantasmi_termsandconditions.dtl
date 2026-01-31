@@ -1,0 +1,25 @@
+Fantasma2: To proceed, accept our terms and conditions.
+Player: Terms and conditions?
+Fantasma2: Of course. Here you go.
+
+Ghost 2 hands over a parchment
+
+Player: By continuing the conversation, you agree that your weapon and your adventuring skills may be used according to our purposes, which we will not specify except in this clause written in very, very small print, impossible to read…
+Player: What if I don’t accept?
+Fantasma2: Then you will have to read the full version.
+Player: …How long is it?
+join scroll (idle) center
+Fantasma1: Only three hundred and seventy-two parchment scrolls.
+Fantasma1: Plus the appendix.
+Fantasma1: Plus the footnotes.
+Player: But it is an empty scroll.
+Fantasma1: It's written in ghostish.
+- Accept
+	join scroll (signed) center
+	set {cemetery_scroll} = true
+	Fantasma1: Good choice!
+	Fantasma1: You won't regret it.
+	[end_timeline]
+- Refuse
+	Player: No way
+	[end_timeline]

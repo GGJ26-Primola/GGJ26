@@ -1,0 +1,21 @@
+if {cemetery_scroll} == false:
+	Fantasma5: You have to accept the terms and conditions to listen to what i have to say.
+	Player: Mmm...
+	[end_timeline]
+Fantasma5: Feeling old?
+Fantasma5: Do you see wrinkles carving your face like a pickaxe striking stone already worn by time and the elements?
+Fantasma5: Come try our new potion. One free vial just for you.
+Player: ... potion?
+Fantasma5: I only ask that you sign the waiver.
+join scroll (idle) center
+Player: Another empty scroll?
+- Sign
+	join scroll (signed) right
+	set {cemetery_vial} = true
+	join potion center
+	Fantasma5: Remember\: time can be your friend.
+	[end_timeline]
+- Leave
+	Fantasma5: If you don't sign, the boolean variable that rules the use of vial will not get the right value.
+	Fantasma5: Be wise.
+	[end_timeline]
