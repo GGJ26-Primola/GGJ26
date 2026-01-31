@@ -477,6 +477,7 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.686136, 10.597036, -7.6934795)
 
 [node name="Destructible" parent="CSGBox3D2" unique_id=314538345 instance=ExtResource("8_dinhu")]
+destroy_parent = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D2/Destructible" unique_id=447905751]
 shape = SubResource("BoxShape3D_wljb1")
