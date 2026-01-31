@@ -398,7 +398,6 @@ rotation_mode = 0
 
 [node name="Cat" parent="NPC/CatPath3D/CatPathFollow3D" unique_id=972012601 instance=ExtResource("2_0tnpc")]
 transform = Transform3D(1.0000021, 0, 0, 0, 1, 0, 0, 0, 1.0000021, 0, 0.8, 0)
-script = ExtResource("15_37s47")
 
 [node name="Interactible" parent="NPC/CatPath3D/CatPathFollow3D" unique_id=476685811 instance=ExtResource("3_u5sy4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5559349, 0)
@@ -613,7 +612,7 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1455375748]
 unique_name_in_owner = true
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 16.62345, -0.30854017)
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071067, 0, -0.7071067, 0.7071068, 0, 16.62345, -0.30854017)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1699421758]
@@ -641,7 +640,7 @@ scale = Vector2(1, 1)
 [node name="Woods" parent="." unique_id=474693119 instance=ExtResource("33_v2yb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.142365, 21.69962, -14.668915)
 
-[node name="Graveyard" parent="." unique_id=1810824615 instance=ExtResource("40_m4url")]
+[node name="Graveyard" parent="." unique_id=1189775658 instance=ExtResource("40_m4url")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.316717, 17.005215, -79.08286)
 
 [node name="arch_gate" parent="." unique_id=1156300368 instance=ExtResource("41_8ool0")]

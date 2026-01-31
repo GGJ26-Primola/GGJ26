@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cwmxp2kkuq7in" path="res://assets/cat/HURT.png" id="1_7vi38"]
 [ext_resource type="Texture2D" uid="uid://dnfhaqkml55cn" path="res://assets/cat/ATTACK 1.png" id="1_cxap7"]
+[ext_resource type="Script" uid="uid://sg40rd5w3em0" path="res://scripts/cat.gd" id="1_ic5u8"]
 [ext_resource type="Texture2D" uid="uid://luiv2xu81vpd" path="res://assets/cat/IDLE.png" id="2_cxap7"]
 [ext_resource type="Texture2D" uid="uid://b2x133t78a5cy" path="res://assets/cat/RUN.png" id="3_tol8a"]
 [ext_resource type="Texture2D" uid="uid://bijja6d7irwmi" path="res://assets/cat/JUMP.png" id="4_ic5u8"]
@@ -369,10 +370,12 @@ animations = [{
 }]
 
 [node name="Cat" type="Node3D" unique_id=972012601]
+script = ExtResource("1_ic5u8")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1835971461]
 pixel_size = 0.05
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_cdiht")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
+frame_progress = 0.28307799
