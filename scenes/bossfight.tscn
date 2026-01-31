@@ -117,3 +117,4 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="Boss" parent="." unique_id=1656814271 instance=ExtResource("2_jiv1s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+can_mist = false
