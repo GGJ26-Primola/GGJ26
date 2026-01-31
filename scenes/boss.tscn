@@ -20,18 +20,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..:can_scream")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_qnbj4"]
 resource_name = "bullets_in"
@@ -132,7 +120,24 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_0onds"]
+resource_name = "damage"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.19999996, 0.29999998, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [13, 14, 13, 14, 13]
 }
 
 [sub_resource type="Animation" id="Animation_2cdgk"]
@@ -150,18 +155,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("..:can_scream")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_qsl3t"]
@@ -196,7 +189,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_2avx2"]
 resource_name = "scream"
 length = 0.5
-step = 0.5
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -216,10 +209,26 @@ tracks/1/path = NodePath("..:can_scream")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.4, 0.5),
+"times": PackedFloat32Array(0.3, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_lfs1x"]
+resource_name = "weak"
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [12, 13]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qsl3t"]
@@ -229,9 +238,11 @@ _data = {
 &"bullets_out": SubResource("Animation_r3bxh"),
 &"charging": SubResource("Animation_wqpjq"),
 &"charging_scream": SubResource("Animation_5f346"),
+&"damage": SubResource("Animation_0onds"),
 &"idle": SubResource("Animation_2cdgk"),
 &"mist": SubResource("Animation_qsl3t"),
-&"scream": SubResource("Animation_2avx2")
+&"scream": SubResource("Animation_2avx2"),
+&"weak": SubResource("Animation_lfs1x")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jncid"]
@@ -246,6 +257,9 @@ animation = &"charging"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qsl3t"]
 animation = &"charging_scream"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2avx2"]
+animation = &"damage"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wqpjq"]
 animation = &"idle"
 
@@ -254,6 +268,9 @@ animation = &"mist"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0onds"]
 animation = &"scream"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5f346"]
+animation = &"weak"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qnbj4"]
 switch_mode = 2
@@ -282,6 +299,23 @@ switch_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lfs1x"]
 switch_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8eiau"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vn2fc"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gqd3i"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mautr"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ho3mf"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7apjh"]
+switch_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jncid"]
 states/bullets_in/node = SubResource("AnimationNodeAnimation_jncid")
 states/bullets_in/position = Vector2(588.36804, 48.799995)
@@ -291,18 +325,22 @@ states/charging/node = SubResource("AnimationNodeAnimation_r3bxh")
 states/charging/position = Vector2(455.6, 100.8)
 states/charging_scream/node = SubResource("AnimationNodeAnimation_qsl3t")
 states/charging_scream/position = Vector2(455.76, 268.8)
+states/damage/node = SubResource("AnimationNodeAnimation_2avx2")
+states/damage/position = Vector2(170.14243, 334.0384)
 states/idle/node = SubResource("AnimationNodeAnimation_wqpjq")
 states/idle/position = Vector2(350.00003, 163.3472)
 states/mist/node = SubResource("AnimationNodeAnimation_2cdgk")
 states/mist/position = Vector2(455.44, 13.599998)
 states/scream/node = SubResource("AnimationNodeAnimation_0onds")
-states/scream/position = Vector2(288.40002, 269.12)
-transitions = ["bullets_in", "bullets_out", SubResource("AnimationNodeStateMachineTransition_qnbj4"), "idle", "charging", SubResource("AnimationNodeStateMachineTransition_2cdgk"), "bullets_out", "idle", SubResource("AnimationNodeStateMachineTransition_wqpjq"), "charging", "bullets_in", SubResource("AnimationNodeStateMachineTransition_jncid"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_5f346"), "charging", "mist", SubResource("AnimationNodeStateMachineTransition_qsl3t"), "mist", "charging", SubResource("AnimationNodeStateMachineTransition_r3bxh"), "charging", "idle", SubResource("AnimationNodeStateMachineTransition_2avx2"), "idle", "charging_scream", SubResource("AnimationNodeStateMachineTransition_0onds"), "charging_scream", "scream", SubResource("AnimationNodeStateMachineTransition_lfs1x")]
-graph_offset = Vector2(-122, -8)
+states/scream/position = Vector2(614, 267.03998)
+states/weak/node = SubResource("AnimationNodeAnimation_5f346")
+states/weak/position = Vector2(349.71906, 349.75998)
+transitions = ["bullets_in", "bullets_out", SubResource("AnimationNodeStateMachineTransition_qnbj4"), "idle", "charging", SubResource("AnimationNodeStateMachineTransition_2cdgk"), "bullets_out", "idle", SubResource("AnimationNodeStateMachineTransition_wqpjq"), "charging", "bullets_in", SubResource("AnimationNodeStateMachineTransition_jncid"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_5f346"), "charging", "mist", SubResource("AnimationNodeStateMachineTransition_qsl3t"), "mist", "charging", SubResource("AnimationNodeStateMachineTransition_r3bxh"), "charging", "idle", SubResource("AnimationNodeStateMachineTransition_2avx2"), "idle", "charging_scream", SubResource("AnimationNodeStateMachineTransition_0onds"), "charging_scream", "scream", SubResource("AnimationNodeStateMachineTransition_lfs1x"), "scream", "weak", SubResource("AnimationNodeStateMachineTransition_8eiau"), "weak", "damage", SubResource("AnimationNodeStateMachineTransition_vn2fc"), "scream", "charging_scream", SubResource("AnimationNodeStateMachineTransition_gqd3i"), "charging_scream", "idle", SubResource("AnimationNodeStateMachineTransition_mautr"), "damage", "idle", SubResource("AnimationNodeStateMachineTransition_ho3mf"), "weak", "idle", SubResource("AnimationNodeStateMachineTransition_7apjh")]
+graph_offset = Vector2(41, 84)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jncid"]
-render_priority = 1
 transparency = 1
+cull_mode = 2
 albedo_texture = ExtResource("4_qnbj4")
 uv1_scale = Vector3(10, 10, 10)
 texture_filter = 0
@@ -313,13 +351,14 @@ material = SubResource("StandardMaterial3D_jncid")
 radius = 1.0
 is_hemisphere = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_jncid"]
-size = Vector3(2, 3, 2)
+[sub_resource type="SphereShape3D" id="SphereShape3D_r3bxh"]
+radius = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3bxh"]
+size = Vector3(5, 1, 2)
 
 [node name="Boss" type="Node3D" unique_id=1656814271]
 script = ExtResource("1_neq0i")
-can_mist = true
-can_scream = true
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=80689855]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
@@ -327,7 +366,7 @@ pixel_size = 0.03
 texture_filter = 0
 texture = ExtResource("2_jncid")
 hframes = 4
-vframes = 3
+vframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1667033057]
 root_node = NodePath("../Sprite3D")
@@ -354,7 +393,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 script = ExtResource("4_r3bxh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="scream" unique_id=410133]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 mesh = SubResource("SphereMesh_jncid")
 
 [node name="Hitbox" type="Area3D" parent="scream" unique_id=929374536]
@@ -362,9 +401,19 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="scream/Hitbox" unique_id=395764823]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-shape = SubResource("BoxShape3D_jncid")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+shape = SubResource("SphereShape3D_r3bxh")
+
+[node name="BossHitbox" type="Area3D" parent="." unique_id=539125056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BossHitbox" unique_id=414436483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+shape = SubResource("BoxShape3D_r3bxh")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="scream/Hitbox" to="scream" method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="scream/Hitbox" to="scream" method="_on_hitbox_body_exited"]
+[connection signal="area_entered" from="BossHitbox" to="." method="_on_boss_hitbox_area_entered"]
