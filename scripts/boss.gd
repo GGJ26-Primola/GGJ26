@@ -2,7 +2,7 @@ extends Node3D
 
 @export var bullet_rateo : float = 1.5
 @export var idle_wait : int = 200
-
+@onready var sprite: Sprite3D = $Sprite3D
 @onready var bullets: Node3D = $bullets
 @onready var mist: FogVolume = $mist
 @onready var scream: Node3D = $scream
@@ -10,14 +10,16 @@ extends Node3D
 @onready var timer: Timer = $Timer
 
 @onready var player: CharacterBody3D = %Player
-#@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var boss_hitbox: Area3D = $BossHitbox
 var animState
 
-enum {IDLE, BULLETS, MIST, SCREAM, PARRY, WEAK}
+enum {IDLE, BULLETS, MIST, SCREAM, PARRY, WEAK, DEATH}
 
 var State
+var Phase: int = 1
+var move_num: int = -1
 
 ## IDLE STATE ##
 var can_idle := true
@@ -26,7 +28,7 @@ var can_idle := true
 @export var can_shoot := false
 var bullet_current_rateo : float = 0
 var bullet
-var bullet_number = 0
+var bullet_number = -1
 
 ## MIST STATE ##
 var initial_mist_scale : Vector3
@@ -42,10 +44,20 @@ var initial_scream_height
 var scream_expanding := false
 var boss_scream
 var player_scream
+var can_finish_scream := true
 
 ## PARRY STATE ##
 var can_parry := true
 var kill_tween := false
+
+## WEAK STATE ##
+var can_weak := false
+var hit_num := 0
+var max_hit := 1
+
+## DEATH STATE ##
+@export var can_die := false
+
 
 func _ready() -> void:
 	State = IDLE
@@ -65,41 +77,71 @@ func _ready() -> void:
 	scream.hide()
 	
 	animState = animation_tree.get("parameters/playback")
-	
-#func sleep() -> void:
-	#await get_tree().create_timer(3).timeout
 
 func _process(delta: float) -> void:
-	#print("can_scream: ", can_scream, "\nscream_expanding: ", scream_expanding)
 	state_machine(delta)
 	if Dialogic.VAR.current_mask == "pest":
 		timer.stop()
 
 func fire () -> void:
 	var bullet_instance = bullet.instantiate()
-	#bullet_instance.position.x = player.position.x + randf_range(-1, 1)
-	#bullet_instance.position.y = 1
 	bullet_instance.position = Vector3(1.3,4.3,0)
 	bullet_instance.player = player
 	bullets.add_child(bullet_instance)
 
+func choose_next_move():
+	scream.hide()
+	scream.disabled = true
+	scream.scale = initial_scream_scale
+	scream.position = initial_scream_position
+	scream_mesh.mesh.height = initial_scream_height
+	
+	boss_hitbox.monitorable = false
+	boss_hitbox.monitoring = false
+	animState.travel("charging")
+	can_idle = false
+	can_mist = true
+	can_scream = true
+	
+	#var next_state = randf_range(0, 1)
+	#if next_state <= 0.8:
+		#State = SCREAM
+	#else:
+		#State = SCREAM
+	
+	var moves
+	
+	match Phase:
+		1:
+			moves = [BULLETS, SCREAM]
+			max_hit = 1
+		2:
+			moves = [BULLETS, MIST, SCREAM]
+			max_hit = 2
+		3:
+			moves = [BULLETS,MIST, BULLETS, MIST, SCREAM]
+			#moves = [BULLETS, SCREAM]
+			max_hit = 3
+			
+	move_num += 1
+	if move_num > len(moves)-1:
+		move_num = -1
+		Phase += 1
+		if Phase > 3:
+			State = DEATH
+			return
+		can_idle = true
+		return
+	State = moves[move_num]
+	return
+
 func state_machine(delta: float) -> void:
 	match State:
 		IDLE:
-			boss_hitbox.monitorable = false
-			boss_hitbox.monitoring = false
 			if can_idle:
 				idle_wait -= delta
 				if idle_wait <= 0:
-					animState.travel("charging")
-					can_idle = false
-					can_mist = true
-					can_scream = true
-					var next_state = randf_range(0, 1)
-					if next_state <= 0.8:
-						State = SCREAM
-					else:
-						State = SCREAM
+					choose_next_move()
 
 		BULLETS:
 			animState.travel("bullets_in")
@@ -114,7 +156,7 @@ func state_machine(delta: float) -> void:
 				
 				if bullet_number <= 0:
 					can_shoot = false
-					idle_wait = randi_range(100,200)
+					idle_wait = randi_range(50, 100)
 					can_idle = true
 					animState.travel("bullets_out")
 					State = IDLE
@@ -147,7 +189,7 @@ func state_machine(delta: float) -> void:
 				mist.position = initial_mist_position
 				mist.disabled = true
 				
-				idle_wait = randi_range(100,200)
+				idle_wait = randi_range(50, 100)
 				can_idle = true
 				animState.travel("idle")
 				State = IDLE
@@ -156,10 +198,7 @@ func state_machine(delta: float) -> void:
 			if can_scream:
 				#can_scream = false
 				scream_expanding= true
-				
-				#var tween = create_tween()
-				#tween.tween_property(scream, "visible", true, 1)
-				#await tween.finished
+				can_finish_scream = true
 				scream.show()
 			
 			elif scream_expanding:
@@ -180,20 +219,21 @@ func state_machine(delta: float) -> void:
 				#remove_scream.tween_property(scream_mesh, "mesh:material:uv1_offset", Vector3(10,10,0), 1)
 				#
 				#await remove_scream.finished
-				
-				scream.hide()
-				scream.disabled = true
-				scream.scale = initial_scream_scale
-				scream.position = initial_scream_position
-				scream_mesh.mesh.height = initial_scream_height
-				
-				idle_wait = randi_range(100,200)
-				can_idle = true
-				animState.travel("idle")
-				State = IDLE
+				if can_finish_scream:
+					scream.hide()
+					scream.disabled = true
+					scream.scale = initial_scream_scale
+					scream.position = initial_scream_position
+					scream_mesh.mesh.height = initial_scream_height
+					
+					idle_wait = randi_range(50, 100)
+					can_idle = true
+					animState.travel("idle")
+					State = IDLE
 		PARRY:
 			if can_parry:
 				can_parry = false
+				can_finish_scream = false
 				animState.travel("weak")
 				
 				scream_mesh.mesh.material.uv1_offset = Vector3.ZERO
@@ -207,26 +247,41 @@ func state_machine(delta: float) -> void:
 				
 				scream.hide()
 				scream.disabled = true
-				scream.scale = initial_scream_scale
-				scream.position = initial_scream_position
-				scream_mesh.mesh.height = initial_scream_height
+				#scream.scale = initial_scream_scale
+				#scream.position = initial_scream_position
+				#scream_mesh.mesh.height = initial_scream_height
+				
 				State = WEAK
 		WEAK:
 			boss_hitbox.monitorable = true
 			boss_hitbox.monitoring = true
-			#can_idle = true
-			
-
+			scream_expanding = false
+			if hit_num >= max_hit:
+				can_weak = true
+			else:
+				#animState.travel("weak")
+				can_weak = false
+			if can_weak:
+				hit_num = 0
+				idle_wait = randi_range(50, 100)
+				can_idle = true
+				animState.travel("idle")
+				State = IDLE
+		DEATH:
+			animState.travel("no_damage")
+			if can_die:
+				can_die = false
+				var disappear = create_tween()
+				disappear.tween_property(sprite, "modulate:a", 0, 1)
+				await disappear.finished
+				queue_free()
 
 func _on_timer_timeout() -> void:
+	Dialogic.VAR.boss_last_death = "mist"
 	Global.game_over = true
-
+	#Global.game_manager.game_over()
 
 func _on_boss_hitbox_area_entered(area: Area3D) -> void:
 	print("BOSS HIT")
-	#boss_hitbox.monitorable = false
-	#boss_hitbox.monitoring = false
+	hit_num += 1
 	animState.travel("damage")
-	animState.travel("idle")
-	State = IDLE
-	
