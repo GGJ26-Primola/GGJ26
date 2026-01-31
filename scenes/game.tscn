@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://bu78ssf0f5nim" path="res://scenes/cat.tscn" id="2_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://b51wiu02jdl1b" path="res://assets/Music/safe_zone.wav" id="2_ca42v"]
 [ext_resource type="PackedScene" uid="uid://dxmdmtwbtv530" path="res://scenes/safe_zone.tscn" id="2_e1j6l"]
-[ext_resource type="Resource" uid="uid://dshht4ncgt01m" path="res://dialogic/Safe zone/hitted_child_1.dtl" id="2_js0lu"]
+[ext_resource type="Resource" path="res://dialogic/Safe zone/hitted_child_1.dtl" id="2_js0lu"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bqo0cfd63o4nl" path="res://scenes/menu.tscn" id="2_p57ef"]
 [ext_resource type="Script" uid="uid://dh0p4hudw1jkb" path="res://scripts/music_manager.gd" id="2_rysoc"]
-[ext_resource type="Resource" uid="uid://g8tjnldk20po" path="res://dialogic/Safe zone/hitted_child_2.dtl" id="3_gxtfn"]
+[ext_resource type="Resource" path="res://dialogic/Safe zone/hitted_child_2.dtl" id="3_gxtfn"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://be2mgdfg87nm3" path="res://assets/Music/cemetery.wav" id="3_rysoc"]
 [ext_resource type="PackedScene" uid="uid://c6wi5nthdn08o" path="res://scenes/interactible.tscn" id="3_u5sy4"]
@@ -21,10 +21,13 @@
 [ext_resource type="AudioStream" uid="uid://cj87igh3bjjco" path="res://assets/Music/SFX/GHOST WALKING.wav" id="11_twgab"]
 [ext_resource type="Resource" uid="uid://dfih0wiq8j04t" path="res://dialogic/Safe zone/1[Zona1] V65 Quest gatto END.dtl" id="14_gxtfn"]
 [ext_resource type="Script" uid="uid://tq8hh5r2ii45" path="res://scripts/look_at_2d.gd" id="15_37s47"]
+[ext_resource type="Texture2D" uid="uid://itkqkut1m1fp" path="res://assets/2D/spreadsheet_monello_1.png" id="16_3hbvx"]
 [ext_resource type="PackedScene" uid="uid://cm4noj7flak4p" path="res://scenes/enemy.tscn" id="16_5newe"]
+[ext_resource type="Script" uid="uid://cgixvwoqw1in2" path="res://scripts/monello.gd" id="16_q8j3a"]
 [ext_resource type="PackedScene" uid="uid://dw350qjqwdwki" path="res://scenes/music_changer.tscn" id="18_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://bpl470i2x3dpm" path="res://scenes/knight.tscn" id="19_264po"]
 [ext_resource type="PackedScene" uid="uid://ijrrf5ej7e13" path="res://scenes/inventory.tscn" id="19_bt5mj"]
+[ext_resource type="Texture2D" uid="uid://1qm1gyfyn8vb" path="res://assets/2D/spreadsheet_monello_2.png" id="19_ms3bu"]
 [ext_resource type="Resource" uid="uid://t4q67befekfr" path="res://dialogic/Safe zone/1[Zona1] Dialogo con villico 5.dtl" id="20_1kice"]
 [ext_resource type="PackedScene" uid="uid://bnulwgy8p3fxt" path="res://scenes/umarell.tscn" id="22_v2yb1"]
 [ext_resource type="Script" uid="uid://drh820sgimx7h" path="res://scripts/mazapegul.gd" id="24_7025r"]
@@ -44,15 +47,15 @@
 [ext_resource type="PackedScene" uid="uid://dvtfflyj2wnh7" path="res://scenes/Graveyard.tscn" id="40_m4url"]
 [ext_resource type="PackedScene" uid="uid://dsf1im1wt7jie" path="res://scenes/Collisions/arch_gate.tscn" id="41_8ool0"]
 [ext_resource type="PackedScene" uid="uid://0eameechcba5" path="res://scenes/snake.tscn" id="44_0sl42"]
+[ext_resource type="PackedScene" uid="uid://lkcb5qva01jm" path="res://scenes/ghost.tscn" id="45_oaba0"]
 [ext_resource type="PackedScene" uid="uid://1gtbarf0bsw1" path="res://assets/Mesh Woods/Rocks/Flat_Boulder_03.glb" id="45_pf7vy"]
-[ext_resource type="PackedScene" uid="uid://bb2b4bacfh66b" path="res://assets/Mesh Graveyard/fbx/tree_pine_orange_large.fbx" id="46_o8ni1"]
-[ext_resource type="PackedScene" uid="uid://b7xlkcf006u1g" path="res://assets/Mesh Graveyard/fbx/tree_pine_orange_medium.fbx" id="47_3hbvx"]
-[ext_resource type="PackedScene" uid="uid://lbnw7nxspft8" path="res://assets/Mesh Graveyard/fbx/tree_pine_yellow_medium.fbx" id="48_q8j3a"]
-[ext_resource type="PackedScene" path="res://scenes/Collisions/tree_pine_yellow_large.tscn" id="49_ms3bu"]
+[ext_resource type="PackedScene" uid="uid://bb2b4bacfh66b" path="res://assets/Mesh Woods/tree_pine_orange_large.fbx" id="46_o8ni1"]
+[ext_resource type="PackedScene" uid="uid://b7xlkcf006u1g" path="res://assets/Mesh Woods/tree_pine_orange_medium.fbx" id="47_3hbvx"]
+[ext_resource type="PackedScene" uid="uid://lbnw7nxspft8" path="res://assets/Mesh Woods/tree_pine_yellow_medium.fbx" id="48_q8j3a"]
+[ext_resource type="PackedScene" uid="uid://btsroxy2eeykp" path="res://scenes/Collisions/tree_pine_yellow_large.tscn" id="49_ms3bu"]
 [ext_resource type="PackedScene" uid="uid://c3715oyku61f8" path="res://scenes/Collisions/tree_pine_yellow_medium.tscn" id="50_7ixpq"]
 [ext_resource type="PackedScene" uid="uid://ckcwxssmjgdri" path="res://scenes/Collisions/tree_pine_orange_medium.tscn" id="51_bk1p3"]
 [ext_resource type="PackedScene" uid="uid://67ph82uhj4oh" path="res://scenes/Collisions/tree_pine_orange_large.tscn" id="52_n8ral"]
-[ext_resource type="PackedScene" uid="uid://lkcb5qva01jm" path="res://scenes/ghost.tscn" id="45_oaba0"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ssvqc"]
 clip_count = 4
@@ -101,8 +104,128 @@ point_count = 6
 [sub_resource type="SphereShape3D" id="SphereShape3D_js0lu"]
 radius = 1.79434
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8j3a"]
+atlas = ExtResource("16_3hbvx")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms3bu"]
+atlas = ExtResource("16_3hbvx")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8ral"]
+atlas = ExtResource("16_3hbvx")
+region = Rect2(0, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yd4ix"]
+atlas = ExtResource("16_3hbvx")
+region = Rect2(100, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ixpq"]
+atlas = ExtResource("16_3hbvx")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk1p3"]
+atlas = ExtResource("16_3hbvx")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n8ral"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8j3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ms3bu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8ral")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yd4ix")
+}],
+"loop": true,
+"name": &"walk_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ixpq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk1p3")
+}],
+"loop": true,
+"name": &"walk_front",
+"speed": 5.0
+}]
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_wljb1"]
 radius = 0.95785785
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66xif"]
+atlas = ExtResource("19_ms3bu")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnuda"]
+atlas = ExtResource("19_ms3bu")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rmfi"]
+atlas = ExtResource("19_ms3bu")
+region = Rect2(0, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbak0"]
+atlas = ExtResource("19_ms3bu")
+region = Rect2(100, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3x28f"]
+atlas = ExtResource("19_ms3bu")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6q63"]
+atlas = ExtResource("19_ms3bu")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mmvbu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66xif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnuda")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rmfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbak0")
+}],
+"loop": true,
+"name": &"walk_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3x28f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6q63")
+}],
+"loop": true,
+"name": &"walk_front",
+"speed": 5.0
+}]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_v2yb1"]
 radius = 0.912029
@@ -288,8 +411,16 @@ shape = SubResource("SphereShape3D_js0lu")
 transform = Transform3D(0.99999875, 0, 0, 0, 0.99999887, 0, 0, 0, 0.9999992, 2.65451, 10.126058, -20.504871)
 progress = 2.0
 rotation_mode = 0
+script = ExtResource("16_q8j3a")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="NPC/CatPath3D/PathFollow3D" unique_id=911827753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.000001, 0)
+pixel_size = 0.03
+sprite_frames = SubResource("SpriteFrames_n8ral")
+animation = &"walk_back"
 
 [node name="Monello 1" type="CSGBox3D" parent="NPC/CatPath3D/PathFollow3D" unique_id=1634180117]
+visible = false
 
 [node name="Destructible" parent="NPC/CatPath3D/PathFollow3D" unique_id=1808292629 instance=ExtResource("8_dinhu")]
 
@@ -300,9 +431,17 @@ shape = SubResource("SphereShape3D_wljb1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 1.7979691, 10.150391, -21.020096)
 progress = 3.0
 rotation_mode = 0
+script = ExtResource("16_q8j3a")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="NPC/CatPath3D/PathFollow3D2" unique_id=222973510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+pixel_size = 0.03
+sprite_frames = SubResource("SpriteFrames_mmvbu")
+animation = &"walk_front"
 
 [node name="Monello 2" type="CSGBox3D" parent="NPC/CatPath3D/PathFollow3D2" unique_id=393557570]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visible = false
 
 [node name="Destructible" parent="NPC/CatPath3D/PathFollow3D2" unique_id=1492957789 instance=ExtResource("8_dinhu")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -536,6 +675,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.436905, 22.81261, -61.972
 
 [node name="tree_pine_orange_large2" parent="." unique_id=495724873 instance=ExtResource("52_n8ral")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.764145, 21.108316, -62.264267)
+
 [node name="Ghosts" type="Node3D" parent="." unique_id=2030157221]
 
 [node name="Ghost" parent="Ghosts" unique_id=766622181 instance=ExtResource("45_oaba0")]
