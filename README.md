@@ -7,56 +7,17 @@ Global Game Jam 2026 a Primola - Imola
 
 ## TODO
 
-### 2D
-- [ ] Player
-  - [ ] idle, walk with "basic mask" (bandana)
-  - [ ] idle, walk with "Gat Mamon" mask
-  - [ ] idle, walk with "ftp1" mask
-  - [ ] idle, walk with "plague doctor" mask
-  - [ ] idle, walk with "Régul" mask
-- [ ] PNG
-  - [ ] Wolf with idle, walk
-  - [ ] Skeleton with idle, walk
-  - [ ] PNG from safe zone
-  - [ ] Ghost
-
-### 3D
-- [ ] Safe zone
-  - [ ] Terrain
-  - [ ] Houses
-  - [ ] Misc
-- [ ] Cemetery
-  - [ ] Terrain
-  - [ ] Graves
-  - [ ] Stand
-  - [ ] Misc
-- [ ] Woods
-  - [ ] Terrain
-  - [ ] Trees
-  - [ ] Castle
-  - [ ] Misc
-
 ### Code
-- [x] System for switch mask
-- [x] Menu
-- [x] Dialogue system
 - [ ] Melee combat system
   - [x] Hit
   - [ ] Be hitted
-- [x] Music change by zone
 - [ ] Boss fight
 
 ### UI
-- [ ] ALL
+- [ ] Game Over (win) Menu
 
 ### Audio
-- [x] Safe zone
-- [x] Cemetery
-- [x] Woods
-- [x] Boss Fight
 - [ ] Sound effects
-  - [x] Player attacking
-  - [x] Player walking
   - [ ] Player dying
   - [ ] Ghost attacking
   - [ ] Ghost  sliding
@@ -86,3 +47,6 @@ Global Game Jam 2026 a Primola - Imola
 - [Max Romagnoli (programmer)](https://www.maxromagnoli.com)
 - Vincenzo Grimaudo (programmatore)
 - [Zibbo Dry Bone (audio designer)](https://www.linktr.ee/ZIBBO)
+
+## Press
+- [www.IlNuovoDiario.com](https://www.ilnuovodiario.com/2026/01/26/la-global-game-jam-arriva-in-citta-imola-diventa-studio-di-videogiochi/)

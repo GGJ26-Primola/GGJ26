@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://0eameechcba5"]
+
+[ext_resource type="Texture2D" uid="uid://bmx140lehrsx4" path="res://assets/2D/snake_attack.png" id="1_a5f6l"]
+[ext_resource type="Script" uid="uid://e6o3aopyhevo" path="res://scripts/snake.gd" id="1_yc36x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5f6l"]
+atlas = ExtResource("1_a5f6l")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yc36x"]
+atlas = ExtResource("1_a5f6l")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auphx"]
+atlas = ExtResource("1_a5f6l")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l4b1q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5f6l")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yc36x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_auphx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Snake" type="Node3D" unique_id=483913166]
+script = ExtResource("1_yc36x")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=917195355]
+pixel_size = 0.03
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_l4b1q")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.94723976
