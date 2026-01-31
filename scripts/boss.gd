@@ -66,7 +66,7 @@ func state_machine(delta: float) -> void:
 					can_mist = true
 					var next_state = randf_range(0, 1)
 					if next_state <= 0.8:
-						State = MIST
+						State = BULLETS
 					else:
 						State = MIST
 
