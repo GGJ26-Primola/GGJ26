@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm16kxljje3ck"
-path.s3tc="res://.godot/imported/Casa1 (1)_TrimSheet1.png-eb6e5185952e705731710ec81b28c813.s3tc.ctex"
+uid="uid://e47mqimlc5ka"
+path.s3tc="res://.godot/imported/Pozzo1_TrimSheet1.png-d11ef8ace497ddeebb1b024189c57aa5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/3D/Casa1 (1)_TrimSheet1.png"
-dest_files=["res://.godot/imported/Casa1 (1)_TrimSheet1.png-eb6e5185952e705731710ec81b28c813.s3tc.ctex"]
+source_file="res://assets/3D/Pozzo1_TrimSheet1.png"
+dest_files=["res://.godot/imported/Pozzo1_TrimSheet1.png-d11ef8ace497ddeebb1b024189c57aa5.s3tc.ctex"]
 
 [params]
 

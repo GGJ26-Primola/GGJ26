@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ck2llnyw0nr81"]
+
+[ext_resource type="PackedScene" uid="uid://d2gqbtyc28r62" path="res://assets/3D/CespuglioBacche2.glb" id="1_5w674"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j8lb7"]
+radius = 1.5444336
+height = 3.3139648
+
+[node name="CespuglioBacche2" unique_id=1499043684 instance=ExtResource("1_5w674")]
+
+[node name="CespuglioBacche_02" parent="." index="0" unique_id=546201179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1809057106]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=2091448522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6569824, 0)
+shape = SubResource("CapsuleShape3D_j8lb7")
