@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c0uv0iitg3qpb"]
+
+[ext_resource type="PackedScene" uid="uid://olxolwsucs4q" path="res://scenes/rect.tscn" id="1_ogmq8"]
+[ext_resource type="FontFile" uid="uid://7ex4cvf0obq0" path="res://assets/Fonts/Melon Pop.ttf" id="2_i0xu3"]
+
+[node name="GraveyardGameOver" type="Control" unique_id=456347588]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MainPanel" parent="." unique_id=229314279 instance=ExtResource("1_ogmq8")]
+layout_mode = 1
+offset_left = 222.99998
+offset_top = 176.0
+offset_right = -223.0
+offset_bottom = -176.00003
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel" unique_id=1881724404]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.204483
+offset_top = 157.89763
+offset_right = -30.585083
+offset_bottom = -155.29916
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MainPanel/VBoxContainer" unique_id=1900307860]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 0.24313726, 0.21960784, 1)
+theme_override_fonts/font = ExtResource("2_i0xu3")
+theme_override_font_sizes/font_size = 70
+text = "YOU DIED"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MainPanel/VBoxContainer" unique_id=1743660718]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_i0xu3")
+theme_override_font_sizes/font_size = 40
+text = "SCIUPE, PATACCA"
+horizontal_alignment = 1

@@ -40,6 +40,7 @@
 [ext_resource type="Resource" uid="uid://bnmpyrdm1oaoh" path="res://dialogic/Safe zone/1[Zona1] V6 Inizio quest gatto 1.dtl" id="31_nepv3"]
 [ext_resource type="Resource" uid="uid://15s883uo4k61" path="res://dialogic/Safe zone/Incontro con Mazanpegul.dtl" id="32_7025r"]
 [ext_resource type="PackedScene" uid="uid://wwx5yv6ev5yr" path="res://scenes/woods.tscn" id="33_v2yb1"]
+[ext_resource type="PackedScene" uid="uid://c0uv0iitg3qpb" path="res://scenes/graveyard_game_over.tscn" id="40_05nbr"]
 [ext_resource type="PackedScene" uid="uid://dvtfflyj2wnh7" path="res://scenes/Graveyard.tscn" id="40_m4url"]
 [ext_resource type="PackedScene" uid="uid://dsf1im1wt7jie" path="res://scenes/Collisions/arch_gate.tscn" id="41_8ool0"]
 
@@ -205,6 +206,7 @@ wait_time = 10.0
 one_shot = true
 
 [node name="CemeteryRespawnTimer" type="Timer" parent="GameManager" unique_id=2109619764]
+wait_time = 3.0
 one_shot = true
 
 [node name="SafeZone" parent="." unique_id=1897293832 instance=ExtResource("2_e1j6l")]
@@ -483,6 +485,8 @@ shape = SubResource("BoxShape3D_wljb1")
 scale = Vector2(1, 1)
 
 [node name="Inventory" parent="." unique_id=874561363 instance=ExtResource("19_bt5mj")]
+
+[node name="GraveyardGameOver" parent="." unique_id=456347588 instance=ExtResource("40_05nbr")]
 
 [node name="Woods" parent="." unique_id=474693119 instance=ExtResource("33_v2yb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.142365, 21.69962, -14.668915)

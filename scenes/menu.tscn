@@ -17,12 +17,11 @@ scale = Vector2(1.0015773, 1.0030943)
 script = ExtResource("1_yqeox")
 
 [node name="MainPanel" parent="." unique_id=229314279 instance=ExtResource("2_4ytvr")]
-visible = false
 layout_mode = 1
 offset_left = 171.91252
-offset_top = 96.700775
+offset_top = 61.808743
 offset_right = -171.91254
-offset_bottom = -96.700806
+offset_bottom = -61.808777
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainPanel" unique_id=350585992]
 layout_mode = 1
@@ -60,8 +59,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../../NinePatchRect3/ExitButton")
-focus_neighbor_bottom = NodePath("../../NinePatchRect2/OptionsButton")
-focus_next = NodePath("../../NinePatchRect2/OptionsButton")
+focus_neighbor_bottom = NodePath("../../NinePatchRect2/ReloadButton")
+focus_next = NodePath("../../NinePatchRect2/ReloadButton")
 focus_previous = NodePath("../../NinePatchRect3/ExitButton")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0, 0.5058824, 0, 1)
@@ -76,7 +75,7 @@ text = "Play"
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="OptionsButton" type="MenuButton" parent="MainPanel/VBoxContainer/NinePatchRect2" unique_id=362814617]
+[node name="ReloadButton" type="MenuButton" parent="MainPanel/VBoxContainer/NinePatchRect2" unique_id=362814617]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -85,9 +84,34 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../../NinePatchRect/PlayButton")
+focus_neighbor_bottom = NodePath("../../NinePatchRect4/OptionsButton")
+focus_next = NodePath("../../NinePatchRect4/OptionsButton")
+focus_previous = NodePath("../../NinePatchRect/PlayButton")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0.5058824, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.5058824, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_g3eks")
+theme_override_font_sizes/font_size = 50
+text = "Reload"
+
+[node name="NinePatchRect4" parent="MainPanel/VBoxContainer" unique_id=1612574626 instance=ExtResource("2_4ytvr")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="OptionsButton" type="MenuButton" parent="MainPanel/VBoxContainer/NinePatchRect4" unique_id=848076346]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../../NinePatchRect2/ReloadButton")
 focus_neighbor_bottom = NodePath("../../NinePatchRect3/ExitButton")
 focus_next = NodePath("../../NinePatchRect3/ExitButton")
-focus_previous = NodePath("../../NinePatchRect/PlayButton")
+focus_previous = NodePath("../../NinePatchRect2/ReloadButton")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0, 0.5058824, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 1, 0, 1)
@@ -109,10 +133,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-focus_neighbor_top = NodePath("../../NinePatchRect2/OptionsButton")
+focus_neighbor_top = NodePath("../../NinePatchRect2/ReloadButton")
 focus_neighbor_bottom = NodePath("../../NinePatchRect/PlayButton")
 focus_next = NodePath("../../NinePatchRect/PlayButton")
-focus_previous = NodePath("../../NinePatchRect2/OptionsButton")
+focus_previous = NodePath("../../NinePatchRect2/ReloadButton")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0, 0.5058824, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 1, 0, 1)
@@ -123,6 +147,7 @@ theme_override_font_sizes/font_size = 50
 text = "Exit"
 
 [node name="OptionsPanel" parent="." unique_id=1926434036 instance=ExtResource("2_4ytvr")]
+visible = false
 layout_mode = 1
 offset_left = 171.9125
 offset_top = 96.700775
@@ -247,7 +272,8 @@ theme_override_font_sizes/font_size = 50
 text = "Back"
 
 [connection signal="pressed" from="MainPanel/VBoxContainer/NinePatchRect/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="MainPanel/VBoxContainer/NinePatchRect2/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MainPanel/VBoxContainer/NinePatchRect2/ReloadButton" to="." method="_on_reload_button_pressed"]
+[connection signal="pressed" from="MainPanel/VBoxContainer/NinePatchRect4/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MainPanel/VBoxContainer/NinePatchRect3/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="value_changed" from="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer/HSlider" to="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer/HSlider" method="_on_value_changed"]
 [connection signal="value_changed" from="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer/HSlider2" to="OptionsPanel/VBoxContainer/OptionsContainer/SliderContainer/HSlider2" method="_on_value_changed"]
