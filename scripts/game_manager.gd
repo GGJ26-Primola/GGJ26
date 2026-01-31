@@ -150,12 +150,15 @@ func start_timeline(timeline : DialogicTimeline) -> void:
 	GameState.dialogic_destroy_after_read = false
 	Dialogic.start(timeline)
 
-# CEMETERY
-func cemetery_game_over() -> void:
-	Dialogic.VAR.dead_from_ghost = true
+func game_over() -> void:
 	GameState.set_game_status(GameState.State.GAMEOVER)
 	graveyard_game_over.show()
 	cemetery_respawn_timer.start()
+
+# CEMETERY
+func cemetery_game_over() -> void:
+	Dialogic.VAR.dead_from_ghost = true
+	game_over()
 	
 func cemetery_respawn() -> void:
 	graveyard_game_over.hide()
