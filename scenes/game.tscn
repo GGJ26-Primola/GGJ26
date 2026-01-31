@@ -503,6 +503,7 @@ transform = Transform3D(-0.9986626, -0.04212606, 0.029975494, -0.043559503, 0.99
 
 [node name="Snake" parent="Snakes" unique_id=1789395511 instance=ExtResource("44_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.910667, 13.248374, -16.058613)
+can_exit_agro = false
 
 [connection signal="timeout" from="GameManager/CemeteryDeathTimer" to="GameManager" method="cemetery_game_over"]
 [connection signal="timeout" from="GameManager/CemeteryRespawnTimer" to="GameManager" method="cemetery_respawn"]
