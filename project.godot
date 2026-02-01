@@ -67,7 +67,8 @@ directories/dch_directory={
 "potion": "res://dialogic/npc/potion.dch",
 "scheletro_mercante": "res://dialogic/npc/cemetery/scheletro_mercante.dch",
 "scroll": "res://dialogic/npc/scroll.dch",
-"stick": "res://dialogic/npc/stick.dch"
+"stick": "res://dialogic/npc/stick.dch",
+"team": "res://dialogic/npc/team.dch"
 }
 directories/dtl_directory={
 "1[Zona 1] Dialogo con villico 2": "res://dialogic/Safe zone/1[Zona 1] Dialogo con villico 2.dtl",

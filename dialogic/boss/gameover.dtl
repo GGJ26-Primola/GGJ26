@@ -11,6 +11,6 @@ Mazapégul (idle): You have defeated her, and now everybody will be free to smil
 Mazapégul (idle): And without her shadow over these lands, i will be once again free to cause any kind of mischief!
 Mazapégul (idle): So i thank you, dear boy, and see you soon!
 leave Mazapégul
-join "Villico 6" right
-"Villico 6": Thanks for playing our game!
+join "team" center
+"team": Thanks for playing our game!
 [signal arg="quit"]

@@ -44,11 +44,11 @@ label Maschera1
 	leave berretto
 	[signal arg="intro_end"]
 	Mazapégul (idle): This mask shall hide your identity, for the time being.
-	Mazapégul (idle_hat): I cannot linger here anymore, lest she finds me.
-	Mazapégul (idle_hat): We shall see each other again soon!
-	Mazapégul (idle_hat): Do not, i repeat...
-	Mazapégul (idle_hat): DO-NOT! Take off your mask in here, it's not safe.
-	Mazapégul (idle_hat): Ciao
+	Mazapégul (idle): I cannot linger here anymore, lest she finds me.
+	Mazapégul (idle): We shall see each other again soon!
+	Mazapégul (idle): Do not, i repeat...
+	Mazapégul (idle): DO-NOT! Take off your mask in here, it's not safe.
+	Mazapégul (idle): Ciao
 - Refuse equipment from weird magic monkey-cat.
 	Mazapégul (idle): Do not be silly, you NEED this mask, like, really really need it!
 	jump Maschera1
