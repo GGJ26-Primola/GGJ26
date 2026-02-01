@@ -54,6 +54,7 @@
 [ext_resource type="PackedScene" uid="uid://bb2b4bacfh66b" path="res://assets/Mesh Woods/tree_pine_orange_large.fbx" id="46_o8ni1"]
 [ext_resource type="PackedScene" uid="uid://b7xlkcf006u1g" path="res://assets/Mesh Woods/tree_pine_orange_medium.fbx" id="47_3hbvx"]
 [ext_resource type="PackedScene" uid="uid://lbnw7nxspft8" path="res://assets/Mesh Woods/tree_pine_yellow_medium.fbx" id="48_q8j3a"]
+[ext_resource type="Resource" uid="uid://egj6wr1ylxnd" path="res://dialogic/Cemetery/fantasmi_lindas.dtl" id="48_yd4ix"]
 [ext_resource type="Texture2D" uid="uid://cdihffb0jdkfp" path="res://assets/2D/blue_ghost.png" id="49_7ixpq"]
 [ext_resource type="PackedScene" uid="uid://btsroxy2eeykp" path="res://scenes/Collisions/tree_pine_yellow_large.tscn" id="49_ms3bu"]
 [ext_resource type="PackedScene" uid="uid://c3715oyku61f8" path="res://scenes/Collisions/tree_pine_yellow_medium.tscn" id="50_7ixpq"]
@@ -384,7 +385,7 @@ animations = [{
 }]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sxt1d"]
-radius = 1.6981937
+radius = 2.8145046
 
 [node name="Game" type="Node" unique_id=803510040]
 
@@ -673,12 +674,12 @@ shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1338356758 instance=ExtResource("1_uwrxv")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.334305, 16.811756, -46.392834)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11127114, 11.946434, -5.426239)
 collision_layer = 3
 collision_mask = 3
 
 [node name="CameraPlayer" type="Node3D" parent="." unique_id=386739997 node_paths=PackedStringArray("follow_targets")]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 111.334305, 22.518864, -40.685726)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0.11127114, 17.653542, 0.28086776)
 top_level = true
 script = ExtResource("2_lnu2h")
 follow_mode = 3
@@ -694,7 +695,7 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1455375748]
 unique_name_in_owner = true
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071067, 0, -0.7071067, 0.7071068, 111.334305, 22.518864, -40.685726)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0.11127114, 17.653542, 0.28086776)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1699421758]
@@ -725,6 +726,50 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.142365, 21.69962, -14.6689
 
 [node name="Graveyard" parent="." unique_id=1189775658 instance=ExtResource("40_m4url")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.316717, 17.005215, -79.08286)
+
+[node name="GoodGhosts" type="Node3D" parent="." unique_id=1125799041]
+
+[node name="GhostLindas" type="Node3D" parent="GoodGhosts" unique_id=592436165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.349792, 19.155685, -91.58652)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="GoodGhosts/GhostLindas" unique_id=535922302]
+pixel_size = 0.03
+sprite_frames = SubResource("SpriteFrames_o8oq8")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.036899652
+
+[node name="Interactible" parent="GoodGhosts/GhostLindas" unique_id=323765291 instance=ExtResource("3_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4903407, 0)
+timeline = ExtResource("48_yd4ix")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GoodGhosts/GhostLindas/Interactible" unique_id=1018808999]
+shape = SubResource("SphereShape3D_sxt1d")
+
+[node name="GhostStart" type="Node3D" parent="GoodGhosts" unique_id=1038776448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.740654, 12.706235, -162.41489)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="GoodGhosts/GhostStart" unique_id=1535195935]
+pixel_size = 0.03
+sprite_frames = SubResource("SpriteFrames_o8oq8")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.036899652
+
+[node name="Interactible" parent="GoodGhosts/GhostStart" unique_id=2112780815 instance=ExtResource("3_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4903407, 0)
+timeline = ExtResource("50_bk1p3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GoodGhosts/GhostStart/Interactible" unique_id=24463104]
+shape = SubResource("SphereShape3D_sxt1d")
+
+[node name="EvilsGhosts" type="Node3D" parent="." unique_id=2030157221]
+
+[node name="Ghost" parent="EvilsGhosts" unique_id=2001474726 instance=ExtResource("45_oaba0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.349792, 19.155685, -91.58652)
+
+[node name="Ghost2" parent="EvilsGhosts" unique_id=766622181 instance=ExtResource("45_oaba0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.740654, 12.706235, -162.41489)
 
 [node name="arch_gate" parent="." unique_id=1156300368 instance=ExtResource("41_8ool0")]
 transform = Transform3D(-0.9986626, -0.04212606, 0.029975494, -0.043559503, 0.9978539, -0.048894368, -0.02785127, -0.050134677, -0.9983543, -16.31212, 15.002968, -73.02219)
@@ -757,30 +802,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.795444, 13.65453, -12.1875
 
 [node name="Flat_Boulder_03" parent="." unique_id=535769743 instance=ExtResource("45_pf7vy")]
 transform = Transform3D(-0.111496374, -0.96605635, -0.09495434, -0.038667787, 0.1978023, -0.57779586, 0.3821863, -0.2618178, -0.08615994, -38.98559, 16.63804, -58.38967)
-
-[node name="GoodGhosts" type="Node3D" parent="." unique_id=1125799041]
-
-[node name="GhostStart" type="Node3D" parent="GoodGhosts" unique_id=592436165]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0476575, 11.4197855, -14.983555)
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="GoodGhosts/GhostStart" unique_id=535922302]
-pixel_size = 0.03
-sprite_frames = SubResource("SpriteFrames_o8oq8")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.036899652
-
-[node name="Interactible" parent="GoodGhosts/GhostStart" unique_id=323765291 instance=ExtResource("3_u5sy4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4903407, 0)
-timeline = ExtResource("50_bk1p3")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GoodGhosts/GhostStart/Interactible" unique_id=1018808999]
-shape = SubResource("SphereShape3D_sxt1d")
-
-[node name="EvilsGhosts" type="Node3D" parent="." unique_id=2030157221]
-
-[node name="Ghost" parent="EvilsGhosts" unique_id=2001474726 instance=ExtResource("45_oaba0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1009274, 11.403783, -14.541943)
 
 [node name="Trees" type="Node3D" parent="." unique_id=1107555645]
 

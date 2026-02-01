@@ -2,9 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://wpb28sr8ppw2" path="res://assets/Mesh Graveyard/fbx/pillar.fbx" id="1_jhpj8"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_d3aps"]
-height = 3.4060059
-radius = 0.76416016
+[sub_resource type="BoxShape3D" id="BoxShape3D_jhpj8"]
+size = Vector3(1, 3.947998, 1)
 
 [node name="pillar" unique_id=1602841066 instance=ExtResource("1_jhpj8")]
 
@@ -12,5 +11,6 @@ radius = 0.76416016
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7813941, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1529947484]
-transform = Transform3D(-0.999996, -0.00282737, 0, 0.00282737, -0.999996, 0, 0, 0, 1, 0, 0.27210522, 0)
-shape = SubResource("CylinderShape3D_d3aps")
+transform = Transform3D(-0.999996, -0.00282737, 0, 0.00282737, -0.999996, 0, 0, 0, 1, 0.002747643, 1.243903, 0)
+shape = SubResource("BoxShape3D_jhpj8")
+debug_color = Color(0, 0.6509804, 0.007843138, 1)
