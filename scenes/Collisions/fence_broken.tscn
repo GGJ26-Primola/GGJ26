@@ -2,14 +2,4 @@
 
 [ext_resource type="PackedScene" uid="uid://8j8104eiqp4l" path="res://assets/Mesh Graveyard/fbx/fence_broken.fbx" id="1_h4rem"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_h4rem"]
-size = Vector3(1.65625, 4.321171, 0.50219727)
-
 [node name="fence_broken" unique_id=889285184 instance=ExtResource("1_h4rem")]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1485734771]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7813941, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=320050704]
-transform = Transform3D(0.0022863885, 0.9999974, 0, -0.9999974, 0.0022863885, 0, 0, 0, 1, 0.046733186, 0.27144706, 0.0013427734)
-shape = SubResource("BoxShape3D_h4rem")

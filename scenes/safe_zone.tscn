@@ -85,7 +85,13 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5r6v5")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mg75l"]
-size = Vector3(3.3919678, 8.453125, 52.335205)
+size = Vector3(4.37323, 9.573242, 62.967384)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_607xk"]
+size = Vector3(2.6831055, 4.813965, 52.613403)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3rgd6"]
+size = Vector3(10.565826, 8.434082, 5.336914)
 
 [node name="SafeZone" type="Node" unique_id=1897293832]
 
@@ -139,7 +145,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.080198, 9.206878, -42.409
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.715205, 14.893273, -58.430443)
 
 [node name="tree_pine_yellow_large9" parent="Lev/Terrain/HTerrain/trees" unique_id=1161222749 instance=ExtResource("16_11gxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.401247, 12.986176, -49.668404)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.86412, 12.986176, -49.646633)
 
 [node name="tree_pine_yellow_large10" parent="Lev/Terrain/HTerrain/trees" unique_id=206548415 instance=ExtResource("16_11gxj")]
 transform = Transform3D(0.9953728, 0.096088976, 0, -0.096088976, 0.9953728, 0, 0, 0, 1, -25.489983, 10.839924, -44.616726)
@@ -578,6 +584,8 @@ mesh = SubResource("ArrayMesh_byv58")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("17_ocx5q")
 
+[node name="Flat_Boulder_03" parent="Lev/Terrain/HTerrain/Misc/Flat_Boulder_03/Boulder 3 f" unique_id=1168624160 instance=ExtResource("17_5g4u4")]
+
 [node name="Boulder 3 f5" type="MeshInstance3D" parent="Lev/Terrain/HTerrain/Misc/Flat_Boulder_03" unique_id=1680030914]
 transform = Transform3D(0.9999521, -0.008952856, 0.0040828427, 0.007847071, 0.9758958, 0.2180988, -0.0059368275, -0.21805611, 0.97591853, -9.057468, -3.4458313, 3.4933472)
 mesh = SubResource("ArrayMesh_byv58")
@@ -602,6 +610,8 @@ mesh = SubResource("ArrayMesh_byv58")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("17_ocx5q")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Lev/Terrain/HTerrain/Misc/Flat_Boulder_03" unique_id=1682570088]
+
 [node name="path_B" parent="Lev/Terrain/HTerrain/Misc" unique_id=1647965739 instance=ExtResource("19_kih1l")]
 transform = Transform3D(1.1042203, -1.3031144, 0.18727615, 0.18899906, 0.65373164, -0.17175111, -0.01523436, 0.17013219, 0.9949497, -26.671404, 4.929432, -33.027256)
 
@@ -624,7 +634,7 @@ transform = Transform3D(-0.99066436, -0.12221586, -0.06039839, -0.12847625, 0.98
 transform = Transform3D(0.0034234368, -0.12858883, 0.9916921, 0.11591738, 0.9850637, 0.12732919, -0.9932532, 0.11451844, 0.01827798, -26.720919, 4.421275, -29.142132)
 
 [node name="Flat_Boulder_04" parent="Lev/Terrain/HTerrain/Misc" unique_id=1960451734 instance=ExtResource("17_5g4u4")]
-transform = Transform3D(0.22266144, 0, -0.44768503, 0, 0.5, 0, 0.44768503, 0, 0.22266144, -18.865438, 3.285183, -34.100136)
+transform = Transform3D(0.22266144, 0, -0.44768503, 0, 0.21770436, 0, 0.44768503, 0, 0.22266144, -18.865438, 3.285183, -34.100136)
 
 [node name="path_A4" parent="Lev/Terrain/HTerrain/Misc" unique_id=1018037714 instance=ExtResource("18_1k4jv")]
 transform = Transform3D(0.49819934, -0.042078607, -0.0051766587, 0.040339705, 0.4892726, -0.09478951, 0.013042815, 0.09403049, 0.49090543, -24.963964, 4.2590065, -26.042976)
@@ -662,27 +672,42 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.502808, 4.364889, -32.311
 [node name="Node3D" type="Node3D" parent="Lev/Terrain" unique_id=1606884205]
 transform = Transform3D(-4.3711392e-08, 0, 0.99999976, 0, 0.9999997, 0, -1.0000001, 0, -4.3711378e-08, -2.417982, 15.051104, -30.817799)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Lev/Terrain/Node3D" unique_id=431055706]
+[node name="Bordo nord" type="StaticBody3D" parent="Lev/Terrain/Node3D" unique_id=967630912]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Lev/Terrain/Node3D/RigidBody3D" unique_id=1592821497]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010444641, -1.9073486e-06, 10.946991)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lev/Terrain/Node3D/Bordo nord" unique_id=1592821497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9657288, -1.9073486e-06, 15.493468)
 shape = SubResource("BoxShape3D_mg75l")
+debug_color = Color(0.899143, 0.09984564, 0.7244408, 0.41960785)
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Lev/Terrain/Node3D/RigidBody3D" unique_id=483070531]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010444641, -1.9073486e-06, 10.946991)
-shape = SubResource("BoxShape3D_mg75l")
+[node name="RigidBody3D3" type="StaticBody3D" parent="Lev/Terrain/Node3D" unique_id=1977528608]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Lev/Terrain/Node3D/RigidBody3D" unique_id=763955663]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -36.590115, -6.7190514, -30.678503)
+[node name="Bordo est" type="CollisionShape3D" parent="Lev/Terrain/Node3D/RigidBody3D3" unique_id=763955663]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -36.590115, -6.7190514, -30.678501)
 shape = SubResource("BoxShape3D_mg75l")
+debug_color = Color(0.899143, 0.09984564, 0.7244408, 0.41960785)
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Lev/Terrain/Node3D/RigidBody3D" unique_id=241858420]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.789127, -6.7190514, -2.2938855)
-shape = SubResource("BoxShape3D_mg75l")
+[node name="RigidBody3D4" type="StaticBody3D" parent="Lev/Terrain/Node3D" unique_id=2098286934]
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="Lev/Terrain/Node3D/RigidBody3D" unique_id=1514151067]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.648956, -6.7190514, 10.640556)
+[node name="Bordo Sud" type="CollisionShape3D" parent="Lev/Terrain/Node3D/RigidBody3D4" unique_id=241858420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.789154, -6.7190514, 5.2435193)
 shape = SubResource("BoxShape3D_mg75l")
+debug_color = Color(0.899143, 0.09984564, 0.7244408, 0.41960785)
+
+[node name="Bordo ovest" type="StaticBody3D" parent="Lev/Terrain/Node3D" unique_id=1943949811]
+transform = Transform3D(-4.371139e-08, 0, 1.0000001, 0, 1, 0, -1, 0, -4.371139e-08, -16.135239, 0, 35.185833)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lev/Terrain/Node3D/Bordo ovest" unique_id=388046030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -8.31335e-13, 0, 1, 1.56567, -1.906971, -0.2745552)
+shape = SubResource("BoxShape3D_607xk")
+debug_color = Color(0.9375982, 1.4824272e-05, 0.6294136, 0.41960785)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Lev/Terrain/Node3D" unique_id=1636981060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.447186, 0, 35.06707)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lev/Terrain/Node3D/StaticBody3D" unique_id=1231017701]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.169693, -3.717041, -2.168457)
+shape = SubResource("BoxShape3D_3rgd6")
+debug_color = Color(0.90544736, 0.13361347, 0.6730395, 0.41960785)
 
 [node name="Flat_Boulder_02" parent="." unique_id=221972456 instance=ExtResource("30_mg75l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.52482, 11.884377, -64.362946)

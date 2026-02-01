@@ -2,9 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c0c1gc8v2y6eb" path="res://assets/Mesh Graveyard/fbx/ribcage.fbx" id="1_4f2ch"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_sfp81"]
-height = 1.0378113
-radius = 0.5449219
+[sub_resource type="BoxShape3D" id="BoxShape3D_4f2ch"]
+size = Vector3(0.47180176, 0.52441406, 0.6128235)
 
 [node name="ribcage" unique_id=845625228 instance=ExtResource("1_4f2ch")]
 
@@ -12,5 +11,5 @@ radius = 0.5449219
 transform = Transform3D(0.9999915, 0.0035103564, -0.0021805633, -0.0035061724, 0.999992, 0.0019204029, 0.0021872846, -0.0019127441, 0.99999577, 0, 0.7813941, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=315388309]
-transform = Transform3D(-1, -0.0029511182, 0.000187587, 0.0029365083, -0.99851227, -0.054357417, 0.00034774735, -0.054356117, 0.99851656, -0.0032884146, -0.79571265, -0.114438154)
-shape = SubResource("CylinderShape3D_sfp81")
+transform = Transform3D(-1, -0.002951204, 0.0001875814, 0.002936405, -0.99849904, -0.05435805, 0.0003477555, -0.0543553, 0.9985033, -0.045405127, -0.89700854, -0.02676844)
+shape = SubResource("BoxShape3D_4f2ch")
