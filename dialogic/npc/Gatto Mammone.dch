@@ -19,7 +19,7 @@
 &"portraits": {
 "idle": {
 "export_overrides": {
-"image": ""
+"image": "\"res://assets/UI/gatto_mammone.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -27,5 +27,5 @@
 "scene": ""
 }
 },
-&"scale": 1.0
+&"scale": 0.7
 }

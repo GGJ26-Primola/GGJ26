@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://cj60jvskfrry0"]
+
+[ext_resource type="Texture2D" uid="uid://cdihffb0jdkfp" path="res://assets/2D/blue_ghost.png" id="1_6yr4p"]
+[ext_resource type="PackedScene" uid="uid://c6wi5nthdn08o" path="res://scenes/interactible.tscn" id="2_0fowk"]
+[ext_resource type="Resource" uid="uid://egj6wr1ylxnd" path="res://dialogic/Cemetery/fantasmi_lindas.dtl" id="3_ia8ku"]
+[ext_resource type="Resource" uid="uid://dna103qyjiorc" path="res://dialogic/Cemetery/fantasmi_smith.dtl" id="4_y3k2y"]
+[ext_resource type="Resource" uid="uid://2d4tqdmm7l22" path="res://dialogic/Cemetery/fantasmi_termsandconditions.dtl" id="5_neo62"]
+[ext_resource type="Resource" uid="uid://p87cjxumoen7" path="res://dialogic/Cemetery/fantasmi_vial.dtl" id="6_2p5nu"]
+[ext_resource type="Resource" uid="uid://c467j3k2yocx8" path="res://dialogic/Cemetery/fantasmi.dtl" id="7_58ubs"]
+[ext_resource type="Script" uid="uid://tq8hh5r2ii45" path="res://scripts/look_at_2d.gd" id="8_1bath"]
+[ext_resource type="Texture2D" uid="uid://ebnq7uu62rsv" path="res://assets/2D/skeleton_idle.png" id="9_xug51"]
+[ext_resource type="Resource" uid="uid://w6mjvnwiyfsh" path="res://dialogic/Cemetery/scheletro_mercante.dtl" id="10_wyl6p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmvbu"]
+atlas = ExtResource("1_6yr4p")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weeiq"]
+atlas = ExtResource("1_6yr4p")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxocx"]
+atlas = ExtResource("1_6yr4p")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nv0b"]
+atlas = ExtResource("1_6yr4p")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o8oq8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmvbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weeiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxocx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nv0b")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sxt1d"]
+radius = 3.0506654
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8oq8"]
+atlas = ExtResource("9_xug51")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxt1d"]
+atlas = ExtResource("9_xug51")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2iuns"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8oq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxt1d")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_m4url"]
+radius = 3.6868103
+
+[node name="GoodGhosts" type="Node3D" unique_id=7887150]
+
+[node name="GhostLindas" type="Node3D" parent="." unique_id=1102179661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.349792, 19.155685, -91.58652)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="GhostLindas" unique_id=1079355147]
+pixel_size = 0.03
+sprite_frames = SubResource("SpriteFrames_o8oq8")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.036899652
+
+[node name="Interactible" parent="GhostLindas" unique_id=476685811 instance=ExtResource("2_0fowk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4903407, 0)
+timeline = ExtResource("3_ia8ku")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GhostLindas/Interactible" unique_id=738999245]
+shape = SubResource("SphereShape3D_sxt1d")
+
+[node name="GhostSmith" type="Node3D" parent="." unique_id=942720543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.697517, 16.768898, -141.94714)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="GhostSmith" unique_id=571112457]
+pixel_size = 0.03
+sprite_frames = SubResource("SpriteFrames_o8oq8")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.036899652
+
+[node name="Interactible" parent="GhostSmith" unique_id=1977879257 instance=ExtResource("2_0fowk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4903407, 0)
+timeline = ExtResource("4_y3k2y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GhostSmith/Interactible" unique_id=1448770288]
+shape = SubResource("SphereShape3D_sxt1d")
+
+[node name="GhostThermAndConditions" type="Node3D" parent="." unique_id=634582584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.208008, 20.699429, -124.76232)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="GhostThermAndConditions" unique_id=1328523343]
+pixel_size = 0.03
+sprite_frames = SubResource("SpriteFrames_o8oq8")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.036899652
+
+[node name="Interactible" parent="GhostThermAndConditions" unique_id=1773820088 instance=ExtResource("2_0fowk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4903407, 0)
+timeline = ExtResource("5_neo62")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GhostThermAndConditions/Interactible" unique_id=800799329]
+shape = SubResource("SphereShape3D_sxt1d")
+
+[node name="GhostVial" type="Node3D" parent="." unique_id=2002935586]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.03998, 22.213453, -82.465996)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="GhostVial" unique_id=674412049]
+pixel_size = 0.03
+sprite_frames = SubResource("SpriteFrames_o8oq8")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.036899652
+
+[node name="Interactible" parent="GhostVial" unique_id=1769552908 instance=ExtResource("2_0fowk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4903407, 0)
+timeline = ExtResource("6_2p5nu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GhostVial/Interactible" unique_id=2050398069]
+shape = SubResource("SphereShape3D_sxt1d")
+
+[node name="GhostStart" type="Node3D" parent="." unique_id=486313346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.502556, 12.706235, -161.08353)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="GhostStart" unique_id=1351903077]
+pixel_size = 0.03
+sprite_frames = SubResource("SpriteFrames_o8oq8")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.036899652
+
+[node name="Interactible" parent="GhostStart" unique_id=1395555453 instance=ExtResource("2_0fowk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4903407, 0)
+timeline = ExtResource("7_58ubs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GhostStart/Interactible" unique_id=1795089163]
+shape = SubResource("SphereShape3D_sxt1d")
+
+[node name="Mercant" type="Node3D" parent="." unique_id=1099714500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.986858, 16.682713, -124.97701)
+script = ExtResource("8_1bath")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Mercant" unique_id=1123969558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26350784, 0)
+pixel_size = 0.04
+sprite_frames = SubResource("SpriteFrames_2iuns")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="interactible" parent="Mercant" unique_id=1788757517 instance=ExtResource("2_0fowk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0213909, 0)
+timeline = ExtResource("10_wyl6p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mercant/interactible" unique_id=1604531465]
+shape = SubResource("SphereShape3D_m4url")
