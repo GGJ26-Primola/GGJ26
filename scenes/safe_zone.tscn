@@ -610,8 +610,6 @@ mesh = SubResource("ArrayMesh_byv58")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("17_ocx5q")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Lev/Terrain/HTerrain/Misc/Flat_Boulder_03" unique_id=1682570088]
-
 [node name="path_B" parent="Lev/Terrain/HTerrain/Misc" unique_id=1647965739 instance=ExtResource("19_kih1l")]
 transform = Transform3D(1.1042203, -1.3031144, 0.18727615, 0.18899906, 0.65373164, -0.17175111, -0.01523436, 0.17013219, 0.9949497, -26.671404, 4.929432, -33.027256)
 
