@@ -1,6 +1,20 @@
 [gd_scene format=3 uid="uid://clbgrsnndj50o"]
 
+[ext_resource type="AudioStream" uid="uid://cshtwrtcm0sco" path="res://assets/Music/SFX/WITCH ATTACK1.wav" id="2_byl7a"]
 [ext_resource type="PackedScene" uid="uid://ctio65mmg2fab" path="res://scenes/boss.tscn" id="2_jiv1s"]
+[ext_resource type="AudioStream" uid="uid://sqv47xwpwhtk" path="res://assets/Music/SFX/WITCH ATTACK2.wav" id="3_s17tx"]
+[ext_resource type="AudioStream" uid="uid://bdvba83adkfkc" path="res://assets/Music/SFX/Witch Launch.wav" id="4_3o5e3"]
+[ext_resource type="AudioStream" uid="uid://l3aa78cb6l3c" path="res://assets/Music/SFX/WITCH ATTACK3.wav" id="4_wbf06"]
+[ext_resource type="AudioStream" uid="uid://dsvukix5qf3iw" path="res://assets/Music/SFX/WITCH ATTACK4.wav" id="5_pq7qv"]
+[ext_resource type="AudioStream" uid="uid://bmwdvc8yw8ijw" path="res://assets/Music/SFX/Witch Dead.wav" id="5_wbf06"]
+[ext_resource type="AudioStream" uid="uid://bw6hgmuugngns" path="res://assets/Music/SFX/Witch Laugh.wav" id="6_3o5e3"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_pq7qv"]
+streams_count = 4
+stream_0/stream = ExtResource("2_byl7a")
+stream_1/stream = ExtResource("3_s17tx")
+stream_2/stream = ExtResource("4_wbf06")
+stream_3/stream = ExtResource("5_pq7qv")
 
 [node name="Bossfight" type="Node3D" unique_id=453515205]
 
@@ -12,3 +26,19 @@ one_shot = true
 
 [node name="CameraFocus" type="Node3D" parent="." unique_id=2063507650]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -3)
+
+[node name="AudioMist" type="AudioStreamPlayer" parent="." unique_id=2032247744]
+stream = SubResource("AudioStreamRandomizer_pq7qv")
+bus = &"SFX"
+
+[node name="AudioIdle" type="AudioStreamPlayer" parent="." unique_id=905001662]
+stream = ExtResource("6_3o5e3")
+bus = &"SFX"
+
+[node name="AudioDeath" type="AudioStreamPlayer" parent="." unique_id=231779097]
+stream = ExtResource("5_wbf06")
+bus = &"SFX"
+
+[node name="AudioBullets" type="AudioStreamPlayer" parent="." unique_id=205298672]
+stream = ExtResource("4_3o5e3")
+bus = &"SFX"

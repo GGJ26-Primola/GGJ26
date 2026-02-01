@@ -107,7 +107,7 @@ variables={
 "cemetery_vial": false,
 "current_mask": "default",
 "dead_from_ghost": false,
-"mask_boss": false,
+"mask_boss": true,
 "mask_cat": false,
 "mask_default": true,
 "mask_ftp1": false,
@@ -157,7 +157,6 @@ layout/default_style="res://dialogic/styles/conversation.tres"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
