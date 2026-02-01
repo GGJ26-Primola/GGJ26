@@ -21,10 +21,10 @@ Mazapégul (idle_hat): Ha-ha! Just as  i thought! My dear boy, you'll learn soon
 Mazapégul (idle): Here, take these.
 set {mask_default} = true
 [signal arg="mazapegul"]
-join "Maschera 1" center
+join berretto center
 label Maschera1
 - Take the mask and the weapon
-	leave "Maschera 1"
+	leave berretto
 	[signal arg="intro_end"]
 	Mazapégul (idle): This mask shall hide your identity, for the time being. I cannot linger here anymore, lest she finds me. We shall see each other again soon! Do not, i repeat DO-NOT! Take off your mask in here, it's not safe. Cia'
 - Refuse equipment from weird magic monkey-cat.

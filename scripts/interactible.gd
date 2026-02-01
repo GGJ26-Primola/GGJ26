@@ -15,11 +15,11 @@ func _ready() -> void:
 
 func _on_area_entered(_area: Area3D) -> void:
 	
-	if bubble_pnc != null:
-		layout = Dialogic.Styles.load_style("bubble")
-		layout.register_character(bubble_pnc, $".")
-	else:
-		Dialogic.Styles.load_style("conversation")
+	#if bubble_pnc != null:
+		#layout = Dialogic.Styles.load_style("bubble")
+		#layout.register_character(bubble_pnc, $".")
+	#else:
+		#Dialogic.Styles.load_style("conversation")
 	
 	info_mark.show()
 	#GameState.set_dialogic_timeline(timeline, info_mark)
