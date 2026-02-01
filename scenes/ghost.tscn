@@ -1,7 +1,24 @@
 [gd_scene format=3 uid="uid://lkcb5qva01jm"]
 
 [ext_resource type="PackedScene" uid="uid://cm4noj7flak4p" path="res://scenes/enemy.tscn" id="1_l5lq6"]
+[ext_resource type="Texture2D" uid="uid://bx32p77h1kq05" path="res://assets/2D/red_ghost.png" id="2_bbnym"]
 [ext_resource type="Texture2D" uid="uid://bmpgcjolxjolr" path="res://assets/2D/green_ghost.png" id="2_l5lq6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv5gc"]
+atlas = ExtResource("2_bbnym")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wj1r3"]
+atlas = ExtResource("2_bbnym")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_seks5"]
+atlas = ExtResource("2_bbnym")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pqta"]
+atlas = ExtResource("2_bbnym")
+region = Rect2(300, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbnym"]
 atlas = ExtResource("2_l5lq6")
@@ -21,6 +38,23 @@ region = Rect2(300, 0, 100, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sv5gc"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sv5gc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wj1r3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seks5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pqta")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bbnym")
@@ -46,16 +80,20 @@ radius = 0.7729261
 
 [node name="Enemy" parent="." unique_id=1759208191 instance=ExtResource("1_l5lq6")]
 speed = 200.0
+damage_distance = 2.5
 can_die = false
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Enemy" unique_id=1665357714]
 pixel_size = 0.03
 sprite_frames = SubResource("SpriteFrames_sv5gc")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.275564
+frame_progress = 0.38791943
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy" unique_id=1991669721]
 shape = SubResource("SphereShape3D_wj1r3")
 
 [node name="RespawnTimer" type="Timer" parent="Enemy" unique_id=1278661948]
+one_shot = true
+
+[connection signal="timeout" from="Enemy/RespawnTimer" to="Enemy" method="respawn"]

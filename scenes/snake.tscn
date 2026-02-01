@@ -55,9 +55,13 @@ animations = [{
 radius = 0.31201172
 height = 2.1308594
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_yc36x"]
+radius = 0.9696687
+
 [node name="Snake" type="Node3D" unique_id=599877792]
 
 [node name="Enemy" parent="." unique_id=1759208191 instance=ExtResource("1_yc36x")]
+can_exit_agro = false
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Enemy" unique_id=917195355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5101238, 0)
@@ -73,5 +77,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06542969, 0)
 shape = SubResource("CapsuleShape3D_yc36x")
 
 [node name="RespawnTimer" type="Timer" parent="Enemy" unique_id=887659088]
+wait_time = 10.0
+one_shot = true
 
-[connection signal="timeout" from="Enemy/RespawnTimer" to="." method="respawn"]
+[node name="Area3D" type="Area3D" parent="Enemy" unique_id=274621726]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/Area3D" unique_id=1789933767]
+shape = SubResource("SphereShape3D_yc36x")
+
+[connection signal="timeout" from="Enemy/RespawnTimer" to="Enemy" method="respawn"]
+[connection signal="area_entered" from="Enemy/Area3D" to="Enemy" method="hitted"]

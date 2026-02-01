@@ -8,4 +8,3 @@ enum Level { SAFE, CEMETERY, WOODS, BOSS }
 static var current_level := Level.SAFE
 
 var game_over = false
-var boss_agro = false

@@ -3,4 +3,6 @@
 [ext_resource type="Script" uid="uid://b86sfjdni2cnt" path="res://scripts/enemy.gd" id="1_7p1mj"]
 
 [node name="Enemy" type="CharacterBody3D" unique_id=1759208191]
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_7p1mj")
