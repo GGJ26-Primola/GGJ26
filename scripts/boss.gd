@@ -9,7 +9,6 @@ extends Node3D
 @onready var scream_mesh: MeshInstance3D = $scream/MeshInstance3D
 @onready var timer: Timer = $Timer
 
-@onready var player: CharacterBody3D = %Player
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var boss_hitbox: Area3D = $BossHitbox
@@ -79,6 +78,10 @@ func _ready() -> void:
 	animState = animation_tree.get("parameters/playback")
 
 func _process(delta: float) -> void:
+	if not Global.boss_agro:
+		Phase = 1
+		move_num -1
+		return
 	state_machine(delta)
 	if Dialogic.VAR.current_mask == "pest":
 		timer.stop()
@@ -86,7 +89,6 @@ func _process(delta: float) -> void:
 func fire () -> void:
 	var bullet_instance = bullet.instantiate()
 	bullet_instance.position = Vector3(1.3,4.3,0)
-	bullet_instance.player = player
 	bullets.add_child(bullet_instance)
 
 func choose_next_move():

@@ -1,6 +1,6 @@
 extends Node
 
-#@onready var camera: Camera3D = %Camera3D
+@onready var camera: Camera3D = %Camera3D
 @onready var camera_player: PhantomCamera3D = $"../CameraPlayer"
 @onready var umarell: Node3D = $"../NPC/Umarell"
 @onready var player: CharacterBody3D = %Player
@@ -8,6 +8,12 @@ var last_checkpoint : Vector3
 
 var cat_running = false
 const RUN_SPEED = 5
+
+const fov_default := Vector3(0, 5, 5)
+const fov_1 := Vector3(0, 4, 4)
+const fov_2 := Vector3(0, 3, 3)
+const fov_boss := Vector3(0, 5, 10)
+
 
 @onready var cat_path: PathFollow3D = $"../NPC/CatPath3D/CatPathFollow3D"
 @onready var child_1_path: PathFollow3D = $"../NPC/CatPath3D/PathFollow3D"
@@ -29,6 +35,9 @@ const RUN_SPEED = 5
 @onready var offence_label: Label = $"../GraveyardGameOver/MainPanel/VBoxContainer/Label2"
 @onready var good_ghosts: Node3D = $"../GoodGhosts"
 @onready var evils_ghosts: Node3D = $"../EvilsGhosts"
+
+# BOSS
+@onready var bossfight: Node3D = $"../Bossfight/CameraFocus"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -68,13 +77,11 @@ func remove_target() -> void:
 
 func _on_dialogic_signal(argument: String) -> void:
 	if argument == "fov_0":
-		camera_player.follow_offset = Vector3(0, 5, 5)
+		camera_player.follow_offset = fov_default
 	elif argument == "fov_1":
-		camera_player.follow_offset = Vector3(0, 4, 4)
+		camera_player.follow_offset = fov_1
 	elif argument == "fov_2":
-		camera_player.follow_offset = Vector3(0, 3, 3)
-	elif argument == "fov_boss":
-		camera_player.follow_offset = Vector3(0, 8, 8)
+		camera_player.follow_offset = fov_2
 	elif argument == "cat_start":
 		start_cat()
 	elif argument == "cat_stop":
@@ -155,6 +162,10 @@ func start_timeline(timeline : DialogicTimeline) -> void:
 	Dialogic.start(timeline)
 
 func game_over() -> void:
+	camera_player.follow_offset = fov_default
+	camera_player.set_follow_targets([player])
+	camera.fov = 75
+	
 	Global.boss_agro = false
 	GameState.set_game_status(GameState.State.GAMEOVER)
 	offence_label.text = get_random_offence()
@@ -179,3 +190,20 @@ func cemetery_respawn() -> void:
 func get_random_offence() -> String:
 	var words = ["PATACCA", "SCIUPE"]
 	return words[randi_range(0, len(words) - 1)]
+
+## BOSSFIGHT ##
+
+func enter_boss_agro(body: Node3D) -> void:
+	if body.name == "Player":
+		camera_player.follow_offset = fov_boss
+		camera_player.set_follow_targets([player, bossfight])
+		camera.fov = 90
+		Global.boss_agro = true
+
+func exit_boss_agro(body: Node3D) -> void:
+	if body.name == "Player":
+		camera_player.follow_offset = fov_default
+		camera_player.set_follow_targets([player])
+		camera.fov = 75
+		
+		Global.boss_agro = false

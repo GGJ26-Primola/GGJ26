@@ -101,12 +101,13 @@ layout/style_directory={
 "conversation": "res://dialogic/styles/conversation.tres"
 }
 variables={
+"boss_last_death": "",
 "cemetery_bush": false,
 "cemetery_scroll": false,
 "cemetery_vial": false,
 "current_mask": "default",
 "dead_from_ghost": false,
-"mask_boss": false,
+"mask_boss": true,
 "mask_cat": false,
 "mask_default": true,
 "mask_ftp1": false,
