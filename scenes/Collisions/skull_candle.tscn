@@ -11,8 +11,8 @@ albedo_color = Color(0, 0.4862745, 0, 0.4392157)
 
 [sub_resource type="SphereMesh" id="SphereMesh_tjyon"]
 material = SubResource("StandardMaterial3D_tjyon")
-radius = 0.1
-height = 0.2
+radius = 0.2
+height = 0.4
 radial_segments = 8
 rings = 8
 
@@ -29,8 +29,8 @@ transform = Transform3D(-0.999996, -0.00282737, 0, 0.00282737, -0.999996, 0, 0, 
 shape = SubResource("SphereShape3D_tjyon")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." index="2" unique_id=123939135]
-transform = Transform3D(0.63386345, 0, 0, 0, 0.9663925, 0, 0, 0, 0.51813066, 0, 1.4024163, -0.17919064)
-amount = 50
+transform = Transform3D(0.94499713, 0, 0, 0, 1.2357423, 0, 0, 0, 0.51813066, 0, 1.688114, 0.023238957)
+amount = 20
 lifetime = 0.06999999999999999
 speed_scale = 0.1
 mesh = SubResource("SphereMesh_tjyon")
