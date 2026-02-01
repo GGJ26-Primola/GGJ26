@@ -93,6 +93,7 @@ directories/dtl_directory={
 "fantasmi_termsandconditions": "res://dialogic/Cemetery/fantasmi_termsandconditions.dtl",
 "fantasmi_vial": "res://dialogic/Cemetery/fantasmi_vial.dtl",
 "ftp1": "res://dialogic/woods/ftp1.dtl",
+"gameover": "res://dialogic/boss/gameover.dtl",
 "hitted_child_1": "res://dialogic/Safe zone/hitted_child_1.dtl",
 "hitted_child_2": "res://dialogic/Safe zone/hitted_child_2.dtl",
 "miao": "res://dialogic/miao.dtl",
@@ -104,7 +105,6 @@ layout/style_directory={
 "conversation": "res://dialogic/styles/conversation.tres"
 }
 variables={
-"boss_intro": false,
 "boss_last_death": "",
 "cemetery_bush": false,
 "cemetery_scroll": false,
@@ -112,9 +112,9 @@ variables={
 "current_mask": "default",
 "dead_from_ghost": false,
 "evil_item": true,
-"mask_boss": false,
-"mask_cat": false,
-"mask_default": false,
+"mask_boss": true,
+"mask_cat": true,
+"mask_default": true,
 "mask_ftp1": false,
 "mask_pest": true,
 "meow": 0,

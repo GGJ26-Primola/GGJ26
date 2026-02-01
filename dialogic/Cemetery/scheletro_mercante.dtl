@@ -37,5 +37,6 @@ scheletro_mercante: How can I help you?
 	scheletro_mercante: Ahhhh, I'm already feeling better!
 	join bush center
 	scheletro_mercante: Take this flower bad with a small bush!
+	set {cemetery_bush} = true
 	leave bush
 	Player: Just the thing I was looking for.

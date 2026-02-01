@@ -11,6 +11,8 @@ extends Node3D
 @onready var audio_mist: AudioStreamPlayer = $"../AudioMist"
 @onready var audio_bullets: AudioStreamPlayer = $"../AudioBullets"
 
+@onready var musics: Node = $"../../Musics"
+
 @onready var audio_idle: AudioStreamPlayer = $"../AudioIdle"
 @onready var audio_death: AudioStreamPlayer = $"../AudioDeath"
 
@@ -144,7 +146,7 @@ func choose_next_move():
 			max_hit = 3
 			
 	move_num += 1
-	if move_num > len(moves)-1:
+	if move_num > len(moves) - 1:
 		move_num = -1
 		Phase += 1
 		if Phase > 3:
@@ -308,6 +310,10 @@ func state_machine(delta: float) -> void:
 				disappear.tween_property(sprite, "modulate:a", 0, disappear_time)
 				await disappear.finished
 				queue_free()
+				
+				musics.change_music("safe")
+				GameState.current_game_status = GameState.State.GAMEOVER
+				Dialogic.start_timeline("gameover")
 
 func _on_timer_timeout() -> void:
 	Dialogic.VAR.boss_last_death = "mist"

@@ -1,0 +1,16 @@
+join Mazapégul (idle) right
+Mazapégul (idle): YOU WON!
+Mazapégul (idle): You defeated the terrible Borda!
+Mazapégul (idle): You truly are the hero of the village!
+Mazapégul (idle): You see, Borda kidnapped many children during the years.
+Mazapégul (idle): Many grandmothers told their grandchildren the story of the terrible Borda.
+Mazapégul (idle): "If you misbehave, she will come and take you away forever!"
+Mazapégul (idle): This has been a sad truth for too much time for those villagers, who lost so much because of her.
+Mazapégul (idle): But not anymore!
+Mazapégul (idle): You have defeated her, and now everybody will be free to smile and live free of fear of the woods!
+Mazapégul (idle): And without her shadow over these lands, i will be once again free to cause any kind of mischief!
+Mazapégul (idle): So i thank you, dear boy, and see you soon!
+leave Mazapégul
+join "Villico 6" right
+"Villico 6": Thanks for playing our game!
+[signal arg="quit"]

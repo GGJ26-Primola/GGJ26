@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://bu78ssf0f5nim" path="res://scenes/cat.tscn" id="2_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://b51wiu02jdl1b" path="res://assets/Music/safe_zone.wav" id="2_ca42v"]
 [ext_resource type="PackedScene" uid="uid://dxmdmtwbtv530" path="res://scenes/safe_zone.tscn" id="2_e1j6l"]
-[ext_resource type="Resource" path="res://dialogic/Safe zone/hitted_child_1.dtl" id="2_js0lu"]
+[ext_resource type="Resource" uid="uid://dshht4ncgt01m" path="res://dialogic/Safe zone/hitted_child_1.dtl" id="2_js0lu"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bqo0cfd63o4nl" path="res://scenes/menu.tscn" id="2_p57ef"]
 [ext_resource type="Script" uid="uid://dh0p4hudw1jkb" path="res://scripts/music_manager.gd" id="2_rysoc"]
-[ext_resource type="Resource" path="res://dialogic/Safe zone/hitted_child_2.dtl" id="3_gxtfn"]
+[ext_resource type="Resource" uid="uid://g8tjnldk20po" path="res://dialogic/Safe zone/hitted_child_2.dtl" id="3_gxtfn"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://be2mgdfg87nm3" path="res://assets/Music/cemetery.wav" id="3_rysoc"]
 [ext_resource type="PackedScene" uid="uid://c6wi5nthdn08o" path="res://scenes/interactible.tscn" id="3_u5sy4"]
@@ -46,7 +46,6 @@
 [ext_resource type="Resource" uid="uid://bnmpyrdm1oaoh" path="res://dialogic/Safe zone/1[Zona1] V6 Inizio quest gatto 1.dtl" id="31_nepv3"]
 [ext_resource type="Texture2D" uid="uid://b4syildw2wtmp" path="res://assets/2D/skeleton.png" id="32_3x28f"]
 [ext_resource type="Resource" uid="uid://15s883uo4k61" path="res://dialogic/Safe zone/Incontro con Mazanpegul.dtl" id="32_7025r"]
-[ext_resource type="Resource" path="res://dialogic/Cemetery/scheletro_mercante.dtl" id="32_bnuda"]
 [ext_resource type="Resource" uid="uid://l7ty1sxvjf1q" path="res://dialogic/woods/ftp1.dtl" id="32_xbak0"]
 [ext_resource type="PackedScene" uid="uid://wwx5yv6ev5yr" path="res://scenes/woods.tscn" id="33_v2yb1"]
 [ext_resource type="PackedScene" uid="uid://c0uv0iitg3qpb" path="res://scenes/graveyard_game_over.tscn" id="40_05nbr"]
@@ -64,16 +63,6 @@
 [ext_resource type="PackedScene" uid="uid://c3715oyku61f8" path="res://scenes/Collisions/tree_pine_yellow_medium.tscn" id="50_7ixpq"]
 [ext_resource type="PackedScene" uid="uid://ckcwxssmjgdri" path="res://scenes/Collisions/tree_pine_orange_medium.tscn" id="51_bk1p3"]
 [ext_resource type="PackedScene" uid="uid://67ph82uhj4oh" path="res://scenes/Collisions/tree_pine_orange_large.tscn" id="52_n8ral"]
-[ext_resource type="Resource" path="res://dialogic/Cemetery/fantasmi_lindas.dtl" id="48_yd4ix"]
-[ext_resource type="Texture2D" uid="uid://cdihffb0jdkfp" path="res://assets/2D/blue_ghost.png" id="49_7ixpq"]
-[ext_resource type="PackedScene" uid="uid://btsroxy2eeykp" path="res://scenes/Collisions/tree_pine_yellow_large.tscn" id="49_ms3bu"]
-[ext_resource type="PackedScene" uid="uid://c3715oyku61f8" path="res://scenes/Collisions/tree_pine_yellow_medium.tscn" id="50_7ixpq"]
-[ext_resource type="Resource" path="res://dialogic/Cemetery/fantasmi.dtl" id="50_bk1p3"]
-[ext_resource type="PackedScene" uid="uid://ckcwxssmjgdri" path="res://scenes/Collisions/tree_pine_orange_medium.tscn" id="51_bk1p3"]
-[ext_resource type="PackedScene" uid="uid://67ph82uhj4oh" path="res://scenes/Collisions/tree_pine_orange_large.tscn" id="52_n8ral"]
-[ext_resource type="Resource" path="res://dialogic/Cemetery/fantasmi_smith.dtl" id="52_weeiq"]
-[ext_resource type="Resource" path="res://dialogic/Cemetery/fantasmi_termsandconditions.dtl" id="53_uxocx"]
-[ext_resource type="Resource" path="res://dialogic/Cemetery/fantasmi_vial.dtl" id="54_7nv0b"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ssvqc"]
 clip_count = 4
@@ -750,12 +739,12 @@ shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1338356758 instance=ExtResource("1_uwrxv")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6516596, 10.975374, -5.3793435)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.81356, 17.23908, -46.020645)
 collision_layer = 3
 collision_mask = 3
 
 [node name="CameraPlayer" type="Node3D" parent="." unique_id=386739997 node_paths=PackedStringArray("follow_targets")]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, -0.6516596, 16.682482, 0.32776326)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 103.81356, 22.946188, -40.313538)
 top_level = true
 script = ExtResource("2_lnu2h")
 follow_mode = 3
@@ -771,7 +760,7 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1455375748]
 unique_name_in_owner = true
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071067, 0, -0.7071067, 0.7071068, -0.6516596, 16.682482, 0.32776326)
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071067, 0, -0.7071067, 0.7071068, 103.81356, 22.946188, -40.313538)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1699421758]
