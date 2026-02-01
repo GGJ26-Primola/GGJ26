@@ -8,7 +8,9 @@ elif {mask_cat} == false:
 	Mazapégul (idle): You have found something to unlock the gate!
 	Mazapégul (idle): BUT BEWARE!
 	Mazapégul (idle): Inside the graveyard the are thing that you cannot hit with a stick!
-	Mazapégul (idle): Find something that protects you from evil spirits!
+	Mazapégul (idle): Find something that protects you from evil magic!
+	Mazapégul: That same malignant power is making the spirits go crazy.
+	Mazapégul: There must be something inside the graveyard that is controlling them.
 	[end_timeline]
 elif {dead_from_ghost} == true:
 	Mazapégul (idle): I told you that you are a PATACCA!
