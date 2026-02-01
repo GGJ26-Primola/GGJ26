@@ -1,0 +1,11 @@
+if {mask_ftp1} == true:
+	Player: I alredy have this mask.
+	[end_timeline]
+Player: A skeleton with a ftp1 maks
+join Mascherina center
+set {mask_ftp1} = true
+[signal arg="inventory"]
+[signal arg="take_ftp1"]
+Player: I think it's still good to use.
+audio "res://assets/Music/SFX/MASK 3.wav"
+leave Mascherina

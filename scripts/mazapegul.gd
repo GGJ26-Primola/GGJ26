@@ -4,6 +4,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	play_animation()
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	
 func _on_dialogic_signal(argument: String) -> void:
@@ -14,4 +15,4 @@ func play_animation() -> void:
 	if Dialogic.VAR.mask_default:
 		animated_sprite.play("idle")
 	else:
-		animated_sprite.play("idle_mask")
+		animated_sprite.play("idle_hat")

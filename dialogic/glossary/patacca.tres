@@ -25,6 +25,11 @@ entries = {
 "text": "PATACCA is a name for describe a useful person",
 "title": "PATACCA"
 },
+"Umarello-Jutsu": {
+"name": "Umarello-Jutsu",
+"text": "Just hitting someone with a stick",
+"title": "Umarello-Jutsu"
+},
 "whistle": {
 "alternatives": ["whistling"],
 "name": "whistle",
