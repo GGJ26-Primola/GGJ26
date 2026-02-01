@@ -1,4 +1,4 @@
-# Il gatto cambia forma e diventa più grande, rivelando la sua forma gatto mammone
+join "Gatto Mammone" right
 [signal arg="gatto_mammone"]
 if {meow} == 0:
 	audio "res://assets/Music/SFX/CAT TALK1.wav"

@@ -31,12 +31,12 @@ const fov_boss := Vector3(0, 5, 10)
 @onready var skeleton_without_mask: Sprite3D = $"../NPC/ftp1_mask/SpriteWithoutMask"
 
 # Cemetery
+static var good_ghosts_scene := preload("res://scenes/good_ghosts.tscn")
 @onready var cemetery_death_audio : AudioStreamPlayer = $"../Musics/CemeteryDeathAudio"
 @onready var cemetery_death_timer : Timer = $CemeteryDeathTimer
 @onready var cemetery_respawn_timer: Timer = $CemeteryRespawnTimer
 @onready var graveyard_game_over: Control = $"../GraveyardGameOver"
 @onready var offence_label: Label = $"../GraveyardGameOver/MainPanel/VBoxContainer/Label2"
-@onready var good_ghosts: Node3D = $"../GoodGhosts"
 @onready var evils_ghosts: Node3D = $"../EvilsGhosts"
 
 # BOSS
@@ -66,7 +66,6 @@ func _ready() -> void:
 	graveyard_game_over.hide()
 	
 	if Dialogic.VAR.evil_item:
-		good_ghosts.hide()
 		evils_ghosts.show()
 	else:
 		destroyed_evil_item()
@@ -192,10 +191,13 @@ func game_over() -> void:
 
 func destroyed_evil_item() -> void:
 	Dialogic.VAR.evil_item = false
-	good_ghosts.show()
 	evils_ghosts.queue_free()
 	cemetery_death_audio.stop()
 	cemetery_death_timer.stop()
+	
+	# Instantiate good ghosts scene
+	var gg_scene := good_ghosts_scene.instantiate()
+	add_child(gg_scene)
 
 func cemetery_game_over() -> void:
 	Dialogic.VAR.dead_from_ghost = true

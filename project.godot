@@ -115,7 +115,7 @@ variables={
 "evil_item": true,
 "mask_boss": false,
 "mask_cat": false,
-"mask_default": true,
+"mask_default": false,
 "mask_ftp1": false,
 "mask_pest": true,
 "meow": 0,
