@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://c2p4yelnwchdx" path="res://scenes/Collisions/tree_dead_medium.tscn" id="27_pgi4y"]
 [ext_resource type="PackedScene" uid="uid://coctxygy26lp8" path="res://assets/Mesh Graveyard/fbx/skull.fbx" id="28_7dbwh"]
 [ext_resource type="PackedScene" uid="uid://cc5kaqcimh0k" path="res://scenes/Collisions/ribcage.tscn" id="30_17ynj"]
-[ext_resource type="PackedScene" uid="uid://2nr31b5horhe" path="res://scenes/Collisions/skull_candle.tscn" id="32_lgker"]
 [ext_resource type="PackedScene" uid="uid://bryc4xnelx42o" path="res://scenes/Collisions/coffin.tscn" id="33_dxgjj"]
 [ext_resource type="PackedScene" uid="uid://c5g8j04a838e4" path="res://scenes/Collisions/skull.tscn" id="34_5uk6q"]
 [ext_resource type="PackedScene" uid="uid://dqd8bpulvpe1w" path="res://assets/Mesh Graveyard/fbx/candle_melted.fbx" id="35_lbgwf"]
@@ -183,15 +182,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1418861, 2.1064544, 39.809
 
 [node name="arch" parent="Terrain/HTerrain/misc" unique_id=1902237570 instance=ExtResource("46_3f8l7")]
 transform = Transform3D(0.86708, 0.12673567, 0.48177835, -0.110783264, 0.9919365, -0.06155485, -0.48569474, 0, 0.8741285, 43.14878, -0.2834568, -1.7685394)
-
-[node name="skull_candle6" parent="Terrain/HTerrain/misc" unique_id=751045213 instance=ExtResource("32_lgker")]
-transform = Transform3D(-0.2629639, 0, 0.96480566, 0, 1, 0, -0.96480566, 0, -0.2629639, -52.191647, -4.321327, -30.029587)
-
-[node name="skull_candle7" parent="Terrain/HTerrain/misc" unique_id=821616363 instance=ExtResource("32_lgker")]
-transform = Transform3D(0.44828963, 0, 0.89388835, -0.16714549, 0.9823624, 0.08382433, -0.87812227, -0.18698698, 0.44038287, -1.1947727, -4.025793, -51.11705)
-
-[node name="skull_candle8" parent="Terrain/HTerrain/misc" unique_id=922160194 instance=ExtResource("32_lgker")]
-transform = Transform3D(-0.25451759, 0, 0.96706814, 0, 1, 0, -0.96706814, 0, -0.25451759, -52.857983, -5.0487537, -31.880142)
 
 [node name="post_lantern6" parent="Terrain/HTerrain/misc" unique_id=490590645 instance=ExtResource("24_lgker")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.497005, 5.4107466, 53.762535)
