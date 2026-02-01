@@ -107,6 +107,7 @@ layout/style_directory={
 "conversation": "res://dialogic/styles/conversation.tres"
 }
 variables={
+"boss_intro": false,
 "boss_last_death": "",
 "cemetery_bush": false,
 "cemetery_scroll": false,
@@ -114,13 +115,13 @@ variables={
 "current_mask": "default",
 "dead_from_ghost": false,
 "evil_item": true,
-"mask_boss": true,
-"mask_cat": true,
-"mask_default": true,
+"mask_boss": false,
+"mask_cat": false,
+"mask_default": false,
 "mask_ftp1": false,
-"mask_pest": true,
+"mask_pest": false,
 "meow": 0,
-"stick": true,
+"stick": false,
 "umarell_hitted": false
 }
 extensions_folder="res://addons/dialogic_additions"

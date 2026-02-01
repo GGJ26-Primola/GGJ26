@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dyxlrpi7d10g" path="res://assets/textures/Grass005_1K-PNG_AmbientOcclusion.png" id="5_gk5tg"]
 [ext_resource type="Texture2D" uid="uid://nra28017mqyk" path="res://assets/textures/R.jpg" id="6_y6g3r"]
 [ext_resource type="PackedScene" uid="uid://67ph82uhj4oh" path="res://scenes/Collisions/tree_pine_orange_large.tscn" id="7_6ovqo"]
-[ext_resource type="PackedScene" path="res://scenes/Collisions/tree_pine_yellow_large.tscn" id="8_sacjn"]
+[ext_resource type="PackedScene" uid="uid://btsroxy2eeykp" path="res://scenes/Collisions/tree_pine_yellow_large.tscn" id="8_sacjn"]
 [ext_resource type="PackedScene" uid="uid://ckcwxssmjgdri" path="res://scenes/Collisions/tree_pine_orange_medium.tscn" id="10_jvtka"]
 [ext_resource type="PackedScene" uid="uid://cnmluv43bqtv6" path="res://scenes/Collisions/boulderX.tscn" id="11_gk5tg"]
 [ext_resource type="PackedScene" uid="uid://dnw3xyfeekf8g" path="res://scenes/Collisions/boulderZ.tscn" id="12_y6g3r"]
@@ -38,11 +38,12 @@
 [ext_resource type="PackedScene" uid="uid://cdgu60xdy4f2g" path="res://assets/Mesh Woods/Rocks/Flat_Rock_08.glb" id="34_57qtr"]
 [ext_resource type="PackedScene" uid="uid://5dk3a2jci4i4" path="res://assets/Mesh Woods/Rocks/Flat_Rock_10.glb" id="35_qae4p"]
 [ext_resource type="PackedScene" uid="uid://ck2llnyw0nr81" path="res://scenes/cespuglio_bacche_2.tscn" id="36_qpljy"]
-[ext_resource type="Material" uid="uid://b3eykt7r4wf4k" path="res://assets/textures/Grass005_1K-PNG.tres" id="38_18v45"]
+[ext_resource type="Material" path="res://assets/textures/Grass005_1K-PNG.tres" id="38_18v45"]
 [ext_resource type="PackedScene" uid="uid://ddfrxhu8h3urn" path="res://assets/modelli klaus/Braciere1 (1).glb" id="40_cqfx6"]
 [ext_resource type="PackedScene" uid="uid://baw3jcac833xn" path="res://assets/modelli klaus/Colonna1 (1).glb" id="41_3vo27"]
 [ext_resource type="PackedScene" uid="uid://hrebp14ihag6" path="res://assets/modelli klaus/Colonna1.glb" id="42_xd12l"]
 [ext_resource type="PackedScene" uid="uid://lgnna3vtjn7d" path="res://assets/modelli klaus/Colonna2.glb" id="43_uaw7y"]
+
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vo27"]
 radius = 0.95996094
