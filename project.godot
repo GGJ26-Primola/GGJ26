@@ -101,7 +101,6 @@ layout/style_directory={
 "conversation": "res://dialogic/styles/conversation.tres"
 }
 variables={
-"boss_last_death": "",
 "cemetery_bush": false,
 "cemetery_scroll": false,
 "cemetery_vial": false,

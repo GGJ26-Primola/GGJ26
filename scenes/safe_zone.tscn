@@ -32,9 +32,11 @@
 [ext_resource type="PackedScene" uid="uid://ck2llnyw0nr81" path="res://scenes/cespuglio_bacche_2.tscn" id="33_3rgd6"]
 [ext_resource type="PackedScene" uid="uid://dwapv8iv1pid6" path="res://scenes/albero_1.tscn" id="34_2nqb3"]
 [ext_resource type="PackedScene" uid="uid://pg5srqam86l1" path="res://assets/Mesh Woods/tree_dead_small.fbx" id="34_3rgd6"]
+[ext_resource type="PackedScene" uid="uid://bu0csnq00pyyi" path="res://scenes/Collisions/fence.tscn" id="35_2jpf8"]
 [ext_resource type="PackedScene" uid="uid://cpo7hpc1jkyh1" path="res://assets/Mesh Woods/tree_dead_large_decorated.fbx" id="35_2nqb3"]
 [ext_resource type="PackedScene" uid="uid://un875knrpwga" path="res://scenes/pozzo_1.tscn" id="35_607xk"]
 [ext_resource type="PackedScene" uid="uid://biodym60jxpwh" path="res://assets/Mesh Woods/tree_pine_yellow_small.fbx" id="36_2jpf8"]
+[ext_resource type="PackedScene" uid="uid://0rnjgk85woi0" path="res://scenes/Collisions/shrine.tscn" id="36_3rgd6"]
 
 [sub_resource type="Resource" id="Resource_v8mog"]
 script = ExtResource("8_8s1qs")
@@ -84,6 +86,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5r6v5")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2nqb3"]
+size = Vector3(6.214697, 0.001, 10.727783)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_74b8q"]
+size = Vector3(3.9091797, 1.6314087, 0.8973999)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_mg75l"]
 size = Vector3(4.37323, 9.573242, 62.967384)
 
@@ -92,6 +100,10 @@ size = Vector3(2.6831055, 4.813965, 52.613403)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3rgd6"]
 size = Vector3(10.565826, 8.434082, 5.336914)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_607xk"]
+height = 4.3517914
+radius = 2.3295898
 
 [node name="SafeZone" type="Node" unique_id=1897293832]
 
@@ -579,12 +591,13 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 6.6853485, 1.092761,
 transform = Transform3D(-1.2126939, 0.027859626, 0.046710458, -0.1842428, 0.04358117, -0.2880017, -0.1154037, -0.3623344, -0.031049006, -27.149128, 3.7972412, -30.914612)
 
 [node name="Boulder 3 f" type="MeshInstance3D" parent="Lev/Terrain/HTerrain/Misc/Flat_Boulder_03" unique_id=1349314332]
-transform = Transform3D(0.9999519, -0.008952845, 0.004082855, 0.007846922, 0.9758954, 0.2180987, -0.005936973, -0.21805602, 0.9759183, 0.084135056, -0.19625854, 2.0029373)
+transform = Transform3D(0.999952, -0.008952849, 0.0040828483, 0.007846981, 0.9758955, 0.21809876, -0.005936902, -0.21805605, 0.97591835, 0.084135056, -0.19625854, 2.0029373)
 mesh = SubResource("ArrayMesh_byv58")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("17_ocx5q")
 
-[node name="Flat_Boulder_03" parent="Lev/Terrain/HTerrain/Misc/Flat_Boulder_03/Boulder 3 f" unique_id=1168624160 instance=ExtResource("17_5g4u4")]
+[node name="StaticBody3D" type="StaticBody3D" parent="Lev/Terrain/HTerrain/Misc/Flat_Boulder_03" unique_id=262532356]
+transform = Transform3D(0.999952, -0.0089528505, 0.0040828483, 0.0078469515, 0.9758955, 0.21809876, -0.0059369653, -0.21805605, 0.97591835, 0.0015618429, 8.804546, -0.008220673)
 
 [node name="Boulder 3 f5" type="MeshInstance3D" parent="Lev/Terrain/HTerrain/Misc/Flat_Boulder_03" unique_id=1680030914]
 transform = Transform3D(0.9999521, -0.008952856, 0.0040828427, 0.007847071, 0.9758958, 0.2180988, -0.0059368275, -0.21805611, 0.97591853, -9.057468, -3.4458313, 3.4933472)
@@ -598,8 +611,8 @@ mesh = SubResource("ArrayMesh_byv58")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("17_ocx5q")
 
-[node name="Boulder 3 f4" type="MeshInstance3D" parent="Lev/Terrain/HTerrain/Misc/Flat_Boulder_03" unique_id=1993161187]
-transform = Transform3D(0.98037803, 0.19695064, -0.008516723, -0.018437296, 0.1346208, 0.99072677, 0.19627012, -0.9711286, 0.13561025, -41.975975, -3.1943054, 26.77173)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lev/Terrain/HTerrain/Misc/Flat_Boulder_03" unique_id=1993161187]
+transform = Transform3D(0.98037815, 0.19695067, -0.008516723, -0.018437237, 0.13462082, 0.99072695, 0.1962702, -0.97112864, 0.13561027, -41.97598, -3.1943054, 26.77173)
 mesh = SubResource("ArrayMesh_byv58")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("17_ocx5q")
@@ -667,6 +680,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.677973, 4.766243, -28.746
 [node name="tree_pine_orange_large" parent="Lev/Terrain/HTerrain/Misc" unique_id=306900365 instance=ExtResource("26_v73hy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.502808, 4.364889, -32.3115)
 
+[node name="Node3D" type="Node3D" parent="Lev/Terrain/HTerrain/Misc" unique_id=1502102461]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Lev/Terrain/HTerrain/Misc/Node3D" unique_id=393779661]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 5.5879354e-09, 0, -2.0954758e-08, 1.0000001, 1.9073486e-06, 0, 3.8146973e-06)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lev/Terrain/HTerrain/Misc/Node3D/StaticBody3D" unique_id=1118920453]
+transform = Transform3D(0.062406763, -0.03582801, 0.9974075, -0.15526637, 0.9868393, 0.04516322, -0.9858994, -0.15768223, 0.056022618, -25.359573, 4.265628, -34.802025)
+shape = SubResource("BoxShape3D_2nqb3")
+debug_color = Color(0.9577566, 2.8878452e-07, 0.5334733, 0.41960785)
+
+[node name="fence" parent="Lev/Terrain/HTerrain/Misc" unique_id=515575620 instance=ExtResource("35_2jpf8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.215687, 4.6307545, -33.327316)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Lev/Terrain/HTerrain/Misc/fence" unique_id=255761618]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lev/Terrain/HTerrain/Misc/fence/StaticBody3D" unique_id=452918961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011230469, 1.3927307, 0.05130005)
+shape = SubResource("BoxShape3D_74b8q")
+
 [node name="Node3D" type="Node3D" parent="Lev/Terrain" unique_id=1606884205]
 transform = Transform3D(-4.3711392e-08, 0, 0.99999976, 0, 0.9999997, 0, -1.0000001, 0, -4.3711378e-08, -2.417982, 15.051104, -30.817799)
 
@@ -707,8 +739,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.169693, -3.717041, -2.16845
 shape = SubResource("BoxShape3D_3rgd6")
 debug_color = Color(0.90544736, 0.13361347, 0.6730395, 0.41960785)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Lev/Terrain" unique_id=1654753829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.032736, 21.956463, -41.48682)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lev/Terrain/StaticBody3D" unique_id=360137352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9581947, -6.8918514, 6.6022263)
+shape = SubResource("CylinderShape3D_607xk")
+
 [node name="Flat_Boulder_02" parent="." unique_id=221972456 instance=ExtResource("30_mg75l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.52482, 11.884377, -64.362946)
 
 [node name="Pozzo1" parent="." unique_id=864482933 instance=ExtResource("35_607xk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40514684, 8.783014, -29.05604)
+
+[node name="shrine" parent="." unique_id=1279285287 instance=ExtResource("36_3rgd6")]
+transform = Transform3D(1.574229, -0.1070445, -0.003196669, 0.24093536, 0.69885194, 0.050180644, -0.0051764753, -0.025971139, 1.3634764, -22.331884, 14.85054, -62.29234)
