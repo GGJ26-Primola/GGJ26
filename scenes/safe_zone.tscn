@@ -591,7 +591,7 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 6.6853485, 1.092761,
 transform = Transform3D(-1.2126939, 0.027859626, 0.046710458, -0.1842428, 0.04358117, -0.2880017, -0.1154037, -0.3623344, -0.031049006, -27.149128, 3.7972412, -30.914612)
 
 [node name="Boulder 3 f" type="MeshInstance3D" parent="Lev/Terrain/HTerrain/Misc/Flat_Boulder_03" unique_id=1349314332]
-transform = Transform3D(0.999952, -0.008952849, 0.0040828483, 0.007846981, 0.9758955, 0.21809876, -0.005936902, -0.21805605, 0.97591835, 0.084135056, -0.19625854, 2.0029373)
+transform = Transform3D(0.9999521, -0.008952849, 0.0040828455, 0.007847011, 0.9758957, 0.21809879, -0.005936835, -0.21805611, 0.9759184, 0.084135056, -0.19625854, 2.0029373)
 mesh = SubResource("ArrayMesh_byv58")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("17_ocx5q")
