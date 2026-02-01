@@ -6,14 +6,15 @@
 script = ExtResource("1_aht5b")
 entries = {
 "Borda": {
+"case_sensitive": true,
 "name": "Borda",
-"text": "A terrible hag, kidnapping children",
+"text": "A terrible hag, kidnapping misbehaving children",
 "title": "Borda"
 },
 "Gatto Mammone": {
 "case_sensitive": true,
 "name": "Gatto Mammone",
-"text": "A magical cat that can see spirits",
+"text": "A magical cat that guards spirits",
 "title": "Gatto Mammone"
 },
 "Mazapégul": {
@@ -27,7 +28,7 @@ entries = {
 "case_sensitive": true,
 "extra": "es: you are a PATACCA!",
 "name": "PATACCA",
-"text": "PATACCA is a name for describe a useful person",
+"text": "Common insult in Romagna",
 "title": "PATACCA"
 },
 "Umarello-Jutsu": {
@@ -38,7 +39,7 @@ entries = {
 "whistle": {
 "alternatives": ["whistling"],
 "name": "whistle",
-"text": "In folk legends, the Basilisk's call is a whistle",
+"text": "In folk legends of Romagna, the Basilisk's call is a whistle",
 "title": "Whistle"
 },
 "whistling": "whistle"
