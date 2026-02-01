@@ -86,6 +86,7 @@ directories/dtl_directory={
 "2 Secondo incontro Mazapégul": "res://dialogic/Cemetery/2 Secondo incontro Mazapégul.dtl",
 "GrimBalduzzi": "res://dialogic/Cemetery/GrimBalduzzi.dtl",
 "Incontro con Mazanpegul": "res://dialogic/Safe zone/Incontro con Mazanpegul.dtl",
+"book num": "res://dialogic/Safe zone/book num.dtl",
 "boss_hints": "res://dialogic/boss/boss_hints.dtl",
 "fantasmi": "res://dialogic/Cemetery/fantasmi.dtl",
 "fantasmi_lindas": "res://dialogic/Cemetery/fantasmi_lindas.dtl",
