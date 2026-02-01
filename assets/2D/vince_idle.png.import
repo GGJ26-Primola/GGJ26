@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hc3qdy1uyy50"
-path.s3tc="res://.godot/imported/gatto_mammone_idle.png-cb8c256789a34e841bc8264a98823bee.s3tc.ctex"
+uid="uid://ccafkyk0fqhn6"
+path.s3tc="res://.godot/imported/vince_idle.png-afef4e5ed1ced3348346259d703a52dd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/2D/gatto_mammone_idle.png"
-dest_files=["res://.godot/imported/gatto_mammone_idle.png-cb8c256789a34e841bc8264a98823bee.s3tc.ctex"]
+source_file="res://assets/2D/vince_idle.png"
+dest_files=["res://.godot/imported/vince_idle.png-afef4e5ed1ced3348346259d703a52dd.s3tc.ctex"]
 
 [params]
 

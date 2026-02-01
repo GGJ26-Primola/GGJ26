@@ -1,4 +1,5 @@
 join "Gatto Mammone" right
+[signal arg="gatto_mammone"]
 if {meow} == 0:
 	audio "res://assets/Music/SFX/CAT TALK1.wav"
 	set {meow} = 1
