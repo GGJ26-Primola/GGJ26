@@ -85,6 +85,7 @@ directories/dtl_directory={
 "2 Secondo incontro Mazapégul": "res://dialogic/Cemetery/2 Secondo incontro Mazapégul.dtl",
 "GrimBalduzzi": "res://dialogic/Cemetery/GrimBalduzzi.dtl",
 "Incontro con Mazanpegul": "res://dialogic/Safe zone/Incontro con Mazanpegul.dtl",
+"boss_hints": "res://dialogic/boss/boss_hints.dtl",
 "fantasmi": "res://dialogic/Cemetery/fantasmi.dtl",
 "fantasmi_lindas": "res://dialogic/Cemetery/fantasmi_lindas.dtl",
 "fantasmi_smith": "res://dialogic/Cemetery/fantasmi_smith.dtl",
@@ -101,6 +102,7 @@ layout/style_directory={
 "conversation": "res://dialogic/styles/conversation.tres"
 }
 variables={
+"boss_intro": false,
 "boss_last_death": "",
 "cemetery_bush": false,
 "cemetery_scroll": false,

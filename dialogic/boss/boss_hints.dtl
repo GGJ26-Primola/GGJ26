@@ -1,0 +1,31 @@
+join Mazapégul (idle) right
+if {boss_intro} == false:
+	set {boss_intro} = true
+	Mazapégul: You'll find the Borda ahead.
+	Mazapégul: Good luck!
+if {stick} != true:
+	Mazapégul: Are you sure you want to fight the Borda without a weapon?
+	- Yes
+		Mazapégul: You're a weirdo...
+	- No
+		Mazapégul: Then go and find one!
+	[end_timeline]
+if {boss_last_death} == "bullet":
+	Mazapégul: I see you died from the Borda magic. Try to dodge it!
+	[end_timeline]
+elif {boss_last_death} == "mist":
+	if {mask_pest} == true:
+		Mazapégul: So you died from her poisonous mist?
+		Mazapégul: You should have something useful for it...
+	else:
+		Mazapégul: So you died from her poisonous mist?
+		Mazapégul: You should be looking for something to survive it...
+	[end_timeline]
+elif {boss_last_death} == "scream":
+	if {mask_boss} == true:
+		Mazapégul: That crazy scream killed you, huh?
+		Mazapégul: You know, a whistle could stop it.
+	else:
+		Mazapégul: That crazy scream killed you, huh?
+		Mazapégul: You should look for a whistling mask...
+	[end_timeline]

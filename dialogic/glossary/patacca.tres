@@ -6,6 +6,7 @@
 script = ExtResource("1_aht5b")
 entries = {
 "Gatto Mammone": {
+"case_sensitive": true,
 "name": "Gatto Mammone",
 "text": "A magical cat that can see spirits",
 "title": "Gatto Mammone"
@@ -23,5 +24,12 @@ entries = {
 "name": "PATACCA",
 "text": "PATACCA is a name for describe a useful person",
 "title": "PATACCA"
-}
+},
+"whistle": {
+"alternatives": ["whistling"],
+"name": "whistle",
+"text": "In folk legends, the Basilisk's call is a whistle",
+"title": "Whistle"
+},
+"whistling": "whistle"
 }
