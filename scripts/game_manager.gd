@@ -209,7 +209,7 @@ func cemetery_respawn() -> void:
 	GameState.set_game_status(GameState.State.PLAYING)
 
 func get_random_offence() -> String:
-	var words = ["PATACCA", "SCIUPE", "QUAJON", "INVURNI", "INCICIUI", "SVARNAZA", "CIU", "IGNURANT"]
+	var words = ["PATACCA", "QUAJON", "INVURNI", "INCICIUI", "SVARNAZA", "CIU", "IGNURANT"]
 	return words[randi_range(0, len(words) - 1)]
 
 ## WOODS ##

@@ -1,3 +1,6 @@
+if {cemetery_scroll} == true:
+	Fantasma2: Thanks for having signed our contract!
+	[end_timeline]
 Fantasma2: To proceed, accept our terms and conditions.
 Player: Terms and conditions?
 Fantasma2: Of course. Here you go.

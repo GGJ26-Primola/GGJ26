@@ -40,7 +40,7 @@ set {mask_default} = true
 [signal arg="mazapegul"]
 join berretto center
 label Maschera1
-- Take the mask and the weapon
+- Take the mask
 	leave berretto
 	[signal arg="intro_end"]
 	Mazapégul (idle): This mask shall hide your identity, for the time being.

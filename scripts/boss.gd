@@ -135,7 +135,7 @@ func choose_next_move():
 	
 	match Phase:
 		1:
-			moves = [MIST, SCREAM]
+			moves = [BULLETS, SCREAM]
 			max_hit = 1
 		2:
 			moves = [BULLETS, MIST, SCREAM]
@@ -203,8 +203,8 @@ func state_machine(delta: float) -> void:
 				mist_expanding = false
 				var expand_mist = create_tween().set_parallel(true)
 				expand_mist.tween_property(mist, "disabled", false, 3)
-				expand_mist.tween_property(mist, "scale", Vector3(8,1,10), mist_expand_time)
-				expand_mist.tween_property(mist, "position:z", 10, mist_expand_time)
+				expand_mist.tween_property(mist, "scale", Vector3(16,1,20), mist_expand_time)
+				expand_mist.tween_property(mist, "position:z", 8, mist_expand_time)
 				await expand_mist.finished
 				
 				var remove_mist = create_tween().set_parallel(true)
@@ -313,7 +313,7 @@ func state_machine(delta: float) -> void:
 				
 				musics.change_music("safe")
 				GameState.current_game_status = GameState.State.GAMEOVER
-				Dialogic.start_timeline("gameover")
+				Dialogic.start("gameover")
 
 func _on_timer_timeout() -> void:
 	Dialogic.VAR.boss_last_death = "mist"
