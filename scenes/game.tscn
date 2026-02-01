@@ -34,7 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://d1m6gsuv8l63j" path="res://assets/2D/mazapegul_idle.png" id="25_m4url"]
 [ext_resource type="Resource" uid="uid://dbmq8cmqa8wls" path="res://dialogic/Safe zone/1[Zona1] Dialogo con Villico 1.dtl" id="25_wljb1"]
 [ext_resource type="Texture2D" uid="uid://cdogkwrkjp13t" path="res://assets/2D/mazapegul_idle_with_hat.png" id="26_8ool0"]
-[ext_resource type="Resource" uid="uid://cqxbtqudrldrs" path="res://dialogic/Cemetery/2 Secondo incontro Mazapégul.dtl" id="26_pr1ej"]
+[ext_resource type="Resource" path="res://dialogic/Cemetery/2 Secondo incontro Mazapégul.dtl" id="26_pr1ej"]
 [ext_resource type="Resource" uid="uid://dwpuiw3hquai" path="res://dialogic/Safe zone/1[Zona 1] Dialogo con villico 2.dtl" id="26_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://6ii0307e2il5" path="res://assets/2D/npc1_idle.png" id="27_js0lu"]
 [ext_resource type="Resource" uid="uid://3m3iwwpkrohn" path="res://dialogic/Safe zone/1[Zona1] Dialogo con villico 3.dtl" id="28_gxtfn"]
@@ -46,6 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://c0uv0iitg3qpb" path="res://scenes/graveyard_game_over.tscn" id="40_05nbr"]
 [ext_resource type="PackedScene" uid="uid://2nr31b5horhe" path="res://scenes/Collisions/skull_candle.tscn" id="40_bk1p3"]
 [ext_resource type="PackedScene" uid="uid://dvtfflyj2wnh7" path="res://scenes/Graveyard.tscn" id="40_m4url"]
+[ext_resource type="Script" uid="uid://cuffvge5ad4aa" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_3d.gd" id="40_yd4ix"]
 [ext_resource type="PackedScene" uid="uid://dsf1im1wt7jie" path="res://scenes/Collisions/arch_gate.tscn" id="41_8ool0"]
 [ext_resource type="PackedScene" uid="uid://0eameechcba5" path="res://scenes/snake.tscn" id="44_0sl42"]
 [ext_resource type="PackedScene" uid="uid://lkcb5qva01jm" path="res://scenes/ghost.tscn" id="45_oaba0"]
@@ -53,10 +54,11 @@
 [ext_resource type="PackedScene" uid="uid://bb2b4bacfh66b" path="res://assets/Mesh Woods/tree_pine_orange_large.fbx" id="46_o8ni1"]
 [ext_resource type="PackedScene" uid="uid://b7xlkcf006u1g" path="res://assets/Mesh Woods/tree_pine_orange_medium.fbx" id="47_3hbvx"]
 [ext_resource type="PackedScene" uid="uid://lbnw7nxspft8" path="res://assets/Mesh Woods/tree_pine_yellow_medium.fbx" id="48_q8j3a"]
+[ext_resource type="Resource" uid="uid://egj6wr1ylxnd" path="res://dialogic/Cemetery/fantasmi_lindas.dtl" id="48_yd4ix"]
 [ext_resource type="Texture2D" uid="uid://cdihffb0jdkfp" path="res://assets/2D/blue_ghost.png" id="49_7ixpq"]
 [ext_resource type="PackedScene" path="res://scenes/Collisions/tree_pine_yellow_large.tscn" id="49_ms3bu"]
 [ext_resource type="PackedScene" uid="uid://c3715oyku61f8" path="res://scenes/Collisions/tree_pine_yellow_medium.tscn" id="50_7ixpq"]
-[ext_resource type="Resource" uid="uid://c467j3k2yocx8" path="res://dialogic/Cemetery/fantasmi.dtl" id="50_bk1p3"]
+[ext_resource type="Resource" path="res://dialogic/Cemetery/fantasmi.dtl" id="50_bk1p3"]
 [ext_resource type="PackedScene" uid="uid://ckcwxssmjgdri" path="res://scenes/Collisions/tree_pine_orange_medium.tscn" id="51_bk1p3"]
 [ext_resource type="PackedScene" uid="uid://67ph82uhj4oh" path="res://scenes/Collisions/tree_pine_orange_large.tscn" id="52_n8ral"]
 
@@ -335,6 +337,14 @@ volumetric_fog_density = 0.0
 [sub_resource type="Resource" id="Resource_iywne"]
 script = ExtResource("3_lbhrr")
 
+[sub_resource type="Resource" id="Resource_66xif"]
+script = ExtResource("40_yd4ix")
+frequency = 0.0
+randomize_noise_seed = 1
+rotational_noise = false
+positional_noise = true
+metadata/_custom_type_script = "uid://cuffvge5ad4aa"
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_7ixpq"]
 radius = 1.4909781
 
@@ -375,7 +385,7 @@ animations = [{
 }]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sxt1d"]
-radius = 1.6981937
+radius = 2.8145046
 
 [node name="Game" type="Node" unique_id=803510040]
 
@@ -664,7 +674,7 @@ shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1338356758 instance=ExtResource("1_uwrxv")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.625792, 12.84145, -39.923058)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11127114, 11.946434, -5.426239)
 collision_layer = 3
 collision_mask = 3
 
@@ -677,6 +687,7 @@ follow_targets = [NodePath("../Player")]
 tween_resource = SubResource("Resource_iywne")
 follow_offset = Vector3(0, 5, 5)
 follow_damping = true
+noise = SubResource("Resource_66xif")
 align_transform_with_view = Callable()
 align_position_with_view = Callable()
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
@@ -716,6 +727,50 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.142365, 21.69962, -14.6689
 [node name="Graveyard" parent="." unique_id=1189775658 instance=ExtResource("40_m4url")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.316717, 17.005215, -79.08286)
 
+[node name="GoodGhosts" type="Node3D" parent="." unique_id=1125799041]
+
+[node name="GhostLindas" type="Node3D" parent="GoodGhosts" unique_id=592436165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.349792, 19.155685, -91.58652)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="GoodGhosts/GhostLindas" unique_id=535922302]
+pixel_size = 0.03
+sprite_frames = SubResource("SpriteFrames_o8oq8")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.036899652
+
+[node name="Interactible" parent="GoodGhosts/GhostLindas" unique_id=323765291 instance=ExtResource("3_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4903407, 0)
+timeline = ExtResource("48_yd4ix")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GoodGhosts/GhostLindas/Interactible" unique_id=1018808999]
+shape = SubResource("SphereShape3D_sxt1d")
+
+[node name="GhostStart" type="Node3D" parent="GoodGhosts" unique_id=1038776448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.740654, 12.706235, -162.41489)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="GoodGhosts/GhostStart" unique_id=1535195935]
+pixel_size = 0.03
+sprite_frames = SubResource("SpriteFrames_o8oq8")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.036899652
+
+[node name="Interactible" parent="GoodGhosts/GhostStart" unique_id=2112780815 instance=ExtResource("3_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4903407, 0)
+timeline = ExtResource("50_bk1p3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GoodGhosts/GhostStart/Interactible" unique_id=24463104]
+shape = SubResource("SphereShape3D_sxt1d")
+
+[node name="EvilsGhosts" type="Node3D" parent="." unique_id=2030157221]
+
+[node name="Ghost" parent="EvilsGhosts" unique_id=2001474726 instance=ExtResource("45_oaba0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.349792, 19.155685, -91.58652)
+
+[node name="Ghost2" parent="EvilsGhosts" unique_id=766622181 instance=ExtResource("45_oaba0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.740654, 12.706235, -162.41489)
+
 [node name="arch_gate" parent="." unique_id=1156300368 instance=ExtResource("41_8ool0")]
 transform = Transform3D(-0.9986626, -0.04212606, 0.029975494, -0.043559503, 0.9978539, -0.048894368, -0.02785127, -0.050134677, -0.9983543, -16.31212, 15.002968, -73.02219)
 
@@ -747,30 +802,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.795444, 13.65453, -12.1875
 
 [node name="Flat_Boulder_03" parent="." unique_id=535769743 instance=ExtResource("45_pf7vy")]
 transform = Transform3D(-0.111496374, -0.96605635, -0.09495434, -0.038667787, 0.1978023, -0.57779586, 0.3821863, -0.2618178, -0.08615994, -38.98559, 16.63804, -58.38967)
-
-[node name="GoodGhosts" type="Node3D" parent="." unique_id=1125799041]
-
-[node name="GhostStart" type="Node3D" parent="GoodGhosts" unique_id=592436165]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0476575, 11.4197855, -14.983555)
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="GoodGhosts/GhostStart" unique_id=535922302]
-pixel_size = 0.03
-sprite_frames = SubResource("SpriteFrames_o8oq8")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.036899652
-
-[node name="Interactible" parent="GoodGhosts/GhostStart" unique_id=323765291 instance=ExtResource("3_u5sy4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4903407, 0)
-timeline = ExtResource("50_bk1p3")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GoodGhosts/GhostStart/Interactible" unique_id=1018808999]
-shape = SubResource("SphereShape3D_sxt1d")
-
-[node name="EvilsGhosts" type="Node3D" parent="." unique_id=2030157221]
-
-[node name="Ghost" parent="EvilsGhosts" unique_id=2001474726 instance=ExtResource("45_oaba0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1009274, 11.403783, -14.541943)
 
 [node name="Trees" type="Node3D" parent="." unique_id=1107555645]
 

@@ -38,6 +38,7 @@ const fov_boss := Vector3(0, 5, 10)
 
 # BOSS
 @onready var bossfight: Node3D = $"../Bossfight/CameraFocus"
+@export var camera_shake_frequency: float = 0.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -105,6 +106,8 @@ func _process(delta: float) -> void:
 	elif Dialogic.VAR.current_mask == "cat" or Global.current_level != Global.Level.CEMETERY:
 		cemetery_death_audio.stop()
 		cemetery_death_timer.stop()
+		
+	mist_damage(delta)
 
 func run_paths(delta) -> void:
 	if not cat_running:
@@ -188,10 +191,16 @@ func cemetery_respawn() -> void:
 	GameState.set_game_status(GameState.State.PLAYING)
 
 func get_random_offence() -> String:
-	var words = ["PATACCA", "SCIUPE"]
+	var words = ["PATACCA", "SCIUPE", "QUAJON", "INVURNI", "INCICIUI", "SVARNAZA", "CIU", "IGNURANT"]
 	return words[randi_range(0, len(words) - 1)]
 
 ## BOSSFIGHT ##
+
+func mist_damage(delta: float) -> void:
+	if not Global.mist_damage:
+		camera_player.noise.frequency = 0
+		return
+	camera_player.noise.frequency = camera_shake_frequency
 
 func enter_boss_agro(body: Node3D) -> void:
 	if body.name == "Player":
