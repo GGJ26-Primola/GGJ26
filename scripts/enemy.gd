@@ -2,14 +2,14 @@ extends CharacterBody3D
 
 @export var agro_range : float = 100.0
 @export var speed : float = 350.0
+@export var damage_distance : float = 2.0
 @export var can_exit_agro := true
 @export var can_die := true
 
 @onready var animated_sprite: AnimatedSprite3D = $AnimatedSprite3D
 @onready var respawn_timer: Timer = $RespawnTimer
-@onready var collision_shape: CollisionShape3D = $Area3D/CollisionShape3D
 
-enum STATUS { IDLE, FOLLOW, RETURNING, HITTED }
+enum STATUS { IDLE, FOLLOW, RETURNING, HITTED, RESPAWNING }
 var current_status := STATUS.IDLE
 
 var starting_point : Vector3
@@ -25,35 +25,46 @@ func _physics_process(delta: float) -> void:
 	if Global.player == null:
 		return
 	
+	# If enemy hitted, do nothing
 	if current_status == STATUS.HITTED:
 		return
 	
+	# If waiting for respawn, respawn when player is outside agro
+	if current_status == STATUS.RESPAWNING:
+		if player_in_agro():
+			return
+		else:
+			current_status = STATUS.IDLE
+			animated_sprite.play("idle")
+			animated_sprite.visible = true
+	
+	# If game status is not playing, do nothing
 	if GameState.current_game_status != GameState.State.PLAYING:
 		return
 	
 	# If player enter agro, start follow
 	if current_status == STATUS.IDLE or current_status == STATUS.RETURNING:
-		var distance : Vector3 = Global.player.global_position - starting_point
-		if distance.length_squared() < agro_range:
+		if player_in_agro():
 			current_status = STATUS.FOLLOW
 			animated_sprite.play("attack")
 	
 	# If in follow
 	if current_status == STATUS.FOLLOW:
 		
-		# If Player can exit agro, exit agro if distance from starting point
-		if can_exit_agro:
-			var distance : Vector3 = Global.player.global_position - starting_point
-			if distance.length_squared() > agro_range:
-				current_status = STATUS.RETURNING
-				return
+		# If Player can exit agro
+		if can_exit_agro and not player_in_agro():
+			current_status = STATUS.RETURNING
+			return
 		
 		# Move in the direction of player
 		var distance : Vector3 = Global.player.global_position - global_position
-		if distance.length_squared() < 2:
+		
+		# Hit player if is in damage distance
+		if distance.length_squared() < damage_distance:
 			hitted(null)
 			Global.game_manager.game_over()
 			return
+		
 		move_to_target(distance, delta)
 	
 	# if is returning
@@ -65,6 +76,10 @@ func _physics_process(delta: float) -> void:
 			return
 		move_to_target(distance, delta)
 
+func player_in_agro() -> bool:
+	var distance : Vector3 = Global.player.global_position - starting_point
+	return distance.length_squared() < agro_range
+
 func move_to_target(distance : Vector3, delta : float) -> void:
 	animated_sprite.flip_h = distance.x > 0
 	distance = distance.normalized()
@@ -74,14 +89,10 @@ func move_to_target(distance : Vector3, delta : float) -> void:
 	move_and_slide()
 
 func hitted(_area : Area3D) -> void:
+	global_position = starting_point
 	current_status = STATUS.HITTED
 	animated_sprite.visible = false
-	collision_shape.disabled = true
 	respawn_timer.start()
 	
 func respawn() -> void:
-	# TODO: Respawn only if is outside agro. Add new status
-	global_position = starting_point
-	current_status = STATUS.IDLE
-	animated_sprite.visible = true
-	collision_shape.disabled = false
+	current_status = STATUS.RESPAWNING

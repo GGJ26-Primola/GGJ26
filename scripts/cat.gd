@@ -6,7 +6,7 @@ var prev_pos
 func _ready() -> void:
 	prev_pos = global_position
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if global_position != prev_pos:
 		animated_sprite.play("run")
 	else:

@@ -6,7 +6,7 @@ var prev_pos
 func _ready() -> void:
 	prev_pos = global_position
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if global_position.z < prev_pos.z:
 		animated_sprite.play("walk_back")
 	elif global_position.z > prev_pos.z:

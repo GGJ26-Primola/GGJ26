@@ -155,7 +155,6 @@ func start_timeline(timeline : DialogicTimeline) -> void:
 	Dialogic.start(timeline)
 
 func game_over() -> void:
-	Global.boss_agro = false
 	GameState.set_game_status(GameState.State.GAMEOVER)
 	offence_label.text = get_random_offence()
 	graveyard_game_over.show()

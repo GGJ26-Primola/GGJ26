@@ -61,6 +61,7 @@ radius = 0.9696687
 [node name="Snake" type="Node3D" unique_id=599877792]
 
 [node name="Enemy" parent="." unique_id=1759208191 instance=ExtResource("1_yc36x")]
+can_exit_agro = false
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Enemy" unique_id=917195355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5101238, 0)

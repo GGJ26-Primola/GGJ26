@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://bu78ssf0f5nim" path="res://scenes/cat.tscn" id="2_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://b51wiu02jdl1b" path="res://assets/Music/safe_zone.wav" id="2_ca42v"]
 [ext_resource type="PackedScene" uid="uid://dxmdmtwbtv530" path="res://scenes/safe_zone.tscn" id="2_e1j6l"]
-[ext_resource type="Resource" path="res://dialogic/Safe zone/hitted_child_1.dtl" id="2_js0lu"]
+[ext_resource type="Resource" uid="uid://dshht4ncgt01m" path="res://dialogic/Safe zone/hitted_child_1.dtl" id="2_js0lu"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bqo0cfd63o4nl" path="res://scenes/menu.tscn" id="2_p57ef"]
 [ext_resource type="Script" uid="uid://dh0p4hudw1jkb" path="res://scripts/music_manager.gd" id="2_rysoc"]
-[ext_resource type="Resource" path="res://dialogic/Safe zone/hitted_child_2.dtl" id="3_gxtfn"]
+[ext_resource type="Resource" uid="uid://g8tjnldk20po" path="res://dialogic/Safe zone/hitted_child_2.dtl" id="3_gxtfn"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://be2mgdfg87nm3" path="res://assets/Music/cemetery.wav" id="3_rysoc"]
 [ext_resource type="PackedScene" uid="uid://c6wi5nthdn08o" path="res://scenes/interactible.tscn" id="3_u5sy4"]
@@ -22,7 +22,6 @@
 [ext_resource type="Resource" uid="uid://dfih0wiq8j04t" path="res://dialogic/Safe zone/1[Zona1] V65 Quest gatto END.dtl" id="14_gxtfn"]
 [ext_resource type="Script" uid="uid://tq8hh5r2ii45" path="res://scripts/look_at_2d.gd" id="15_37s47"]
 [ext_resource type="Texture2D" uid="uid://itkqkut1m1fp" path="res://assets/2D/spreadsheet_monello_1.png" id="16_3hbvx"]
-[ext_resource type="PackedScene" uid="uid://cm4noj7flak4p" path="res://scenes/enemy.tscn" id="16_5newe"]
 [ext_resource type="Script" uid="uid://cgixvwoqw1in2" path="res://scripts/monello.gd" id="16_q8j3a"]
 [ext_resource type="PackedScene" uid="uid://dw350qjqwdwki" path="res://scenes/music_changer.tscn" id="18_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://bpl470i2x3dpm" path="res://scenes/knight.tscn" id="19_264po"]
@@ -34,7 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://d1m6gsuv8l63j" path="res://assets/2D/mazapegul_idle.png" id="25_m4url"]
 [ext_resource type="Resource" uid="uid://dbmq8cmqa8wls" path="res://dialogic/Safe zone/1[Zona1] Dialogo con Villico 1.dtl" id="25_wljb1"]
 [ext_resource type="Texture2D" uid="uid://cdogkwrkjp13t" path="res://assets/2D/mazapegul_idle_with_hat.png" id="26_8ool0"]
-[ext_resource type="Resource" path="res://dialogic/Cemetery/2 Secondo incontro Mazapégul.dtl" id="26_pr1ej"]
+[ext_resource type="Resource" uid="uid://cqxbtqudrldrs" path="res://dialogic/Cemetery/2 Secondo incontro Mazapégul.dtl" id="26_pr1ej"]
 [ext_resource type="Resource" uid="uid://dwpuiw3hquai" path="res://dialogic/Safe zone/1[Zona 1] Dialogo con villico 2.dtl" id="26_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://6ii0307e2il5" path="res://assets/2D/npc1_idle.png" id="27_js0lu"]
 [ext_resource type="Resource" uid="uid://3m3iwwpkrohn" path="res://dialogic/Safe zone/1[Zona1] Dialogo con villico 3.dtl" id="28_gxtfn"]
@@ -52,8 +51,10 @@
 [ext_resource type="PackedScene" uid="uid://bb2b4bacfh66b" path="res://assets/Mesh Woods/tree_pine_orange_large.fbx" id="46_o8ni1"]
 [ext_resource type="PackedScene" uid="uid://b7xlkcf006u1g" path="res://assets/Mesh Woods/tree_pine_orange_medium.fbx" id="47_3hbvx"]
 [ext_resource type="PackedScene" uid="uid://lbnw7nxspft8" path="res://assets/Mesh Woods/tree_pine_yellow_medium.fbx" id="48_q8j3a"]
+[ext_resource type="Texture2D" uid="uid://cdihffb0jdkfp" path="res://assets/2D/blue_ghost.png" id="49_7ixpq"]
 [ext_resource type="PackedScene" uid="uid://btsroxy2eeykp" path="res://scenes/Collisions/tree_pine_yellow_large.tscn" id="49_ms3bu"]
 [ext_resource type="PackedScene" uid="uid://c3715oyku61f8" path="res://scenes/Collisions/tree_pine_yellow_medium.tscn" id="50_7ixpq"]
+[ext_resource type="Resource" uid="uid://c467j3k2yocx8" path="res://dialogic/Cemetery/fantasmi.dtl" id="50_bk1p3"]
 [ext_resource type="PackedScene" uid="uid://ckcwxssmjgdri" path="res://scenes/Collisions/tree_pine_orange_medium.tscn" id="51_bk1p3"]
 [ext_resource type="PackedScene" uid="uid://67ph82uhj4oh" path="res://scenes/Collisions/tree_pine_orange_large.tscn" id="52_n8ral"]
 
@@ -326,6 +327,45 @@ script = ExtResource("3_lbhrr")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wljb1"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmvbu"]
+atlas = ExtResource("49_7ixpq")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weeiq"]
+atlas = ExtResource("49_7ixpq")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxocx"]
+atlas = ExtResource("49_7ixpq")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nv0b"]
+atlas = ExtResource("49_7ixpq")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o8oq8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmvbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weeiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxocx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nv0b")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sxt1d"]
+radius = 1.6981937
+
 [node name="Game" type="Node" unique_id=803510040]
 
 [node name="GameManager" type="Node" parent="." unique_id=1908884894]
@@ -579,10 +619,6 @@ reload_now = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1594849, 0)
 shape = SubResource("CapsuleShape3D_264po")
 
-[node name="Enemy" parent="NPC" unique_id=890366818 instance=ExtResource("16_5newe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3007967, 0.5577383, 4.980488)
-script = null
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=789237425]
 environment = SubResource("Environment_yqjtg")
 
@@ -612,7 +648,7 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1455375748]
 unique_name_in_owner = true
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071067, 0, -0.7071067, 0.7071068, 0, 16.62345, -0.30854017)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 16.62345, -0.30854017)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1699421758]
@@ -651,7 +687,6 @@ transform = Transform3D(-0.9986626, -0.04212606, 0.029975494, -0.043559503, 0.99
 [node name="Snake" parent="Snakes" unique_id=1789395511 instance=ExtResource("44_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.910667, 13.248374, -16.058613)
 
-
 [node name="Snake2" parent="Snakes" unique_id=599877792 instance=ExtResource("44_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.415813, 13.248374, -20.285894)
 
@@ -676,35 +711,56 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.795444, 13.65453, -12.1875
 [node name="Flat_Boulder_03" parent="." unique_id=535769743 instance=ExtResource("45_pf7vy")]
 transform = Transform3D(-0.111496374, -0.96605635, -0.09495434, -0.038667787, 0.1978023, -0.57779586, 0.3821863, -0.2618178, -0.08615994, -38.98559, 16.63804, -58.38967)
 
-[node name="tree_pine_orange_large" parent="." unique_id=1535710466 instance=ExtResource("46_o8ni1")]
+[node name="GoodGhosts" type="Node3D" parent="." unique_id=1125799041]
+
+[node name="GhostStart" type="Node3D" parent="GoodGhosts" unique_id=592436165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0476575, 11.4197855, -14.983555)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="GoodGhosts/GhostStart" unique_id=535922302]
+pixel_size = 0.03
+sprite_frames = SubResource("SpriteFrames_o8oq8")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.036899652
+
+[node name="Interactible" parent="GoodGhosts/GhostStart" unique_id=323765291 instance=ExtResource("3_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4903407, 0)
+timeline = ExtResource("50_bk1p3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GoodGhosts/GhostStart/Interactible" unique_id=1018808999]
+shape = SubResource("SphereShape3D_sxt1d")
+
+[node name="EvilsGhosts" type="Node3D" parent="." unique_id=2030157221]
+
+[node name="Ghost" parent="EvilsGhosts" unique_id=2001474726 instance=ExtResource("45_oaba0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1009274, 11.403783, -14.541943)
+
+[node name="Trees" type="Node3D" parent="." unique_id=1107555645]
+
+[node name="tree_pine_orange_large" parent="Trees" unique_id=1535710466 instance=ExtResource("46_o8ni1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.708145, 22.753239, -61.562485)
 
-[node name="tree_pine_orange_medium" parent="." unique_id=1715483347 instance=ExtResource("47_3hbvx")]
+[node name="tree_pine_orange_medium" parent="Trees" unique_id=1715483347 instance=ExtResource("47_3hbvx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.0521, 22.626396, -61.839577)
 
-[node name="tree_pine_yellow_medium" parent="." unique_id=587314601 instance=ExtResource("48_q8j3a")]
+[node name="tree_pine_yellow_medium" parent="Trees" unique_id=587314601 instance=ExtResource("48_q8j3a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.90744, 22.074022, -61.408676)
 
-[node name="tree_pine_yellow_large" parent="." unique_id=1161222749 instance=ExtResource("49_ms3bu")]
+[node name="tree_pine_yellow_large" parent="Trees" unique_id=1161222749 instance=ExtResource("49_ms3bu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.3363, 21.799623, -63.100727)
 
-[node name="tree_pine_yellow_medium2" parent="." unique_id=812486897 instance=ExtResource("50_7ixpq")]
+[node name="tree_pine_yellow_medium2" parent="Trees" unique_id=812486897 instance=ExtResource("50_7ixpq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.721596, 22.057657, -60.902603)
 
-[node name="tree_pine_orange_medium2" parent="." unique_id=848010131 instance=ExtResource("51_bk1p3")]
+[node name="tree_pine_orange_medium2" parent="Trees" unique_id=848010131 instance=ExtResource("51_bk1p3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.436905, 22.81261, -61.972363)
 
-[node name="tree_pine_orange_large2" parent="." unique_id=495724873 instance=ExtResource("52_n8ral")]
+[node name="tree_pine_orange_large2" parent="Trees" unique_id=495724873 instance=ExtResource("52_n8ral")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.764145, 21.108316, -62.264267)
-
-[node name="Ghosts" type="Node3D" parent="." unique_id=2030157221]
-
-[node name="Ghost" parent="Ghosts" unique_id=766622181 instance=ExtResource("45_oaba0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1009274, 11.403783, -14.541943)
 
 [connection signal="timeout" from="GameManager/CemeteryDeathTimer" to="GameManager" method="cemetery_game_over"]
 [connection signal="timeout" from="GameManager/CemeteryRespawnTimer" to="GameManager" method="cemetery_respawn"]
 [connection signal="attacked" from="NPC/CatPath3D/PathFollow3D/Destructible" to="GameManager" method="_on_child_1_attacked"]
 [connection signal="attacked" from="NPC/CatPath3D/PathFollow3D2/Destructible" to="GameManager" method="_on_child_2_attacked"]
 [connection signal="attacked" from="NPC/Umarell/Destructible" to="GameManager" method="_on_umarell_attacked"]
-[connection signal="attacked" from="CSGBox3D2/Destructible" to="GameManager" method="_on_item_attacked"]
+[connection signal="attacked" from="CSGBox3D2/Destructible" to="GameManager" method="destroyed_evil_item"]
