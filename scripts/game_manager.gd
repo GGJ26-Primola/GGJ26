@@ -205,5 +205,4 @@ func exit_boss_agro(body: Node3D) -> void:
 		camera_player.follow_offset = fov_default
 		camera_player.set_follow_targets([player])
 		camera.fov = 75
-		
 		Global.boss_agro = false

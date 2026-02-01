@@ -79,6 +79,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if not Global.boss_agro:
+		State = IDLE
 		Phase = 1
 		move_num -1
 		return
