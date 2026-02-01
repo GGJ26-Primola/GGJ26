@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://c84ln5a6vslxd" path="res://scenes/Collisions/gravemarker_a.tscn" id="36_vpao2"]
 [ext_resource type="PackedScene" uid="uid://cuxpl5ngt2o80" path="res://scenes/Collisions/grave_b.tscn" id="37_a7vut"]
 [ext_resource type="PackedScene" uid="uid://cexb1px1iq0ng" path="res://scenes/Collisions/gravemarker_b.tscn" id="37_vpao2"]
-[ext_resource type="PackedScene" path="res://scenes/Collisions/tree_pine_yellow_large.tscn" id="38_vpao2"]
+[ext_resource type="PackedScene" uid="uid://btsroxy2eeykp" path="res://scenes/Collisions/tree_pine_yellow_large.tscn" id="38_vpao2"]
 [ext_resource type="PackedScene" uid="uid://0rnjgk85woi0" path="res://scenes/Collisions/shrine.tscn" id="39_l6fg0"]
 [ext_resource type="PackedScene" uid="uid://d2eder4aolp38" path="res://assets/3D/Tomba1.glb" id="40_5uk6q"]
 [ext_resource type="PackedScene" uid="uid://csmobhdu4w4fp" path="res://scenes/Collisions/grave_a.tscn" id="40_pgi4y"]
@@ -189,9 +189,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1418861, 2.1064544, 39.809
 
 [node name="arch" parent="Terrain/HTerrain/misc" unique_id=1902237570 instance=ExtResource("46_3f8l7")]
 transform = Transform3D(0.86708, 0.12673567, 0.48177835, -0.110783264, 0.9919365, -0.06155485, -0.48569474, 0, 0.8741285, 43.14878, -0.2834568, -1.7685394)
-
-[node name="skull_candle5" parent="Terrain/HTerrain/misc" unique_id=879943294 instance=ExtResource("32_lgker")]
-transform = Transform3D(2.4954996, -0.14676975, -0.03068167, 0.14992169, 2.4338577, 0.55123544, -0.0024919421, -0.552083, 2.4382777, -38.878353, -3.3446255, -36.428284)
 
 [node name="skull_candle6" parent="Terrain/HTerrain/misc" unique_id=751045213 instance=ExtResource("32_lgker")]
 transform = Transform3D(-0.2629639, 0, 0.96480566, 0, 1, 0, -0.96480566, 0, -0.2629639, -52.191647, -4.321327, -30.029587)

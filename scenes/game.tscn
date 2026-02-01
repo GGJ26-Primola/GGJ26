@@ -43,6 +43,7 @@
 [ext_resource type="Resource" uid="uid://15s883uo4k61" path="res://dialogic/Safe zone/Incontro con Mazanpegul.dtl" id="32_7025r"]
 [ext_resource type="PackedScene" uid="uid://wwx5yv6ev5yr" path="res://scenes/woods.tscn" id="33_v2yb1"]
 [ext_resource type="PackedScene" uid="uid://c0uv0iitg3qpb" path="res://scenes/graveyard_game_over.tscn" id="40_05nbr"]
+[ext_resource type="PackedScene" uid="uid://2nr31b5horhe" path="res://scenes/Collisions/skull_candle.tscn" id="40_bk1p3"]
 [ext_resource type="PackedScene" uid="uid://dvtfflyj2wnh7" path="res://scenes/Graveyard.tscn" id="40_m4url"]
 [ext_resource type="PackedScene" uid="uid://dsf1im1wt7jie" path="res://scenes/Collisions/arch_gate.tscn" id="41_8ool0"]
 [ext_resource type="PackedScene" uid="uid://0eameechcba5" path="res://scenes/snake.tscn" id="44_0sl42"]
@@ -325,7 +326,8 @@ tonemap_mode = 2
 [sub_resource type="Resource" id="Resource_iywne"]
 script = ExtResource("3_lbhrr")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_wljb1"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_7ixpq"]
+radius = 1.4909781
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mmvbu"]
 atlas = ExtResource("49_7ixpq")
@@ -657,14 +659,15 @@ process_physics_priority = 300
 script = ExtResource("4_lbhrr")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1550080212]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.686136, 10.597036, -7.6934795)
+[node name="EvilItem" parent="." unique_id=879943294 instance=ExtResource("40_bk1p3")]
+transform = Transform3D(2.4954996, -0.14676975, -0.03068167, 0.14992169, 2.4338577, 0.55123544, -0.0024919421, -0.552083, 2.4382777, -81.413086, 11.575192, -160.58804)
 
-[node name="Destructible" parent="CSGBox3D2" unique_id=314538345 instance=ExtResource("8_dinhu")]
+[node name="Destructible" parent="EvilItem" unique_id=314538345 instance=ExtResource("8_dinhu")]
+transform = Transform3D(0.3992799, 0.023987466, -0.00039871165, -0.023483157, 0.38941723, -0.08833329, -0.0049090674, 0.08819767, 0.39012444, -0.023037674, 0.38894978, -0.09393943)
 destroy_parent = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D2/Destructible" unique_id=447905751]
-shape = SubResource("BoxShape3D_wljb1")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EvilItem/Destructible" unique_id=447905751]
+shape = SubResource("SphereShape3D_7ixpq")
 
 [node name="Menu" parent="." unique_id=803179413 instance=ExtResource("2_p57ef")]
 scale = Vector2(1, 1)
@@ -763,4 +766,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.764145, 21.108316, -62.26
 [connection signal="attacked" from="NPC/CatPath3D/PathFollow3D/Destructible" to="GameManager" method="_on_child_1_attacked"]
 [connection signal="attacked" from="NPC/CatPath3D/PathFollow3D2/Destructible" to="GameManager" method="_on_child_2_attacked"]
 [connection signal="attacked" from="NPC/Umarell/Destructible" to="GameManager" method="_on_umarell_attacked"]
-[connection signal="attacked" from="CSGBox3D2/Destructible" to="GameManager" method="destroyed_evil_item"]
+[connection signal="attacked" from="EvilItem/Destructible" to="GameManager" method="destroyed_evil_item"]
