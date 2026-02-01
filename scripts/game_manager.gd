@@ -14,7 +14,6 @@ const fov_1 := Vector3(0, 4, 4)
 const fov_2 := Vector3(0, 3, 3)
 const fov_boss := Vector3(0, 5, 10)
 
-
 @onready var cat_path: PathFollow3D = $"../NPC/CatPath3D/CatPathFollow3D"
 @onready var child_1_path: PathFollow3D = $"../NPC/CatPath3D/PathFollow3D"
 @onready var child_2_path: PathFollow3D = $"../NPC/CatPath3D/PathFollow3D2"
@@ -26,6 +25,10 @@ const fov_boss := Vector3(0, 5, 10)
 @export var child_1_hitted_dialogue : DialogicTimeline
 @export var child_2_hitted_dialogue : DialogicTimeline
 @export var cat_end_dialogue : DialogicTimeline
+
+# Woods
+@onready var skeleton_with_mask: Sprite3D = $"../NPC/ftp1_mask/SpriteWithMask"
+@onready var skeleton_without_mask: Sprite3D = $"../NPC/ftp1_mask/SpriteWithoutMask"
 
 # Cemetery
 @onready var cemetery_death_audio : AudioStreamPlayer = $"../Musics/CemeteryDeathAudio"
@@ -58,9 +61,15 @@ func _ready() -> void:
 	Dialogic.timeline_ended.connect(remove_target)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	
+	take_ftp1()
+	
 	graveyard_game_over.hide()
-	good_ghosts.hide()
-	evils_ghosts.show()
+	
+	if Dialogic.VAR.evil_item:
+		good_ghosts.hide()
+		evils_ghosts.show()
+	else:
+		destroyed_evil_item()
 
 func append_target() -> void:
 	if GameState.current_info_mark == null:
@@ -87,6 +96,8 @@ func _on_dialogic_signal(argument: String) -> void:
 		start_cat()
 	elif argument == "cat_stop":
 		end_cat()
+	elif argument == "take_ftp1":
+		take_ftp1()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -99,7 +110,9 @@ func _process(delta: float) -> void:
 	run_paths(delta)
 	
 	# If you are in the cemetery without mask, you can live for few seconds
-	if cemetery_death_timer.is_stopped():
+	if Dialogic.VAR.evil_item == false:
+		return
+	elif cemetery_death_timer.is_stopped():
 		if Global.current_level == Global.Level.CEMETERY and not Dialogic.VAR.current_mask == "cat":
 			cemetery_death_audio.play()
 			cemetery_death_timer.start()
@@ -178,8 +191,11 @@ func game_over() -> void:
 # CEMETERY
 
 func destroyed_evil_item() -> void:
+	Dialogic.VAR.evil_item = false
 	good_ghosts.show()
 	evils_ghosts.queue_free()
+	cemetery_death_audio.stop()
+	cemetery_death_timer.stop()
 
 func cemetery_game_over() -> void:
 	Dialogic.VAR.dead_from_ghost = true
@@ -193,6 +209,16 @@ func cemetery_respawn() -> void:
 func get_random_offence() -> String:
 	var words = ["PATACCA", "SCIUPE", "QUAJON", "INVURNI", "INCICIUI", "SVARNAZA", "CIU", "IGNURANT"]
 	return words[randi_range(0, len(words) - 1)]
+
+## WOODS ##
+
+func take_ftp1() -> void:
+	if Dialogic.VAR.mask_ftp1:
+		skeleton_with_mask.hide()
+		skeleton_without_mask.show()
+	else:
+		skeleton_with_mask.show()
+		skeleton_without_mask.hide()
 
 ## BOSSFIGHT ##
 

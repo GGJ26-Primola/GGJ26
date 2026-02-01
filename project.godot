@@ -61,6 +61,7 @@ directories/dch_directory={
 "Villico 4": "res://dialogic/npc/Villico 4.dch",
 "Villico 5": "res://dialogic/npc/Villico 5.dch",
 "Villico 6": "res://dialogic/npc/Villico 6.dch",
+"berretto": "res://dialogic/berretto.dch",
 "bush": "res://dialogic/npc/bush.dch",
 "cat": "res://dialogic/npc/cat.dch",
 "potion": "res://dialogic/npc/potion.dch",
@@ -85,11 +86,13 @@ directories/dtl_directory={
 "2 Secondo incontro Mazapégul": "res://dialogic/Cemetery/2 Secondo incontro Mazapégul.dtl",
 "GrimBalduzzi": "res://dialogic/Cemetery/GrimBalduzzi.dtl",
 "Incontro con Mazanpegul": "res://dialogic/Safe zone/Incontro con Mazanpegul.dtl",
+"boss_hints": "res://dialogic/boss/boss_hints.dtl",
 "fantasmi": "res://dialogic/Cemetery/fantasmi.dtl",
 "fantasmi_lindas": "res://dialogic/Cemetery/fantasmi_lindas.dtl",
 "fantasmi_smith": "res://dialogic/Cemetery/fantasmi_smith.dtl",
 "fantasmi_termsandconditions": "res://dialogic/Cemetery/fantasmi_termsandconditions.dtl",
 "fantasmi_vial": "res://dialogic/Cemetery/fantasmi_vial.dtl",
+"ftp1": "res://dialogic/woods/ftp1.dtl",
 "hitted_child_1": "res://dialogic/Safe zone/hitted_child_1.dtl",
 "hitted_child_2": "res://dialogic/Safe zone/hitted_child_2.dtl",
 "miao": "res://dialogic/miao.dtl",
@@ -101,18 +104,20 @@ layout/style_directory={
 "conversation": "res://dialogic/styles/conversation.tres"
 }
 variables={
+"boss_last_death": "",
 "cemetery_bush": false,
 "cemetery_scroll": false,
 "cemetery_vial": false,
 "current_mask": "default",
 "dead_from_ghost": false,
+"evil_item": false,
 "mask_boss": false,
 "mask_cat": true,
 "mask_default": true,
 "mask_ftp1": false,
-"mask_pest": true,
+"mask_pest": false,
 "meow": 0,
-"stick": true,
+"stick": false,
 "umarell_hitted": false
 }
 extensions_folder="res://addons/dialogic_additions"
