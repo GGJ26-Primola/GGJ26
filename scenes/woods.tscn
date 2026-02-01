@@ -64,6 +64,10 @@ script = ExtResource("3_ehbw6")
 mode = 0
 textures = [[ExtResource("4_tb5gt"), ExtResource("5_gk5tg"), ExtResource("6_y6g3r"), ExtResource("28_kobyj")], [null, null, null, null]]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_57qtr"]
+height = 7.900711
+radius = 5.713379
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_kobyj"]
 top_radius = 2.0
 bottom_radius = 2.0
@@ -93,6 +97,10 @@ size = Vector3(1.5330658, 0.001, 6.4657288)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3vo27"]
 size = Vector3(1, 10.136841, 38.145935)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qae4p"]
+radius = 5.224121
+height = 15.538345
 
 [node name="Woods" type="Node3D" unique_id=474693119]
 
@@ -1075,22 +1083,22 @@ transform = Transform3D(-0.20885055, 0, 0.9779476, 0, 1, 0, -0.9779476, 0, -0.20
 transform = Transform3D(-0.8758859, 0, 0.48251826, 0, 1, 0, -0.48251826, 0, -0.8758859, -14.240256, -12.73695, -62.256756)
 
 [node name="Flat_Boulder_06" parent="Misc" unique_id=254343784 instance=ExtResource("12_y6g3r")]
-transform = Transform3D(0.48231405, 0.35642102, 0.21361305, 0.1549667, 0.33709863, -0.45256007, -0.31062388, 0.7215987, 0.10590552, 40.513653, -1.4459875, -73.06706)
+transform = Transform3D(0.48231402, 0.356421, 0.21361303, 0.0051683336, 0.61633635, -0.362063, -0.3470953, 0.5044497, 0.2914394, 40.423462, -1.4459875, -75.39534)
 
 [node name="Flat_Boulder_07" parent="Misc" unique_id=1643425769 instance=ExtResource("12_y6g3r")]
-transform = Transform3D(0.40528968, -0.17555627, 0.39236814, 0.51671904, 0.26796037, -0.2617558, -0.10727398, 0.6274491, 0.22156832, 37.47793, 0.81656575, -73.596924)
+transform = Transform3D(0.40528962, -0.17555627, 0.39236808, 0.42250735, 0.5086931, -0.14313574, -0.31621793, 0.4546717, 0.31164205, 37.827698, 0.81656575, -74.67365)
 
 [node name="Flat_Boulder_08" parent="Misc" unique_id=1226077689 instance=ExtResource("12_y6g3r")]
-transform = Transform3D(0.3958492, -0.21488902, 0.33436066, 0.3705925, 0.27587393, -0.33573562, -0.028784737, 0.5966056, 0.27567828, 32.964207, -0.7334001, -72.96867)
+transform = Transform3D(0.39584917, -0.21488899, 0.33436063, 0.31119105, 0.52858126, -0.16200355, -0.2032917, 0.39070004, 0.4030779, 33.309006, -0.7334001, -74.29068)
 
 [node name="Flat_Boulder_09" parent="Misc" unique_id=199178577 instance=ExtResource("12_y6g3r")]
-transform = Transform3D(0.50517815, -0.3670697, 0.13041621, 0.19076617, 0.27893373, -0.6417453, 0.1815261, 0.72840565, 0.3114698, 69.069244, -3.8493304, -71.51299)
+transform = Transform3D(0.50517815, -0.36706966, 0.13041623, 0.242044, 0.5151574, -0.49308854, 0.10372143, 0.58565485, 0.5154746, 71.74843, -6.546912, -76.02)
 
 [node name="Flat_Boulder_10" parent="Misc" unique_id=954298044 instance=ExtResource("12_y6g3r")]
-transform = Transform3D(0.47647214, 0.20466948, 0.1361855, 0.043552738, 0.23396064, -0.86134505, -0.13030635, 0.82658184, 0.2100792, 72.678505, -5.2541747, -75.26156)
+transform = Transform3D(0.47647214, 0.20466949, 0.1361855, -0.0285904, 0.6210264, -0.6356231, -0.13438442, 0.5935497, 0.6180873, 72.49408, -5.2541747, -75.20552)
 
 [node name="Flat_Boulder_21" parent="Misc" unique_id=1935506597 instance=ExtResource("12_y6g3r")]
-transform = Transform3D(0.35158843, 0.40211046, 0.21663561, 0.07020405, 0.2612821, -0.65135986, -0.24190809, 0.6602526, 0.1258266, 76.705734, -4.8212085, -74.557976)
+transform = Transform3D(0.35158843, 0.40211043, 0.2166356, 0.0069287457, 0.41934448, -0.59857494, -0.2517938, 0.57302004, 0.2860245, 76.705734, -4.8212085, -74.557976)
 
 [node name="Flat_Boulder_22" parent="Misc" unique_id=692571245 instance=ExtResource("13_mvwud")]
 transform = Transform3D(-0.9997245, 0, -0.02347245, 0, 1, 0, 0.02347245, 0, -0.9997245, 49.04365, -6.2352324, -75.80095)
@@ -1133,6 +1141,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.72469, -6.247039, 15.10637
 
 [node name="Flat_Boulder_11" parent="Misc" unique_id=459359615 instance=ExtResource("11_gk5tg")]
 transform = Transform3D(-0.46729726, 0, -0.88410026, 0, 1, 0, 0.88410026, 0, -0.46729726, 106.908394, -12.103792, 14.508839)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Misc/Flat_Boulder_11" unique_id=1895871573]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Misc/Flat_Boulder_11/StaticBody3D" unique_id=2050492534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0700111, 5.371147, -0.35549927)
+shape = SubResource("CylinderShape3D_57qtr")
+debug_color = Color(0.92941177, 0, 0.65882355, 1)
 
 [node name="Flat_Boulder_12" parent="Misc" unique_id=1363007345 instance=ExtResource("12_y6g3r")]
 transform = Transform3D(-0.014051259, -0.9218863, -0.3872053, -0.024903575, 0.38744634, -0.92155606, 0.99959123, -0.0033062473, -0.02840238, 96.85328, -11.684778, 16.062529)
@@ -1269,6 +1284,22 @@ transform = Transform3D(0.9275039, 0, 0.37381354, 0, 1, 0, -0.37381354, 0, 0.927
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.48253, -6.880163, -65.20781)
 shape = SubResource("BoxShape3D_3vo27")
 debug_color = Color(0.8235294, 0, 0.9607843, 1)
+
+[node name="Node3D2" type="Node3D" parent="Boundaries" unique_id=160423544]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boundaries/Node3D2" unique_id=2018127932]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundaries/Node3D2/StaticBody3D" unique_id=1630427136]
+transform = Transform3D(-4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0, 1, 35.48462, -0.3933368, -72.26991)
+shape = SubResource("CapsuleShape3D_qae4p")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Boundaries/Node3D2/StaticBody3D" unique_id=991774131]
+transform = Transform3D(-4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0, 1, 35.647057, -0.39333677, -71.63775)
+shape = SubResource("CapsuleShape3D_qae4p")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Boundaries/Node3D2/StaticBody3D" unique_id=656377049]
+transform = Transform3D(-4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0, 1, 74.56591, -7.456193, -74.280045)
+shape = SubResource("CapsuleShape3D_qae4p")
 
 [node name="Flat_Boulder_03" parent="." unique_id=636131696 instance=ExtResource("12_y6g3r")]
 transform = Transform3D(-0.9877347, 0, -0.15614149, 0, 1, 0, 0.15614149, 0, -0.9877347, 109.59464, -9.571382, -62.196983)
