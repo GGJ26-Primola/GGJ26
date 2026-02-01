@@ -1,45 +1,64 @@
 join Umarell right
 if {umarell_hitted} == true:
 	Umarell: ...
-	Umarell: <I think i will go lay down a bit, my head hurts./Why?>
+	Umarell: <I think i will go lay down a bit, my head hurts./Why?/I am older than you can ever imagine.>
 	[end_timeline]
 if {stick} == true:
 	Umarell: Such power, such grace, such umarellitude!
 	Umarell: You are indeed a worthy successor.
 	[end_timeline]
-Umarell: Pah! I am tired of all this! Things are tumbling down and nobody is doing a damn thing about it!
-[wait time="0.5"]
-Umarell: Pah! Pthooey! If only i were still eighty years old, i'd whip some sense into everyone!
+Umarell: Pah! I am tired of all this!
+Umarell: Things are tumbling down and nobody is doing a damn thing about it!
+[wait time="0.5" hide_text="false"]
+Umarell: Pah! Pthooey!
+Umarell: If only i were still eighty years old, i'd whip some sense into everyone!
+label first
 - Go away.
-	[end_timeline]
+	Umarell: HEY!
+	Umarell: Where do you think you are going?
+	jump first
 - Get closer.
 	[signal arg="fov_1"]
-Umarell: Aaah, if only i could instruct someone young and strong in the ancient and sacred arts of BASHING SOMEONE IN THE HEAD WITH A STICK, that'd be wonderful.
+Umarell: Aaah, if only i could instruct someone young and strong in the ancient and sacred arts of...
+Umarell: BASHING SOMEONE IN THE HEAD WITH A STICK!
+Umarell: That'd be wonderful.
 Umarell: Wait...
-Umarell: YOU! Come here!
+Umarell: YOU!
+Umarell: Come here!
+label second
 - Run away.
-	[signal arg="fov_0"]
-	[end_timeline]
+	Umarell: I AM TALKING TO YOU!
+	Umarell: YOUNG MAN!
+	jump second
 - Get even closer.
 	[signal arg="fov_2"]
-Umarell: I knew you were someone smart! I see it in you, you have something in you. Yes, i can see into you the power of COMPLAINING LIKE AN OLD MAN! You crave to learn the ancient arts of Umarello-Jutsu! I shall be your master!
-- "I don't really want to?"
-	[signal arg="fov_0"]
-	[end_timeline]
+Umarell: I knew you were someone smart!
+Umarell: I see it in you, you have something in you.
+Umarell: Yes, i can see into you the power of...
+Umarell: COMPLAINING LIKE AN OLD MAN!
+Umarell: You crave to learn the ancient arts of Umarello-Jutsu!
+Umarell: I shall be your master!
+label third
+- "I don't really want to"
+	Umarell: OF COURSE YOU DO!
+	jump third
 - "YES SENSEI!"
-	Umarell: PAIN DOES NOT EXIST IN THIS PLAZA, DOES IT?
-	- "A LITTLE BIT, SENSEI!"
-		Umarell: Then you are unworthy!
-		[signal arg="fov_0"]
-		[end_timeline]
-	- "NO SENSEI!"
+Umarell: PAIN DOES NOT EXIST IN THIS PLAZA, DOES IT?
+label fourth
+- "A LITTLE BIT, SENSEI!"
+	Umarell: THIS IS NOT THE ANSWER!
+	jump fourth
+- "NO SENSEI!"
+[signal arg="fov_0"]
 set {stick} = true
 [signal arg="umarell"]
 join stick center
-Umarell: GOOD, YOUR TRAINING START NOW! Here is your weapon, brandish it with annoyance and pain in your joints!  Strike me down, and i shall become older than you can ever imagine.
+Umarell: GOOD, YOUR TRAINING START NOW!
+Umarell: Here is your weapon!
+Umarell: Brandish it with annoyance and pain in your joints!
+Umarell: Strike me down, and i shall become older than you can ever imagine.
 [signal arg="fov_0"]
 audio "res://assets/Music/SFX/MASK 1.wav"
 leave stick
-Player: The student is now the master.
-# prompt che spiega come usare la mazza, tirare un colpo
+Umarell: The student is now the master.
 Click the main button to attack

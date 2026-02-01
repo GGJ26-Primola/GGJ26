@@ -18,10 +18,12 @@ func _process(delta: float) -> void:
 func _on_hitbox_body_entered(body: Node3D) -> void:
 	if body.name == "Player" and Dialogic.VAR.current_mask != "pest":
 		timer.start()
+		Global.mist_damage = true
 
 
 func _on_hitbox_body_exited(body: Node3D) -> void:
 	if body.name == "Player":
 		timer.stop()
+		Global.mist_damage = false
 		#Global.game_over = false
 		

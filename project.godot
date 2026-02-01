@@ -86,6 +86,7 @@ directories/dtl_directory={
 "2 Secondo incontro Mazapégul": "res://dialogic/Cemetery/2 Secondo incontro Mazapégul.dtl",
 "GrimBalduzzi": "res://dialogic/Cemetery/GrimBalduzzi.dtl",
 "Incontro con Mazanpegul": "res://dialogic/Safe zone/Incontro con Mazanpegul.dtl",
+"boss_hints": "res://dialogic/boss/boss_hints.dtl",
 "fantasmi": "res://dialogic/Cemetery/fantasmi.dtl",
 "fantasmi_lindas": "res://dialogic/Cemetery/fantasmi_lindas.dtl",
 "fantasmi_smith": "res://dialogic/Cemetery/fantasmi_smith.dtl",
@@ -109,14 +110,14 @@ variables={
 "cemetery_vial": false,
 "current_mask": "default",
 "dead_from_ghost": false,
-"evil_item": true,
+"evil_item": false,
 "mask_boss": false,
 "mask_cat": true,
 "mask_default": true,
-"mask_ftp1": true,
-"mask_pest": true,
+"mask_ftp1": false,
+"mask_pest": false,
 "meow": 0,
-"stick": true,
+"stick": false,
 "umarell_hitted": false
 }
 extensions_folder="res://addons/dialogic_additions"

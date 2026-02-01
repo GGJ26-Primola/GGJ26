@@ -9,3 +9,4 @@ static var current_level := Level.SAFE
 
 var game_over = false
 var boss_agro = false
+var mist_damage = false

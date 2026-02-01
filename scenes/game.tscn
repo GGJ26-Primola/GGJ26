@@ -52,6 +52,7 @@
 [ext_resource type="PackedScene" uid="uid://c0uv0iitg3qpb" path="res://scenes/graveyard_game_over.tscn" id="40_05nbr"]
 [ext_resource type="PackedScene" uid="uid://2nr31b5horhe" path="res://scenes/Collisions/skull_candle.tscn" id="40_bk1p3"]
 [ext_resource type="PackedScene" uid="uid://dvtfflyj2wnh7" path="res://scenes/Graveyard.tscn" id="40_m4url"]
+[ext_resource type="Script" uid="uid://cuffvge5ad4aa" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_3d.gd" id="40_yd4ix"]
 [ext_resource type="PackedScene" uid="uid://dsf1im1wt7jie" path="res://scenes/Collisions/arch_gate.tscn" id="41_8ool0"]
 [ext_resource type="PackedScene" uid="uid://0eameechcba5" path="res://scenes/snake.tscn" id="44_0sl42"]
 [ext_resource type="PackedScene" uid="uid://lkcb5qva01jm" path="res://scenes/ghost.tscn" id="45_oaba0"]
@@ -340,6 +341,9 @@ animations = [{
 [sub_resource type="SphereShape3D" id="SphereShape3D_m4url"]
 radius = 3.6868103
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_7nv0b"]
+radius = 2.65297
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_gee14"]
 radius = 2.5951588
 
@@ -366,6 +370,14 @@ volumetric_fog_density = 0.0
 
 [sub_resource type="Resource" id="Resource_iywne"]
 script = ExtResource("3_lbhrr")
+
+[sub_resource type="Resource" id="Resource_66xif"]
+script = ExtResource("40_yd4ix")
+frequency = 0.0
+randomize_noise_seed = 1
+rotational_noise = false
+positional_noise = true
+metadata/_custom_type_script = "uid://cuffvge5ad4aa"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7ixpq"]
 radius = 1.4909781
@@ -688,6 +700,23 @@ timeline = ExtResource("32_xbak0")
 destroy_after_read = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/ftp1_mask/ToDestroy/interactible" unique_id=1313527242]
+shape = SubResource("SphereShape3D_7nv0b")
+
+[node name="Mazapégul3" type="Node3D" parent="NPC" unique_id=1296096044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.61412, 16.470304, -55.519028)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="NPC/Mazapégul3" unique_id=715485312]
+pixel_size = 0.03
+sprite_frames = SubResource("SpriteFrames_458eo")
+animation = &"idle"
+autoplay = "idle_hat"
+frame_progress = 0.14907537
+
+[node name="interactible" parent="NPC/Mazapégul3" unique_id=1775122151 instance=ExtResource("3_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.36278248, 0)
+timeline = ExtResource("26_pr1ej")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Mazapégul3/interactible" unique_id=279858583]
 shape = SubResource("SphereShape3D_m4url")
 
 [node name="Mazapégul" type="Node3D" parent="NPC" unique_id=1634428036]
@@ -747,12 +776,12 @@ shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1338356758 instance=ExtResource("1_uwrxv")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11127114, 11.946434, -5.426239)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0034666, 15.85844, -21.436735)
 collision_layer = 3
 collision_mask = 3
 
 [node name="CameraPlayer" type="Node3D" parent="." unique_id=386739997 node_paths=PackedStringArray("follow_targets")]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0.11127114, 17.653542, 0.28086776)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, -4.0034666, 21.565548, -15.729629)
 top_level = true
 script = ExtResource("2_lnu2h")
 follow_mode = 3
@@ -760,6 +789,7 @@ follow_targets = [NodePath("../Player")]
 tween_resource = SubResource("Resource_iywne")
 follow_offset = Vector3(0, 5, 5)
 follow_damping = true
+noise = SubResource("Resource_66xif")
 align_transform_with_view = Callable()
 align_position_with_view = Callable()
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
@@ -767,7 +797,7 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1455375748]
 unique_name_in_owner = true
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0.11127114, 17.653542, 0.28086776)
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071067, 0, -0.7071067, 0.7071068, -4.0034666, 21.565548, -15.729629)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1699421758]
@@ -888,6 +918,7 @@ shape = SubResource("SphereShape3D_sxt1d")
 
 [node name="Mercant" type="Node3D" parent="GoodGhosts" unique_id=902845936]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.986858, 16.682713, -124.97701)
+script = ExtResource("15_37s47")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="GoodGhosts/Mercant" unique_id=680964300]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26350784, 0)
