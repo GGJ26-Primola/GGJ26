@@ -309,7 +309,6 @@ func state_machine(delta: float) -> void:
 				var disappear = create_tween()
 				disappear.tween_property(sprite, "modulate:a", 0, disappear_time)
 				await disappear.finished
-				queue_free()
 				
 				musics.change_music("safe")
 				GameState.current_game_status = GameState.State.GAMEOVER
