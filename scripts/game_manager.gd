@@ -97,6 +97,8 @@ func _on_dialogic_signal(argument: String) -> void:
 		end_cat()
 	elif argument == "take_ftp1":
 		take_ftp1()
+	elif argument == "quit":
+		get_tree().quit() #Exit game
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
