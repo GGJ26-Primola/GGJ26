@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://xp817dx81uy0"
 path.s3tc="res://.godot/imported/boss_spreadsheet.png-64ae7142163b256eaa8794449bf4c36e.s3tc.ctex"
+path.etc2="res://.godot/imported/boss_spreadsheet.png-64ae7142163b256eaa8794449bf4c36e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/2D/boss_spreadsheet.png"
-dest_files=["res://.godot/imported/boss_spreadsheet.png-64ae7142163b256eaa8794449bf4c36e.s3tc.ctex"]
+dest_files=["res://.godot/imported/boss_spreadsheet.png-64ae7142163b256eaa8794449bf4c36e.s3tc.ctex", "res://.godot/imported/boss_spreadsheet.png-64ae7142163b256eaa8794449bf4c36e.etc2.ctex"]
 
 [params]
 

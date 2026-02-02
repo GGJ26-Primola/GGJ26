@@ -584,14 +584,14 @@ timeline = ExtResource("25_wljb1")
 shape = SubResource("SphereShape3D_pr1ej")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="NPC/Villico 1" unique_id=243602379]
-transform = Transform3D(0.8905306, 0, -0.45492333, 0, 1, 0, 0.45492333, 0, 0.8905306, 0, 1.2573872, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2573872, 0)
 pixel_size = 0.03
 sprite_frames = SubResource("SpriteFrames_2gnni")
 animation = &"idle+"
 autoplay = "idle+"
 
 [node name="Villico 2" type="Node3D" parent="NPC" unique_id=1984934729]
-transform = Transform3D(0.43603235, 0, 0.899931, 0, 1, 0, -0.899931, 0, 0.43603235, -16.777288, 9.691846, -6.846901)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.777288, 9.691846, -6.846901)
 script = ExtResource("15_37s47")
 
 [node name="Interactible" parent="NPC/Villico 2" unique_id=2034438154 instance=ExtResource("3_u5sy4")]
@@ -602,7 +602,7 @@ timeline = ExtResource("26_v2yb1")
 shape = SubResource("SphereShape3D_pr1ej")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="NPC/Villico 2" unique_id=829677871]
-transform = Transform3D(0.89420116, 0, -0.44766545, 0, 1, 0, 0.44766545, 0, 0.89420116, 0, 1.5100002, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5100002, 0)
 pixel_size = 0.03
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_1yg85")
@@ -869,7 +869,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.208008, 20.699429, -124.7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.697517, 16.768898, -141.94714)
 
 [node name="Ghost5" parent="EvilsGhosts" unique_id=58780998 instance=ExtResource("45_oaba0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.03998, 22.213453, -82.465996)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.09683, 22.776978, -96.47911)
 
 [node name="arch_gate" parent="." unique_id=1156300368 instance=ExtResource("41_8ool0")]
 transform = Transform3D(-0.9986626, -0.04212606, 0.029975494, -0.043559503, 0.9978539, -0.048894368, -0.02785127, -0.050134677, -0.9983543, -16.31212, 15.002968, -73.02219)

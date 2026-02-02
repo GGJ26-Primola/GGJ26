@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://duaxfcvx1shxd"
 path.s3tc="res://.godot/imported/Braciere1_TrimSheet1.png-ab4bfbed11b76523ba7042b8bb82aca6.s3tc.ctex"
+path.etc2="res://.godot/imported/Braciere1_TrimSheet1.png-ab4bfbed11b76523ba7042b8bb82aca6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/modelli klaus/Braciere1_TrimSheet1.png"
-dest_files=["res://.godot/imported/Braciere1_TrimSheet1.png-ab4bfbed11b76523ba7042b8bb82aca6.s3tc.ctex"]
+dest_files=["res://.godot/imported/Braciere1_TrimSheet1.png-ab4bfbed11b76523ba7042b8bb82aca6.s3tc.ctex", "res://.godot/imported/Braciere1_TrimSheet1.png-ab4bfbed11b76523ba7042b8bb82aca6.etc2.ctex"]
 
 [params]
 

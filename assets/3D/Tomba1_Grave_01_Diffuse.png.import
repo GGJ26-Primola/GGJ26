@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cyd15y30vpmop"
 path.s3tc="res://.godot/imported/Tomba1_Grave_01_Diffuse.png-99abf3aa1c6321f2b99e7b79a394e9a1.s3tc.ctex"
+path.etc2="res://.godot/imported/Tomba1_Grave_01_Diffuse.png-99abf3aa1c6321f2b99e7b79a394e9a1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/3D/Tomba1_Grave_01_Diffuse.png"
-dest_files=["res://.godot/imported/Tomba1_Grave_01_Diffuse.png-99abf3aa1c6321f2b99e7b79a394e9a1.s3tc.ctex"]
+dest_files=["res://.godot/imported/Tomba1_Grave_01_Diffuse.png-99abf3aa1c6321f2b99e7b79a394e9a1.s3tc.ctex", "res://.godot/imported/Tomba1_Grave_01_Diffuse.png-99abf3aa1c6321f2b99e7b79a394e9a1.etc2.ctex"]
 
 [params]
 

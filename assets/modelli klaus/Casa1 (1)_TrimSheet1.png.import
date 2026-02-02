@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvwaokev1pf5y"
 path.s3tc="res://.godot/imported/Casa1 (1)_TrimSheet1.png-cadd4cd4d7c0277f7835baa71270ff6f.s3tc.ctex"
+path.etc2="res://.godot/imported/Casa1 (1)_TrimSheet1.png-cadd4cd4d7c0277f7835baa71270ff6f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/modelli klaus/Casa1 (1)_TrimSheet1.png"
-dest_files=["res://.godot/imported/Casa1 (1)_TrimSheet1.png-cadd4cd4d7c0277f7835baa71270ff6f.s3tc.ctex"]
+dest_files=["res://.godot/imported/Casa1 (1)_TrimSheet1.png-cadd4cd4d7c0277f7835baa71270ff6f.s3tc.ctex", "res://.godot/imported/Casa1 (1)_TrimSheet1.png-cadd4cd4d7c0277f7835baa71270ff6f.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1eqja5efxt60"
 path.s3tc="res://.godot/imported/water-texture-seamless-natural-high-quality-photo.jpg-553cb0b12a310f9e139f425bf971b531.s3tc.ctex"
+path.etc2="res://.godot/imported/water-texture-seamless-natural-high-quality-photo.jpg-553cb0b12a310f9e139f425bf971b531.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/water-texture-seamless-natural-high-quality-photo.jpg"
-dest_files=["res://.godot/imported/water-texture-seamless-natural-high-quality-photo.jpg-553cb0b12a310f9e139f425bf971b531.s3tc.ctex"]
+dest_files=["res://.godot/imported/water-texture-seamless-natural-high-quality-photo.jpg-553cb0b12a310f9e139f425bf971b531.s3tc.ctex", "res://.godot/imported/water-texture-seamless-natural-high-quality-photo.jpg-553cb0b12a310f9e139f425bf971b531.etc2.ctex"]
 
 [params]
 

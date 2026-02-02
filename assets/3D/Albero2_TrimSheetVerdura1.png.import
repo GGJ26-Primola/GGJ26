@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dy8dfsd7mvi3l"
 path.s3tc="res://.godot/imported/Albero2_TrimSheetVerdura1.png-15dead8c8c6ae8289c6a7c6d7e9deea9.s3tc.ctex"
+path.etc2="res://.godot/imported/Albero2_TrimSheetVerdura1.png-15dead8c8c6ae8289c6a7c6d7e9deea9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/3D/Albero2_TrimSheetVerdura1.png"
-dest_files=["res://.godot/imported/Albero2_TrimSheetVerdura1.png-15dead8c8c6ae8289c6a7c6d7e9deea9.s3tc.ctex"]
+dest_files=["res://.godot/imported/Albero2_TrimSheetVerdura1.png-15dead8c8c6ae8289c6a7c6d7e9deea9.s3tc.ctex", "res://.godot/imported/Albero2_TrimSheetVerdura1.png-15dead8c8c6ae8289c6a7c6d7e9deea9.etc2.ctex"]
 
 [params]
 

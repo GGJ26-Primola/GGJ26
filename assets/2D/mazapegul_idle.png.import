@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1m6gsuv8l63j"
 path.s3tc="res://.godot/imported/mazapegul_idle.png-5d17ccfe4602b8aa174541116865ce0a.s3tc.ctex"
+path.etc2="res://.godot/imported/mazapegul_idle.png-5d17ccfe4602b8aa174541116865ce0a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/2D/mazapegul_idle.png"
-dest_files=["res://.godot/imported/mazapegul_idle.png-5d17ccfe4602b8aa174541116865ce0a.s3tc.ctex"]
+dest_files=["res://.godot/imported/mazapegul_idle.png-5d17ccfe4602b8aa174541116865ce0a.s3tc.ctex", "res://.godot/imported/mazapegul_idle.png-5d17ccfe4602b8aa174541116865ce0a.etc2.ctex"]
 
 [params]
 

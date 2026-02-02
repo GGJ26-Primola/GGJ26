@@ -310,9 +310,10 @@ func state_machine(delta: float) -> void:
 				disappear.tween_property(sprite, "modulate:a", 0, disappear_time)
 				await disappear.finished
 				
-				musics.change_music("safe")
-				GameState.current_game_status = GameState.State.GAMEOVER
-				Dialogic.start("gameover")
+				if GameState.current_game_status != GameState.State.GAMEOVER:
+					musics.change_music("safe")
+					GameState.current_game_status = GameState.State.GAMEOVER
+					Dialogic.start("gameover")
 
 func _on_timer_timeout() -> void:
 	Dialogic.VAR.boss_last_death = "mist"

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://de1ohtes1rxgf"
 path.s3tc="res://.godot/imported/Stand1_TrimSheet2.png-8e465a89d513464a90790aa7a5c8c22c.s3tc.ctex"
+path.etc2="res://.godot/imported/Stand1_TrimSheet2.png-8e465a89d513464a90790aa7a5c8c22c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/Mesh Village/Stand1_TrimSheet2.png"
-dest_files=["res://.godot/imported/Stand1_TrimSheet2.png-8e465a89d513464a90790aa7a5c8c22c.s3tc.ctex"]
+dest_files=["res://.godot/imported/Stand1_TrimSheet2.png-8e465a89d513464a90790aa7a5c8c22c.s3tc.ctex", "res://.godot/imported/Stand1_TrimSheet2.png-8e465a89d513464a90790aa7a5c8c22c.etc2.ctex"]
 
 [params]
 

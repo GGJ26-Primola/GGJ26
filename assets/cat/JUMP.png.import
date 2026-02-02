@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bijja6d7irwmi"
 path.s3tc="res://.godot/imported/JUMP.png-324c1ffe4fd3e815d0021df8fc26fab8.s3tc.ctex"
+path.etc2="res://.godot/imported/JUMP.png-324c1ffe4fd3e815d0021df8fc26fab8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/cat/JUMP.png"
-dest_files=["res://.godot/imported/JUMP.png-324c1ffe4fd3e815d0021df8fc26fab8.s3tc.ctex"]
+dest_files=["res://.godot/imported/JUMP.png-324c1ffe4fd3e815d0021df8fc26fab8.s3tc.ctex", "res://.godot/imported/JUMP.png-324c1ffe4fd3e815d0021df8fc26fab8.etc2.ctex"]
 
 [params]
 

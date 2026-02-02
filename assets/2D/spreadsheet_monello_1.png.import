@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://itkqkut1m1fp"
 path.s3tc="res://.godot/imported/spreadsheet_monello_1.png-0af092b1d1ace433e46e8eb63fcf26b9.s3tc.ctex"
+path.etc2="res://.godot/imported/spreadsheet_monello_1.png-0af092b1d1ace433e46e8eb63fcf26b9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/2D/spreadsheet_monello_1.png"
-dest_files=["res://.godot/imported/spreadsheet_monello_1.png-0af092b1d1ace433e46e8eb63fcf26b9.s3tc.ctex"]
+dest_files=["res://.godot/imported/spreadsheet_monello_1.png-0af092b1d1ace433e46e8eb63fcf26b9.s3tc.ctex", "res://.godot/imported/spreadsheet_monello_1.png-0af092b1d1ace433e46e8eb63fcf26b9.etc2.ctex"]
 
 [params]
 

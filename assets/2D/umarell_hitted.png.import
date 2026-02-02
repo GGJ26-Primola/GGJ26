@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3bdnqvvrdjc8"
 path.s3tc="res://.godot/imported/umarell_hitted.png-bec50b3a4aabbc53ce4be41959ea7f1c.s3tc.ctex"
+path.etc2="res://.godot/imported/umarell_hitted.png-bec50b3a4aabbc53ce4be41959ea7f1c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/2D/umarell_hitted.png"
-dest_files=["res://.godot/imported/umarell_hitted.png-bec50b3a4aabbc53ce4be41959ea7f1c.s3tc.ctex"]
+dest_files=["res://.godot/imported/umarell_hitted.png-bec50b3a4aabbc53ce4be41959ea7f1c.s3tc.ctex", "res://.godot/imported/umarell_hitted.png-bec50b3a4aabbc53ce4be41959ea7f1c.etc2.ctex"]
 
 [params]
 

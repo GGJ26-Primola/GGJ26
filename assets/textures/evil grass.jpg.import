@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cq60ttdx3v7fq"
 path.s3tc="res://.godot/imported/evil grass.jpg-24f1f46f5957c670b5826e842e061fbf.s3tc.ctex"
+path.etc2="res://.godot/imported/evil grass.jpg-24f1f46f5957c670b5826e842e061fbf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/evil grass.jpg"
-dest_files=["res://.godot/imported/evil grass.jpg-24f1f46f5957c670b5826e842e061fbf.s3tc.ctex"]
+dest_files=["res://.godot/imported/evil grass.jpg-24f1f46f5957c670b5826e842e061fbf.s3tc.ctex", "res://.godot/imported/evil grass.jpg-24f1f46f5957c670b5826e842e061fbf.etc2.ctex"]
 
 [params]
 

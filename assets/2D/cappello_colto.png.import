@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://8cwl28pa2v6j"
 path.s3tc="res://.godot/imported/cappello_colto.png-e15800d1266d77728d3b9e293b4f68a2.s3tc.ctex"
+path.etc2="res://.godot/imported/cappello_colto.png-e15800d1266d77728d3b9e293b4f68a2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/2D/cappello_colto.png"
-dest_files=["res://.godot/imported/cappello_colto.png-e15800d1266d77728d3b9e293b4f68a2.s3tc.ctex"]
+dest_files=["res://.godot/imported/cappello_colto.png-e15800d1266d77728d3b9e293b4f68a2.s3tc.ctex", "res://.godot/imported/cappello_colto.png-e15800d1266d77728d3b9e293b4f68a2.etc2.ctex"]
 
 [params]
 

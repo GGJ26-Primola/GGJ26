@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://tqwier3rw1h5"
 path.s3tc="res://.godot/imported/CespuglioBacche4_TrimSheetVerdura1.png-53d250b3db7ba071c0da62fb9ae3ff18.s3tc.ctex"
+path.etc2="res://.godot/imported/CespuglioBacche4_TrimSheetVerdura1.png-53d250b3db7ba071c0da62fb9ae3ff18.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/3D/CespuglioBacche4_TrimSheetVerdura1.png"
-dest_files=["res://.godot/imported/CespuglioBacche4_TrimSheetVerdura1.png-53d250b3db7ba071c0da62fb9ae3ff18.s3tc.ctex"]
+dest_files=["res://.godot/imported/CespuglioBacche4_TrimSheetVerdura1.png-53d250b3db7ba071c0da62fb9ae3ff18.s3tc.ctex", "res://.godot/imported/CespuglioBacche4_TrimSheetVerdura1.png-53d250b3db7ba071c0da62fb9ae3ff18.etc2.ctex"]
 
 [params]
 

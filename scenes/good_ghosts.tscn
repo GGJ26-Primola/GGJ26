@@ -129,7 +129,7 @@ timeline = ExtResource("5_neo62")
 shape = SubResource("SphereShape3D_sxt1d")
 
 [node name="GhostVial" type="Node3D" parent="." unique_id=2002935586]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.03998, 22.213453, -82.465996)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.09683, 22.776978, -96.47911)
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="GhostVial" unique_id=674412049]
 pixel_size = 0.03

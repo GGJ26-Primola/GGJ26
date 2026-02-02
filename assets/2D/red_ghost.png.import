@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bx32p77h1kq05"
 path.s3tc="res://.godot/imported/red_ghost.png-61cea513dda7dff16dc2efbbfa2a225a.s3tc.ctex"
+path.etc2="res://.godot/imported/red_ghost.png-61cea513dda7dff16dc2efbbfa2a225a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/2D/red_ghost.png"
-dest_files=["res://.godot/imported/red_ghost.png-61cea513dda7dff16dc2efbbfa2a225a.s3tc.ctex"]
+dest_files=["res://.godot/imported/red_ghost.png-61cea513dda7dff16dc2efbbfa2a225a.s3tc.ctex", "res://.godot/imported/red_ghost.png-61cea513dda7dff16dc2efbbfa2a225a.etc2.ctex"]
 
 [params]
 
